@@ -3,6 +3,7 @@ import { AuthClientResponse, GuardContract } from '@adonisjs/auth/types'
 import { UserProviderContract } from '@adonisjs/auth/types/core'
 import jwt from 'jsonwebtoken'
 import { HttpContext } from '@adonisjs/core/http'
+import redis from '@adonisjs/redis/services/main'
 
 export type JwtGuardOptions = {
   secret: string
@@ -49,11 +50,17 @@ export class JwtGuard<UserProvider extends UserProviderContract<unknown>>
 
   /**
    * Generate a JWT token for a given user.
+   * Manage redis cache for token invalidation
    */
   async generate(user: UserProvider[typeof symbols.PROVIDER_REAL_USER]): Promise<string> {
     const providerUser = await this.#userProvider.createUserForGuard(user)
     const token = jwt.sign({ userId: providerUser.getId() }, this.#options.secret)
 
+    const key = `user:${providerUser.getId()}:token`
+    if (await redis.exists(key)) {
+      await redis.del(key)
+    }
+    await redis.set(key, token, 'EX', 60 * 60 * 24 * 30) // 30 days
     return token
   }
 
