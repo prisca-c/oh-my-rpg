@@ -49,6 +49,13 @@ export default class User extends BaseModel {
     user.id = randomUUID()
   }
 
+  @beforeCreate()
+  static async generateUsername(user: User) {
+    if (user.username === null || user.username === undefined || user.username === '') {
+      user.username = new UsernameGenerate().generate()
+    }
+  }
+
   @hasMany(() => Character)
   declare characters: HasMany<typeof Character>
 }
