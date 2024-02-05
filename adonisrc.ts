@@ -33,7 +33,7 @@ export default defineConfig({
     () => import('@adonisjs/redis/redis_provider'),
     () => import('@adonisjs/session/session_provider'),
     () => import('@adonisjs/vite/vite_provider'),
-    () => import('@adonisjs/shield/shield_provider')
+    () => import('@adonisjs/shield/shield_provider'),
   ],
 
   /*
