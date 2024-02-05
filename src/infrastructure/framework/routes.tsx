@@ -9,9 +9,10 @@
 
 import router from '@adonisjs/core/services/router'
 import { middleware } from '#start/kernel'
-import { Home } from '../../domain/resources/home'
-import { Login } from '../../domain/resources/login'
+import { Home } from '#domain/resources/home'
+import { Login } from '#domain/resources/login'
 import { Register } from '#domain/resources/register'
+import { HttpContext } from '@adonisjs/core/http'
 
 const GamesController = () => import('#controllers/games_controller')
 const CharactersController = () => import('#controllers/characters_controller')
@@ -35,7 +36,7 @@ router
   .where('id', router.matchers.uuid())
   .use(middleware.auth())
 
-router.get('/login', () => <Login />).as('login.get')
+router.get('/login', (ctx: HttpContext) => <Login ctx={ctx} />).as('login.get')
 router.post('/login', [AuthController, 'login']).as('login.post')
 
 router.get('/logout', [AuthController, 'logout'])
