@@ -6,7 +6,7 @@ const shieldConfig = defineConfig({
    * to learn more
    */
   csp: {
-    enabled: true,
+    enabled: false,
     directives: {
       defaultSrc: [`'self'`, '@viteDevUrl'],
       connectSrc: ['@viteHmrUrl'],
@@ -14,9 +14,8 @@ const shieldConfig = defineConfig({
       styleSrc: ["'self'"],
       fontSrc: ["'self'"],
       imgSrc: ["'self'"],
-      sandbox: ['allow-forms', 'allow-scripts'],
-      reportUri: '/report-violation',
       objectSrc: ["'none'"],
+      reportUri: '/report-violation',
     },
     reportOnly: false,
   },
@@ -45,7 +44,7 @@ const shieldConfig = defineConfig({
    * Force browser to always use HTTPS
    */
   hsts: {
-    enabled: true,
+    enabled: false,
     maxAge: '180 days',
     includeSubDomains: true,
   },
