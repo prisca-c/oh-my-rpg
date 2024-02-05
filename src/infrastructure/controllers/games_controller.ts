@@ -2,7 +2,7 @@ import Character from '#models/character'
 import { HttpContext } from '@adonisjs/core/http'
 
 export default class GamesController {
-  async index({ view, params, auth, session }: HttpContext) {
+  async index({ params, auth, session }: HttpContext) {
     const user = auth.user
     const id = params.id
 
@@ -10,7 +10,7 @@ export default class GamesController {
 
     if (user?.id !== character?.userId || !character) {
       session.flash('error', 'Seems like there was an error loading your character.')
-      return view.render('game')
+      //return view.render('game')
     }
 
     const characters = Character.query()
@@ -18,10 +18,10 @@ export default class GamesController {
       .orderBy('level', 'desc')
       .limit(5)
 
-    return view.render('game', {
-      character: character,
-      leaderboard: await characters,
-      properties: await character.entityProperty,
-    })
+    // return view.render('game', {
+    //   character: character,
+    //   leaderboard: await characters,
+    //   properties: await character.entityProperty,
+    // })
   }
 }

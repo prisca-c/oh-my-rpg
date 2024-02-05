@@ -3,13 +3,13 @@ import { HttpContext } from '@adonisjs/core/http'
 import { createCharacterValidator } from '#validators/create_character_validator'
 
 export default class CharactersController {
-  async index({ auth, view }: HttpContext) {
+  async index({ auth }: HttpContext) {
     const user = auth.user
     await user?.load('characters')
 
-    return view.render('character', {
-      characters: user?.characters,
-    })
+    // return view.render('character', {
+    //   characters: user?.characters,
+    // })
   }
 
   async store({ request, response, auth }: HttpContext) {
