@@ -10,6 +10,7 @@
 import router from '@adonisjs/core/services/router'
 import { middleware } from '#start/kernel'
 import { Home } from '#domains/resources/home'
+import { Login } from '#domains/resources/login'
 
 const GamesController = () => import('#controllers/games_controller')
 const CharactersController = () => import('#controllers/characters_controller')
@@ -33,7 +34,8 @@ router
   .where('id', router.matchers.uuid())
   .use(middleware.auth())
 
-router.post('/login', [AuthController, 'login']).as('login')
+router.get('/login', () => <Login />).as('login.get')
+router.post('/login', [AuthController, 'login']).as('login.post')
 
 router.get('/logout', [AuthController, 'logout'])
 
