@@ -5,16 +5,16 @@ import { createUserValidator } from '#validators/create_user_validator'
 
 export default class AuthController {
   async login({ auth, request, response, session }: HttpContext) {
-    const { username, password } = request.all()
+    const { email, password } = request.only(['email', 'password'])
 
     session.flash({
       errors: {
-        username: 'Invalid username or password',
-        password: 'Invalid username or password',
+        email: 'Invalid credentials',
+        password: 'Invalid credentials',
       },
     })
 
-    const user = await User.verifyCredentials(username, password)
+    const user = await User.verifyCredentials(email, password)
 
     user.lastSessionId = session.sessionId
     user.lastLoginAt = DateTime.now()
