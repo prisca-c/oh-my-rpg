@@ -3,9 +3,17 @@ import hash from '@adonisjs/core/services/hash'
 import { BaseModel, beforeCreate, beforeSave, column, hasMany } from '@adonisjs/lucid/orm'
 import type { HasMany } from '@adonisjs/lucid/types/relations'
 import Character from '#models/character'
+import { compose } from '@adonisjs/core/helpers'
 import { randomUUID } from 'node:crypto'
+import { withAuthFinder } from '@adonisjs/auth'
+import { UsernameGenerate } from '#infrastructure/services/username_generate'
 
-export default class User extends BaseModel {
+const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
+  uids: ['email'],
+  passwordColumnName: 'password',
+})
+
+export default class User extends compose(BaseModel, AuthFinder) {
   @column({ isPrimary: true })
   declare id: string
 

@@ -14,19 +14,18 @@ export default class AuthController {
       },
     })
 
-    await auth.use('jwt').attempt(username, password)
-
-    const user = await User.findByOrFail('username', username)
+    const user = await User.verifyCredentials(username, password)
 
     user.lastSessionId = session.sessionId
     user.lastLoginAt = DateTime.now()
     await user.save()
+    auth.use('web').login(user)
 
     response.redirect('/character')
   }
 
   async logout({ auth, response }: HttpContext) {
-    auth.use('jwt')
+    auth.use('web').logout()
     return response.redirect('/')
   }
 
