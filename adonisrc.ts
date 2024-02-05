@@ -31,6 +31,7 @@ export default defineConfig({
     () => import('@adonisjs/auth/auth_provider'),
     () => import('@adonisjs/lucid/database_provider'),
     () => import('@adonisjs/redis/redis_provider'),
+    () => import('@adonisjs/session/session_provider'),
   ],
 
   /*
@@ -79,6 +80,5 @@ export default defineConfig({
     validators: 'src/infrastructure/validators',
     factories: 'src/infrastructure/framework/database/factories',
     seeders: 'src/infrastructure/framework/database/seeders',
-    kernel: 'src/infrastructure/framework',
   },
 })
