@@ -9,8 +9,8 @@
 
 import router from '@adonisjs/core/services/router'
 import { middleware } from '#start/kernel'
-import { Home } from '#domains/resources/home'
-import { Login } from '#domains/resources/login'
+import { Home } from '../../domain/resources/home'
+import { Login } from '../../domain/resources/login'
 
 const GamesController = () => import('#controllers/games_controller')
 const CharactersController = () => import('#controllers/characters_controller')

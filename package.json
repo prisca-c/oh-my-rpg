@@ -14,7 +14,7 @@
     "typecheck": "tsc --noEmit"
   },
   "imports": {
-    "#domains/*": "./src/domains/*.js",
+    "#domain/*": "./src/domain/*.js",
     "#infrastructure/*": "./src/infrastructure/*.js",
     "#controllers/*": "./src/infrastructure/controllers/*.js",
     "#exceptions/*": "./src/infrastructure/framework/exceptions/*.js",

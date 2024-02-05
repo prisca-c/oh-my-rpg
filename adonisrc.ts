@@ -82,7 +82,7 @@ export default defineConfig({
     validators: 'src/infrastructure/validators',
     factories: 'src/infrastructure/framework/database/factories',
     seeders: 'src/infrastructure/framework/database/seeders',
-    views: 'src/domains/views',
+    views: 'src/domain/views',
   },
   metaFiles: [
     {
