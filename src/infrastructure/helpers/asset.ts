@@ -23,3 +23,5 @@ function ScriptAsset(props: { entrypoint: string }) {
 
   return Html.createElement(Html.Fragment, {}, elements)
 }
+
+export { Image, ScriptAsset }

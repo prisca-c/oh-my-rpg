@@ -9,11 +9,15 @@
 
 import router from '@adonisjs/core/services/router'
 import { middleware } from '#start/kernel'
+import { Home } from '#domains/resources/home'
+
 const GamesController = () => import('#controllers/games_controller')
 const CharactersController = () => import('#controllers/characters_controller')
 const AuthController = () => import('#controllers/auth_controller')
 
-router.get('/', async () => 'It works!')
+router.get('/', async () => {
+  return <Home />
+})
 
 router.get('/character', [CharactersController, 'index']).use(middleware.auth())
 

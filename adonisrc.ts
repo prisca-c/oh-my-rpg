@@ -32,6 +32,8 @@ export default defineConfig({
     () => import('@adonisjs/lucid/database_provider'),
     () => import('@adonisjs/redis/redis_provider'),
     () => import('@adonisjs/session/session_provider'),
+    () => import('@adonisjs/vite/vite_provider'),
+    () => import('@adonisjs/shield/shield_provider')
   ],
 
   /*
@@ -80,5 +82,12 @@ export default defineConfig({
     validators: 'src/infrastructure/validators',
     factories: 'src/infrastructure/framework/database/factories',
     seeders: 'src/infrastructure/framework/database/seeders',
+    views: 'src/domains/views',
   },
+  metaFiles: [
+    {
+      pattern: 'public/**',
+      reloadServer: false,
+    },
+  ],
 })
