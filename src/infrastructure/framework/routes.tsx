@@ -11,6 +11,7 @@ import router from '@adonisjs/core/services/router'
 import { middleware } from '#start/kernel'
 import { Home } from '../../domain/resources/home'
 import { Login } from '../../domain/resources/login'
+import { Register } from '#domain/resources/register'
 
 const GamesController = () => import('#controllers/games_controller')
 const CharactersController = () => import('#controllers/characters_controller')
@@ -39,6 +40,7 @@ router.post('/login', [AuthController, 'login']).as('login.post')
 
 router.get('/logout', [AuthController, 'logout'])
 
-router.post('/register', [AuthController, 'register']).as('register')
+router.get('/register', (ctx: HttpContext) => <Register ctx={ctx} />).as('register.get')
+router.post('/register', [AuthController, 'register']).as('register.post')
 
 router.get('/auth0/callback', [AuthController, 'auth0Callback'])
