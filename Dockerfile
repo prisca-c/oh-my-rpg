@@ -24,13 +24,13 @@ ARG APP_RELEASE
 
 ENV APP_RELEASE=$APP_RELEASE
 ENV HOST=0.0.0.0
-ENV PORT=51000
+ENV PORT=3333
 
 WORKDIR /app
 
 COPY --from=builder /app/build .
 
-EXPOSE 51000
+EXPOSE 3333
 
 CMD ["node", "bin/server.js"]
 
