@@ -24,9 +24,11 @@ services:
       - redis_cache:/data
       - ./data/redis:/data/redis
 
-  api:
+  adonis:
     image: rpg-server
     build: ./
+    ports:
+      - '${PORT}:${PORT}'
     environment:
       - PORT=${PORT}
       - HOST=${HOST}
