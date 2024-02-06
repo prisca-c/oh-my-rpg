@@ -24,38 +24,38 @@ services:
       - redis_cache:/data
       - ./data/redis:/data/redis
 
-#  api:
-#    image: server
-#    build: ./server/
-#    environment:
-#      - PORT=${PORT}
-#      - HOST=${HOST}
-#      - NODE_ENV=${NODE_ENV}
-#      - APP_KEY=${APP_KEY}
-#      - LOG_LEVEL=${LOG_LEVEL}
-#      - TZ=${TZ}
-#      - CACHE_VIEWS=${CACHE_VIEWS}
-#
-#      - COOKIE_DOMAIN=${COOKIE_DOMAIN}
-#      - CORS_ORIGIN=${CORS_ORIGIN}
-#
-#      - DB_CONNECTION=${DB_CONNECTION}
-#
-#      - PG_HOST=${DB_HOST}
-#      - PG_PORT=${DB_PORT}
-#      - PG_USER=$DB_USER}
-#      - PG_PASSWORD=${DB_PASSWORD}
-#      - PG_DB_NAME=${DB_DATABASE}
-#
-#      - SESSION_DRIVER=${SESSION_DRIVER}
-#
-#      - REDIS_CONNECTION=${REDIS_CONNECTION}
-#      - REDIS_HOST=${REDIS_HOST}
-#      - REDIS_PORT=${REDIS_PORT}
-#      - REDIS_PASSWORD=${REDIS_PASSWORD}
-#    depends_on:
-#      - postgres
-#      - redis
+  api:
+    image: rpg-server
+    build: ./
+    environment:
+      - PORT=${PORT}
+      - HOST=${HOST}
+      - NODE_ENV=${NODE_ENV}
+      - APP_KEY=${APP_KEY}
+      - LOG_LEVEL=${LOG_LEVEL}
+      - TZ=${TZ}
+      - CACHE_VIEWS=${CACHE_VIEWS}
+
+      - COOKIE_DOMAIN=${COOKIE_DOMAIN}
+      - CORS_ORIGIN=${CORS_ORIGIN}
+
+      - DB_CONNECTION=${DB_CONNECTION}
+
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=$DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=${DB_DATABASE}
+
+      - SESSION_DRIVER=${SESSION_DRIVER}
+
+      - REDIS_CONNECTION=${REDIS_CONNECTION}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+    depends_on:
+      - postgres
+      - redis
 
 
 volumes:
