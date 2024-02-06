@@ -19,6 +19,8 @@ export default await Env.create(new URL('../../../', import.meta.url), {
   LOG_LEVEL: Env.schema.string(),
   CACHE_VIEWS: Env.schema.boolean(),
 
+  COOKIE_DOMAIN: Env.schema.string.optional(),
+
   /*
   |----------------------------------------------------------
   | Variables for configuring database connection
