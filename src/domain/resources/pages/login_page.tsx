@@ -1,9 +1,10 @@
-import { route } from 'adonisjsx'
+import { csrfField, route } from 'adonisjsx'
 import { getErrorByField } from '#infrastructure/helpers/session'
 import { InputGroup } from '#domain/resources/components/form/input_group'
 import { Button } from '#domain/resources/components/button'
 import type { HttpContext } from '@adonisjs/core/http'
 import { Form } from '#domain/resources/components/form/form'
+import { Typography } from '#domain/resources/components/utils/typography'
 
 export const LoginPage = ({ ctx }: { ctx: HttpContext }) => {
   const submit = async (e: Event) => {
@@ -19,22 +20,24 @@ export const LoginPage = ({ ctx }: { ctx: HttpContext }) => {
 
   return (
     <div>
-      <h1>Login</h1>
+      <Typography type={'h1'} size={'4xl'} className={'font-bold'}>
+        Login
+      </Typography>
       <Form method="POST" onSubmit={submit} textCenter>
-        <input type="hidden" name="_csrf" value={ctx.request.csrfToken} />
+        {csrfField()}
         <InputGroup
-          label={'Username'}
-          name={'username'}
-          type={'text'}
-          id={'username'}
-          error={getErrorByField(ctx, 'username')}
+          label={'Email'}
+          name={'email'}
+          type={'email'}
+          id={'email'}
+          error={getErrorByField('email', ctx)}
         />
         <InputGroup
           label={'Password'}
           name={'password'}
           type={'password'}
           id={'password'}
-          error={getErrorByField(ctx, 'password')}
+          error={getErrorByField('password', ctx)}
         />
         <Button type={'submit'}>Login</Button>
       </Form>
