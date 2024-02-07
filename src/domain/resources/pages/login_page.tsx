@@ -1,7 +1,8 @@
-import { Login } from '#domain/resources/login'
 import { route } from '#infrastructure/helpers/route'
-import type { HttpContext } from '@adonisjs/core/http'
 import { getErrorByField } from '#infrastructure/helpers/session'
+import { InputGroup } from '#domain/resources/components/form/input_group'
+import { Button } from '#domain/resources/components/button'
+import type { HttpContext } from '@adonisjs/core/http'
 
 export const LoginPage = ({ ctx }: { ctx: HttpContext }) => {
   const submit = (e) => {
@@ -17,21 +18,23 @@ export const LoginPage = ({ ctx }: { ctx: HttpContext }) => {
   return (
     <div>
       <h1>Login</h1>
-      <form method="POST" onsubmit={submit}>
+      <form method="POST" onsubmit={submit} class={'bg-amber-400'}>
         <input type="hidden" name="_csrf" value={ctx.request.csrfToken} />
-        <div>
-          {getErrorByField(ctx, 'email') && <p>{getErrorByField(ctx, 'email')}</p>}
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" />
-        </div>
-        <div>
-          {getErrorByField(ctx, 'password') && <p>{getErrorByField(ctx, 'password')}</p>}
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" />
-        </div>
-        <div>
-          <button type="submit">Login</button>
-        </div>
+        <InputGroup
+          label={'Username'}
+          name={'username'}
+          type={'text'}
+          id={'username'}
+          error={getErrorByField(ctx, 'username')}
+        />
+        <InputGroup
+          label={'Password'}
+          name={'password'}
+          type={'password'}
+          id={'password'}
+          error={getErrorByField(ctx, 'password')}
+        />
+        <Button type={'submit'}>Login</Button>
       </form>
     </div>
   )
