@@ -39,8 +39,4 @@ export default class AuthController {
 
     response.redirect('/login')
   }
-
-  async auth0Callback({ response }: HttpContext) {
-    return response.json({ message: 'auth0Callback' })
-  }
 }

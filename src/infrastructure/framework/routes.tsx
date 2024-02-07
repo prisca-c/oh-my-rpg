@@ -22,20 +22,6 @@ router.get('/', async () => {
   return <HomePage />
 })
 
-router.get('/character', [CharactersController, 'index']).use(middleware.auth())
-
-router.get('/user/characters', [CharactersController, 'index']).use(middleware.auth())
-
-router
-  .post('/character', [CharactersController, 'store'])
-  .use(middleware.auth())
-  .as('character.store')
-
-router
-  .get('/game/:id', [GamesController, 'index'])
-  .where('id', router.matchers.uuid())
-  .use(middleware.auth())
-
 router.get('/login', (ctx: HttpContext) => <LoginPage ctx={ctx} />).as('login.get')
 router.post('/login', [AuthController, 'login']).as('login.post')
 
@@ -46,4 +32,11 @@ router
   .as('register.get')
 router.post('/register', [AuthController, 'register']).as('register.post')
 
-router.get('/auth0/callback', [AuthController, 'auth0Callback'])
+router
+  .group(() => {
+    router.get('/game/:id', [GamesController, 'index']).where('id', router.matchers.uuid())
+    router.get('/character', [CharactersController, 'index'])
+    router.get('/user/characters', [CharactersController, 'index'])
+    router.post('/character', [CharactersController, 'store']).as('character.store')
+  })
+  .use(middleware.auth())
