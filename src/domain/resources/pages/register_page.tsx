@@ -4,14 +4,16 @@ import { Typography } from '#domain/resources/components/utils/typography'
 import { Center } from '#domain/resources/components/utils/center'
 import { InputGroup } from '#domain/resources/components/form/input_group'
 import { Button } from '#domain/resources/components/button'
-import { HttpContext } from '@adonisjs/core/http'
+import { Form } from '#domain/resources/components/form/form'
+import type { HttpContext } from '@adonisjs/core/http'
 
 export const RegisterPage = ({ ctx }: { ctx: HttpContext }) => {
-  const submit = (e: { preventDefault: () => void; currentTarget: any }) => {
+  const submit = async (e: Event) => {
     e.preventDefault()
     const form = e.currentTarget
+    // @ts-ignore
     const formData = new FormData(form)
-    fetch(route('register.post'), {
+    await fetch(route('register.post'), {
       method: 'POST',
       body: formData,
     })
@@ -20,7 +22,7 @@ export const RegisterPage = ({ ctx }: { ctx: HttpContext }) => {
   return (
     <Center>
       <Typography type={'h1'}>Register</Typography>
-      <form method="POST" onsubmit={submit}>
+      <Form method={'POST'} onSubmit={submit}>
         <input type="hidden" name="_csrf" value={ctx.request.csrfToken} />
         <InputGroup
           label={'Username'}
@@ -53,7 +55,7 @@ export const RegisterPage = ({ ctx }: { ctx: HttpContext }) => {
         <Center middle={false}>
           <Button type={'submit'}>Register</Button>
         </Center>
-      </form>
+      </Form>
     </Center>
   )
 }

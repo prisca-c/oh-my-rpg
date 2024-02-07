@@ -3,22 +3,24 @@ import { getErrorByField } from '#infrastructure/helpers/session'
 import { InputGroup } from '#domain/resources/components/form/input_group'
 import { Button } from '#domain/resources/components/button'
 import type { HttpContext } from '@adonisjs/core/http'
+import { Form } from '#domain/resources/components/form/form'
 
 export const LoginPage = ({ ctx }: { ctx: HttpContext }) => {
-  const submit = (e) => {
+  const submit = async (e: Event) => {
     e.preventDefault()
     const form = e.currentTarget
+    // @ts-ignore
     const formData = new FormData(form)
-    console.log(route('login.post'))
-    fetch(route('login.post'), {
+    await fetch(route('login.post'), {
       method: 'POST',
       body: formData,
     })
   }
+
   return (
     <div>
       <h1>Login</h1>
-      <form method="POST" onsubmit={submit} class={'bg-amber-400'}>
+      <Form method="POST" onSubmit={submit}>
         <input type="hidden" name="_csrf" value={ctx.request.csrfToken} />
         <InputGroup
           label={'Username'}
@@ -35,7 +37,7 @@ export const LoginPage = ({ ctx }: { ctx: HttpContext }) => {
           error={getErrorByField(ctx, 'password')}
         />
         <Button type={'submit'}>Login</Button>
-      </form>
+      </Form>
     </div>
   )
 }
