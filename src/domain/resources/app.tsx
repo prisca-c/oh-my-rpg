@@ -1,3 +1,1 @@
-export const App = () => {
-  return <div>App</div>
-}
+import './index.css'

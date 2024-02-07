@@ -34,6 +34,7 @@ export default defineConfig({
     () => import('@adonisjs/session/session_provider'),
     () => import('@adonisjs/vite/vite_provider'),
     () => import('@adonisjs/shield/shield_provider'),
+    () => import('adonisjsx/jsxProvider')
   ],
 
   /*
