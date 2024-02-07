@@ -1,6 +1,10 @@
-import type { HttpContext } from '@adonisjs/core/http'
+import { HttpContext } from '@adonisjs/core/http'
 
-export const getErrorByField = (ctx: HttpContext, field: string) => {
+export const getErrorByField = (field: string, ctx?: HttpContext) => {
+  if (!ctx) {
+    ctx = HttpContext.getOrFail()
+  }
+
   if (!ctx.session || !ctx.session.flashMessages) {
     return
   }
