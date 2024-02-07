@@ -1,6 +1,7 @@
 import app from '@adonisjs/core/services/app'
 import { errors } from '@adonisjs/shield'
 import { HttpContext, ExceptionHandler } from '@adonisjs/core/http'
+import env from '#start/env'
 
 export default class HttpExceptionHandler extends ExceptionHandler {
   /**
@@ -24,6 +25,11 @@ export default class HttpExceptionHandler extends ExceptionHandler {
     if (error instanceof errors.E_BAD_CSRF_TOKEN) {
       return ctx.response.status(error.status).send('Page has expired')
     }
+
+    if (env.get('NODE_ENV') === 'development') {
+      console.log(error)
+    }
+
     return super.handle(error, ctx)
   }
 
