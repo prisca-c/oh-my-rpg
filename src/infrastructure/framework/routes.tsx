@@ -41,7 +41,9 @@ router.post('/login', [AuthController, 'login']).as('login.post')
 
 router.get('/logout', [AuthController, 'logout'])
 
-router.get('/register', (ctx: HttpContext) => <RegisterPage ctx={ctx} />).as('register.get')
+router
+  .get('/register', (ctx: HttpContext) => ctx.jsx(<RegisterPage ctx={ctx} />))
+  .as('register.get')
 router.post('/register', [AuthController, 'register']).as('register.post')
 
 router.get('/auth0/callback', [AuthController, 'auth0Callback'])
