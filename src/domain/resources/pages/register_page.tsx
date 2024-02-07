@@ -1,10 +1,11 @@
 import { getErrorByField } from '#infrastructure/helpers/session'
-import { route } from '#infrastructure/helpers/route'
+import { route } from 'adonisjsx'
 import { Typography } from '#domain/resources/components/utils/typography'
 import { Center } from '#domain/resources/components/utils/center'
 import { InputGroup } from '#domain/resources/components/form/input_group'
 import { Button } from '#domain/resources/components/button'
 import { Form } from '#domain/resources/components/form/form'
+import { csrfField } from 'adonisjsx'
 import type { HttpContext } from '@adonisjs/core/http'
 
 export const RegisterPage = ({ ctx }: { ctx: HttpContext }) => {
@@ -22,8 +23,8 @@ export const RegisterPage = ({ ctx }: { ctx: HttpContext }) => {
   return (
     <Center>
       <Typography type={'h1'}>Register</Typography>
-      <Form method={'POST'} onSubmit={submit}>
-        <input type="hidden" name="_csrf" value={ctx.request.csrfToken} />
+      <Form method={'POST'} onSubmit={submit} textCenter>
+        {csrfField()}
         <InputGroup
           label={'Username'}
           name={'username'}
@@ -53,7 +54,9 @@ export const RegisterPage = ({ ctx }: { ctx: HttpContext }) => {
           error={getErrorByField(ctx, 'password_confirmation')}
         />
         <Center middle={false}>
-          <Button type={'submit'}>Register</Button>
+          <div class={'mt-2'}>
+            <Button type={'submit'}>Register</Button>
+          </div>
         </Center>
       </Form>
     </Center>

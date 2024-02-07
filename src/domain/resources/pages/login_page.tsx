@@ -1,4 +1,4 @@
-import { route } from '#infrastructure/helpers/route'
+import { route } from 'adonisjsx'
 import { getErrorByField } from '#infrastructure/helpers/session'
 import { InputGroup } from '#domain/resources/components/form/input_group'
 import { Button } from '#domain/resources/components/button'
@@ -20,7 +20,7 @@ export const LoginPage = ({ ctx }: { ctx: HttpContext }) => {
   return (
     <div>
       <h1>Login</h1>
-      <Form method="POST" onSubmit={submit}>
+      <Form method="POST" onSubmit={submit} textCenter>
         <input type="hidden" name="_csrf" value={ctx.request.csrfToken} />
         <InputGroup
           label={'Username'}

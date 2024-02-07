@@ -1,4 +1,4 @@
-import { route } from '#infrastructure/helpers/route'
+import { route } from 'adonisjsx'
 
 export const HomePage = () => {
   return (
