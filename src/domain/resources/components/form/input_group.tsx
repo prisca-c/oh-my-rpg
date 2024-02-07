@@ -1,7 +1,7 @@
 export const InputGroup = ({ label, name, type, id, error, ...props }) => {
   return (
     <div class={'flex flex-col'}>
-      {error && <p>{error}</p>}
+      {error && <p class={'text-red-500'}>{error}</p>}
       <label for={name}>{label}</label>
       <input
         type={type}

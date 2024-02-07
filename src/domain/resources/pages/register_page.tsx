@@ -22,7 +22,9 @@ export const RegisterPage = ({ ctx }: { ctx: HttpContext }) => {
 
   return (
     <Center>
-      <Typography type={'h1'}>Register</Typography>
+      <Typography type={'h1'} size={'4xl'} className={'font-bold'}>
+        Register
+      </Typography>
       <Form method={'POST'} onSubmit={submit} textCenter>
         {csrfField()}
         <InputGroup
@@ -30,28 +32,28 @@ export const RegisterPage = ({ ctx }: { ctx: HttpContext }) => {
           name={'username'}
           type={'text'}
           id={'username'}
-          error={getErrorByField(ctx, 'username')}
+          error={getErrorByField('username', ctx)}
         />
         <InputGroup
           label={'Email'}
           name={'email'}
           type={'email'}
           id={'email'}
-          error={getErrorByField(ctx, 'email')}
+          error={getErrorByField('email', ctx)}
         />
         <InputGroup
           label={'Password'}
           name={'password'}
           type={'password'}
           id={'password'}
-          error={getErrorByField(ctx, 'password')}
+          error={getErrorByField('password', ctx)}
         />
         <InputGroup
           label={'Password Confirmation'}
           name={'password_confirmation'}
           type={'password'}
           id={'password_confirmation'}
-          error={getErrorByField(ctx, 'password_confirmation')}
+          error={getErrorByField('password_confirmation', ctx)}
         />
         <Center middle={false}>
           <div class={'mt-2'}>
