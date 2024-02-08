@@ -64,7 +64,6 @@ export default function Register({ csrfToken }: RegisterProps) {
     router.post('/register', new FormData(e.currentTarget))
   }
 
-  console.log(usePage())
   const errors = usePage().props.errors
 
   return (
