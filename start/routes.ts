@@ -11,6 +11,8 @@ import router from '@adonisjs/core/services/router'
 
 import { middleware } from '#start/kernel'
 
+const LoginController = () => import('#controllers/login_controller')
+
 const HomeController = () => import('#controllers/home_controller')
 
 const GamesController = () => import('#controllers/games_controller')
@@ -19,7 +21,7 @@ const AuthController = () => import('#controllers/auth_controller')
 
 router.get('/', [HomeController, 'index'])
 
-// router.get('/login', (ctx: HttpContext) => ctx.jsx(<LoginPage ctx={ctx} />)).as('login.get')
+router.get('/login', [LoginController, 'index']).as('login.get')
 router.post('/login', [AuthController, 'login']).as('login.post')
 
 router.get('/logout', [AuthController, 'logout'])

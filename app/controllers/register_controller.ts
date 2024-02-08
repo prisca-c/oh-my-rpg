@@ -1,7 +1,7 @@
 import type { HttpContext } from '@adonisjs/core/http'
 
-export default class HomeController {
+export default class RegisterController {
   async index({ inertia }: HttpContext) {
-    return inertia.render('public/home')
+    return inertia.render('public/register')
   }
 }
