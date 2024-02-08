@@ -6,7 +6,6 @@ type FlexProps = {
   justify?: 'center' | 'space-between' | 'space-around' | 'space-evenly' | 'flex-start' | 'flex-end'
   align?: 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'baseline'
   wrap?: 'wrap' | 'nowrap' | 'wrap-reverse'
-  gap?: string
   className?: string
 }
 
@@ -16,7 +15,6 @@ export const Flex = ({
   justify = 'flex-start',
   align = 'stretch',
   wrap = 'nowrap',
-  gap = '0',
   className = '',
 }: FlexProps) => {
   const flexDirection = {
@@ -47,7 +45,7 @@ export const Flex = ({
     'wrap-reverse': 'flex-wrap-reverse',
   }
 
-  const classes = `flex ${flexDirection[direction]} ${flexJustify[justify]} ${flexAlign[align]} ${flexWrap[wrap]} gap-${gap} ${className}`
+  const classes = `flex ${flexDirection[direction]} ${flexJustify[justify]} ${flexAlign[align]} ${flexWrap[wrap]} ${className}`
 
   return <div className={classes}>{children}</div>
 }
