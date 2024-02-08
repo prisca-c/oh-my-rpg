@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "start": "node bin/server.js",
     "build": "node ace build",
@@ -16,18 +19,16 @@
     "migrate:prod": "node ace migration:run --force"
   },
   "imports": {
-    "#domain/*": "./src/domain/*.js",
-    "#infrastructure/*": "./src/infrastructure/*.js",
-    "#controllers/*": "./src/infrastructure/controllers/*.js",
-    "#exceptions/*": "./src/infrastructure/framework/exceptions/*.js",
-    "#models/*": "./src/infrastructure/models/*.js",
+    "#controllers/*": "./app/controllers/*.js",
+    "#exceptions/*": "./app/exceptions/*.js",
+    "#models/*": "./app/models/*.js",
     "#services/*": "./app/services/*.js",
     "#listeners/*": "./app/listeners/*.js",
     "#events/*": "./app/events/*.js",
-    "#middleware/*": "./src/infrastructure/middleware/*.js",
-    "#validators/*": "./src/infrastructure/validators/*.js",
-    "#start/*": "./src/infrastructure/framework/*.js",
-    "#config/*": "./src/infrastructure/framework/config/*.js"
+    "#middleware/*": "./app/middleware/*.js",
+    "#validators/*": "./app/validators/*.js",
+    "#start/*": "./start/*.js",
+    "#config/*": "./config/*.js"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^7.1.1",
@@ -37,10 +38,15 @@
     "@japa/assert": "^2.0.1",
     "@japa/plugin-adonisjs": "^2.0.1",
     "@japa/runner": "^3.1.0",
+    "@julr/tooling-configs": "^2.1.0",
+    "@poppinss/utils": "^6.7.2",
     "@swc/core": "^1.3.99",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/luxon": "^3.3.5",
     "@types/node": "^20.9.4",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.54.0",
     "pino-pretty": "^10.2.3",
@@ -48,27 +54,27 @@
     "prettier": "^3.1.0",
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.1",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "vite": "^5.0.12"
   },
   "dependencies": {
     "@adonisjs/auth": "9.1.1",
     "@adonisjs/core": "6.2.3",
+    "@adonisjs/inertia": "^1.0.0-7",
     "@adonisjs/lucid": "19.0.0",
     "@adonisjs/redis": "^8.0.1",
     "@adonisjs/session": "^7.1.1",
     "@adonisjs/shield": "^8.1.1",
     "@adonisjs/vite": "^2.0.2",
-    "@kitajs/html": "^3.1.1",
-    "@kitajs/ts-html-plugin": "^1.3.4",
+    "@inertiajs/react": "^1.0.14",
     "@vinejs/vine": "1.7.1",
     "adonisjsx": "^0.1.1",
+    "edge.js": "^6.0.1",
     "luxon": "^3.4.4",
     "pg": "^8.11.3",
-    "reflect-metadata": "^0.1.13",
-    "vite": "^5.0.12"
-  },
-  "eslintConfig": {
-    "extends": "@adonisjs/eslint-config/app"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "reflect-metadata": "^0.1.13"
   },
   "prettier": "@adonisjs/prettier-config"
 }

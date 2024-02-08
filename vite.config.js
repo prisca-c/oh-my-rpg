@@ -1,4 +1,6 @@
+import path from 'node:path'
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 import adonisjs from '@adonisjs/vite/client'
 
 export default defineConfig({
@@ -8,12 +10,18 @@ export default defineConfig({
        * Entrypoints of your application. Each entrypoint will
        * result in a separate bundle.
        */
-      entrypoints: ['./src/domain/resources/app.tsx'],
+      entrypoints: ['resources/app.tsx'],
 
       /**
        * Paths to watch and reload the browser on file change
        */
-      reload: ['./src/domain/resources/**/*.tsx', './src/domain/resources/**/*.css'],
+      reload: ['resources/views/**/*.edge'],
     }),
+    react(),
   ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'resources'),
+    },
+  },
 })

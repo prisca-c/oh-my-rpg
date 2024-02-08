@@ -34,7 +34,8 @@ export default defineConfig({
     () => import('@adonisjs/session/session_provider'),
     () => import('@adonisjs/vite/vite_provider'),
     () => import('@adonisjs/shield/shield_provider'),
-    () => import('adonisjsx/jsxProvider')
+    () => import('@adonisjs/core/providers/edge_provider'),
+    () => import('@adonisjs/inertia/inertia_provider'),
   ],
 
   /*
@@ -45,7 +46,7 @@ export default defineConfig({
   | List of modules to import before starting the application.
   |
   */
-  preloads: [() => import('#start/routes'), () => import('#start/kernel')],
+  preloads: [() => import('./start/routes.js'), () => import('./start/kernel.js')],
 
   /*
   |--------------------------------------------------------------------------
@@ -66,28 +67,18 @@ export default defineConfig({
       {
         files: ['tests/functional/**/*.spec(.ts|.js)'],
         name: 'functional',
-        timeout: 30000,
+        timeout: 30_000,
       },
     ],
     forceExit: false,
   },
-
-  directories: {
-    config: 'src/infrastructure/framework/config',
-    models: 'src/infrastructure/models',
-    httpControllers: 'src/infrastructure/controllers',
-    exceptions: 'src/infrastructure/framework/exceptions',
-    middleware: 'src/infrastructure/middleware',
-    start: 'src/infrastructure/framework',
-    migrations: 'src/infrastructure/framework/database/migrations',
-    validators: 'src/infrastructure/validators',
-    factories: 'src/infrastructure/framework/database/factories',
-    seeders: 'src/infrastructure/framework/database/seeders',
-    views: 'src/domain/views',
-  },
   metaFiles: [
     {
       pattern: 'public/**',
+      reloadServer: false,
+    },
+    {
+      pattern: 'resources/views/**/*.edge',
       reloadServer: false,
     },
   ],
