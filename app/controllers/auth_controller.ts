@@ -1,7 +1,8 @@
-import User from '#models/user'
 import { DateTime } from 'luxon'
-import { HttpContext } from '@adonisjs/core/http'
-import { createUserValidator } from '../validators/create_user_validator'
+import type { HttpContext } from '@adonisjs/core/http'
+
+import User from '#models/user'
+import { createUserValidator } from '#validators/create_user_validator'
 
 export default class AuthController {
   async login({ auth, request, response, session }: HttpContext) {
@@ -19,7 +20,7 @@ export default class AuthController {
     user.lastSessionId = session.sessionId
     user.lastLoginAt = DateTime.now()
     await user.save()
-    auth.use('web').login(user)
+    await auth.use('web').login(user)
 
     response.redirect('/character')
   }

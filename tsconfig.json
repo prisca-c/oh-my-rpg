@@ -3,7 +3,9 @@
   "compilerOptions": {
     "jsx": "react",
     "rootDir": "./",
-    "target": "ES2022",
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "resolveJsonModule": true,
     "outDir": "./build",
     "paths": {
       "#controllers/*": ["./app/controllers/*.js"],
@@ -15,9 +17,11 @@
       "#start/*": ["./start/*.js"],
       "#middleware/*": ["./app/middleware/*.js"],
       "#validators/*": ["./app/validators/*.js"],
-      "#config/*": ["./config/*.js"],
-    }
+      "#config/*": ["./config/*.js"]
+    },
+    "isolatedModules": false,
+    "emitDecoratorMetadata": false
   },
   "include": ["./**/*"],
-  "exclude": ["./resources/**/*"],
+  "exclude": ["./resources/**/*"]
 }

@@ -1,12 +1,12 @@
 import { DateTime } from 'luxon'
-import hash from '@adonisjs/core/services/hash'
-import { BaseModel, beforeCreate, column, hasMany } from '@adonisjs/lucid/orm'
-import type { HasMany } from '@adonisjs/lucid/types/relations'
-import Character from '#models/character'
-import { compose } from '@adonisjs/core/helpers'
 import { randomUUID } from 'node:crypto'
+import hash from '@adonisjs/core/services/hash'
 import { withAuthFinder } from '@adonisjs/auth'
-import { UsernameGenerate } from '../services/username_generate'
+import { compose } from '@adonisjs/core/helpers'
+import { HasMany } from '@adonisjs/lucid/types/relations'
+import { BaseModel, beforeCreate, column, hasMany } from '@adonisjs/lucid/orm'
+
+import Character from '#models/character'
 
 const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
   uids: ['email'],
@@ -44,13 +44,6 @@ export default class User extends compose(BaseModel, AuthFinder) {
   @beforeCreate()
   static async generateId(user: User) {
     user.id = randomUUID()
-  }
-
-  @beforeCreate()
-  static async generateUsername(user: User) {
-    if (user.username === null || user.username === undefined || user.username === '') {
-      user.username = new UsernameGenerate().generate()
-    }
   }
 
   @hasMany(() => Character)
