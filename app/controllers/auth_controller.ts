@@ -22,7 +22,7 @@ export default class AuthController {
     await user.save()
     await auth.use('web').login(user)
 
-    response.redirect('/character')
+    response.redirect('/characters')
   }
 
   async logout({ auth, response }: HttpContext) {
