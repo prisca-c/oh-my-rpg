@@ -76,7 +76,10 @@
     "typescript": "5.2.2",
     "vite": "^5.0.12"
   },
-  "prettier": "@adonisjs/prettier-config",
+  "prettier": {
+    "filepath": "@adonisjs/prettier-config",
+    "endOfLine": "lf"
+  },
   "eslintConfig": {
     "extends": "@adonisjs/eslint-config/app"
   }
