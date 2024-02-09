@@ -1,7 +1,7 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
 import type { HasOne } from '@adonisjs/lucid/types/relations'
-import { BaseModel, beforeCreate, column, computed, hasOne } from '@adonisjs/lucid/orm'
+import { BaseModel, beforeCreate, column, hasOne } from '@adonisjs/lucid/orm'
 
 import User from '#models/user'
 import EntityProperty from '#models/entity_property'
@@ -77,8 +77,9 @@ export default class Character extends BaseModel {
   @hasOne(() => User)
   declare user: HasOne<typeof User>
 
-  @computed()
-  get entityProperty() {
-    return EntityProperty.find(this.entityPropertyId)
-  }
+  @hasOne(() => EntityProperty, {
+    localKey: 'entityPropertyId',
+    foreignKey: 'id',
+  })
+  declare entityProperties: HasOne<typeof EntityProperty>
 }
