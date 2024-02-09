@@ -12,7 +12,16 @@ export default class CharactersController {
     //   characters: user?.characters,
     // })
 
-    return inertia.render('characters_page', { data: { characters: user?.characters ?? [] } })
+    return inertia.render(
+      'private/characters',
+      { characters: user?.characters ?? [] },
+      {
+        meta: {
+          title: 'Characters',
+          description: 'List of your characters',
+        },
+      }
+    )
   }
 
   async store({ request, response, auth }: HttpContext) {
