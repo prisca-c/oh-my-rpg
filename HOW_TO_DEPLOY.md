@@ -35,7 +35,7 @@ This document explains how to deploy the application on a Linux server.
      ```
    - Run the migrations
      ```bash
-     docker-compose exec adonis ace migration:run (--force if needed for CICD)
+     docker-compose exec adonis node ace migration:run (--force if needed for CICD)
      ```
 
 3. b. **Pull the latest changes** (If you have already cloned the repository):
@@ -50,7 +50,7 @@ This document explains how to deploy the application on a Linux server.
      ```
    - Run the migrations
      ```bash
-     docker-compose exec adonis ace migration:run (--force if needed for CICD)
+     docker-compose exec adonis node ace migration:run (--force if needed for CICD)
      ```
 
 4. **Setup the web server (Nginx or Apache)** _(If not already done)_:
