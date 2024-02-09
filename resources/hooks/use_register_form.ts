@@ -2,6 +2,13 @@ import type React from 'react'
 import { router } from '@inertiajs/react'
 import { useEffect, useState } from 'react'
 
+import {
+  validateEmail,
+  validatePassword,
+  validatePasswordConfirmation,
+  validateUsername,
+} from '@/helpers/validations'
+
 type FormFields = {
   email: string
   username: string
@@ -25,18 +32,15 @@ export const useRegisterForm = (initialValues: FormFields) => {
     password_confirmation: false,
   })
 
-  const validateEmail = (email: string) => email.includes('@') && email.includes('.')
-  const validateUsername = (username: string) => username.length > 3
-  const validatePassword = (password: string) => password.length > 7
-  const validatePasswordConfirmation = (passwordConfirmation: string) =>
-    passwordConfirmation === inputs.password && inputs.password.length > 7
-
   useEffect(() => {
     setValidations({
       email: validateEmail(inputs.email),
       username: validateUsername(inputs.username),
       password: validatePassword(inputs.password),
-      password_confirmation: validatePasswordConfirmation(inputs.password_confirmation),
+      password_confirmation: validatePasswordConfirmation(
+        inputs.password_confirmation,
+        inputs.password
+      ),
     })
   }, [inputs])
 
