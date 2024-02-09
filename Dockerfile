@@ -1,17 +1,21 @@
 ARG NODE_IMAGE=node:20-alpine3.18
 
-FROM $NODE_IMAGE as builder
+FROM $NODE_IMAGE as base
 
 WORKDIR /app
-
-RUN curl -o- -L https://yarnpkg.com/install.sh | sh
 
 COPY package.json ./
 COPY yarn.lock ./
 
+COPY . .
+
+FROM base as deps
+
+RUN curl -o- -L https://yarnpkg.com/install.sh | sh
+
 RUN yarn install --frozen-lockfile
 
-COPY . .
+FROM deps as builder
 
 RUN node ace build \
     --ignore-ts-errors \
