@@ -1,6 +1,7 @@
-import env from '../start/env.js'
 import { defineConfig } from '@adonisjs/redis'
-import { InferConnections } from '@adonisjs/redis/types'
+import type { InferConnections } from '@adonisjs/redis/types'
+
+import env from '../start/env.js'
 
 const redisConfig = defineConfig({
   connection: 'main',

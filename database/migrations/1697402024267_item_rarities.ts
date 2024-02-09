@@ -20,7 +20,7 @@ export default class extends BaseSchema {
     this.defer(async () => {
       await this.db.table('item_rarities').insert(
         rarities.map((name) => ({
-          name: name,
+          name,
           created_at: new Date(),
           updated_at: new Date(),
         }))

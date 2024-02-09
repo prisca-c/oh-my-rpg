@@ -1,4 +1,5 @@
 import vine, { SimpleMessagesProvider } from '@vinejs/vine'
+
 import { uniqueRule } from './rules/unique.js'
 
 export const createUserValidator = (data: {
@@ -18,7 +19,7 @@ export const createUserValidator = (data: {
       .email()
       .trim()
       .use(uniqueRule({ table: 'users', column: 'email' })),
-    password: vine.string().regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,250}$/),
+    password: vine.string().regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\dA-Za-z]).{8,250}$/),
   })
 
   const messagesProvider = new SimpleMessagesProvider({

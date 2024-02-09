@@ -1,7 +1,8 @@
-import { DateTime } from 'luxon'
-import { BaseModel, beforeCreate, column, computed } from '@adonisjs/lucid/orm'
-import ItemProperty from '#models/item_property'
+import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
+import { BaseModel, beforeCreate, column, computed } from '@adonisjs/lucid/orm'
+
+import ItemProperty from '#models/item_property'
 
 export default class ItemSuffix extends BaseModel {
   @column({ isPrimary: true })

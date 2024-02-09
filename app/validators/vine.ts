@@ -1,5 +1,7 @@
 import { VineString } from '@vinejs/vine'
-import { Options, uniqueRule } from './rules/unique.js'
+
+import { uniqueRule } from './rules/unique.js'
+import type { Options } from './rules/unique.js'
 
 declare module '@vinejs/vine' {
   interface VineString {

@@ -1,4 +1,5 @@
 import vine, { SimpleMessagesProvider } from '@vinejs/vine'
+
 import { uniqueRule } from './rules/unique.js'
 
 export const createCharacterValidator = (data: { name: string }) => {

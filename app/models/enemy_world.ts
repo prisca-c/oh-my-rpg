@@ -1,6 +1,6 @@
-import { DateTime } from 'luxon'
-import { BaseModel, beforeCreate, column } from '@adonisjs/lucid/orm'
+import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
+import { BaseModel, beforeCreate, column } from '@adonisjs/lucid/orm'
 
 export default class EnemyWorld extends BaseModel {
   @column({ isPrimary: true })

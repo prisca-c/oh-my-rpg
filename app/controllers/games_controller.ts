@@ -1,5 +1,6 @@
+import type { HttpContext } from '@adonisjs/core/http'
+
 import Character from '#models/character'
-import { HttpContext } from '@adonisjs/core/http'
 
 export default class GamesController {
   async index({ params, auth, session }: HttpContext) {

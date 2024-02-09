@@ -1,5 +1,6 @@
+import type { HttpContext } from '@adonisjs/core/http'
+
 import Character from '#models/character'
-import { HttpContext } from '@adonisjs/core/http'
 import { createCharacterValidator } from '#validators/create_character_validator'
 
 export default class CharactersController {
@@ -22,7 +23,7 @@ export default class CharactersController {
     const user = auth.user
 
     await Character.create({
-      name: name,
+      name,
       userId: user?.id,
     })
 

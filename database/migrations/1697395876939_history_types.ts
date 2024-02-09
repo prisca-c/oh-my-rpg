@@ -30,7 +30,7 @@ export default class extends BaseSchema {
     this.defer(async () => {
       await this.db.table('history_types').insert(
         types.map((name) => ({
-          name: name,
+          name,
           created_at: new Date(),
           updated_at: new Date(),
         }))

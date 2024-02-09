@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { router, usePage } from '@inertiajs/react'
+import React from 'react'
+import { usePage } from '@inertiajs/react'
 
 import { Button } from '@/components/button'
 import { Form } from '@/components/form/form'

@@ -2,11 +2,10 @@
   "extends": "@adonisjs/tsconfig/tsconfig.app.json",
   "compilerOptions": {
     "jsx": "react",
+    "emitDecoratorMetadata": false,
     "rootDir": "./",
     "module": "Node16",
     "moduleResolution": "Node16",
-    "resolveJsonModule": true,
-    "outDir": "./build",
     "paths": {
       "#controllers/*": ["./app/controllers/*.js"],
       "#exceptions/*": ["./app/exceptions/*.js"],
@@ -19,8 +18,9 @@
       "#validators/*": ["./app/validators/*.js"],
       "#config/*": ["./config/*.js"]
     },
-    "isolatedModules": false,
-    "emitDecoratorMetadata": false
+    "resolveJsonModule": true,
+    "outDir": "./build",
+    "isolatedModules": false
   },
   "include": ["./**/*"],
   "exclude": ["./resources/**/*"]

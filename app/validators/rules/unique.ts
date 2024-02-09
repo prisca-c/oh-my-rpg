@@ -1,6 +1,6 @@
-import { FieldContext } from '@vinejs/vine/types'
 import vine from '@vinejs/vine'
 import db from '@adonisjs/lucid/services/db'
+import type { FieldContext } from '@vinejs/vine/types'
 
 /**
  * Options accepted by the unique rule

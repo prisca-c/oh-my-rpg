@@ -1,8 +1,9 @@
-import { DateTime } from 'luxon'
-import { BaseModel, beforeCreate, column, hasOne } from '@adonisjs/lucid/orm'
-import Character from '#models/character'
-import type { HasOne } from '@adonisjs/lucid/types/relations'
+import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
+import type { HasOne } from '@adonisjs/lucid/types/relations'
+import { BaseModel, beforeCreate, column, hasOne } from '@adonisjs/lucid/orm'
+
+import Character from '#models/character'
 
 export default class EntityProperty extends BaseModel {
   @column({ isPrimary: true })
