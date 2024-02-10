@@ -2,17 +2,23 @@ import vine, { SimpleMessagesProvider } from '@vinejs/vine'
 
 import { uniqueRule } from '#validators/rules/index'
 
-export const createUserValidator = (data: {
+type CreateUserValidatorData = {
   username: string
   email: string
   password: string
-}) => {
+}
+
+export const createUserValidator = (data: CreateUserValidatorData) => {
   const schema = vine.object({
     username: vine
       .string()
       .trim()
       .minLength(3)
       .maxLength(20)
+      .alphaNumeric({
+        allowDashes: true,
+        allowUnderscores: true,
+      })
       .unique(uniqueRule('users', 'username')),
     email: vine.string().email().trim().unique(uniqueRule('users', 'email')),
     password: vine.string().regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\dA-Za-z]).{8,250}$/),

@@ -26,11 +26,11 @@ export default class CharactersController {
     assert(auth.user)
     const userId = auth.user.id
 
-    await createCharacterValidator({ name, userId })
+    const data = await createCharacterValidator({ name, userId })
 
     await Character.create({
-      name,
-      userId,
+      name: data.name,
+      userId: data.userId,
     })
 
     response.redirect('/character')
