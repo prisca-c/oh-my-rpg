@@ -28,6 +28,7 @@ export const useCreateCharacterForm = (initialValues: CreateCharacterForm) => {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setInputs(initialValues)
     router.post('/characters', new FormData(e.currentTarget))
   }
 
