@@ -1,3 +1,108 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-ExtraBoldItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CreatoDisplay';
+  src: url('../assets/fonts/creato-display/CreatoDisplay-ThinItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gamer';
+  src: url('../assets/fonts/gamer/gamer.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
