@@ -19,8 +19,12 @@ export const createUserValidator = (data: CreateUserValidatorData) => {
         allowDashes: true,
         allowUnderscores: true,
       })
-      .unique(uniqueRule('users', 'username')),
-    email: vine.string().email().trim().unique(uniqueRule('users', 'email')),
+      .use(uniqueRule({ table: 'users', column: 'username' })),
+    email: vine
+      .string()
+      .email()
+      .trim()
+      .use(uniqueRule({ table: 'users', column: 'email' })),
     password: vine.string().regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\dA-Za-z]).{8,250}$/),
   })
 

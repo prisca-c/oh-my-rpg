@@ -18,9 +18,8 @@ export const createCharacterValidator = (data: CreateCharacterValidatorData) => 
         allowDashes: true,
         allowUnderscores: true,
       })
-      .exists(existsRule('characters', 'name'))
-      .unique(uniqueRule('characters', 'name')),
-    userId: vine.string().exists(existsRule('users', 'id')),
+      .use(uniqueRule({ table: 'characters', column: 'name' })),
+    userId: vine.string().use(existsRule({ table: 'users', column: 'id' })),
   })
 
   const messagesProvider = new SimpleMessagesProvider({

@@ -1,31 +1,56 @@
+import vine from '@vinejs/vine'
+import db from '@adonisjs/lucid/services/db'
 import type { FieldContext } from '@vinejs/vine/types'
-import type { Database } from '@adonisjs/lucid/database'
 
-type DbOptions = {
-  caseInsensitive: boolean
+/**
+ * Options accepted by the unique rule
+ */
+export type Options = {
+  table: string
+  column: string
 }
 
-const query = (db: Database, table: string, column: string, value: string, options?: DbOptions) => {
-  return db
-    .from(table)
-    .select('id')
-    .if(
-      options?.caseInsensitive,
-      (truthy) => truthy.whereILike(column, value),
-      (falsy) => falsy.where(column, value)
-    )
-}
+async function unique(value: unknown, options: Options, field: FieldContext) {
+  /**
+   * We do not want to deal with non-string
+   * values. The "string" rule will handle
+   * the validation.
+   */
+  if (typeof value !== 'string') {
+    return
+  }
 
-export const existsRule = (table: string, column: string, options?: DbOptions) => {
-  return async (db: Database, value: string, _field: FieldContext) => {
-    const result = await query(db, table, column, value, options)
-    return !!result.length
+  const row = await db
+    .from(options.table)
+    .select(options.column)
+    .where(options.column, value)
+    .first()
+
+  if (row) {
+    field.report('The {{ field }} field is not unique', 'unique', field)
   }
 }
 
-export const uniqueRule = (table: string, column: string, options?: DbOptions) => {
-  return async (db: Database, value: string, _field: FieldContext) => {
-    const result = await query(db, table, column, value, options)
-    return !result.length
+async function exists(value: unknown, options: Options, field: FieldContext) {
+  /**
+   * We do not want to deal with non-string
+   * values. The "string" rule will handle
+   * the validation.
+   */
+  if (typeof value !== 'string') {
+    return
+  }
+
+  const row = await db
+    .from(options.table)
+    .select(options.column)
+    .where(options.column, value)
+    .first()
+
+  if (!row) {
+    field.report('The {{ field }} field does not exist', 'exists', field)
   }
 }
+
+export const uniqueRule = vine.createRule(unique)
+export const existsRule = vine.createRule(exists)
