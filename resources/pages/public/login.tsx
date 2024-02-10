@@ -44,6 +44,7 @@ export default function Login({ csrfToken }: LoginProps) {
           id={'password'}
           value={inputs.password}
           onChange={onChange}
+          autoComplete={'current-password'}
         />
         <Button type={'submit'}>Login</Button>
         <Button type={'button'} onClick={goToRegister}>
