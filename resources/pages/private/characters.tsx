@@ -1,6 +1,6 @@
 import type Character from '~/app/models/character'
 
-import { Flex } from '@/components/utils/flex'
+import { Flex } from '@/components/utils'
 import { CharacterCard } from '@/components/character_card'
 
 type CharactersProps = {

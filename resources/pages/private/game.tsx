@@ -1,8 +1,7 @@
 import type Character from '~/app/models/character'
 import type EntityProperty from '~/app/models/entity_property'
 
-import { Flex } from '@/components/utils/flex'
-import { Typography } from '@/components/utils/typography'
+import { Flex, Typography } from '@/components/utils'
 
 type GameProps = {
   character: Character

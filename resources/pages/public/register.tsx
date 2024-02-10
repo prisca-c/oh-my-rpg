@@ -2,9 +2,8 @@ import React from 'react'
 import { usePage } from '@inertiajs/react'
 
 import { Button } from '@/components/button'
-import { Form } from '@/components/form/form'
-import { Typography } from '@/components/utils/typography'
-import { InputGroup } from '@/components/form/input_group'
+import { Typography } from '@/components/utils'
+import { Form, InputGroup } from '@/components/form'
 import { useRegisterForm } from '@/hooks/use_register_form'
 
 type RegisterProps = {

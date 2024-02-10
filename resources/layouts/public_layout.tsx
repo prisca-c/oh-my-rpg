@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Center } from '@/components/utils/center'
+import { Center } from '@/components/utils'
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,8 +1,7 @@
 import { router } from '@inertiajs/react'
 
 import { Button } from '@/components/button'
-import { Flex } from '@/components/utils/flex'
-import { Typography } from '@/components/utils/typography'
+import { Flex, Typography } from '@/components/utils'
 
 export default function Home() {
   const goToLogin = () => {
