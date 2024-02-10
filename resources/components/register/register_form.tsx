@@ -26,7 +26,6 @@ export const RegisterForm = () => {
         valid={validations.username}
         onChange={onChange}
         autoComplete={'username'}
-        className={inputs.username ? 'border-2 border-green-500' : ''}
       />
       <InputGroup
         label={'Email'}

@@ -22,7 +22,6 @@ export const CreateCharacterForm = () => {
         valid={validations.name}
         onChange={onChange}
         autoComplete={'name'}
-        className={inputs.name ? 'border-2 border-green-500' : ''}
       />
       <Button type={'submit'}>Create</Button>
     </Form>
