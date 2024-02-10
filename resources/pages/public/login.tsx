@@ -2,9 +2,8 @@ import React from 'react'
 import { router } from '@inertiajs/react'
 
 import { Button } from '@/components/button'
-import { Typography } from '@/components/utils/'
-import { Form, InputGroup } from '@/components/form'
 import { useLoginForm } from '@/hooks/use_login_form'
+import { Typography, Form, InputGroup } from '@/components/utils/'
 
 type LoginProps = {
   csrfToken: string

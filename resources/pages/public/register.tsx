@@ -2,9 +2,8 @@ import React from 'react'
 import { usePage } from '@inertiajs/react'
 
 import { Button } from '@/components/button'
-import { Typography } from '@/components/utils'
-import { Form, InputGroup } from '@/components/form'
 import { useRegisterForm } from '@/hooks/use_register_form'
+import { Typography, Form, InputGroup } from '@/components/utils'
 
 type RegisterProps = {
   csrfToken: string

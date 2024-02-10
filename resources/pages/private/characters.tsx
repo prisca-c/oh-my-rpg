@@ -1,7 +1,8 @@
 import type Character from '~/app/models/character'
 
-import { Flex } from '@/components/utils'
+import { Button } from '@/components/button'
 import { CharacterCard } from '@/components/character_card'
+import { Flex, Typography, Form, InputGroup } from '@/components/utils'
 
 type CharactersProps = {
   characters: Character[]
