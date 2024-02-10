@@ -1,8 +1,13 @@
 import vine, { SimpleMessagesProvider } from '@vinejs/vine'
 
-import { uniqueRule } from './rules/unique.js'
+import { uniqueRule, existsRule } from '#validators/rules/index'
 
-export const createCharacterValidator = (data: { name: string }) => {
+type CreateCharacterValidatorData = {
+  name: string
+  userId: string
+}
+
+export const createCharacterValidator = (data: CreateCharacterValidatorData) => {
   const schema = vine.object({
     name: vine
       .string()
@@ -13,7 +18,9 @@ export const createCharacterValidator = (data: { name: string }) => {
         allowDashes: true,
         allowUnderscores: true,
       })
-      .use(uniqueRule({ table: 'characters', column: 'name' })),
+      .exists(existsRule('characters', 'name'))
+      .unique(uniqueRule('characters', 'name')),
+    userId: vine.string().exists(existsRule('users', 'id')),
   })
 
   const messagesProvider = new SimpleMessagesProvider({
@@ -22,6 +29,8 @@ export const createCharacterValidator = (data: { name: string }) => {
     'name.alphaNum': 'The name can only contain letters, numbers, dashes and underscores',
     'name.maxLength': 'The name must be less than 20 characters',
     'name.minLength': 'The name must be at least 3 characters',
+    'userId.required': 'User ID is required',
+    'userId.exists': 'User does not exist',
   })
 
   return vine.validate({ schema, data, messagesProvider })
