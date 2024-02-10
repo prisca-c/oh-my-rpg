@@ -35,6 +35,6 @@ router
   .group(() => {
     router.get('/game/:id', [GamesController, 'index']).where('id', router.matchers.uuid())
     router.get('/characters', [CharactersController, 'index'])
-    router.post('/character', [CharactersController, 'store']).as('character.store')
+    router.post('/characters', [CharactersController, 'store']).as('character.store')
   })
   .use(middleware.auth())

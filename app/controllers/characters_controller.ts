@@ -33,6 +33,6 @@ export default class CharactersController {
       userId: data.userId,
     })
 
-    response.redirect('/character')
+    response.redirect('/characters')
   }
 }
