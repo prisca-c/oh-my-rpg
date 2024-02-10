@@ -1,10 +1,10 @@
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class LoginController {
-  async index({ inertia, request }: HttpContext) {
+  async index({ inertia }: HttpContext) {
     return inertia.render(
       'public/login',
-      { csrfToken: request.csrfToken },
+      {},
       {
         meta: {
           title: 'Login',
