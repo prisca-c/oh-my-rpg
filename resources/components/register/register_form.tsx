@@ -1,5 +1,5 @@
 import React from 'react'
-import { usePage } from '@inertiajs/react'
+import { usePage, router } from '@inertiajs/react'
 
 import { Button } from '@/components/button'
 import { Form, InputGroup } from '@/components/utils'
@@ -13,6 +13,10 @@ export const RegisterForm = () => {
     password_confirmation: '',
   })
   const errors = usePage().props.errors
+
+  const goToLogin = () => {
+    router.visit('/login')
+  }
 
   return (
     <Form method={'POST'} onSubmit={onSubmit}>
@@ -61,6 +65,9 @@ export const RegisterForm = () => {
         autoComplete={'new-password'}
       />
       <Button type={'submit'}>Register</Button>
+      <Button type={'button'} onClick={goToLogin}>
+        Go back to login
+      </Button>
     </Form>
   )
 }
