@@ -1,6 +1,6 @@
 import type Character from '~/app/models/character'
 
-import { Flex, Typography } from '@/components/utils'
+import { Container, Typography } from '@/components/utils'
 
 type LeaderboardProps = {
   leaderboard: Character[]
@@ -8,11 +8,14 @@ type LeaderboardProps = {
 
 export const Leaderboard = ({ leaderboard }: LeaderboardProps) => {
   return (
-    <Flex
+    <Container
+      layout={'flex'}
       direction={'col'}
-      justify={'center'}
+      justify={'start'}
       align={'center'}
-      className={'gap-6 bg-gray-200 p-4 rounded-md w-fit'}
+      className={'gap-6 h-full'}
+      bg={'lightGray'}
+      rounded
     >
       <Typography type={'h2'} size={'lg'} className={'font-bold text-center'}>
         Leaderboard
@@ -33,6 +36,6 @@ export const Leaderboard = ({ leaderboard }: LeaderboardProps) => {
           ))}
         </tbody>
       </table>
-    </Flex>
+    </Container>
   )
 }
