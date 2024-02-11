@@ -3,6 +3,7 @@ import React from 'react'
 type TypographyProps = {
   type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
   size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl'
+  align?: 'left' | 'center' | 'right'
   children: string
   className?: string
 }
@@ -10,8 +11,9 @@ type TypographyProps = {
 export const Typography = ({
   type,
   children,
-  size,
+  size = 'md',
   className,
+  align = 'left',
 }: TypographyProps): React.ReactElement => {
   const Tag = type
   const textSizes = {
@@ -25,7 +27,11 @@ export const Typography = ({
     '5xl': 'text-5xl',
     '6xl': 'text-6xl',
   }
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
-  return <Tag className={`${textSizes[size]} ${className}`}>{children}</Tag>
+  const textAlignment = {
+    left: 'text-left',
+    center: 'text-center',
+    right: 'text-right',
+  }
+
+  return <Tag className={`${textSizes[size]} ${textAlignment[align]} ${className}`}>{children}</Tag>
 }
