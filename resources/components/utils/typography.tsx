@@ -1,8 +1,10 @@
 import React from 'react'
 
+import type { TextSizes } from '@/types'
+
 type TypographyProps = {
   type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
-  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl'
+  size?: TextSizes
   align?: 'left' | 'center' | 'right'
   children: string
   className?: string
