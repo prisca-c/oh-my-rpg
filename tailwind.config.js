@@ -9,6 +9,17 @@ export default {
     },
     container: {},
     extend: {},
+    colors: {
+      'primary': '#ff984f',
+      'secondary': '#ffe24f',
+      'light-primary': '#ffb580',
+      'dark-primary': '#FF6A00',
+      'light-secondary': '#ffe77f',
+      'dark-secondary': '#FFD700',
+      'gray': '#e7e7e7',
+      'dark-gray': '#797979',
+      'light-gray': '#bdbdbd',
+    },
   },
   plugins: [],
 }
