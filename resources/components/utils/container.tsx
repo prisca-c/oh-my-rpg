@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { BgColors } from '@/enums/tailwind'
+
 type ContainerProps = {
   children: React.ReactNode
   className?: string
@@ -9,7 +11,7 @@ type ContainerProps = {
   justify?: 'center' | 'start' | 'end'
   gap?: string
   direction?: 'row' | 'col'
-  bg?: string
+  bg?: keyof typeof BgColors
 }
 
 export const Container = ({
@@ -21,7 +23,7 @@ export const Container = ({
   justify = 'center',
   gap = '0',
   direction = 'row',
-  bg = '',
+  bg,
 }: ContainerProps) => {
   const classList: string[] = ['p-4']
   if (layout === 'flex') {
@@ -35,7 +37,10 @@ export const Container = ({
     classList.push('grid')
     classList.push(`gap-${gap}`)
   }
-  if (bg) classList.push(`bg-${bg}`)
+  if (bg) {
+    const bgColors = BgColors[bg]
+    classList.push(bgColors)
+  }
   if (rounded) classList.push('rounded-md')
   if (className) classList.push(className)
 
