@@ -1,7 +1,9 @@
+import { motion } from 'framer-motion'
 import { router } from '@inertiajs/react'
 
 import { Button } from '@/components/button'
-import { Flex, Typography } from '@/components/utils'
+import { FadeIn, Flex } from '@/components/utils'
+import { LogoAnimation } from '@/components/logo_animation'
 
 export default function Home() {
   const goToLogin = () => {
@@ -9,11 +11,11 @@ export default function Home() {
   }
 
   return (
-    <Flex direction={'col'} justify={'center'} align={'center'} className={'h-full gap-6'}>
-      <Typography type={'h1'} size={'5xl'} className={'font-bold text-center'}>
-        Hello World
-      </Typography>
-      <Button onClick={goToLogin}>Login</Button>
+    <Flex direction={'col'} justify={'center'} align={'center'} className={'h-full w-full gap-6'}>
+      <LogoAnimation />
+      <FadeIn delay={1.36} duration={0.8} slide={{ y: { start: 50, end: 0 } }}>
+        <Button onClick={goToLogin}>Login</Button>
+      </FadeIn>
     </Flex>
   )
 }
