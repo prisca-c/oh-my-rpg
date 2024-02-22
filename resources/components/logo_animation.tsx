@@ -1,7 +1,7 @@
 import { LuSwords } from 'react-icons/lu'
 
 import type { TextSizes } from '@/types'
-import { FadeIn, Flex, Typography } from '@/components/utils'
+import { Container, FadeIn, Typography } from '@/components/utils'
 
 type LogoAnimationProps = {
   textSizes?: TextSizes
@@ -10,18 +10,7 @@ type LogoAnimationProps = {
 
 export const LogoAnimation = ({ textSizes = '3xl', logoSize = 50 }: LogoAnimationProps) => {
   return (
-    <Flex justify={'center'} align={'center'} className={'gap-2 w-full'}>
-      <FadeIn
-        slide={{ x: { start: 50, end: 0 } }}
-        delay={0.8}
-        duration={0.8}
-        opacity={{ start: 0, end: 1 }}
-        className={'w-full'}
-      >
-        <Typography type={'p'} size={textSizes} className={'font-gamer'} align={'right'}>
-          RPG
-        </Typography>
-      </FadeIn>
+    <Container layout={'flex'} direction={'col'} justify={'center'} align={'center'}>
       <FadeIn
         delay={0}
         duration={0.8}
@@ -37,10 +26,10 @@ export const LogoAnimation = ({ textSizes = '3xl', logoSize = 50 }: LogoAnimatio
         opacity={{ start: 0, end: 1 }}
         className={'w-full'}
       >
-        <Typography type={'p'} size={textSizes} className={'font-gamer'} align={'left'}>
-          game
+        <Typography type={'p'} size={textSizes} className={'font-gamer'}>
+          RPG game
         </Typography>
       </FadeIn>
-    </Flex>
+    </Container>
   )
 }
