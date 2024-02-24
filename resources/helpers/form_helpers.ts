@@ -1,4 +1,4 @@
-export const getErrorByField = (errors: Record<string, string[]> | undefined, field: string) => {
+export const getErrorByField = <T>(errors: Record<keyof T, T> | undefined, field: string) => {
   if (!errors) return
   if (!errors[field]) return
 
