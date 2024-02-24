@@ -1,3 +1,3 @@
-import { uniqueRule, existsRule } from '#validators/rules/db'
+import { uniqueRule, existsRule, relationCountRule } from '#validators/rules/db'
 
-export { uniqueRule, existsRule }
+export { uniqueRule, existsRule, relationCountRule }

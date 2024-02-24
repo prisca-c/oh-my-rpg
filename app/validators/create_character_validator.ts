@@ -1,6 +1,6 @@
 import vine, { SimpleMessagesProvider } from '@vinejs/vine'
 
-import { uniqueRule, existsRule } from '#validators/rules/index'
+import { uniqueRule, existsRule, relationCountRule } from '#validators/rules/index'
 
 type CreateCharacterValidatorData = {
   name: string
@@ -19,7 +19,10 @@ export const createCharacterValidator = (data: CreateCharacterValidatorData) => 
         allowUnderscores: true,
       })
       .use(uniqueRule({ table: 'characters', column: 'name' })),
-    userId: vine.string().use(existsRule({ table: 'users', column: 'id' })),
+    userId: vine
+      .string()
+      .use(existsRule({ table: 'users', column: 'id' }))
+      .use(relationCountRule({ table: 'characters', column: 'user_id', maxCount: 3 })),
   })
 
   const messagesProvider = new SimpleMessagesProvider({
@@ -30,6 +33,7 @@ export const createCharacterValidator = (data: CreateCharacterValidatorData) => 
     'name.minLength': 'The name must be at least 3 characters',
     'userId.required': 'User ID is required',
     'userId.exists': 'User does not exist',
+    'userId.relationCount': 'You can only have 3 characters',
   })
 
   return vine.validate({ schema, data, messagesProvider })
