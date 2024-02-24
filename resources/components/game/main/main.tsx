@@ -7,7 +7,7 @@ export const Main = () => {
       direction={'col'}
       justify={'center'}
       align={'center'}
-      className={'gap-6 h-full w-[500px]'}
+      className={'gap-6 h-full w-full'}
       rounded
       bg={'lightPrimary'}
     >
