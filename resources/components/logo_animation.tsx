@@ -20,7 +20,7 @@ export const LogoAnimation = ({ textSizes = '3xl', logoSize = 50 }: LogoAnimatio
         <LuSwords size={logoSize} />
       </FadeIn>
       <FadeIn
-        slide={{ x: { start: -50, end: 0 } }}
+        slide={{ y: { start: -50, end: 0 } }}
         delay={0.8}
         duration={0.8}
         opacity={{ start: 0, end: 1 }}
