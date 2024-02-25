@@ -15,7 +15,16 @@ export default class extends BaseSchema {
       table.timestamp('updated_at', { useTz: true })
     })
 
-    const rarities = ['common', 'uncommon', 'rare', 'epic', 'legendary', 'mythic', 'secret']
+    const rarities = [
+      'common',
+      'uncommon',
+      'rare',
+      'epic',
+      'legendary',
+      'mythic',
+      'secret',
+      'quest',
+    ]
 
     this.defer(async () => {
       await this.db.table('item_rarities').insert(
