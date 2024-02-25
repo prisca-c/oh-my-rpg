@@ -10,6 +10,7 @@ export default class extends BaseSchema {
       table.string('description').notNullable()
       table.boolean('is_event').defaultTo(false)
       table.uuid('event_id').references('id').inTable('events').onDelete('CASCADE')
+      table.uuid('item_list_id').references('id').inTable('item_lists').onDelete('CASCADE')
       table.boolean('is_active').defaultTo(false)
       table.jsonb('requirements').notNullable()
       table.integer('max_drop').notNullable()
