@@ -17,6 +17,7 @@ export default class extends BaseSchema {
           enumName: 'limit_enum',
         })
         .notNullable()
+        .defaultTo('none')
       table.integer('limit_amount').notNullable().defaultTo(0)
 
       /**

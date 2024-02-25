@@ -18,6 +18,12 @@ export default class Event extends BaseModel {
   @column()
   declare end: string
 
+  @column()
+  declare limit_type: 'none' | 'user' | 'daily' | 'weekly' | 'monthly'
+
+  @column()
+  declare limit_amount: number
+
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
 
