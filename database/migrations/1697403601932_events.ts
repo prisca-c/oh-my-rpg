@@ -10,6 +10,14 @@ export default class extends BaseSchema {
       table.string('description').notNullable()
       table.dateTime('start').notNullable()
       table.dateTime('end').notNullable()
+      table
+        .enum('limit_type', ['none', 'user', 'daily', 'weekly', 'monthly'], {
+          useNative: true,
+          existingType: false,
+          enumName: 'limit',
+        })
+        .notNullable()
+      table.integer('limit_amount').notNullable().defaultTo(0)
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
@@ -21,5 +29,6 @@ export default class extends BaseSchema {
 
   async down() {
     this.schema.dropTable(this.tableName)
+    this.schema.raw('DROP TYPE IF EXISTS "limit"')
   }
 }
