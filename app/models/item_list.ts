@@ -23,6 +23,7 @@ export default class ItemList extends BaseModel {
     pivotForeignKey: 'item_list_id',
     relatedKey: 'id',
     pivotRelatedForeignKey: 'item_id',
+    pivotColumns: ['drop_chance', 'only_boss'],
   })
   declare items: ManyToMany<typeof Item>
 }
