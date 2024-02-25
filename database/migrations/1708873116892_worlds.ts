@@ -9,6 +9,12 @@ export default class extends BaseSchema {
       table.string('name').notNullable()
       table.string('description').notNullable()
       table.boolean('is_event').defaultTo(false)
+      table
+        .integer('difficulty_id')
+        .references('id')
+        .inTable('difficulty')
+        .onDelete('CASCADE')
+        .notNullable()
       table.uuid('event_id').references('id').inTable('events').onDelete('CASCADE')
       table.uuid('item_list_id').references('id').inTable('item_lists').onDelete('CASCADE')
       table.boolean('is_active').defaultTo(false)
@@ -20,6 +26,21 @@ export default class extends BaseSchema {
        */
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
+    })
+
+    this.defer(async (db) => {
+      await db.table('worlds').insert([
+        {
+          name: 'Oh no! Goblins!',
+          description: 'A world filled with goblins!',
+          is_event: false,
+          is_active: true,
+          requirements: {
+            level: 1,
+          },
+          max_drop: 1,
+        },
+      ])
     })
   }
 

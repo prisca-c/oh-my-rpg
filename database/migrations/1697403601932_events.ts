@@ -11,13 +11,12 @@ export default class extends BaseSchema {
       table.dateTime('start').notNullable()
       table.dateTime('end').notNullable()
       table
-        .enum('limit_type', ['none', 'user', 'daily', 'weekly', 'monthly'], {
-          useNative: true,
-          existingType: true,
-          enumName: 'limit_enum',
-        })
-        .notNullable()
-        .defaultTo('none')
+        .integer('difficulty_id')
+        .references('id')
+        .inTable('difficulty')
+        .onDelete('CASCADE')
+        .nullable()
+      table.integer('limit_id').references('id').inTable('limits').onDelete('CASCADE')
       table.integer('limit_amount').notNullable().defaultTo(0)
 
       /**
