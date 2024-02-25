@@ -19,7 +19,7 @@ export default function Game({ character, leaderboard, properties }: GameProps) 
       direction={'col'}
       justify={'center'}
       align={'center'}
-      className={'p-2 gap-6 h-full w-full'}
+      className={'h-full w-full p-4'}
     >
       <Container
         layout={'flex'}
@@ -28,9 +28,18 @@ export default function Game({ character, leaderboard, properties }: GameProps) 
         align={'center'}
         className={'gap-6 h-full w-full'}
       >
-        <CharacterInfos character={character} properties={properties} />
+        <Container
+          layout={'flex'}
+          direction={'col'}
+          justify={'center'}
+          align={'center'}
+          className={'gap-6 h-full'}
+          rounded
+        >
+          <CharacterInfos character={character} properties={properties} />
+          <Leaderboard leaderboard={leaderboard} />
+        </Container>
         <Main />
-        <Leaderboard leaderboard={leaderboard} />
       </Container>
     </Container>
   )

@@ -13,7 +13,7 @@ export const Leaderboard = ({ leaderboard }: LeaderboardProps) => {
       direction={'col'}
       justify={'start'}
       align={'center'}
-      className={'gap-6 h-full'}
+      className={'gap-6 h-full p-4'}
       bg={'lightGray'}
       rounded
     >

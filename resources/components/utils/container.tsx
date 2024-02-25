@@ -25,7 +25,7 @@ export const Container = ({
   direction = 'row',
   bg,
 }: ContainerProps) => {
-  const classList: string[] = ['p-4']
+  const classList: string[] = []
   if (layout === 'flex') {
     classList.push('flex')
     classList.push(`flex-${direction}`)
