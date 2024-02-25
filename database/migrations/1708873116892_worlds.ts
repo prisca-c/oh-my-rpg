@@ -12,7 +12,7 @@ export default class extends BaseSchema {
       table
         .integer('difficulty_id')
         .references('id')
-        .inTable('difficulty')
+        .inTable('difficulties')
         .onDelete('CASCADE')
         .notNullable()
       table.uuid('event_id').references('id').inTable('events').onDelete('CASCADE')
@@ -29,6 +29,7 @@ export default class extends BaseSchema {
     })
 
     this.defer(async (db) => {
+      const difficulty = await db.from('difficulties').where('name', 'tutorial').first()
       await db.table('worlds').insert([
         {
           name: 'Oh no! Goblins!',
@@ -39,6 +40,9 @@ export default class extends BaseSchema {
             level: 1,
           },
           max_drop: 1,
+          difficulty_id: difficulty.id,
+          created_at: new Date(),
+          updated_at: new Date(),
         },
       ])
     })

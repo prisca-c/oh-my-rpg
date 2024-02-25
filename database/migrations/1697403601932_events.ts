@@ -13,7 +13,7 @@ export default class extends BaseSchema {
       table
         .integer('difficulty_id')
         .references('id')
-        .inTable('difficulty')
+        .inTable('difficulties')
         .onDelete('CASCADE')
         .nullable()
       table.integer('limit_id').references('id').inTable('limits').onDelete('CASCADE')
