@@ -21,6 +21,7 @@
   "imports": {
     "#config/*": "./config/*.js",
     "#controllers/*": "./app/controllers/*.js",
+    "#enums/*": "./enums/*.js",
     "#events/*": "./app/events/*.js",
     "#exceptions/*": "./app/exceptions/*.js",
     "#features/*": "./app/features/*.js",
@@ -29,6 +30,7 @@
     "#models/*": "./app/models/*.js",
     "#services/*": "./app/services/*.js",
     "#start/*": "./start/*.js",
+    "#types/*": "./types/*.js",
     "#utils/*": "./utils/*.js",
     "#validators/*": "./app/validators/*.js"
   },
