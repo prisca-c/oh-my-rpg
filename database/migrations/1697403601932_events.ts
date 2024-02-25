@@ -13,8 +13,8 @@ export default class extends BaseSchema {
       table
         .enum('limit_type', ['none', 'user', 'daily', 'weekly', 'monthly'], {
           useNative: true,
-          existingType: false,
-          enumName: 'limit',
+          existingType: true,
+          enumName: 'limit_enum',
         })
         .notNullable()
       table.integer('limit_amount').notNullable().defaultTo(0)
@@ -29,6 +29,5 @@ export default class extends BaseSchema {
 
   async down() {
     this.schema.dropTable(this.tableName)
-    this.schema.raw('DROP TYPE IF EXISTS "limit"')
   }
 }
