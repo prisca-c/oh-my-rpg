@@ -8,28 +8,29 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "start": "node bin/server.js",
     "build": "node ace build",
     "dev": "node ace serve --watch",
-    "test": "node ace test",
-    "lint": "eslint .",
     "format": "prettier --write .",
-    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
     "migrate": "node ace migration:run",
-    "migrate:prod": "node ace migration:run --force"
+    "migrate:prod": "node ace migration:run --force",
+    "start": "node bin/server.js",
+    "test": "node ace test",
+    "typecheck": "tsc --noEmit"
   },
   "imports": {
+    "#config/*": "./config/*.js",
     "#controllers/*": "./app/controllers/*.js",
+    "#events/*": "./app/events/*.js",
     "#exceptions/*": "./app/exceptions/*.js",
+    "#features/*": "./app/features/*.js",
+    "#listeners/*": "./app/listeners/*.js",
+    "#middleware/*": "./app/middleware/*.js",
     "#models/*": "./app/models/*.js",
     "#services/*": "./app/services/*.js",
-    "#listeners/*": "./app/listeners/*.js",
-    "#events/*": "./app/events/*.js",
-    "#middleware/*": "./app/middleware/*.js",
-    "#validators/*": "./app/validators/*.js",
     "#start/*": "./start/*.js",
-    "#config/*": "./config/*.js",
-    "#utils/*": "./utils/*.js"
+    "#utils/*": "./utils/*.js",
+    "#validators/*": "./app/validators/*.js"
   },
   "dependencies": {
     "@adonisjs/auth": "9.1.1",
