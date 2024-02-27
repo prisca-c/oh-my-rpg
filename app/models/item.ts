@@ -1,7 +1,7 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
-import type { HasOne, ManyToMany } from '@adonisjs/lucid/types/relations'
-import { BaseModel, beforeCreate, column, hasOne, manyToMany, computed } from '@adonisjs/lucid/orm'
+import type { HasMany, HasOne } from '@adonisjs/lucid/types/relations'
+import { BaseModel, beforeCreate, column, hasOne, computed, hasMany } from '@adonisjs/lucid/orm'
 
 import ItemBase from '#models/item_base'
 import ItemList from '#models/item_list'
@@ -22,10 +22,10 @@ export default class Item extends BaseModel {
   declare level: number
 
   @column()
-  declare is_active: boolean
+  declare isActive: boolean
 
   @column()
-  declare is_tradeable: boolean
+  declare isTradeable: boolean
 
   @column()
   declare itemBaseId: string
@@ -50,15 +50,8 @@ export default class Item extends BaseModel {
   @hasOne(() => ItemRarity)
   declare itemRarity: HasOne<typeof ItemRarity>
 
-  @manyToMany(() => ItemList, {
-    pivotTable: 'items_item_lists',
-    localKey: 'id',
-    pivotForeignKey: 'item_id',
-    relatedKey: 'id',
-    pivotRelatedForeignKey: 'item_list_id',
-    pivotColumns: ['drop_chance', 'only_boss'],
-  })
-  declare itemLists: ManyToMany<typeof ItemList>
+  @hasMany(() => ItemList)
+  declare itemLists: HasMany<typeof ItemList>
 
   @computed()
   get properties(): object {

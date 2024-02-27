@@ -1,8 +1,9 @@
 import type { DateTime } from 'luxon'
-import type { ManyToMany } from '@adonisjs/lucid/types/relations'
-import { BaseModel, column, manyToMany } from '@adonisjs/lucid/orm'
+import type { HasMany, ManyToMany } from '@adonisjs/lucid/types/relations'
+import { BaseModel, column, hasMany, manyToMany } from '@adonisjs/lucid/orm'
 
 import Item from '#models/item'
+import ItemItemList from '#models/item_item_list'
 
 export default class ItemList extends BaseModel {
   @column({ isPrimary: true })
@@ -17,13 +18,14 @@ export default class ItemList extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime
 
-  @manyToMany(() => Item, {
-    pivotTable: 'items_item_lists',
+  @hasMany(() => ItemItemList, {
+    foreignKey: 'item_list_id',
     localKey: 'id',
-    pivotForeignKey: 'item_list_id',
-    relatedKey: 'id',
-    pivotRelatedForeignKey: 'item_id',
-    pivotColumns: ['drop_chance', 'only_boss'],
+  })
+  declare itemItemList: HasMany<typeof ItemItemList>
+
+  @manyToMany(() => Item, {
+    pivotTable: 'item_item_list',
   })
   declare items: ManyToMany<typeof Item>
 }

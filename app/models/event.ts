@@ -23,7 +23,7 @@ export default class Event extends BaseModel {
   declare end: string
 
   @column()
-  declare limit_amount: number
+  declare limitAmount: number
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime

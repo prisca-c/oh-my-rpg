@@ -1,6 +1,6 @@
 import type { DateTime } from 'luxon'
-import type { HasOne } from '@adonisjs/lucid/types/relations'
-import { BaseModel, column, hasOne } from '@adonisjs/lucid/orm'
+import type { BelongsTo, HasOne } from '@adonisjs/lucid/types/relations'
+import { BaseModel, belongsTo, column, hasOne } from '@adonisjs/lucid/orm'
 
 import Item from '#models/item'
 import ItemList from '#models/item_list'
@@ -10,10 +10,16 @@ export default class ItemItemList extends BaseModel {
   declare id: string
 
   @column()
-  declare drop_chance: number
+  declare dropChance: number
 
   @column()
-  declare only_boss: boolean
+  declare onlyBoss: boolean
+
+  @column()
+  declare itemId: string
+
+  @column()
+  declare itemListId: string
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
@@ -24,6 +30,6 @@ export default class ItemItemList extends BaseModel {
   @hasOne(() => Item)
   declare item: HasOne<typeof Item>
 
-  @hasOne(() => ItemList)
-  declare itemList: HasOne<typeof ItemList>
+  @belongsTo(() => ItemList)
+  declare itemList: BelongsTo<typeof ItemList>
 }
