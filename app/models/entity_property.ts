@@ -1,9 +1,10 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
-import type { HasOne } from '@adonisjs/lucid/types/relations'
-import { BaseModel, beforeCreate, column, hasOne } from '@adonisjs/lucid/orm'
+import { BaseModel, beforeCreate, column, computed } from '@adonisjs/lucid/orm'
 
 import Character from '#models/character'
+import EnemyType from '#models/enemy_type'
+import { Entity } from '#enums/entity.enum'
 
 export default class EntityProperty extends BaseModel {
   @column({ isPrimary: true })
@@ -47,6 +48,12 @@ export default class EntityProperty extends BaseModel {
     entityProperty.id = randomUUID()
   }
 
-  @hasOne(() => Character)
-  declare character: HasOne<typeof Character>
+  @computed()
+  get entity() {
+    if (this.entityType === Entity.CHARACTER) {
+      return Character.findBy('entityPropertyId', this.id)
+    } else if (this.entityType === Entity.ENEMY) {
+      return EnemyType.findBy('entityPropertyId', this.id)
+    }
+  }
 }
