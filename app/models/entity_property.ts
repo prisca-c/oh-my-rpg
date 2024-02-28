@@ -1,14 +1,17 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
+import type { Opaque } from '@poppinss/utils/types'
 import { BaseModel, beforeCreate, column, computed } from '@adonisjs/lucid/orm'
 
 import Character from '#models/character'
 import EnemyType from '#models/enemy_type'
 import { Entity } from '#enums/entity.enum'
 
+export type EntityPropertyId = Opaque<'entityPropertyId', string>
+
 export default class EntityProperty extends BaseModel {
   @column({ isPrimary: true })
-  declare id: string
+  declare id: EntityPropertyId
 
   @column()
   declare entityType: string
@@ -45,7 +48,7 @@ export default class EntityProperty extends BaseModel {
 
   @beforeCreate()
   static async generateId(entityProperty: EntityProperty) {
-    entityProperty.id = randomUUID()
+    entityProperty.id = randomUUID() as EntityPropertyId
   }
 
   @computed()

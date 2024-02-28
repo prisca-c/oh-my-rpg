@@ -1,12 +1,15 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
+import type { Opaque } from '@poppinss/utils/types'
 import { BaseModel, beforeCreate, column, computed } from '@adonisjs/lucid/orm'
 
 import ItemProperty from '#models/item_property'
 
+export type ItemSuffixId = Opaque<'itemSuffixId', string>
+
 export default class ItemSuffix extends BaseModel {
   @column({ isPrimary: true })
-  declare id: string
+  declare id: ItemSuffixId
 
   @column()
   declare name: string
@@ -22,7 +25,7 @@ export default class ItemSuffix extends BaseModel {
 
   @beforeCreate()
   static async generateId(itemSuffix: ItemSuffix) {
-    itemSuffix.id = randomUUID()
+    itemSuffix.id = randomUUID() as ItemSuffixId
   }
 
   @computed()

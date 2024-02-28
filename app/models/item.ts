@@ -1,16 +1,21 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
+import type { Opaque } from '@poppinss/utils/types'
 import type { HasMany, HasOne } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, column, hasOne, computed, hasMany } from '@adonisjs/lucid/orm'
 
-import ItemBase from '#models/item_base'
 import ItemList from '#models/item_list'
+import ItemBase from '#models/item_base'
 import ItemRarity from '#models/item_rarity'
 import ItemProperty from '#models/item_property'
+import type { ItemBaseId } from '#models/item_base'
+import type { ItemRarityId } from '#models/item_rarity'
+
+export type ItemId = Opaque<'itemId', string>
 
 export default class Item extends BaseModel {
   @column({ isPrimary: true })
-  declare id: string
+  declare id: ItemId
 
   @column()
   declare name: string
@@ -28,10 +33,10 @@ export default class Item extends BaseModel {
   declare isTradeable: boolean
 
   @column()
-  declare itemBaseId: string
+  declare itemBaseId: ItemBaseId
 
   @column()
-  declare itemRarityId: number
+  declare itemRarityId: ItemRarityId
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
@@ -41,7 +46,7 @@ export default class Item extends BaseModel {
 
   @beforeCreate()
   static async generateId(item: Item) {
-    item.id = randomUUID()
+    item.id = randomUUID() as ItemId
   }
 
   @hasOne(() => ItemBase)

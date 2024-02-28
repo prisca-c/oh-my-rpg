@@ -1,23 +1,28 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
+import type { Opaque } from '@poppinss/utils/types'
 import type { HasOne } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, column, hasOne } from '@adonisjs/lucid/orm'
 
 import User from '#models/user'
+import type { UserId } from '#models/user'
 import EntityProperty from '#models/entity_property'
+import type { EntityPropertyId } from '#models/entity_property'
+
+export type CharacterId = Opaque<'characterId', string>
 
 export default class Character extends BaseModel {
   @column({ isPrimary: true })
-  declare id: string
+  declare id: CharacterId
 
   @column()
-  declare userId: string
+  declare userId: UserId
 
   @column()
   declare name: string
 
   @column()
-  declare entityPropertyId: string
+  declare entityPropertyId: EntityPropertyId
 
   @column()
   declare level: number
@@ -71,7 +76,7 @@ export default class Character extends BaseModel {
 
   @beforeCreate()
   static async generateId(character: Character) {
-    character.id = randomUUID()
+    character.id = randomUUID() as CharacterId
   }
 
   @hasOne(() => User)

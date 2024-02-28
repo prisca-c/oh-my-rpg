@@ -1,13 +1,16 @@
 import type { DateTime } from 'luxon'
+import type { Opaque } from '@poppinss/utils/types'
 import type { HasMany, ManyToMany } from '@adonisjs/lucid/types/relations'
 import { BaseModel, column, hasMany, manyToMany } from '@adonisjs/lucid/orm'
 
 import Item from '#models/item'
 import ItemItemList from '#models/item_item_list'
 
+export type ItemListId = Opaque<'itemListId', string>
+
 export default class ItemList extends BaseModel {
   @column({ isPrimary: true })
-  declare id: string
+  declare id: ItemListId
 
   @column()
   declare name: string

@@ -3,10 +3,13 @@ import { randomUUID } from 'node:crypto'
 import hash from '@adonisjs/core/services/hash'
 import { withAuthFinder } from '@adonisjs/auth'
 import { compose } from '@adonisjs/core/helpers'
+import type { Opaque } from '@poppinss/utils/types'
 import type { HasMany } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, column, hasMany } from '@adonisjs/lucid/orm'
 
 import Character from '#models/character'
+
+export type UserId = Opaque<'userId', string>
 
 const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
   uids: ['email'],
@@ -15,7 +18,7 @@ const AuthFinder = withAuthFinder(() => hash.use('scrypt'), {
 
 export default class User extends compose(BaseModel, AuthFinder) {
   @column({ isPrimary: true })
-  declare id: string
+  declare id: UserId
 
   @column()
   declare username: string
@@ -43,7 +46,7 @@ export default class User extends compose(BaseModel, AuthFinder) {
 
   @beforeCreate()
   static async generateId(user: User) {
-    user.id = randomUUID()
+    user.id = randomUUID() as UserId
   }
 
   @hasMany(() => Character)

@@ -1,21 +1,27 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
+import type { Opaque } from '@poppinss/utils/types'
 import type { HasOne } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, column, hasOne } from '@adonisjs/lucid/orm'
 
 import Item from '#models/item'
 import Character from '#models/character'
+import type { ItemId } from '#models/item'
 import ItemSuffix from '#models/item_suffix'
+import type { CharacterId } from '#models/character'
+import type { ItemSuffixId } from '#models/item_suffix'
+
+export type InventoryItemId = Opaque<'inventoryItemId', string>
 
 export default class InventoryItem extends BaseModel {
   @column({ isPrimary: true })
-  declare id: string
+  declare id: InventoryItemId
 
   @column()
-  declare characterId: string
+  declare characterId: CharacterId
 
   @column()
-  declare itemId: string
+  declare itemId: ItemId
 
   @column()
   declare quantity: number
@@ -24,7 +30,7 @@ export default class InventoryItem extends BaseModel {
   declare hasSuffix: boolean
 
   @column()
-  declare itemSuffixId: string
+  declare itemSuffixId: ItemSuffixId
 
   @column()
   declare isEquipped: boolean
@@ -43,7 +49,7 @@ export default class InventoryItem extends BaseModel {
 
   @beforeCreate()
   static async generateId(inventoryItem: InventoryItem) {
-    inventoryItem.id = randomUUID()
+    inventoryItem.id = randomUUID() as InventoryItemId
   }
 
   @hasOne(() => Character)

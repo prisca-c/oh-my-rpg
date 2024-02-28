@@ -1,9 +1,12 @@
 import type { DateTime } from 'luxon'
+import type { Opaque } from '@poppinss/utils/types'
 import { BaseModel, column } from '@adonisjs/lucid/orm'
+
+export type LimitId = Opaque<'limitId', string>
 
 export default class Limit extends BaseModel {
   @column({ isPrimary: true })
-  declare id: number
+  declare id: LimitId
 
   @column()
   declare name: string

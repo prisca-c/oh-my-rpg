@@ -1,9 +1,12 @@
 import type { DateTime } from 'luxon'
+import type { Opaque } from '@poppinss/utils/types'
 import { BaseModel, column } from '@adonisjs/lucid/orm'
+
+export type ItemCategoryId = Opaque<'itemCategoryId', number>
 
 export default class ItemCategory extends BaseModel {
   @column({ isPrimary: true })
-  declare id: number
+  declare id: ItemCategoryId
 
   @column()
   declare name: string

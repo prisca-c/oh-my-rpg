@@ -1,17 +1,21 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
-import type { HasManyThrough, HasOne } from '@adonisjs/lucid/types/relations'
-import { BaseModel, beforeCreate, column, hasManyThrough, hasOne } from '@adonisjs/lucid/orm'
+import type { Opaque } from '@poppinss/utils/types'
+import type { HasMany, HasOne } from '@adonisjs/lucid/types/relations'
+import { BaseModel, beforeCreate, column, hasMany, hasOne } from '@adonisjs/lucid/orm'
 
-import Item from '#models/item'
 import Event from '#models/event'
 import ItemList from '#models/item_list'
 import Difficulty from '#models/difficulty'
-import ItemItemList from '#models/item_item_list'
+import type { EventId } from '#models/event'
+import type { ItemListId } from '#models/item_list'
+import type { DifficultyId } from '#models/difficulty'
+
+export type WorldId = Opaque<'worldId', string>
 
 export default class World extends BaseModel {
   @column({ isPrimary: true })
-  declare id: string
+  declare id: WorldId
 
   @column()
   declare name: string
@@ -23,22 +27,22 @@ export default class World extends BaseModel {
   declare isEvent: boolean
 
   @column()
-  declare eventID: string
+  declare eventID: EventId | null
 
   @column()
   declare isActive: boolean
 
   @column()
-  declare requirement: object
+  declare requirements: object
 
   @column()
   declare maxDrop: number
 
   @column()
-  declare itemListId: string
+  declare itemListId: ItemListId | null
 
   @column()
-  declare difficultyId: number
+  declare difficultyId: DifficultyId
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
@@ -48,7 +52,7 @@ export default class World extends BaseModel {
 
   @beforeCreate()
   static async generateId(world: World) {
-    world.id = randomUUID()
+    world.id = randomUUID() as WorldId
   }
 
   @hasOne(() => Difficulty)
@@ -57,9 +61,9 @@ export default class World extends BaseModel {
   @hasOne(() => Event)
   declare event: HasOne<typeof Event>
 
-  @hasOne(() => ItemList)
-  declare itemList: HasOne<typeof ItemList>
-
-  @hasManyThrough([() => Item, () => ItemItemList])
-  declare items: HasManyThrough<typeof Item>
+  @hasMany(() => ItemList, {
+    foreignKey: 'item_list_id',
+    localKey: 'item_list_id',
+  })
+  declare items: HasMany<typeof ItemList>
 }
