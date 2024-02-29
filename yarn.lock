@@ -300,9 +300,9 @@
     helmet-csp "^3.4.0"
 
 "@adonisjs/tsconfig@^1.1.9":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@adonisjs/tsconfig/-/tsconfig-1.2.1.tgz#119ab3458b5d1ccf8cde4a4f704a04bcbf37e035"
-  integrity sha512-N8zdNw/bC3ft64e7CGr/LfYDCumoWe3wwePEqq2LRTCjBN/ICyxywW6f60QHLr+q17yHMU6fRFDt0GuRLXtPSA==
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@adonisjs/tsconfig/-/tsconfig-1.2.2.tgz#e116ca27b136290f1d7dc8dc08dc455cef28dc86"
+  integrity sha512-WetOxQCSVYcVcm4ERnzFfRPpxVHvndXDC7EYXDTq47C1lGY6nXZfbDPfyBe4xAcOPR0gv5bN0yy0lEOyZBcL5w==
 
 "@adonisjs/vite@^2.0.2":
   version "2.0.2"
