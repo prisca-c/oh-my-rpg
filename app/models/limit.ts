@@ -1,6 +1,10 @@
 import type { DateTime } from 'luxon'
 import type { Opaque } from '@poppinss/utils/types'
-import { BaseModel, column } from '@adonisjs/lucid/orm'
+import type { HasMany } from '@adonisjs/lucid/types/relations'
+import { BaseModel, column, hasMany } from '@adonisjs/lucid/orm'
+
+import Event from '#models/event'
+import World from '#models/world'
 
 export type LimitId = Opaque<'limitId', string>
 
@@ -19,4 +23,10 @@ export default class Limit extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime
+
+  @hasMany(() => Event)
+  declare events: HasMany<typeof Event>
+
+  @hasMany(() => World)
+  declare worlds: HasMany<typeof World>
 }

@@ -1,10 +1,11 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
 import type { Opaque } from '@poppinss/utils/types'
-import type { HasOne } from '@adonisjs/lucid/types/relations'
-import { BaseModel, beforeCreate, column, hasOne } from '@adonisjs/lucid/orm'
+import type { HasOne, ManyToMany } from '@adonisjs/lucid/types/relations'
+import { BaseModel, beforeCreate, column, hasOne, manyToMany } from '@adonisjs/lucid/orm'
 
 import Limit from '#models/limit'
+import World from '#models/world'
 import Difficulty from '#models/difficulty'
 import type { DifficultyId } from '#models/difficulty'
 
@@ -48,4 +49,10 @@ export default class Event extends BaseModel {
 
   @hasOne(() => Limit)
   declare limit: HasOne<typeof Limit>
+
+  @manyToMany(() => World, {
+    pivotTable: 'event_worlds',
+    pivotColumns: ['is_active'],
+  })
+  declare worlds: ManyToMany<typeof World>
 }

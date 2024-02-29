@@ -1,8 +1,8 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
 import type { Opaque } from '@poppinss/utils/types'
-import type { HasMany, HasOne } from '@adonisjs/lucid/types/relations'
-import { BaseModel, beforeCreate, column, hasOne, computed, hasMany } from '@adonisjs/lucid/orm'
+import type { HasOne, ManyToMany } from '@adonisjs/lucid/types/relations'
+import { BaseModel, beforeCreate, column, hasOne, computed, manyToMany } from '@adonisjs/lucid/orm'
 
 import ItemList from '#models/item_list'
 import ItemBase from '#models/item_base'
@@ -55,8 +55,11 @@ export default class Item extends BaseModel {
   @hasOne(() => ItemRarity)
   declare itemRarity: HasOne<typeof ItemRarity>
 
-  @hasMany(() => ItemList)
-  declare itemLists: HasMany<typeof ItemList>
+  @manyToMany(() => ItemList, {
+    pivotTable: 'item_item_lists',
+    pivotColumns: ['drop_chance', 'only_boss'],
+  })
+  declare itemLists: ManyToMany<typeof ItemList>
 
   @computed()
   get properties(): object {

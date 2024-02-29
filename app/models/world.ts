@@ -1,14 +1,14 @@
-import type { DateTime } from 'luxon'
+import { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
+import db from '@adonisjs/lucid/services/db'
 import type { Opaque } from '@poppinss/utils/types'
-import type { HasMany, HasOne } from '@adonisjs/lucid/types/relations'
-import { BaseModel, beforeCreate, column, hasMany, hasOne } from '@adonisjs/lucid/orm'
+import type { HasOne, ManyToMany } from '@adonisjs/lucid/types/relations'
+import { BaseModel, beforeCreate, column, hasOne, manyToMany } from '@adonisjs/lucid/orm'
 
 import Event from '#models/event'
 import ItemList from '#models/item_list'
 import Difficulty from '#models/difficulty'
 import type { EventId } from '#models/event'
-import type { ItemListId } from '#models/item_list'
 import type { DifficultyId } from '#models/difficulty'
 
 export type WorldId = Opaque<'worldId', string>
@@ -39,9 +39,6 @@ export default class World extends BaseModel {
   declare maxDrop: number
 
   @column()
-  declare itemListId: ItemListId | null
-
-  @column()
   declare difficultyId: DifficultyId
 
   @column.dateTime({ autoCreate: true })
@@ -58,12 +55,25 @@ export default class World extends BaseModel {
   @hasOne(() => Difficulty)
   declare difficulty: HasOne<typeof Difficulty>
 
-  @hasOne(() => Event)
-  declare event: HasOne<typeof Event>
-
-  @hasMany(() => ItemList, {
-    foreignKey: 'item_list_id',
-    localKey: 'item_list_id',
+  @manyToMany(() => Event, {
+    pivotTable: 'event_worlds',
+    pivotColumns: ['is_active'],
   })
-  declare items: HasMany<typeof ItemList>
+  declare events: ManyToMany<typeof Event>
+
+  @manyToMany(() => ItemList, {
+    pivotTable: 'item_list_worlds',
+  })
+  declare itemLists: ManyToMany<typeof ItemList>
+
+  async linkToItemList(itemList: ItemList) {
+    await db.insertQuery().table('item_list_worlds').insert({
+      id: randomUUID(),
+      world_id: this.id,
+      item_list_id: itemList.id,
+      is_active: true,
+      created_at: DateTime.now(),
+      updated_at: DateTime.now(),
+    })
+  }
 }
