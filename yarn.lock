@@ -861,22 +861,22 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-2.0.2.tgz#d9fae00a2d5cb40f92cfe64b47ad749fbc38f917"
   integrity sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==
 
-"@inertiajs/core@1.0.14":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@inertiajs/core/-/core-1.0.14.tgz#2b5f13b09141aa9b35bcabcdaeebb2b1d46e4465"
-  integrity sha512-S33PU6mWEYbn/s2Op+CJ6MN7ON354vWw8Y+UvtQzPt0r7pVgOuIArrqqsoulf9oQz9sbP1+vp/tCvyBzm4XmpA==
+"@inertiajs/core@1.0.15":
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/@inertiajs/core/-/core-1.0.15.tgz#9d5da905dc5838917bd14b0090e57651811c59fc"
+  integrity sha512-7h73+manxkpXdSPlVa2uSjo10AbSS0z9Q1jV7r/otqHfTYCNp7JJxHUX4QpKq/3Z88U8bDUe1RRix1o76pyd5Q==
   dependencies:
-    axios "^1.2.0"
+    axios "^1.6.0"
     deepmerge "^4.0.0"
     nprogress "^0.2.0"
     qs "^6.9.0"
 
 "@inertiajs/react@^1.0.14":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@inertiajs/react/-/react-1.0.14.tgz#921f5f110f88113c3021276b13fca463c7cbd31d"
-  integrity sha512-hE/Q1QN+ODYE95XQwmeHk/keTon5//Uv+GU2dxpsZ8r/3/kxOXcSTcE/pFlfycsXvjRghEijYhg60XKPxuM4vw==
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/@inertiajs/react/-/react-1.0.15.tgz#f44deb52362a2841ceafe10bd51b1c66fe7cf620"
+  integrity sha512-T+eDD8Yz5FZ3Qbd0xKXbfRNSrZAQP6o2+jKv7Jakyzjr8ZLdcIpXmevqlGGo5Tc3/ZLzHAX4+2fzpyEKtfonng==
   dependencies:
-    "@inertiajs/core" "1.0.14"
+    "@inertiajs/core" "1.0.15"
     lodash.isequal "^4.5.0"
 
 "@ioredis/commands@^1.1.1":
@@ -1984,7 +1984,7 @@ autoprefixer@^10.4.17:
     picocolors "^1.0.0"
     postcss-value-parser "^4.2.0"
 
-axios@^1.2.0:
+axios@^1.6.0:
   version "1.6.7"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.7.tgz#7b48c2e27c96f9c68a2f8f31e2ab19f59b06b0a7"
   integrity sha512-/hDJGff6/c7u0hDkvkGxR/oy6CbCs8ziCsC7SqmhjfozqiJGc8Z11wrv9z9lYfY4K8l+H9TpjcMDX0xOZmx+RA==
