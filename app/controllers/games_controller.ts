@@ -1,5 +1,6 @@
 import type { HttpContext } from '@adonisjs/core/http'
 
+import World from '#models/world'
 import Character from '#models/character'
 
 export default class GamesController {
@@ -25,12 +26,23 @@ export default class GamesController {
       return inertia.location('/characters')
     }
 
+    const characterLevel = character.level
+
+    const world = await World.query()
+      .whereRaw("requirements->>'level' <= ?", [characterLevel])
+      .where('worlds.is_active', true)
+      .orderByRaw("worlds.requirements->>'level'" + ' DESC')
+      .preload('itemLists', (itemListsQuery) => {
+        itemListsQuery.preload('items')
+      })
+
     return inertia.render(
       'private/game',
       {
         character,
         leaderboard: await characters,
         properties: characterProperties,
+        world,
       },
       {
         meta: {
