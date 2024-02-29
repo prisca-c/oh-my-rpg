@@ -845,10 +845,10 @@
     youch "^3.3.3"
     youch-terminal "^2.2.3"
 
-"@japa/plugin-adonisjs@^2.0.1":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@japa/plugin-adonisjs/-/plugin-adonisjs-2.0.3.tgz#a62649b6de6304da1ed5e7346ca167300dd21e6f"
-  integrity sha512-karUZq/trLR1/3lGvrNbcf1MqML9G8SNqsLOntxuweVESwjOuci/sz600Mtz4BfmCr/2otsBbmTI7XfKoa+qfg==
+"@japa/plugin-adonisjs@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@japa/plugin-adonisjs/-/plugin-adonisjs-3.0.0.tgz#9842368dcb74998bcf2959a8c7b5589a50c0509e"
+  integrity sha512-gw92tnOlNeVuZoI/ysX/AW9AZdACd5cm50Jpa+dUPQ7VJU7J7PQCNGhp3FF98h7czdGvw8KJvszr/grr3SENEA==
 
 "@japa/runner@^3.1.0":
   version "3.1.1"
