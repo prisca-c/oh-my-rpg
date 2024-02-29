@@ -136,11 +136,11 @@
     split-lines "^3.0.0"
 
 "@adonisjs/eslint-config@^1.1.9":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@adonisjs/eslint-config/-/eslint-config-1.2.1.tgz#ac4a12a9bf61b5514731305db949185c0ce9950c"
-  integrity sha512-kCGvnLcRWyw21YVEnka1TDNquJKrqkY6K7EENxM6tWwoHUyn0j99ssX4+Hv3d2UVvVezcC4KF1l8YZKzLqlgjA==
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@adonisjs/eslint-config/-/eslint-config-1.2.2.tgz#90c63d7895ff73c9b1d9c6f242218f11714d1b80"
+  integrity sha512-RempMUWWNJjuCYgxC93eeQUC+1cuzYzF/7ijdEIiVefkZ1vqZW+xOHMdzBqJMq9wly3MCvxUob6SiNg06CffJg==
   dependencies:
-    "@adonisjs/eslint-plugin" "1.2.1"
+    "@adonisjs/eslint-plugin" "1.2.2"
     "@typescript-eslint/eslint-plugin" "^6.16.0"
     "@typescript-eslint/parser" "^6.16.0"
     eslint-config-prettier "^8.10.0"
@@ -149,7 +149,14 @@
     eslint-plugin-unicorn "^47.0.0"
     jsonc-eslint-parser "^2.4.0"
 
-"@adonisjs/eslint-plugin@1.2.1", "@adonisjs/eslint-plugin@^1.1.8":
+"@adonisjs/eslint-plugin@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@adonisjs/eslint-plugin/-/eslint-plugin-1.2.2.tgz#41ac1b3555ba451c6b36351c2c56a043fcb7a22b"
+  integrity sha512-EKMobeIy+eaLPVj6QPC2RIC55yU9HPPsIo+GmF0bdFJh3gsmx/qwL1i5FhoaQCOG7dgm03ejh1P5PrE+KejKdg==
+  dependencies:
+    "@typescript-eslint/utils" "^6.16.0"
+
+"@adonisjs/eslint-plugin@^1.1.8":
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/@adonisjs/eslint-plugin/-/eslint-plugin-1.2.1.tgz#2cd7ddb2347e02868cce1d969391fdc5b571fc50"
   integrity sha512-dwL0x5An5n/q1sy4ZL3eUqqTGlTJKn/Z8m53m7/DpAHtvq4QZTaxUZ3rF5WgnNiI5Q8+wyc/JcQ+lvQ4T0vH+A==
@@ -1496,9 +1503,9 @@
   integrity sha512-WZLiwShhwLRmeV6zH+GkbOFT6Z6VklCItrDioxUnv+u4Ll+8vKeFySoFyK/0ctcRpOmwAicELfmys1sDc/Rw+A==
 
 "@types/semver@^7.5.0":
-  version "7.5.6"
-  resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.5.6.tgz#c65b2bfce1bec346582c07724e3f8c1017a20339"
-  integrity sha512-dn1l8LaMea/IjDoHNd9J52uBbInB796CDffS6VdIxvqYCPSG0V0DzHp76GpaWnlhg88uYyPbXCDIowa86ybd5A==
+  version "7.5.8"
+  resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.5.8.tgz#8268a8c57a3e4abd25c165ecd36237db7948a55e"
+  integrity sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==
 
 "@types/validator@^13.11.8":
   version "13.11.8"
@@ -3359,9 +3366,9 @@ has-symbols@^1.0.3:
   integrity sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==
 
 hasown@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/hasown/-/hasown-2.0.0.tgz#f4c513d454a57b7c7e1650778de226b11700546c"
-  integrity sha512-vUptKVTpIJhcczKBbgnS+RtcuYMB8+oNzPK2/Hp3hanz8JmpATdmmgLgSaadVREkDm+e2giHwY3ZRkyjSIDDFA==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/hasown/-/hasown-2.0.1.tgz#26f48f039de2c0f8d3356c223fb8d50253519faa"
+  integrity sha512-1/th4MHjnwncwXsIW6QMzlvYL9kG5e/CpVvLRZe4XPa8TOUNbCELqmvhDmnkNsAjwaG4+I8gJJL0JBvTTLO9qA==
   dependencies:
     function-bind "^1.1.2"
 
@@ -5207,9 +5214,9 @@ spdx-correct@^3.0.0:
     spdx-license-ids "^3.0.0"
 
 spdx-exceptions@^2.1.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/spdx-exceptions/-/spdx-exceptions-2.4.0.tgz#c07a4ede25b16e4f78e6707bbd84b15a45c19c1b"
-  integrity sha512-hcjppoJ68fhxA/cjbN4T8N6uCUejN8yFw69ttpqtBeCbF3u13n7mb31NB9jKwGTTWWnt9IbRA/mf1FprYS8wfw==
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/spdx-exceptions/-/spdx-exceptions-2.5.0.tgz#5d607d27fc806f66d7b64a766650fa890f04ed66"
+  integrity sha512-PiU42r+xO4UbUS1buo3LPJkjlO7430Xn5SVAhdpzzsPHsjbYVflnnFdATgabnLude+Cqu25p6N+g2lw/PFsa4w==
 
 spdx-expression-parse@^3.0.0:
   version "3.0.1"
@@ -5228,9 +5235,9 @@ spdx-expression-parse@^4.0.0:
     spdx-license-ids "^3.0.0"
 
 spdx-license-ids@^3.0.0:
-  version "3.0.16"
-  resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.16.tgz#a14f64e0954f6e25cc6587bd4f392522db0d998f"
-  integrity sha512-eWN+LnM3GR6gPu35WxNgbGl8rmY1AEmoMDvL/QD6zYmPWgywxWqJWNdLGT+ke8dKNWrcYgYjPpG5gbTfghP8rw==
+  version "3.0.17"
+  resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.17.tgz#887da8aa73218e51a1d917502d79863161a93f9c"
+  integrity sha512-sh8PWc/ftMqAAdFiBu6Fy6JUOYjqDJBJvIhpfDMyHrr0Rbp5liZqd4TjtQ/RgfLjKFZb+LMx5hpml5qOWy0qvg==
 
 split-lines@^3.0.0:
   version "3.0.0"
@@ -5531,9 +5538,9 @@ truncatise@^0.0.8:
   integrity sha512-cXzueh9pzBCsLzhToB4X4gZCb3KYkrsAcBAX97JnazE74HOl3cpBJYEV7nabHeG/6/WXCU5Yujlde/WPBUwnsg==
 
 ts-api-utils@^1.0.1:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/ts-api-utils/-/ts-api-utils-1.2.0.tgz#48c31073e7ae7868d27ffabef993a2de8c2b006f"
-  integrity sha512-d+3WxW4r8WQy2cZWpNRPPGExX8ffOLGcIhheUANKbL5Sqjbhkneki76fRAWeXkaslV2etTb4tSJBSxOsH5+CJw==
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/ts-api-utils/-/ts-api-utils-1.2.1.tgz#f716c7e027494629485b21c0df6180f4d08f5e8b"
+  integrity sha512-RIYA36cJn2WiH9Hy77hdF9r7oEwxAtB/TS9/S4Qd90Ap4z5FSiin5zEiTL44OII1Y3IIlEvxwxFUVgrHSZ/UpA==
 
 ts-interface-checker@^0.1.9:
   version "0.1.13"
