@@ -38,7 +38,7 @@
     "@adonisjs/auth": "9.1.1",
     "@adonisjs/core": "6.2.3",
     "@adonisjs/inertia": "^1.0.0-7",
-    "@adonisjs/lucid": "19.0.0",
+    "@adonisjs/lucid": "20.3.0",
     "@adonisjs/redis": "^8.0.1",
     "@adonisjs/session": "^7.1.1",
     "@adonisjs/shield": "^8.1.1",

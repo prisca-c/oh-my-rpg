@@ -234,16 +234,16 @@
     abstract-logging "^2.0.1"
     pino "^8.17.2"
 
-"@adonisjs/lucid@19.0.0":
-  version "19.0.0"
-  resolved "https://registry.yarnpkg.com/@adonisjs/lucid/-/lucid-19.0.0.tgz#76e7256c64136663f4caff41313f87f6c22b14f5"
-  integrity sha512-poCchuJKORlMIQ9jAL8wH7AihZjVwHWePNJo17ISbBxlFJxKr9BBAsaCePwqGQECZXXw7QLxr0fkmAWtbc8cGw==
+"@adonisjs/lucid@20.3.0":
+  version "20.3.0"
+  resolved "https://registry.yarnpkg.com/@adonisjs/lucid/-/lucid-20.3.0.tgz#0b52042f85b7e9f3e7922d04a60aa7d7051dcb07"
+  integrity sha512-z6SYk07Mtnm9Snoo49Yby5L1p6BT0c4LdEnusfsGHXufWydrjM3+S1zcj0lP3WyGxJX1i5y/iglnFaMJGLwmIg==
   dependencies:
-    "@adonisjs/presets" "^2.1.1"
-    "@faker-js/faker" "^8.3.1"
+    "@adonisjs/presets" "^2.2.5"
+    "@faker-js/faker" "^8.4.1"
     "@poppinss/hooks" "^7.2.2"
     "@poppinss/macroable" "^1.0.1"
-    "@poppinss/utils" "^6.7.0"
+    "@poppinss/utils" "^6.7.2"
     fast-deep-equal "^3.1.3"
     igniculus "^1.5.0"
     kleur "^4.1.5"
@@ -254,10 +254,17 @@
     slash "^5.1.0"
     tarn "^3.0.2"
 
-"@adonisjs/presets@^2.1.1", "@adonisjs/presets@^2.2.3":
+"@adonisjs/presets@^2.2.3":
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/@adonisjs/presets/-/presets-2.2.4.tgz#592780e12a8b2d4d3c39121f53a3f1a381c57f59"
   integrity sha512-bYciFKma/M2JkKR2bxg3A9/oNGGIXgGNLatgvGVSxCJvAZ5LRkcPsdCr+n0rruAmY/BedUrhAV4b82UyDVxBEg==
+  dependencies:
+    "@poppinss/utils" "^6.7.1"
+
+"@adonisjs/presets@^2.2.5":
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/@adonisjs/presets/-/presets-2.2.5.tgz#d994e50a48ec00e6388a10ea26cd40d92422483c"
+  integrity sha512-VgVU0b4WkRAAvn4GKlDAicfneu9s1StcviF5JbTwFkvzrz2AR3RIPzES2DeLvQTYXRq67RIxJWyGEKlJN7WTwA==
   dependencies:
     "@poppinss/utils" "^6.7.1"
 
@@ -753,10 +760,10 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.0.tgz#a5417ae8427873f1dd08b70b3574b453e67b5f7f"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
-"@faker-js/faker@^8.3.1":
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-8.4.0.tgz#dc09924ee5fa6438eaaa49d0a8820c64d2f8518f"
-  integrity sha512-htW87352wzUCdX1jyUQocUcmAaFqcR/w082EC8iP/gtkF0K+aKcBp0hR5Arb7dzR8tQ1TrhE9DNa5EbJELm84w==
+"@faker-js/faker@^8.4.1":
+  version "8.4.1"
+  resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-8.4.1.tgz#5d5e8aee8fce48f5e189bf730ebd1f758f491451"
+  integrity sha512-XQ3cU+Q8Uqmrbf2e0cIC/QN43sTBSC8KF12u29Mb47tWrt2hAgBXSgpZMj4Ao8Uk0iJcU99QsOCaIL8934obCg==
 
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
