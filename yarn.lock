@@ -36,9 +36,9 @@
     tempura "^0.4.0"
 
 "@adonisjs/assembler@^7.1.1":
-  version "7.2.1"
-  resolved "https://registry.yarnpkg.com/@adonisjs/assembler/-/assembler-7.2.1.tgz#5171c476e9ac6fe0c457bd6905be52420ce22bcc"
-  integrity sha512-+GrxAzoBDndtVwDGXE4rg0D3bj0uJjfrLrYevGrat3RCh84xKatsnEGIz+y4I4pPqZl3IFSFWM/S2QbQjkVOZw==
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/@adonisjs/assembler/-/assembler-7.2.3.tgz#eb60394431e5ce26ef675794896169cbc1b97075"
+  integrity sha512-+qmqukeksDs08YYuydmroNX/HqLUXNC9odgdkfFSA0ivNcMWDjOp+jQYHECHwNqQfVOeSL+MLu/UQvJMq2mg4A==
   dependencies:
     "@adonisjs/env" "^5.0.1"
     "@antfu/install-pkg" "^0.3.1"
