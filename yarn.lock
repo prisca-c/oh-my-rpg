@@ -262,9 +262,9 @@
     "@poppinss/utils" "^6.7.1"
 
 "@adonisjs/prettier-config@^1.1.9":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@adonisjs/prettier-config/-/prettier-config-1.2.1.tgz#6fda45848d5582e303fb65061e4f9fef2af7ec94"
-  integrity sha512-lE9vJNKvknB+RO7uf11C2aT4nPjCxrP6IqPDjVu3HU7qy1VPY1e44SEsxdCOvOm7aFbv9hRV8ZN7sOl37Wa8ww==
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@adonisjs/prettier-config/-/prettier-config-1.2.2.tgz#71b437274c2caee7c519c8f22c3d128101b5baf5"
+  integrity sha512-JM8+btOpE/9BVyKcUCh+8dGlUWQgurtQ4ih28sMDu7/+CcsnYEWX5M5+dYN36dDH6Ud9k552kWK3qIIr4teSTQ==
 
 "@adonisjs/redis@^8.0.1":
   version "8.0.1"
