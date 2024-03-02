@@ -282,10 +282,10 @@
     vary "^1.1.2"
     youch "^3.3.3"
 
-"@adonisjs/inertia@^1.0.0-11":
-  version "1.0.0-11"
-  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.0.0-11.tgz#7ad9268b7c5987c091855e6d15f99266b3c678e9"
-  integrity sha512-2ndUd6/WhgZygi13BPjs7WamoVK/Qwh+WlFnX3aSotSYZWhTBXeq1kWDKKSoPsqdw1SJac7lsYNtm0omXEBtfw==
+"@adonisjs/inertia@^1.0.0-12":
+  version "1.0.0-12"
+  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.0.0-12.tgz#09117207541e50175b15a5bca71adecc5a0f6d1d"
+  integrity sha512-5e1DdsM7ABXkIA6ajwF80Rr1ioaYUgTfi6Dy5sVJY95EAVXWXsXheRv1I97z47mFjSFgSwpR2Qeum9pOXhyBjA==
   dependencies:
     "@poppinss/utils" "^6.7.2"
     crc-32 "^1.2.2"
@@ -397,10 +397,10 @@
     edge-error "^4.0.1"
     vite-plugin-restart "^0.4.0"
 
-"@adonisjs/vite@^3.0.0-3":
-  version "3.0.0-3"
-  resolved "https://registry.yarnpkg.com/@adonisjs/vite/-/vite-3.0.0-3.tgz#1d54c947bc4b2d0b0510226300008281960c5cd6"
-  integrity sha512-BKHXuE/XGyvv3j9mBi1KSINOlgoV+eFIHrM+6oLJaQyNuyXCK8vrsLHwPyid/75s9yzcJlFtW5m8lPNSVqGThQ==
+"@adonisjs/vite@^3.0.0-4":
+  version "3.0.0-4"
+  resolved "https://registry.yarnpkg.com/@adonisjs/vite/-/vite-3.0.0-4.tgz#8d87fefa16b868f9789a86b29ef1c92d08ca0dca"
+  integrity sha512-qNmM0erD5U1ycVnPR+Zbfw0g0z8UAPKyDPXUdtAmqUbI8iD4FzBo3YoO4doaCtcg4GBpwywdskpq5E7AyFwMMw==
   dependencies:
     "@poppinss/utils" "^6.7.2"
     "@vavite/multibuild" "^4.1.1"

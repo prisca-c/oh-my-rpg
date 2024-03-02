@@ -5,7 +5,7 @@ import { createInertiaApp } from '@inertiajs/react'
 import PublicLayout from '@/layouts/public_layout'
 import PrivateLayout from '@/layouts/private_layout'
 
-export default function render(page) {
+export default function render(page: any) {
   return createInertiaApp({
     page,
     render: ReactDOMServer.renderToString,
