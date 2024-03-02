@@ -4,8 +4,10 @@ import { Center } from '@/components/utils'
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
-    <Center type={'grid'} heightFull>
-      {children}
-    </Center>
+    <div className={'h-screen'}>
+      <Center type={'grid'} heightFull>
+        {children}
+      </Center>
+    </div>
   )
 }

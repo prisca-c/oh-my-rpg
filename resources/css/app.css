@@ -106,3 +106,7 @@
   font-weight: 400;
   font-style: normal;
 }
+
+:root {
+  font-family: 'CreatoDisplay', sans-serif;
+}
