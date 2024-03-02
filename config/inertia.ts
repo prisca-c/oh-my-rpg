@@ -13,4 +13,8 @@ export default defineConfig({
     errors: (ctx) => ctx.session.flashMessages.get('errors'),
     user: (ctx) => ctx.auth.user,
   },
+  ssr: {
+    enabled: true,
+    entrypoint: 'resources/ssr.tsx',
+  },
 })

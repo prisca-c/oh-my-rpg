@@ -2,9 +2,15 @@ import path from 'node:path'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import adonisjs from '@adonisjs/vite/client'
+import inertia from '@adonisjs/inertia/client'
 
 export default defineConfig({
   plugins: [
+    inertia({
+      ssr: {
+        enabled: true,
+      },
+    }),
     adonisjs({
       /**
        * Entrypoints of your application. Each entrypoint will
