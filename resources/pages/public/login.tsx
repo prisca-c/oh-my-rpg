@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Typography } from '@/components/utils/'
-import { LoginForm } from '@/components/login/login_form'
+import { LoginForm } from '@/components/auth/login_form'
 
 export default function Login() {
   return (
