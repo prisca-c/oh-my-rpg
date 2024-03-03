@@ -62,6 +62,16 @@ export default class Item extends BaseModel {
   declare itemLists: ManyToMany<typeof ItemList>
 
   @computed()
+  get dropChance(): number {
+    return this.$extras.pivot_drop_chance
+  }
+
+  @computed()
+  get onlyBoss(): boolean {
+    return this.$extras.pivot_only_boss
+  }
+
+  @computed()
   get properties(): object {
     return ItemProperty.findBy('entityId', this.id)
   }
