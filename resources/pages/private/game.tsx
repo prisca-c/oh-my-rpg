@@ -1,8 +1,11 @@
+import { useEffect } from 'react'
+import type World from '~/app/models/world'
 import type Character from '~/app/models/character'
 import type EntityProperty from '~/app/models/entity_property'
 
 import { Container } from '@/components/utils'
 import { Main } from '@/components/game/main/main'
+import { useWorldsStore } from '@/store/use_worlds_store'
 import { Leaderboard } from '@/components/game/leaderboard'
 import { CharacterInfos } from '@/components/game/character_infos'
 
@@ -10,9 +13,15 @@ type GameProps = {
   character: Character
   leaderboard: Character[]
   properties: EntityProperty
+  world: World[]
 }
 
-export default function Game({ character, leaderboard, properties }: GameProps) {
+export default function Game(props: GameProps) {
+  const { character, leaderboard, properties, world } = props
+  useEffect(() => {
+    useWorldsStore.setState({ worlds: world })
+  }, [world])
+
   return (
     <Container
       layout={'flex'}
