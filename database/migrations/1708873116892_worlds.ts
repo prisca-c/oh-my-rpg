@@ -15,6 +15,7 @@ export default class extends BaseSchema {
         .onDelete('CASCADE')
         .notNullable()
       table.boolean('is_active').defaultTo(false)
+      table.string('image').defaultTo(null)
       table.jsonb('requirements').notNullable()
       table.integer('max_drop').notNullable()
 
@@ -31,7 +32,6 @@ export default class extends BaseSchema {
         {
           name: 'Oh no! Goblins!',
           description: 'A world filled with goblins!',
-          is_event: false,
           is_active: true,
           requirements: {
             level: 1,

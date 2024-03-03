@@ -8,7 +8,6 @@ import { BaseModel, beforeCreate, column, hasOne, manyToMany } from '@adonisjs/l
 import Event from '#models/event'
 import ItemList from '#models/item_list'
 import Difficulty from '#models/difficulty'
-import type { EventId } from '#models/event'
 import type { DifficultyId } from '#models/difficulty'
 
 export type WorldId = Opaque<'worldId', string>
@@ -24,16 +23,13 @@ export default class World extends BaseModel {
   declare description: string
 
   @column()
-  declare isEvent: boolean
-
-  @column()
-  declare eventID: EventId | null
-
-  @column()
   declare isActive: boolean
 
   @column()
   declare requirements: object
+
+  @column()
+  declare image: string | null
 
   @column()
   declare maxDrop: number
