@@ -283,14 +283,15 @@
     youch "^3.3.3"
 
 "@adonisjs/inertia@^1.0.0-12":
-  version "1.0.0-12"
-  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.0.0-12.tgz#09117207541e50175b15a5bca71adecc5a0f6d1d"
-  integrity sha512-5e1DdsM7ABXkIA6ajwF80Rr1ioaYUgTfi6Dy5sVJY95EAVXWXsXheRv1I97z47mFjSFgSwpR2Qeum9pOXhyBjA==
+  version "1.0.0-13"
+  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.0.0-13.tgz#2a005c50f5a7a1d5e686ea02e9ca2948bb06bc86"
+  integrity sha512-75D9lVj/LPdrqBs4/wN19IuVXLoGES/SD0wHZVXCDAbbZ9MSRWnszf0+oPDAeINvnM5l1/CbWQw0UCqaYX8h2g==
   dependencies:
     "@poppinss/utils" "^6.7.2"
     crc-32 "^1.2.2"
     edge-error "^4.0.1"
     html-entities "^2.4.0"
+    locate-path "^7.2.0"
     qs "^6.11.2"
 
 "@adonisjs/logger@^6.0.1":
@@ -4000,7 +4001,7 @@ locate-path@^6.0.0:
   dependencies:
     p-locate "^5.0.0"
 
-locate-path@^7.1.0:
+locate-path@^7.1.0, locate-path@^7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-7.2.0.tgz#69cb1779bd90b35ab1e771e1f2f89a202c2a8a8a"
   integrity sha512-gvVijfZvn7R+2qyPX8mAuKcFGDf6Nc61GdvGafQsHL0sBIxfKzA+usWn4GFC/bk+QdwPUD4kWFJLhElipq+0VA==
