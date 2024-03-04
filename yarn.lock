@@ -283,9 +283,9 @@
     youch "^3.3.3"
 
 "@adonisjs/inertia@^1.0.0-12":
-  version "1.0.0-13"
-  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.0.0-13.tgz#2a005c50f5a7a1d5e686ea02e9ca2948bb06bc86"
-  integrity sha512-75D9lVj/LPdrqBs4/wN19IuVXLoGES/SD0wHZVXCDAbbZ9MSRWnszf0+oPDAeINvnM5l1/CbWQw0UCqaYX8h2g==
+  version "1.0.0-14"
+  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.0.0-14.tgz#cd29b0a1326cc449a8b5128ec66936efd83ca4e7"
+  integrity sha512-qRm3Bu9iMrq+nfSQL800oBoHNrmE9N+Fkdt6MTMegW9Od08sKkaocOB6ALyFw8q6R2BpPpGZ8Ap10kaR9YKWXA==
   dependencies:
     "@poppinss/utils" "^6.7.2"
     crc-32 "^1.2.2"
@@ -3517,9 +3517,9 @@ hosted-git-info@^2.1.4:
   integrity sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==
 
 html-entities@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-2.4.0.tgz#edd0cee70402584c8c76cc2c0556db09d1f45061"
-  integrity sha512-igBTJcNNNhvZFRtm8uA6xMY6xYleeDwn3PeBCkDz7tHttv4F2hsDI2aPgNERWzvRcNYHNT3ymRaQzllmXj4YsQ==
+  version "2.5.2"
+  resolved "https://registry.yarnpkg.com/html-entities/-/html-entities-2.5.2.tgz#201a3cf95d3a15be7099521620d19dfb4f65359f"
+  integrity sha512-K//PSRMQk4FZ78Kyau+mZurHn3FH0Vwr+H36eE0rPbeYkRRi9YxceYPhuN60UwWorxyKHhqoAJl2OFKa4BVtaA==
 
 http-errors@2.0.0, http-errors@^2.0.0:
   version "2.0.0"
