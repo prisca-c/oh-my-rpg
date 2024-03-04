@@ -399,9 +399,9 @@
     vite-plugin-restart "^0.4.0"
 
 "@adonisjs/vite@^3.0.0-4":
-  version "3.0.0-4"
-  resolved "https://registry.yarnpkg.com/@adonisjs/vite/-/vite-3.0.0-4.tgz#8d87fefa16b868f9789a86b29ef1c92d08ca0dca"
-  integrity sha512-qNmM0erD5U1ycVnPR+Zbfw0g0z8UAPKyDPXUdtAmqUbI8iD4FzBo3YoO4doaCtcg4GBpwywdskpq5E7AyFwMMw==
+  version "3.0.0-6"
+  resolved "https://registry.yarnpkg.com/@adonisjs/vite/-/vite-3.0.0-6.tgz#9440ac4b3fe806fa6562449ca894911dfcbe828f"
+  integrity sha512-b5t3Zl/TD8/GOt6T/7yw184l27kKJ/hJe6yonSeqvBypXLAOMx/fKEsasboI2W6BUz1BCO5M2elfaKdwpbMAHA==
   dependencies:
     "@poppinss/utils" "^6.7.2"
     "@vavite/multibuild" "^4.1.1"
