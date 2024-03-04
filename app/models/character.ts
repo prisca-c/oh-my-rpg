@@ -25,6 +25,9 @@ export default class Character extends BaseModel {
   declare entityPropertyId: EntityPropertyId
 
   @column()
+  declare inventorySize: number
+
+  @column()
   declare level: number
 
   @column()

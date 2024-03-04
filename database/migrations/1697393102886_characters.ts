@@ -9,6 +9,7 @@ export default class extends BaseSchema {
       table.string('name').notNullable()
       table.integer('currency').notNullable().defaultTo(0)
       table.integer('level').notNullable().defaultTo(1)
+      table.integer('inventory_size').notNullable().defaultTo(10)
       table.integer('experience').notNullable().defaultTo(0)
       table.integer('total_experience').notNullable().defaultTo(0)
       table.dateTime('lucky_charm').nullable()
