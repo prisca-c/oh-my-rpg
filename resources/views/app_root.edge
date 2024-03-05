@@ -24,8 +24,7 @@
   <meta name="theme-color" content="#ffffff">
 
   @viteReactRefresh()
-  @vite(['resources/app.tsx'])
-  @vite(['resources/css/app.css'])
+  @vite(['resources/app.tsx', `resources/pages/${page.component}.tsx`])
   @inertiaHead()
 </head>
 

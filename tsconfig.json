@@ -23,5 +23,5 @@
     "isolatedModules": false
   },
   "include": ["./**/*"],
-  "exclude": ["./resources/**/*"]
+  "exclude": ["resources/**/*"]
 }
