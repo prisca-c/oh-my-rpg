@@ -283,9 +283,9 @@
     youch "^3.3.3"
 
 "@adonisjs/inertia@^1.0.0-12":
-  version "1.0.0-15"
-  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.0.0-15.tgz#6fbf1a63e8599f62dec8ee110dcf3dbd2dfd4ad1"
-  integrity sha512-0F71Jmg4pHUvfu7tq8XOHQrk49/pTIypAnX1TXALB9YCvpoNFFMPxuLdExMdVgKn+E/oljS6ojtzsi8rtNzJeg==
+  version "1.0.0-17"
+  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.0.0-17.tgz#4c5e1ea6c0c691c3e6095e97c71fc9b30d7e264e"
+  integrity sha512-sLZ6kGE+ncwnrHxzJ29PiYW6dETMmTRF27qdWRNIw3gJ+v9vRwdjuWlafEsT1qfuuxOcWUq+3BVlxoREW+jNQg==
   dependencies:
     "@poppinss/utils" "^6.7.2"
     crc-32 "^1.2.2"
