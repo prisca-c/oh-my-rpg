@@ -9,6 +9,7 @@ import Event from '#models/event'
 import ItemList from '#models/item_list'
 import Difficulty from '#models/difficulty'
 import type { DifficultyId } from '#models/difficulty'
+import type { WorldRequirements } from '#types/world_requirements'
 
 export type WorldId = Opaque<'worldId', string>
 
@@ -26,7 +27,7 @@ export default class World extends BaseModel {
   declare isActive: boolean
 
   @column()
-  declare requirements: object
+  declare requirements: WorldRequirements
 
   @column()
   declare image: string | null

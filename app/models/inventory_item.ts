@@ -8,6 +8,7 @@ import Item from '#models/item'
 import Character from '#models/character'
 import type { ItemId } from '#models/item'
 import ItemSuffix from '#models/item_suffix'
+import type { Position } from '#types/position'
 import type { CharacterId } from '#models/character'
 import type { ItemSuffixId } from '#models/item_suffix'
 
@@ -36,7 +37,7 @@ export default class InventoryItem extends BaseModel {
   declare isEquipped: boolean
 
   @column()
-  declare position: object
+  declare position: Position
 
   @column()
   declare page: number
