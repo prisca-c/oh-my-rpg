@@ -1,7 +1,7 @@
 import type { HttpContext } from '@adonisjs/core/http'
 
-import World from '#models/world'
 import Character from '#models/character'
+import { GetWorlds } from '#features/world/get_worlds'
 
 export default class GamesController {
   async index({ params, auth, session, inertia }: HttpContext) {
@@ -15,6 +15,8 @@ export default class GamesController {
       return inertia.location('/characters')
     }
 
+    session.put('characterId', id)
+
     await character.load('entityProperties')
     const characterProperties = character.entityProperties
     const characters = Character.query()
@@ -26,15 +28,7 @@ export default class GamesController {
       return inertia.location('/characters')
     }
 
-    const characterLevel = character.level
-
-    const world = await World.query()
-      .whereRaw("requirements->>'level' <= ?", [characterLevel])
-      .where('worlds.is_active', true)
-      .orderByRaw("worlds.requirements->>'level'" + ' DESC')
-      .preload('itemLists', (itemListsQuery) => {
-        itemListsQuery.preload('items')
-      })
+    const worlds = await new GetWorlds().handle(character)
 
     return inertia.render(
       'private/game',
@@ -42,7 +36,7 @@ export default class GamesController {
         character,
         leaderboard: await characters,
         properties: characterProperties,
-        world,
+        worlds,
       },
       {
         meta: {
