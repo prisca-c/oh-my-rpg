@@ -1,9 +1,10 @@
 import type Item from '#models/item'
 import { Numbers } from '#utils/numbers'
-import { ItemRarity, itemRarityDropChance } from '#enums/item_rarity.enum'
+import ItemRarity from '#models/item_rarity'
+import { ItemRarity as ItemRarityEnum, itemRarityDropChance } from '#enums/item_rarity.enum'
 
 export class Loot {
-  handle(items: Item[]): Item {
+  async handle(items: Item[]): Promise<Item> {
     const rarity = this.#pickRarity()
     return this.#pickItem(rarity, items)
   }
@@ -19,11 +20,15 @@ export class Loot {
       }
     }
 
-    return ItemRarity.COMMON
+    return ItemRarityEnum.COMMON
   }
 
   #pickItem(rarity: keyof typeof itemRarityDropChance, items: Item[]): Item {
-    const filteredItems = items.filter((item) => item.itemRarity.name === rarity)
+    const filteredItems = items.filter(async (item) => {
+      const itemRarity = await ItemRarity.findOrFail(item.itemRarityId)
+      return itemRarity.name === rarity
+    })
+
     const item = filteredItems[Numbers.random(0, items.length - 1)]
 
     return item
