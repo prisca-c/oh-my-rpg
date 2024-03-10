@@ -13,14 +13,15 @@ type GameProps = {
   character: Character
   leaderboard: Character[]
   properties: EntityProperty
-  world: World[]
+  worlds: World[]
 }
 
 export default function Game(props: GameProps) {
-  const { character, leaderboard, properties, world } = props
+  const { character, leaderboard, properties, worlds } = props
+
   useEffect(() => {
-    useWorldsStore.setState({ worlds: world })
-  }, [world])
+    useWorldsStore.setState({ worlds })
+  }, [worlds])
 
   return (
     <Container
