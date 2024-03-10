@@ -8,7 +8,7 @@ export default class extends BaseSchema {
       table.uuid('id').defaultTo(this.raw('gen_random_uuid()')).primary()
       table.uuid('item_id').references('id').inTable('items').onDelete('CASCADE')
       table.uuid('item_list_id').references('id').inTable('item_lists').onDelete('CASCADE')
-      table.float('drop_chance').notNullable()
+      table.float('drop_chance').nullable().defaultTo(null)
       table.boolean('only_boss').defaultTo(false)
 
       table.timestamp('created_at')
