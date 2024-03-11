@@ -1,5 +1,3 @@
-import logger from '@adonisjs/core/services/logger'
-
 import type Item from '#models/item'
 import ItemRarity from '#models/item_rarity'
 
