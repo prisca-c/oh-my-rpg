@@ -1,11 +1,12 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
 import type { Opaque } from '@poppinss/utils/types'
-import type { HasOne } from '@adonisjs/lucid/types/relations'
-import { BaseModel, beforeCreate, column, hasOne } from '@adonisjs/lucid/orm'
+import type { HasMany, HasOne } from '@adonisjs/lucid/types/relations'
+import { BaseModel, beforeCreate, column, hasMany, hasOne } from '@adonisjs/lucid/orm'
 
 import User from '#models/user'
 import type { UserId } from '#models/user'
+import InventoryItem from '#models/inventory_item'
 import EntityProperty from '#models/entity_property'
 import type { EntityPropertyId } from '#models/entity_property'
 
@@ -90,4 +91,7 @@ export default class Character extends BaseModel {
     foreignKey: 'id',
   })
   declare entityProperties: HasOne<typeof EntityProperty>
+
+  @hasMany(() => InventoryItem)
+  declare inventory: HasMany<typeof InventoryItem>
 }
