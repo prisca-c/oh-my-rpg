@@ -5,7 +5,7 @@ export const Main = () => {
   const worlds = useWorldsStore((state) => state.worlds)
   const getItem = async (worldId: string) => {
     const res = await fetch(`/world/loot/${worldId}`)
-    return await res.json()
+    return res
   }
 
   return (
