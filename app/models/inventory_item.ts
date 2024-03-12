@@ -1,8 +1,8 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
 import type { Opaque } from '@poppinss/utils/types'
-import type { HasOne } from '@adonisjs/lucid/types/relations'
-import { BaseModel, beforeCreate, column, hasOne } from '@adonisjs/lucid/orm'
+import type { BelongsTo } from '@adonisjs/lucid/types/relations'
+import { BaseModel, beforeCreate, belongsTo, column } from '@adonisjs/lucid/orm'
 
 import Item from '#models/item'
 import Character from '#models/character'
@@ -31,7 +31,7 @@ export default class InventoryItem extends BaseModel {
   declare hasSuffix: boolean
 
   @column()
-  declare itemSuffixId: ItemSuffixId
+  declare itemSuffixId: ItemSuffixId | null
 
   @column()
   declare isEquipped: boolean
@@ -53,12 +53,12 @@ export default class InventoryItem extends BaseModel {
     inventoryItem.id = randomUUID() as InventoryItemId
   }
 
-  @hasOne(() => Character)
-  declare character: HasOne<typeof Character>
+  @belongsTo(() => Character)
+  declare character: BelongsTo<typeof Character>
 
-  @hasOne(() => Item)
-  declare item: HasOne<typeof Item>
+  @belongsTo(() => Item)
+  declare item: BelongsTo<typeof Item>
 
-  @hasOne(() => ItemSuffix)
-  declare itemSuffix: HasOne<typeof ItemSuffix>
+  @belongsTo(() => ItemSuffix)
+  declare itemSuffix: BelongsTo<typeof ItemSuffix>
 }

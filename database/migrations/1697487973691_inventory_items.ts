@@ -10,7 +10,12 @@ export default class extends BaseSchema {
       table.uuid('item_id').references('id').inTable('items').onDelete('CASCADE')
       table.integer('quantity').notNullable()
       table.boolean('has_suffix').defaultTo(false)
-      table.uuid('item_suffix_id').references('id').inTable('item_suffixes').onDelete('CASCADE')
+      table
+        .uuid('item_suffix_id')
+        .references('id')
+        .nullable()
+        .inTable('item_suffixes')
+        .onDelete('CASCADE')
       table.boolean('is_equipped').defaultTo(false)
       table.jsonb('position').notNullable()
       table.integer('page').notNullable()
