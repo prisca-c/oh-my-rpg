@@ -9,7 +9,10 @@ import ItemList from '#models/item_list'
 import ItemRarity from '#models/item_rarity'
 import ItemCategory from '#models/item_category'
 import ItemItemList from '#models/item_item_list'
+import type { ItemListId } from '#models/item_list'
 import EntityProperty from '#models/entity_property'
+import type { ItemItemListId } from '#models/item_item_list'
+import type { EntityPropertyId } from '#models/entity_property'
 import { ItemRarity as ItemRarityEnum } from '#enums/item_rarity.enum'
 
 export default class extends BaseSeeder {
@@ -43,7 +46,7 @@ export default class extends BaseSeeder {
     for (const item of itemBaseList) {
       const entityProperty = await EntityProperty.create({
         ...entityPropertyBase,
-        id: randomUUID(),
+        id: randomUUID() as EntityPropertyId,
       })
       Object.assign(item, { id: randomUUID(), entityPropertyId: entityProperty.id })
     }
@@ -106,14 +109,14 @@ export default class extends BaseSeeder {
 
     const items = await Item.createMany(itemsArray)
     await ItemList.create({
-      id: randomUUID(),
+      id: randomUUID() as ItemListId,
       name: 'First Age Items',
       createdAt: DateTime.now(),
       updatedAt: DateTime.now(),
     }).then(async (itemList) => {
       for (const item of items) {
         await ItemItemList.create({
-          id: randomUUID(),
+          id: randomUUID() as ItemItemListId,
           itemId: item.id,
           itemListId: itemList.id,
           dropChance: 0.1,
@@ -124,8 +127,7 @@ export default class extends BaseSeeder {
       }
 
       const world = await World.findBy('name', 'Oh no! Goblins!')
-      world!.itemListId = itemList.id
-      await world!.save()
+      await world!.linkToItemList(itemList)
     })
   }
 }
