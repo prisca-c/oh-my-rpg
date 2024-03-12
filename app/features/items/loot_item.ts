@@ -3,7 +3,7 @@ import { Numbers } from '#utils/numbers'
 import { FilterItemByRarity } from '#features/items/filter_item_by_rarity'
 import { ItemRarity as ItemRarityEnum, itemRarityDropChance } from '#enums/item_rarity.enum'
 
-export class Loot {
+export class LootItem {
   async handle(items: Item[]): Promise<Item | null> {
     const rarity = this.#pickRarity()
     return this.#pickItem(rarity, items)
