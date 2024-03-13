@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "jsx": "react-jsx",
-    "lib": ["DOM", "ESNext", "DOM.Iterable", "ES2020"],
-    "useDefineForClassFields": true,
+    "jsx": "react",
     "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "Bundler",
@@ -11,13 +8,6 @@
       "@/*": ["./*"],
       "~/*": ["../*"]
     },
-    "resolveJsonModule": true,
-    "types": ["vite/client"],
-    "strictNullChecks": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "verbatimModuleSyntax": true,
-    "skipLibCheck": true
   },
   "include": ["env.d.ts", "./**/*.ts", "./**/*.tsx"]
 }

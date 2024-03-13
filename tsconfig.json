@@ -1,8 +1,6 @@
 {
-  "extends": "@adonisjs/tsconfig/tsconfig.app.json",
+  "extends": "@adonisjs/tsconfig/tsconfig.client.json",
   "compilerOptions": {
-    "jsx": "react",
-    "emitDecoratorMetadata": false,
     "rootDir": "./",
     "module": "Node16",
     "moduleResolution": "Node16",
@@ -19,8 +17,7 @@
       "#config/*": ["./config/*.js"]
     },
     "resolveJsonModule": true,
-    "outDir": "./build",
-    "isolatedModules": false
+    "outDir": "./build"
   },
   "include": ["./**/*"],
   "exclude": ["resources/**/*"]
