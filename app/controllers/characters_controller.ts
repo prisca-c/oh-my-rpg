@@ -2,6 +2,7 @@ import type { HttpContext } from '@adonisjs/core/http'
 
 import { assert } from '#utils/assert'
 import Character from '#models/character'
+import type { UserId } from '#models/user'
 import { createCharacterValidator } from '#validators/create_character_validator'
 
 export default class CharactersController {
@@ -30,7 +31,7 @@ export default class CharactersController {
 
     await Character.create({
       name: data.name,
-      userId: data.userId,
+      userId: data.userId as UserId,
     })
 
     response.redirect('/characters')
