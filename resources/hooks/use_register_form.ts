@@ -39,7 +39,7 @@ export const useRegisterForm = (initialValues: FormFields) => {
       password: validatePassword(inputs.password),
       password_confirmation: validatePasswordConfirmation(
         inputs.password_confirmation,
-        inputs.password
+        inputs.password,
       ),
     })
   }, [inputs])

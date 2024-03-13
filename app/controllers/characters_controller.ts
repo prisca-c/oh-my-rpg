@@ -18,7 +18,7 @@ export default class CharactersController {
           title: 'Characters',
           description: 'List of your characters',
         },
-      }
+      },
     )
   }
 

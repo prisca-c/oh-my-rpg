@@ -15,7 +15,7 @@ export class LootItem {
     const rarityList = Object.keys(itemRarityDropChance).sort(
       (a, b) =>
         itemRarityDropChance[b as keyof typeof itemRarityDropChance] -
-        itemRarityDropChance[a as keyof typeof itemRarityDropChance]
+        itemRarityDropChance[a as keyof typeof itemRarityDropChance],
     )
 
     for (const rarity of rarityList) {

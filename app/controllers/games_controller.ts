@@ -43,7 +43,7 @@ export default class GamesController {
           title: 'Game',
           description: 'Game description',
         },
-      }
+      },
     )
   }
 }

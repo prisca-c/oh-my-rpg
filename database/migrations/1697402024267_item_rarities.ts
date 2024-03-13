@@ -32,7 +32,7 @@ export default class extends BaseSchema {
           name,
           created_at: new Date(),
           updated_at: new Date(),
-        }))
+        })),
       )
     })
   }

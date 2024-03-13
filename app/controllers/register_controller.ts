@@ -10,7 +10,7 @@ export default class RegisterController {
           title: 'Register',
           description: 'Register for an account',
         },
-      }
+      },
     )
   }
 }

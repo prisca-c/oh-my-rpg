@@ -7,7 +7,7 @@ export class FilterItemByRarity {
       items.map(async (item) => {
         const itemRarity = await ItemRarity.findOrFail(item.itemRarityId)
         return itemRarity.name === rarity ? item : null
-      })
+      }),
     )
 
     return list.filter((item) => item !== null)

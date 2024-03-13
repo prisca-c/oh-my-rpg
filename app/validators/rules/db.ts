@@ -83,7 +83,7 @@ async function relationCount(value: unknown, options: RelationCountOptions, fiel
     field.report(
       `The {{ field }} field has more than ${options.maxCount} related records`,
       'relationCount',
-      field
+      field,
     )
   }
 }

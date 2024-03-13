@@ -10,7 +10,7 @@ export default class LoginController {
           title: 'Login',
           description: 'Login to your account',
         },
-      }
+      },
     )
   }
 }

@@ -1,7 +1,7 @@
-import { DateTime } from 'luxon'
+import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
 import type { Opaque } from '@poppinss/utils/types'
-import { HasMany, HasOne } from '@adonisjs/lucid/types/relations'
+import type { HasMany, HasOne } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, column, hasMany, hasOne } from '@adonisjs/lucid/orm'
 
 import User, { type UserId } from '#models/user'

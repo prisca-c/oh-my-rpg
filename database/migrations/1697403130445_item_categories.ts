@@ -76,7 +76,7 @@ export default class extends BaseSchema {
           ...category,
           created_at: new Date(),
           updated_at: new Date(),
-        }))
+        })),
       )
     })
   }
