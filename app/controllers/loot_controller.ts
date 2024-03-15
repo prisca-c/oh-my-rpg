@@ -4,9 +4,9 @@ import type { HttpContext } from '@adonisjs/core/http'
 
 import World from '#models/world'
 import Character from '#models/character'
-import type GetItems from '#features/items/get_items'
-import type { LootItem } from '#features/items/loot_item'
-import type { StoreItem } from '#features/items/store_item'
+import GetItems from '#features/items/get_items'
+import { LootItem } from '#features/items/loot_item'
+import { StoreItem } from '#features/items/store_item'
 
 @inject()
 export default class LootController {
