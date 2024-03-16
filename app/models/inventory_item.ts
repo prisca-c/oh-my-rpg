@@ -37,10 +37,10 @@ export default class InventoryItem extends BaseModel {
   declare isEquipped: boolean
 
   @column()
-  declare position: Position
+  declare position: Position | null
 
   @column()
-  declare page: number
+  declare page: number | null
 
   @column.dateTime({ autoCreate: true, serializeAs: null })
   declare createdAt: DateTime

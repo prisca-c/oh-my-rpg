@@ -17,8 +17,8 @@ export default class extends BaseSchema {
         .inTable('item_suffixes')
         .onDelete('CASCADE')
       table.boolean('is_equipped').defaultTo(false)
-      table.jsonb('position').notNullable()
-      table.integer('page').notNullable()
+      table.jsonb('position').nullable()
+      table.integer('page').nullable()
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
