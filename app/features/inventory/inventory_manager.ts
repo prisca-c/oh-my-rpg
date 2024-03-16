@@ -31,7 +31,7 @@ export class InventoryManager {
 
     for (let y = 0; y < character.inventorySize * 10; y += 10) {
       for (let x = 0; x < character.inventorySize * 10; x += 10) {
-        if (this.#canItemBePlaced(items, item, character, x, y)) {
+        if (this.canItemBePlaced(items, item, character, x, y)) {
           return { x, y }
         }
       }
@@ -45,7 +45,7 @@ export class InventoryManager {
     return null
   }
 
-  #canItemBePlaced(
+  canItemBePlaced(
     items: InventoryItem[],
     item: InventoryItem,
     character: Character,
