@@ -13,9 +13,9 @@ export default class extends BaseSchema {
       table
         .uuid('item_suffix_id')
         .references('id')
-        .nullable()
         .inTable('item_suffixes')
         .onDelete('CASCADE')
+        .nullable()
       table.boolean('is_equipped').defaultTo(false)
       table.jsonb('position').nullable()
       table.integer('page').nullable()
