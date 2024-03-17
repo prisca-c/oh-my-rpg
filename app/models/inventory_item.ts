@@ -1,16 +1,20 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
 import type { Opaque } from '@poppinss/utils/types'
+import logger from '@adonisjs/core/services/logger'
 import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, belongsTo, column } from '@adonisjs/lucid/orm'
 
 import Item from '#models/item'
+import ItemBase from '#models/item_base'
 import Character from '#models/character'
 import type { ItemId } from '#models/item'
 import ItemSuffix from '#models/item_suffix'
 import type { Position } from '#types/position'
+import ItemCategory from '#models/item_category'
 import type { CharacterId } from '#models/character'
 import type { ItemSuffixId } from '#models/item_suffix'
+import { InventoryManager } from '#features/inventory/inventory_manager'
 
 export type InventoryItemId = Opaque<'inventoryItemId', string>
 
@@ -48,11 +52,6 @@ export default class InventoryItem extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true, serializeAs: null })
   declare updatedAt: DateTime
 
-  @beforeCreate()
-  static async generateId(inventoryItem: InventoryItem) {
-    inventoryItem.id = randomUUID() as InventoryItemId
-  }
-
   @belongsTo(() => Character)
   declare character: BelongsTo<typeof Character>
 
@@ -61,4 +60,40 @@ export default class InventoryItem extends BaseModel {
 
   @belongsTo(() => ItemSuffix)
   declare itemSuffix: BelongsTo<typeof ItemSuffix>
+
+  @beforeCreate()
+  static generateId(inventoryItem: InventoryItem) {
+    inventoryItem.id = randomUUID() as InventoryItemId
+  }
+
+  @beforeCreate()
+  static async setPosition(inventoryItem: InventoryItem) {
+    if (!inventoryItem.position) {
+      const character = await Character.findOrFail(inventoryItem.characterId)
+      const inventoryItems = await InventoryItem.query().where(
+        'character_id',
+        inventoryItem.characterId,
+      )
+      const inventoryManager = new InventoryManager()
+      const position = await inventoryManager.handle(character, inventoryItems, inventoryItem)
+
+      if (!position) {
+        inventoryItem.position = null
+        inventoryItem.page = null
+        return
+      }
+
+      inventoryItem.position = { x: position.x, y: position.y }
+      inventoryItem.page = position.page
+    }
+  }
+
+  async size(): Promise<{ width: number; height: number }> {
+    const item = await Item.findOrFail(this.itemId)
+    const itemBase = await ItemBase.findOrFail(item.itemBaseId)
+    const itemCategory = await ItemCategory.findOrFail(itemBase.itemCategoryId)
+    const width = itemCategory.inventorySpaceWidth
+    const height = itemCategory.inventorySpaceHeight
+    return { width, height }
+  }
 }
