@@ -369,11 +369,11 @@
     string-width "^7.1.0"
 
 "@adonisjs/session@^7.1.1":
-  version "7.1.1"
-  resolved "https://registry.yarnpkg.com/@adonisjs/session/-/session-7.1.1.tgz#32cd568d1528fdb53067d04d3b11bdd555a99d78"
-  integrity sha512-rv5lF6uEaAT3kujAEbwpVJuTfPcskjXlM8bt8OV2V6eGMQHGVczV3bErvQjW5ouHqyZiotKkCV2+7roGJdDaWw==
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@adonisjs/session/-/session-7.3.0.tgz#ecf68a5908a445d37b9ccaa0b7fefc87d875deb2"
+  integrity sha512-ntRDubmOJf8fHZY7IlXHVv4QKgGwfMsWghj9rBh9TVWLVwPeHLBnfHF3oLw25nbXM6hQTa1fPpencol71KrPnw==
   dependencies:
-    "@poppinss/utils" "^6.7.1"
+    "@poppinss/utils" "^6.7.2"
 
 "@adonisjs/shield@^8.1.1":
   version "8.1.1"
