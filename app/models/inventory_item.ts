@@ -1,7 +1,6 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
 import type { Opaque } from '@poppinss/utils/types'
-import logger from '@adonisjs/core/services/logger'
 import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, belongsTo, column } from '@adonisjs/lucid/orm'
 
