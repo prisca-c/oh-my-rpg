@@ -31,6 +31,9 @@ export default class Item extends BaseModel {
   declare description: string
 
   @column()
+  declare image: string | null
+
+  @column()
   declare level: number
 
   @column()

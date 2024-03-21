@@ -8,6 +8,7 @@ export default class extends BaseSchema {
       table.uuid('id').defaultTo(this.raw('gen_random_uuid()')).primary()
       table.string('name').notNullable()
       table.string('description').notNullable()
+      table.string('image').nullable()
       table.integer('level').notNullable()
       table.boolean('is_active').defaultTo(true)
       table.boolean('is_tradeable').defaultTo(true)

@@ -22,6 +22,9 @@ export default class ItemBase extends BaseModel {
   declare description: string
 
   @column()
+  declare image: string | null
+
+  @column()
   declare itemCategoryId: ItemCategoryId
 
   @column()
