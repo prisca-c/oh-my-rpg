@@ -21,6 +21,7 @@
   "imports": {
     "#config/*": "./config/*.js",
     "#controllers/*": "./app/controllers/*.js",
+    "#dto/*": "./app/dto/*.js",
     "#enums/*": "./enums/*.js",
     "#events/*": "./app/events/*.js",
     "#exceptions/*": "./app/exceptions/*.js",
