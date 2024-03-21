@@ -1,5 +1,4 @@
 import { inject } from '@adonisjs/core'
-import logger from '@adonisjs/core/services/logger'
 import type { HttpContext } from '@adonisjs/core/http'
 
 import World from '#models/world'
@@ -19,7 +18,6 @@ export default class LootController {
   async handle({ request, session, response }: HttpContext) {
     const characterId = session.get('characterId')
     const { id } = request.params()
-    logger.debug(session.all())
 
     if (!characterId) {
       return response.redirect().toPath('/characters')

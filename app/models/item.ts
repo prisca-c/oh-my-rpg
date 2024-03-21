@@ -1,12 +1,11 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
 import type { Opaque } from '@poppinss/utils/types'
-import type { BelongsTo, HasOne, ManyToMany } from '@adonisjs/lucid/types/relations'
+import type { BelongsTo, ManyToMany } from '@adonisjs/lucid/types/relations'
 import {
   BaseModel,
   beforeCreate,
   column,
-  hasOne,
   computed,
   manyToMany,
   belongsTo,
@@ -57,8 +56,8 @@ export default class Item extends BaseModel {
     item.id = randomUUID() as ItemId
   }
 
-  @hasOne(() => ItemBase)
-  declare itemBase: HasOne<typeof ItemBase>
+  @belongsTo(() => ItemBase)
+  declare itemBase: BelongsTo<typeof ItemBase>
 
   @belongsTo(() => ItemRarity)
   declare itemRarity: BelongsTo<typeof ItemRarity>
