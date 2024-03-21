@@ -1,13 +1,18 @@
 import type Character from '#models/character'
-import type { Position } from '#types/position'
 import type InventoryItem from '#models/inventory_item'
 
+interface ReturnPosition {
+  page: number
+  x: number
+  y: number
+}
+
 export class InventoryManager {
-  handle(
+  async handle(
     character: Character,
     inventoryItems: InventoryItem[],
     item: InventoryItem,
-  ): Position | null {
+  ): Promise<ReturnPosition | null> {
     const nextAvailablePosition = this.#getNextAvailablePositionForItem(
       inventoryItems,
       item,
@@ -15,29 +20,31 @@ export class InventoryManager {
     )
 
     if (nextAvailablePosition) {
-      return nextAvailablePosition
+      return await nextAvailablePosition
     }
 
     return null
   }
 
-  #getNextAvailablePositionForItem(
+  async #getNextAvailablePositionForItem(
     items: InventoryItem[],
     item: InventoryItem,
     character: Character,
-    page = 0,
-  ): Position | null {
-    const maxPages = Math.ceil(0.5 * character.inventorySize)
+    page = 1,
+  ): Promise<ReturnPosition | null> {
+    const maxPages = 0.5 * character.inventorySize
+    const maxDimension = Math.ceil(maxPages) === page ? 10 : 20
 
-    for (let y = 0; y < character.inventorySize * 10; y += 10) {
-      for (let x = 0; x < character.inventorySize * 10; x += 10) {
-        if (this.canItemBePlaced(items, item, character, x, y)) {
-          return { x, y }
+    for (let y = 0; y < maxDimension; y++) {
+      for (let x = 0; x < 10; x++) {
+        const canPlaceItem = await this.canItemBePlaced(items, item, character, x, y, page)
+        if (canPlaceItem) {
+          return { page, x, y }
         }
       }
     }
 
-    if (page < maxPages) {
+    if (page < Math.ceil(maxPages)) {
       page += 1
       return this.#getNextAvailablePositionForItem(items, item, character, page)
     }
@@ -45,29 +52,43 @@ export class InventoryManager {
     return null
   }
 
-  canItemBePlaced(
+  async canItemBePlaced(
     items: InventoryItem[],
     item: InventoryItem,
     character: Character,
     x: number,
     y: number,
-  ): boolean {
-    const itemsOnPage = items.filter((existingItem) => existingItem.page === item.page)
-
-    if (
-      x + item.size.width > character.inventorySize * 10 ||
-      y + item.size.height > character.inventorySize * 10
-    ) {
+    page: number,
+  ): Promise<boolean> {
+    const itemsOnPage = items.filter((existingItem) => existingItem.page === page)
+    const itemSize = await item.size()
+    const itemWidth = x + (itemSize.width - 1)
+    const itemHeight = y + (itemSize.height - 1)
+    const maxPages = 0.5 * character.inventorySize
+    const maxDimension = Math.ceil(maxPages) === page ? 10 : 20
+    if (itemWidth > 10 || itemHeight > maxDimension) {
       return false
     }
+    const returnStmt = await Promise.all(
+      itemsOnPage.map(async (existingItem) => {
+        const existingItemSize = await existingItem.size()
+        const existingItemPosition = existingItem.position
 
-    return !itemsOnPage.some(
-      (existingItem) =>
-        existingItem.position &&
-        existingItem.position.x < x + item.size.width &&
-        existingItem.position.x + existingItem.size.width > x &&
-        existingItem.position.y < y + item.size.height &&
-        existingItem.position.y + existingItem.size.height > y,
+        const isSamePosition =
+          existingItemPosition && x === existingItemPosition.x && y === existingItemPosition.y
+
+        const isOverlapping = !(
+          existingItemPosition &&
+          (itemWidth < existingItemPosition.x ||
+            x > existingItemPosition.x + existingItemSize.width ||
+            itemHeight < existingItemPosition.y ||
+            y > existingItemPosition.y + existingItemSize.height)
+        )
+
+        return isOverlapping || isSamePosition
+      }),
     )
+
+    return returnStmt.every((result) => result === false)
   }
 }
