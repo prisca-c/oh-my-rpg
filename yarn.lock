@@ -275,12 +275,13 @@
     vary "^1.1.2"
     youch "^3.3.3"
 
-"@adonisjs/inertia@1.0.0-22":
-  version "1.0.0-22"
-  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.0.0-22.tgz#97aa9d2ac19add531f0d75868d5293beb658f6e5"
-  integrity sha512-C9XzIctVNE0GkEPhwE6wpy2Hhmr9BTWVPQugXzc6L+59JsppsjoHHtdLPYpxSsbM3usomqPJK+flEN2NEV/6nQ==
+"@adonisjs/inertia@1.0.0-23":
+  version "1.0.0-23"
+  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.0.0-23.tgz#1a5de6992156d7bbdb2c60ede08abe9877a6dbaf"
+  integrity sha512-i8yIXMlskhrgKr8V9HrBTwIllRI3eIsghFfTxHtR1yL2ZU5QQ+0fL4+/sSgCuxCQUo0XDepMNn3GfhwgNEbeEA==
   dependencies:
     "@poppinss/utils" "^6.7.2"
+    "@tuyau/utils" "^0.0.1"
     crc-32 "^1.2.2"
     edge-error "^4.0.1"
     html-entities "^2.5.2"
@@ -1432,6 +1433,11 @@
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.4.tgz#0b92dcc0cc1c81f6f306a381f28e31b1a56536e9"
   integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
+
+"@tuyau/utils@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@tuyau/utils/-/utils-0.0.1.tgz#bb2e7cf0995027dced7d3c24a8c740b1236a6c81"
+  integrity sha512-Vi2uT9yuy0jZkaW0c1nMgja266DcIoF+/UK0HGMlTH/FUrmKiQLtu64PKBKZtibkezN4nlw3po4SZKvH37SklA==
 
 "@types/babel__core@^7.20.5":
   version "7.20.5"
