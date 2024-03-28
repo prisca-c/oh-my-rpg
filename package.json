@@ -43,7 +43,7 @@
     "@adonisjs/redis": "^8.0.1",
     "@adonisjs/session": "^7.1.1",
     "@adonisjs/shield": "^8.1.1",
-    "@adonisjs/vite": "3.0.0-9",
+    "@adonisjs/vite": "3.0.0-10",
     "@inertiajs/react": "^1.0.14",
     "@poppinss/utils": "^6.7.2",
     "@vinejs/vine": "1.8.0",
