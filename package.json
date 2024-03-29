@@ -63,7 +63,7 @@
     "@adonisjs/eslint-config": "^1.1.9",
     "@adonisjs/prettier-config": "^1.1.9",
     "@adonisjs/tsconfig": "^1.3.0",
-    "@japa/assert": "^2.0.1",
+    "@japa/assert": "^3.0.0",
     "@japa/plugin-adonisjs": "^3.0.0",
     "@japa/runner": "^3.1.1",
     "@julr/tooling-configs": "^2.1.0",
