@@ -36,6 +36,7 @@ export default defineConfig({
     () => import('@adonisjs/shield/shield_provider'),
     () => import('@adonisjs/core/providers/edge_provider'),
     () => import('@adonisjs/inertia/inertia_provider'),
+    () => import('@adonisjs/cors/cors_provider')
   ],
 
   /*
