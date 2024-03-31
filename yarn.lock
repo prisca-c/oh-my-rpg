@@ -293,10 +293,10 @@
     vary "^1.1.2"
     youch "^3.3.3"
 
-"@adonisjs/inertia@1.0.0-23":
-  version "1.0.0-23"
-  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.0.0-23.tgz#1a5de6992156d7bbdb2c60ede08abe9877a6dbaf"
-  integrity sha512-i8yIXMlskhrgKr8V9HrBTwIllRI3eIsghFfTxHtR1yL2ZU5QQ+0fL4+/sSgCuxCQUo0XDepMNn3GfhwgNEbeEA==
+"@adonisjs/inertia@1.0.0-24":
+  version "1.0.0-24"
+  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.0.0-24.tgz#0249a1c6f44566af170c1147e0a8b52beea9299f"
+  integrity sha512-h+fPFdZaUhH3qO2UFkbGqFgQNQV3iG/9d3Crm+eJLU1ADsSSSmp6cjmgzzMk4dcHS2ZqkbFNMcGfKiR/wxACTg==
   dependencies:
     "@poppinss/utils" "^6.7.2"
     "@tuyau/utils" "^0.0.1"
