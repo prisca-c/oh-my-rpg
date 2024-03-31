@@ -1285,16 +1285,16 @@
     truncatise "^0.0.8"
 
 "@poppinss/utils@^6.7.1", "@poppinss/utils@^6.7.2":
-  version "6.7.2"
-  resolved "https://registry.yarnpkg.com/@poppinss/utils/-/utils-6.7.2.tgz#e494534f09e88720c12d13b1036ad6e0a32222db"
-  integrity sha512-C7K0gy7nW0XzlWcuVrSqT1nLQBAddhpgbnvHtYtxFYkS/BdJKzeVz771c80yhLcmrqXoGqZZgjdC7y6Me1L4Tg==
+  version "6.7.3"
+  resolved "https://registry.yarnpkg.com/@poppinss/utils/-/utils-6.7.3.tgz#7f0709902addf36b74853cde542d65c333612abe"
+  integrity sha512-zQnhVG4Q+n6+V1vrL/TF1Oy8ZcVVGUs49Sj5OBgoari/q42UiG/rht1DRvoeWd9bT1BBDwxO2vcfxj6C0u/Dgg==
   dependencies:
     "@lukeed/ms" "^2.0.2"
     "@types/bytes" "^3.1.4"
     "@types/pluralize" "^0.0.33"
     bytes "^3.1.2"
     case-anything "^2.1.13"
-    flattie "^1.1.0"
+    flattie "^1.1.1"
     pluralize "^8.0.0"
     safe-stable-stringify "^2.4.3"
     secure-json-parse "^2.7.0"
