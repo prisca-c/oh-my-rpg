@@ -14,7 +14,8 @@ export const Main = () => {
       direction={'col'}
       justify={'center'}
       align={'center'}
-      className={'gap-6 h-full w-full'}
+      className={'h-full w-full'}
+      gap={6}
       rounded
       bg={'lightPrimary'}
     >

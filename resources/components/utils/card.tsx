@@ -15,7 +15,8 @@ export const Card = (props: CardProps) => {
       direction={'col'}
       justify={'center'}
       align={'center'}
-      className={'gap-6 bg-white p-4 w-[200px] h-[200px]'}
+      gap={6}
+      className={'bg-white p-4 w-[200px] h-[200px]'}
       rounded
     >
       {children}

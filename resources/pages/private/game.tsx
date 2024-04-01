@@ -36,20 +36,22 @@ export default function Game(props: GameProps) {
         direction={'row'}
         justify={'center'}
         align={'center'}
-        className={'gap-6 h-full w-full'}
+        gap={6}
+        className={'h-full w-full'}
       >
         <Container
           layout={'flex'}
           direction={'col'}
           justify={'center'}
           align={'center'}
-          className={'gap-6 h-full'}
+          gap={6}
+          className={'h-full'}
           rounded
         >
           <CharacterInfos character={character} properties={properties} />
           <Leaderboard leaderboard={leaderboard} />
         </Container>
-        <Main />
+        <Main inventory={inventory} />
       </Container>
     </Container>
   )

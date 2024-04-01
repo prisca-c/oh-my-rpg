@@ -15,7 +15,8 @@ export const CharacterInfos = ({ character, properties }: CharacterInfosProps) =
       direction={'col'}
       justify={'start'}
       align={'center'}
-      className={'gap-6 h-full p-4'}
+      className={'h-full p-4'}
+      gap={6}
       bg={'lightGray'}
       rounded
     >
