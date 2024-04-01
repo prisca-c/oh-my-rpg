@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import type World from '~/app/models/world'
 import type Character from '~/app/models/character'
+import { InventoryDtoType } from '~/app/dto/inventory_dto'
 import type EntityProperty from '~/app/models/entity_property'
 
 import { Container } from '@/components/utils'
@@ -12,12 +13,13 @@ import { CharacterInfos } from '@/components/game/character_infos'
 type GameProps = {
   character: Character
   leaderboard: Character[]
+  inventory: InventoryDtoType
   properties: EntityProperty
   worlds: World[]
 }
 
 export default function Game(props: GameProps) {
-  const { character, leaderboard, properties, worlds } = props
+  const { character, leaderboard, properties, worlds, inventory } = props
 
   useEffect(() => {
     useWorldsStore.setState({ worlds })
