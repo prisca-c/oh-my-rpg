@@ -80,9 +80,9 @@ export class InventoryManager {
         const isOverlapping = !(
           existingItemPosition &&
           (itemWidth < existingItemPosition.x ||
-            x > existingItemPosition.x + existingItemSize.width ||
+            x > existingItemPosition.x + (existingItemSize.width - 1) ||
             itemHeight < existingItemPosition.y ||
-            y > existingItemPosition.y + existingItemSize.height)
+            y > existingItemPosition.y + (existingItemSize.height - 1))
         )
 
         return isOverlapping || isSamePosition
