@@ -69,12 +69,8 @@ export default class InventoryItem extends BaseModel {
   static async setPosition(inventoryItem: InventoryItem) {
     if (!inventoryItem.position) {
       const character = await Character.findOrFail(inventoryItem.characterId)
-      const inventoryItems = await InventoryItem.query().where(
-        'character_id',
-        inventoryItem.characterId,
-      )
       const inventoryManager = new InventoryManager()
-      const position = await inventoryManager.handle(character, inventoryItems, inventoryItem)
+      const position = await inventoryManager.handle(character, inventoryItem)
 
       if (!position) {
         inventoryItem.position = null
