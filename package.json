@@ -52,7 +52,7 @@
     "adonisjsx": "^0.1.1",
     "edge.js": "^6.0.1",
     "framer-motion": "^11.0.3",
-    "hot-hook": "^0.0.1",
+    "hot-hook": "^0.1.0",
     "luxon": "^3.4.4",
     "patch-package": "^8.0.0",
     "pg": "^8.11.3",
