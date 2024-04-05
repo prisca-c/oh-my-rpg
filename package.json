@@ -5,7 +5,7 @@
   "private": true,
   "license": "MIT",
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=20.12.0"
   },
   "scripts": {
     "build": "node ace build",
@@ -14,7 +14,6 @@
     "lint": "eslint .",
     "migrate": "node ace migration:run",
     "migrate:prod": "node ace migration:run --force",
-    "postinstall": "patch-package",
     "start": "node bin/server.js",
     "test": "node ace test",
     "typecheck": "tsc --noEmit"
@@ -37,8 +36,8 @@
     "#validators/*": "./app/validators/*.js"
   },
   "dependencies": {
-    "@adonisjs/auth": "9.2.0",
-    "@adonisjs/core": "6.5.0",
+    "@adonisjs/auth": "^9.2.0",
+    "@adonisjs/core": "^6.5.0",
     "@adonisjs/cors": "^2.2.1",
     "@adonisjs/inertia": "1.0.0-25",
     "@adonisjs/lucid": "20.5.1",
@@ -49,12 +48,9 @@
     "@inertiajs/react": "^1.0.14",
     "@poppinss/utils": "^6.7.2",
     "@vinejs/vine": "2.0.0",
-    "adonisjsx": "^0.1.1",
     "edge.js": "^6.0.1",
     "framer-motion": "^11.0.3",
-    "hot-hook": "^0.0.1",
     "luxon": "^3.4.4",
-    "patch-package": "^8.0.0",
     "pg": "^8.11.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -63,29 +59,30 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
-    "@adonisjs/assembler": "7.3.0",
-    "@adonisjs/eslint-config": "^1.1.9",
-    "@adonisjs/prettier-config": "^1.1.9",
+    "@adonisjs/assembler": "7.4.0",
+    "@adonisjs/eslint-config": "^1.3.0",
+    "@adonisjs/prettier-config": "^1.3.0",
     "@adonisjs/tsconfig": "^1.3.0",
     "@japa/assert": "^3.0.0",
     "@japa/plugin-adonisjs": "^3.0.0",
     "@japa/runner": "^3.1.1",
     "@julr/tooling-configs": "^2.1.0",
-    "@swc/core": "^1.4.2",
+    "@swc/core": "^1.4.11",
     "@types/luxon": "^3.4.2",
-    "@types/node": "^20.9.4",
+    "@types/node": "^20.12.3",
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.17",
     "eslint": "^8.57.0",
+    "hot-hook": "^0.1.4",
     "pino-pretty": "^11.0.0",
     "postcss": "^8.4.34",
     "prettier": "^3.2.5",
     "tailwindcss": "^3.4.1",
     "ts-node": "^10.9.2",
     "typescript": "~5.4.2",
-    "vite": "^5.1.5"
+    "vite": "^5.2.8"
   },
   "prettier": "@julr/tooling-configs/prettier"
 }

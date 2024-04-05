@@ -12,13 +12,14 @@ import router from '@adonisjs/core/services/router'
 import { middleware } from '#start/kernel'
 
 // region -- Import controllers
-const LootController = () => import('#controllers/loot_controller')
-const RegisterController = () => import('#controllers/register_controller')
-const LoginController = () => import('#controllers/login_controller')
-const HomeController = () => import('#controllers/home_controller')
-const GamesController = () => import('#controllers/games_controller')
-const CharactersController = () => import('#controllers/characters_controller')
-const AuthController = () => import('#controllers/auth_controller')
+const hmr = import.meta.hot?.boundary
+const LootController = () => import('#controllers/loot_controller', hmr)
+const RegisterController = () => import('#controllers/register_controller', hmr)
+const LoginController = () => import('#controllers/login_controller', hmr)
+const HomeController = () => import('#controllers/home_controller', hmr)
+const GamesController = () => import('#controllers/games_controller', hmr)
+const CharactersController = () => import('#controllers/characters_controller', hmr)
+const AuthController = () => import('#controllers/auth_controller', hmr)
 // endregion
 
 router.get('/', [HomeController, 'index'])

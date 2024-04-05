@@ -18,6 +18,7 @@
       "#validators/*": ["./app/validators/*.js"]
     },
     "resolveJsonModule": true,
+    "types": ["hot-hook/import-meta"],
     "outDir": "./build"
   },
   "include": ["./**/*"],
