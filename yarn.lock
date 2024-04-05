@@ -24,17 +24,6 @@
     youch "^3.3.3"
     youch-terminal "^2.2.3"
 
-"@adonisjs/application@^8.0.2":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@adonisjs/application/-/application-8.0.4.tgz#985485612df0641de2be28f240fe2734d0373a75"
-  integrity sha512-Bh+tKZ/nmU0odBq3FJjpFTZoLcp6/vEosE9DGBu9jbxELeLeW4eY3racNidlEpMz45ObQHA7mAgzeL50xKoWvQ==
-  dependencies:
-    "@poppinss/hooks" "^7.2.2"
-    "@poppinss/macroable" "^1.0.1"
-    "@poppinss/utils" "^6.7.1"
-    glob-parent "^6.0.2"
-    tempura "^0.4.0"
-
 "@adonisjs/application@^8.2.1":
   version "8.2.1"
   resolved "https://registry.yarnpkg.com/@adonisjs/application/-/application-8.2.1.tgz#e8bfa93c78c0319e98edbfc48f7929a8001435e5"
@@ -100,7 +89,7 @@
   dependencies:
     "@poppinss/utils" "^6.7.1"
 
-"@adonisjs/core@6.5.0":
+"@adonisjs/core@6.5.0", "@adonisjs/core@^6.3.1":
   version "6.5.0"
   resolved "https://registry.yarnpkg.com/@adonisjs/core/-/core-6.5.0.tgz#fde1b1a42d7c728cbdafa8876b2e03d37e676b67"
   integrity sha512-p9/s8KFLqUxh/36J6KzLRkEIaoZfIP8wOyjgv2L1Ma2ky8UgFX/sIcg3ILe4f4oWbKVX+5/YUqEiyTpde7mEBw==
@@ -130,35 +119,6 @@
     youch "^3.3.3"
     youch-terminal "^2.2.3"
 
-"@adonisjs/core@^6.2.0":
-  version "6.2.3"
-  resolved "https://registry.yarnpkg.com/@adonisjs/core/-/core-6.2.3.tgz#c8e9db2cecf4898912efeec35018d695f7259362"
-  integrity sha512-ompZA34XINVz2FhegQLvjBn0l550DfIalMTRFgxDzSK80BYCd1xEbIZJ33Js361PH/REgekvdOH5YJBxJqJYjw==
-  dependencies:
-    "@adonisjs/ace" "^13.0.0"
-    "@adonisjs/application" "^8.0.2"
-    "@adonisjs/bodyparser" "^10.0.1"
-    "@adonisjs/config" "^5.0.1"
-    "@adonisjs/encryption" "^6.0.1"
-    "@adonisjs/env" "^5.0.1"
-    "@adonisjs/events" "^9.0.1"
-    "@adonisjs/fold" "^10.0.1"
-    "@adonisjs/hash" "^9.0.1"
-    "@adonisjs/http-server" "^7.0.2"
-    "@adonisjs/logger" "^6.0.1"
-    "@adonisjs/repl" "^4.0.1"
-    "@paralleldrive/cuid2" "^2.2.2"
-    "@poppinss/macroable" "^1.0.1"
-    "@poppinss/utils" "^6.7.1"
-    "@sindresorhus/is" "^6.0.1"
-    "@types/he" "^1.2.3"
-    he "^1.2.0"
-    parse-imports "^1.1.2"
-    pretty-hrtime "^1.0.3"
-    string-width "^7.1.0"
-    youch "^3.3.2"
-    youch-terminal "^2.2.3"
-
 "@adonisjs/cors@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@adonisjs/cors/-/cors-2.2.1.tgz#b6a3ca1129a6fbb37c0f4e5221a1d2d1b9c91608"
@@ -170,16 +130,6 @@
   integrity sha512-9Vz2xU8cryCvRgQDri+4khZIeRDM6yJFe35PdR6xyhgQaT91Qn7fJ2oAcg3yVuNp3WKxg6PTRcxva+ZTfdP3SA==
   dependencies:
     "@poppinss/utils" "^6.7.1"
-
-"@adonisjs/env@^5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@adonisjs/env/-/env-5.0.1.tgz#cbcc902f744a59a4efd4cfb66bf19ad634aafa4e"
-  integrity sha512-jka5D+LHjG0Cuy1IpuOv7NfO5Pu4SZ41UzX5csPeXzBIWyuD9as+HphxctHZpsD2KZ97EuSbVJv6zzxJfZ4Edg==
-  dependencies:
-    "@poppinss/utils" "^6.7.1"
-    "@poppinss/validator-lite" "^1.0.3"
-    dotenv "^16.3.2"
-    split-lines "^3.0.0"
 
 "@adonisjs/env@^6.0.0":
   version "6.0.0"
@@ -228,14 +178,6 @@
   dependencies:
     "@poppinss/utils" "^6.7.1"
 
-"@adonisjs/hash@^9.0.1":
-  version "9.0.1"
-  resolved "https://registry.yarnpkg.com/@adonisjs/hash/-/hash-9.0.1.tgz#ae44f123a28967690ce6b3951ecad1f2c41981c7"
-  integrity sha512-K1jHQWr7ovXf6zHoo+70fmAt33op50GVygZd6ilvyQfCCEPx3lRqGoxqmRdgzDW5eCAfxCwy+nH7zxf8BhX4GQ==
-  dependencies:
-    "@phc/format" "^1.0.0"
-    "@poppinss/utils" "^6.7.1"
-
 "@adonisjs/hash@^9.0.2":
   version "9.0.2"
   resolved "https://registry.yarnpkg.com/@adonisjs/hash/-/hash-9.0.2.tgz#56f8f547ec532c70ae78f0b8ae59ee74395ae304"
@@ -243,33 +185,6 @@
   dependencies:
     "@phc/format" "^1.0.0"
     "@poppinss/utils" "^6.7.3"
-
-"@adonisjs/http-server@^7.0.2":
-  version "7.0.3"
-  resolved "https://registry.yarnpkg.com/@adonisjs/http-server/-/http-server-7.0.3.tgz#807631a2e606cd5b33c25dac47df5740601e21b8"
-  integrity sha512-z8IlnmCsEHiwqYo4eOXx+lKgyXtRCfbQ/KKfEJgfHfspmczJqCt2jVNiJuFuVBeIdPXDIJIys2dJMwu1hsyqoA==
-  dependencies:
-    "@paralleldrive/cuid2" "^2.2.2"
-    "@poppinss/macroable" "^1.0.1"
-    "@poppinss/matchit" "^3.1.2"
-    "@poppinss/middleware" "^3.2.2"
-    "@poppinss/utils" "^6.7.1"
-    "@sindresorhus/is" "^6.1.0"
-    accepts "^1.3.8"
-    content-disposition "^0.5.4"
-    cookie "^0.6.0"
-    destroy "^1.2.0"
-    encodeurl "^1.0.2"
-    etag "^1.8.1"
-    fresh "^0.5.2"
-    mime-types "^2.1.35"
-    on-finished "^2.4.1"
-    proxy-addr "^2.0.7"
-    qs "^6.11.2"
-    tmp-cache "^1.1.0"
-    type-is "^1.6.18"
-    vary "^1.1.2"
-    youch "^3.3.3"
 
 "@adonisjs/http-server@^7.2.0":
   version "7.2.0"
@@ -310,15 +225,6 @@
     html-entities "^2.5.2"
     locate-path "^7.2.0"
     qs "^6.11.2"
-
-"@adonisjs/logger@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@adonisjs/logger/-/logger-6.0.1.tgz#b717d5258fc8f9fd020a4b45529950ca4f836e5e"
-  integrity sha512-zt3G2XPWZcreO6okdZ4A9CXfZhPBaAUTbsJZrLEYILdb5E0r5ZGw/MH6enK4uiN7BI+Y90W6HjXfQzKmXnNV2g==
-  dependencies:
-    "@poppinss/utils" "^6.7.1"
-    abstract-logging "^2.0.1"
-    pino "^8.17.2"
 
 "@adonisjs/logger@^6.0.2":
   version "6.0.2"
@@ -1083,7 +989,7 @@
     local-pkg "^0.5.0"
     vue-eslint-parser "^9.3.2"
 
-"@kitajs/html@^3.1.1":
+"@kitajs/html@^3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@kitajs/html/-/html-3.1.2.tgz#bbcb740d3a611803b1ebd3cc8e764b4226eea82b"
   integrity sha512-igMLn8VCrAyjFuK1OOsCkiiu95EQ+hK/C96moz9+MzX3lsMukZO/AqXRxdhTeB80AtE61pL+lUTuwTkqz/s+rQ==
@@ -1387,7 +1293,7 @@
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.27.8.tgz#6667fac16c436b5434a387a34dedb013198f6e6e"
   integrity sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==
 
-"@sindresorhus/is@^6.0.1", "@sindresorhus/is@^6.1.0":
+"@sindresorhus/is@^6.1.0":
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-6.1.0.tgz#71a4ca5171888fb7fc36c6d1ff3604b0a5e43555"
   integrity sha512-BuvU07zq3tQ/2SIgBsEuxKYDyDjC0n7Zir52bpHy2xnBbW81+po43aLFPLbeV3HRAheFbGud1qgcqSYfhtHMAg==
@@ -1859,15 +1765,15 @@ acorn@^8.11.3, acorn@^8.4.1, acorn@^8.5.0, acorn@^8.9.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.11.3.tgz#71e0b14e13a4ec160724b38fb7b0f233b1b81d7a"
   integrity sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==
 
-adonisjsx@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/adonisjsx/-/adonisjsx-0.1.1.tgz#97d49d71173121611ca3d4127f270f303b849b39"
-  integrity sha512-cNQQqkrxJH4au3o9GI2dw1uYZF4xHPhEcMkJeb+OMCq5ONZR6M6vXnlH7AWg80QQJKH7Ux+DJQveBGyjv4aeNA==
+adonisjsx@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/adonisjsx/-/adonisjsx-0.2.0.tgz#61f39907dfe4c383a0620d4245c7bad02fc04b6a"
+  integrity sha512-eywQHJijYHx8khZIL9UL1k/dKWOYLjD/jlSE8lXy8GgwvAL6CGVia9Sjt87R7xT96JNX2E55E3EhXvVrJynC8Q==
   dependencies:
-    "@adonisjs/core" "^6.2.0"
+    "@adonisjs/core" "^6.3.1"
     "@adonisjs/shield" "^8.1.1"
     "@adonisjs/vite" "^2.0.2"
-    "@kitajs/html" "^3.1.1"
+    "@kitajs/html" "^3.1.2"
     "@kitajs/ts-html-plugin" "^1.3.4"
     defu "^6.1.4"
 
@@ -2761,11 +2667,6 @@ emoji-regex@^9.2.2:
   version "9.2.2"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-9.2.2.tgz#840c8803b0d8047f4ff0cf963176b32d4ef3ed72"
   integrity sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==
-
-encodeurl@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/encodeurl/-/encodeurl-1.0.2.tgz#ad3ff4c86ec2d029322f5a02c3a9a606c95b3f59"
-  integrity sha512-TPJXq8JqFaVYm2CWmPvnP2Iyo4ZSM7/QKcSmuMLDObfpH5fi7RUGmd/rTDf+rut/saiDiQEeVTNgAmJEdAOx0w==
 
 encodeurl@^2.0.0:
   version "2.0.0"
@@ -6264,7 +6165,7 @@ youch-terminal@^2.2.3:
     string-width "^4.2.3"
     wordwrap "^1.0.0"
 
-youch@^3.3.2, youch@^3.3.3:
+youch@^3.3.3:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/youch/-/youch-3.3.3.tgz#50cfdf5bc395ce664a5073e31b712ff4a859d928"
   integrity sha512-qSFXUk3UZBLfggAW3dJKg0BMblG5biqSF8M34E06o5CSsZtH92u9Hqmj2RzGiHDi64fhe83+4tENFP2DB6t6ZA==
