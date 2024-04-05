@@ -5,6 +5,7 @@ import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, belongsTo, column } from '@adonisjs/lucid/orm'
 
 import Item from '#models/item'
+import { Size } from '#types/size'
 import ItemBase from '#models/item_base'
 import Character from '#models/character'
 import type { ItemId } from '#models/item'
@@ -83,7 +84,7 @@ export default class InventoryItem extends BaseModel {
     }
   }
 
-  async size(): Promise<{ width: number; height: number }> {
+  async size(): Promise<Size> {
     const item = await Item.findOrFail(this.itemId)
     const itemBase = await ItemBase.findOrFail(item.itemBaseId)
     const itemCategory = await ItemCategory.findOrFail(itemBase.itemCategoryId)

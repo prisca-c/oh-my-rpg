@@ -1,3 +1,5 @@
+import { Size } from '#types/size'
+import { Position } from '#types/position'
 import type Character from '#models/character'
 import InventoryItem from '#models/inventory_item'
 
@@ -34,7 +36,18 @@ export class InventoryManager {
 
     for (let y = 0; y < maxDimension; y++) {
       for (let x = 0; x < maxDimension; x++) {
-        const canPlaceItem = await this.canItemBePlaced(items, item, x, y, page)
+        const itemsOnPage = []
+
+        for (const item of items) {
+          if (item.page === page) {
+            const size = await item.size()
+            const position = item.position
+            itemsOnPage.push({ position, size })
+          }
+        }
+
+        const itemSize = await item.size()
+        const canPlaceItem = await this.canItemBePlaced(itemsOnPage, itemSize, x, y)
         if (canPlaceItem) {
           return { page, x, y }
         }
@@ -50,23 +63,20 @@ export class InventoryManager {
   }
 
   async canItemBePlaced(
-    items: InventoryItem[],
-    item: InventoryItem,
+    itemsOnPage: { position: Position | null; size: Size }[],
+    sizeItemToPlace: Size,
     x: number,
     y: number,
-    page: number,
   ): Promise<boolean> {
-    const itemsOnPage = items.filter((existingItem) => existingItem.page === page)
-    const itemSize = await item.size()
-    const itemWidth = x + (itemSize.width - 1)
-    const itemHeight = y + (itemSize.height - 1)
+    const itemWidth = x + (sizeItemToPlace.width - 1)
+    const itemHeight = y + (sizeItemToPlace.height - 1)
     const maxDimension = 10
     if (itemWidth > 10 || itemHeight > maxDimension) {
       return false
     }
     const returnStmt = await Promise.all(
       itemsOnPage.map(async (existingItem) => {
-        const existingItemSize = await existingItem.size()
+        const existingItemSize = existingItem.size
         const existingItemPosition = existingItem.position
 
         const isSamePosition =

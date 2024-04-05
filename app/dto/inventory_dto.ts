@@ -1,9 +1,10 @@
+import { Size } from '#types/size'
 import { Position } from '#types/position'
 import Character, { type CharacterId } from '#models/character'
 
 export interface InventoryDtoType {
   items: Record<number, InventoryItemDtoType[]>
-  size: number
+  inventorySize: number
 }
 
 export interface InventoryItemDtoType {
@@ -13,8 +14,7 @@ export interface InventoryItemDtoType {
   rarity: string
   page: number | null
   image: string | null
-  width: number
-  height: number
+  size: Size
   position: Position | null
 }
 
@@ -24,7 +24,7 @@ export class InventoryDTO {
 
   constructor(data: InventoryDtoType) {
     this.#items = data.items
-    this.#size = data.size
+    this.#size = data.inventorySize
   }
 
   static async fromCharacter(characterId: CharacterId) {
@@ -54,12 +54,14 @@ export class InventoryDTO {
         page: inventoryItem.page,
         image: inventoryItem.item.image,
         position: inventoryItem.position,
-        width,
-        height,
+        size: {
+          width,
+          height,
+        },
       })
     }
 
-    return new InventoryDTO({ items: itemsPerPage, size: character.inventorySize })
+    return new InventoryDTO({ items: itemsPerPage, inventorySize: character.inventorySize })
   }
 
   toJSON() {

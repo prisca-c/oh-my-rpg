@@ -43,8 +43,8 @@ export const InventoryGrid = (props: InventoryGridProps) => {
                         src={item.image || 'https://via.placeholder.com/20'}
                         alt={item.name}
                         style={{
-                          width: `calc(${item.width} * 2.5rem - 4px)`,
-                          height: `calc(${item.height} * 2.5rem - 4px)`,
+                          width: `calc(${item.size.width} * 2.5rem - 4px)`,
+                          height: `calc(${item.size.height} * 2.5rem - 4px)`,
                         }}
                         draggable={false}
                       />
