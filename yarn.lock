@@ -35,7 +35,7 @@
     glob-parent "^6.0.2"
     tempura "^0.4.0"
 
-"@adonisjs/application@^8.1.0":
+"@adonisjs/application@^8.2.1":
   version "8.2.1"
   resolved "https://registry.yarnpkg.com/@adonisjs/application/-/application-8.2.1.tgz#e8bfa93c78c0319e98edbfc48f7929a8001435e5"
   integrity sha512-5wPoyTmSg7klLPAp3PMSSi7xwfDpnX2QULsu5FmLNMcTmUVld7GG4zyGfspBXlZr6UU1mFqblKsuQzbTnYo7MQ==
@@ -100,13 +100,13 @@
   dependencies:
     "@poppinss/utils" "^6.7.1"
 
-"@adonisjs/core@6.4.0":
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/@adonisjs/core/-/core-6.4.0.tgz#f0b4b3b4535de7302f1b93c59f4875179c0487fc"
-  integrity sha512-sFXKk/VS7Ax3MavD/+51JjCg3M5uatuPg0KbbO+k0cmPdEmX6bKRISpOKv2f9i/G9iMQ3V/fNQDDF23rOSlg3Q==
+"@adonisjs/core@6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@adonisjs/core/-/core-6.5.0.tgz#fde1b1a42d7c728cbdafa8876b2e03d37e676b67"
+  integrity sha512-p9/s8KFLqUxh/36J6KzLRkEIaoZfIP8wOyjgv2L1Ma2ky8UgFX/sIcg3ILe4f4oWbKVX+5/YUqEiyTpde7mEBw==
   dependencies:
     "@adonisjs/ace" "^13.0.0"
-    "@adonisjs/application" "^8.1.0"
+    "@adonisjs/application" "^8.2.1"
     "@adonisjs/bodyparser" "^10.0.1"
     "@adonisjs/config" "^5.0.1"
     "@adonisjs/encryption" "^6.0.1"
