@@ -1,7 +1,6 @@
-import { Size } from '#types/size'
-import { Position } from '#types/position'
 import type Character from '#models/character'
 import InventoryItem from '#models/inventory_item'
+import { CanItemBePlaced } from '#features/inventory/can_item_be_placed'
 
 interface ReturnPosition {
   page: number
@@ -47,7 +46,7 @@ export class InventoryManager {
         }
 
         const itemSize = await item.size()
-        const canPlaceItem = await this.canItemBePlaced(itemsOnPage, itemSize, x, y)
+        const canPlaceItem = await new CanItemBePlaced().handle(itemsOnPage, itemSize, x, y)
         if (canPlaceItem) {
           return { page, x, y }
         }
@@ -60,40 +59,5 @@ export class InventoryManager {
     }
 
     return null
-  }
-
-  async canItemBePlaced(
-    itemsOnPage: { position: Position | null; size: Size }[],
-    sizeItemToPlace: Size,
-    x: number,
-    y: number,
-  ): Promise<boolean> {
-    const itemWidth = x + (sizeItemToPlace.width - 1)
-    const itemHeight = y + (sizeItemToPlace.height - 1)
-    const maxDimension = 10
-    if (itemWidth > 10 || itemHeight > maxDimension) {
-      return false
-    }
-    const returnStmt = await Promise.all(
-      itemsOnPage.map(async (existingItem) => {
-        const existingItemSize = existingItem.size
-        const existingItemPosition = existingItem.position
-
-        const isSamePosition =
-          existingItemPosition && x === existingItemPosition.x && y === existingItemPosition.y
-
-        const isOverlapping = !(
-          existingItemPosition &&
-          (itemWidth < existingItemPosition.x ||
-            x > existingItemPosition.x + (existingItemSize.width - 1) ||
-            itemHeight < existingItemPosition.y ||
-            y > existingItemPosition.y + (existingItemSize.height - 1))
-        )
-
-        return isOverlapping || isSamePosition
-      }),
-    )
-
-    return returnStmt.every((result) => result === false)
   }
 }
