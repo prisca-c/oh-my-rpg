@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Container } from '@/components/utils/container'
+import { Container } from '#components/utils/container'
 
 type CardProps = {
   children: React.ReactNode

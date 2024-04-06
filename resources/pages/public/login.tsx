@@ -1,7 +1,5 @@
-import React from 'react'
-
-import { Typography } from '@/components/utils/'
-import { LoginForm } from '@/components/auth/login_form'
+import { Typography } from '#components/utils/index'
+import { LoginForm } from '#components/auth/login_form'
 
 export default function Login() {
   return (

@@ -1,7 +1,5 @@
-import React from 'react'
-import { InventoryItemDtoType } from '~/app/dto/inventory_dto'
-
-import { Container } from '@/components/utils'
+import { Container } from '#components/utils/index'
+import { InventoryItemDtoType } from '#dto/inventory_dto'
 
 interface InventoryGridProps {
   items: InventoryItemDtoType[]
@@ -38,7 +36,7 @@ export const InventoryGrid = (props: InventoryGridProps) => {
                   className={'relative bg-amber-200 border-2 border-black h-10 w-10'}
                 >
                   {item && (
-                    <Container key={item.id} className={'absolute z-10 outline outline-black'}>
+                    <Container key={item.id} className={'absolute z-10'}>
                       <img
                         src={item.image || 'https://via.placeholder.com/20'}
                         alt={item.name}

@@ -1,9 +1,9 @@
 import React from 'react'
 import { usePage, router } from '@inertiajs/react'
 
-import { Button } from '@/components/button'
-import { Form, InputGroup } from '@/components/utils'
-import { useRegisterForm } from '@/hooks/use_register_form'
+import { Button } from '#components/button'
+import { Form, InputGroup } from '#components/utils/index'
+import { useRegisterForm } from '#resources/hooks/use_register_form'
 
 export const RegisterForm = () => {
   const { inputs, validations, onChange, onSubmit } = useRegisterForm({

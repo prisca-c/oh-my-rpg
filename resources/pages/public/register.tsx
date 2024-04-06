@@ -1,7 +1,5 @@
-import React from 'react'
-
-import { Typography } from '@/components/utils'
-import { RegisterForm } from '@/components/auth/register_form'
+import { Typography } from '#components/utils/index'
+import { RegisterForm } from '#components/auth/register_form'
 
 export default function Register() {
   return (

@@ -1,8 +1,8 @@
 import { router } from '@inertiajs/react'
 
-import { Button } from '@/components/button'
-import { FadeIn, Flex } from '@/components/utils'
-import { LogoAnimation } from '@/components/logo_animation'
+import { Button } from '#components/button'
+import { FadeIn, Flex } from '#components/utils/index'
+import { LogoAnimation } from '#components/logo_animation'
 
 export default function Home() {
   const goToLogin = () => {

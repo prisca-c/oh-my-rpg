@@ -19,6 +19,8 @@
     "typecheck": "tsc --noEmit"
   },
   "imports": {
+    "#app/*": "./app/*.js",
+    "#components/*": "./resources/components/*.js",
     "#config/*": "./config/*.js",
     "#controllers/*": "./app/controllers/*.js",
     "#dto/*": "./app/dto/*.js",
@@ -29,6 +31,7 @@
     "#listeners/*": "./app/listeners/*.js",
     "#middleware/*": "./app/middleware/*.js",
     "#models/*": "./app/models/*.js",
+    "#resources/*": "./resources/*.js",
     "#services/*": "./app/services/*.js",
     "#start/*": "./start/*.js",
     "#types/*": "./types/*.js",

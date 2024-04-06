@@ -1,7 +1,7 @@
 import { LuSwords } from 'react-icons/lu'
 
-import type { TextSizes } from '@/types'
-import { Container, FadeIn, Typography } from '@/components/utils'
+import type { TextSizes } from '#resources/types/index'
+import { Container, FadeIn, Typography } from '#components/utils/index'
 
 type LogoAnimationProps = {
   textSizes?: TextSizes

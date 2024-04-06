@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { TextSizes } from '@/types'
+import type { TextSizes } from '#resources/types/index'
 
 type TypographyProps = {
   type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'

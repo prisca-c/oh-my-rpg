@@ -1,9 +1,9 @@
 import React from 'react'
 import { router } from '@inertiajs/react'
 
-import { Button } from '@/components/button'
-import { Form, InputGroup } from '@/components/utils'
-import { useLoginForm } from '@/hooks/use_login_form'
+import { Button } from '#components/button'
+import { Form, InputGroup } from '#components/utils/index'
+import { useLoginForm } from '#resources/hooks/use_login_form'
 
 export const LoginForm = () => {
   const { inputs, validations, onChange, onSubmit } = useLoginForm({

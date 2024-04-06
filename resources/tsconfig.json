@@ -1,13 +1,10 @@
 {
   "compilerOptions": {
+    "target": "ESNext",
     "jsx": "react-jsx",
-    "baseUrl": ".",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "paths": {
-      "@/*": ["./*"],
-      "~/*": ["../*"]
-    }
+    "module": "ES2022",
+    "moduleResolution": "NodeNext",
+    "allowSyntheticDefaultImports": true
   },
   "include": ["env.d.ts", "./**/*.ts", "./**/*.tsx"]
 }

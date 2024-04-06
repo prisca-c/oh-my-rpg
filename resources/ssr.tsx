@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { createInertiaApp } from '@inertiajs/react'
 
-import PublicLayout from '@/layouts/public_layout'
-import PrivateLayout from '@/layouts/private_layout'
+import PublicLayout from '#resources/layouts/public_layout'
+import PrivateLayout from '#resources/layouts/private_layout'
 
 export default function render(page: any) {
   return createInertiaApp({

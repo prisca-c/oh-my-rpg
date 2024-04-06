@@ -2,7 +2,7 @@ import type React from 'react'
 import { router } from '@inertiajs/react'
 import { useEffect, useState } from 'react'
 
-import { validateEmail, validatePassword } from '@/helpers/validations'
+import { validateEmail, validatePassword } from '#resources/helpers/validations'
 
 type LoginForm = {
   email: string
@@ -28,7 +28,7 @@ export const useLoginForm = (initialValues: LoginForm) => {
   }, [inputs])
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
+    const { name, value } = e.currentTarget
     setInputs((prevState) => ({ ...prevState, [name]: value }))
   }
 

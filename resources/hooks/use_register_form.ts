@@ -1,13 +1,12 @@
-import type React from 'react'
 import { router } from '@inertiajs/react'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {
   validateEmail,
   validatePassword,
   validatePasswordConfirmation,
   validateUsername,
-} from '@/helpers/validations'
+} from '#resources/helpers/validations'
 
 type FormFields = {
   email: string

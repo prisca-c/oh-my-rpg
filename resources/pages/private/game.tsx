@@ -1,14 +1,14 @@
 import { useEffect } from 'react'
-import type World from '~/app/models/world'
-import type Character from '~/app/models/character'
-import { InventoryDtoType } from '~/app/dto/inventory_dto'
-import type EntityProperty from '~/app/models/entity_property'
 
-import { Container } from '@/components/utils'
-import { Main } from '@/components/game/main/main'
-import { useWorldsStore } from '@/store/use_worlds_store'
-import { Leaderboard } from '@/components/game/leaderboard'
-import { CharacterInfos } from '@/components/game/character_infos'
+import type World from '#models/world'
+import type Character from '#models/character'
+import { Main } from '#components/game/main/main'
+import { Container } from '#components/utils/index'
+import { InventoryDtoType } from '#dto/inventory_dto'
+import type EntityProperty from '#models/entity_property'
+import { Leaderboard } from '#components/game/leaderboard'
+import { CharacterInfos } from '#components/game/character_infos'
+import { useWorldsStore } from '#resources/store/use_worlds_store'
 
 type GameProps = {
   character: Character

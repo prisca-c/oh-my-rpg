@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { getErrorByField } from '@/helpers/form_helpers'
+import { getErrorByField } from '#resources/helpers/form_helpers'
 
 type InputGroupProps = {
   label: string

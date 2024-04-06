@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
-import { InventoryDtoType } from '~/app/dto/inventory_dto'
 
-import { Button } from '@/components/button'
-import { useWorldsStore } from '@/store/use_worlds_store'
-import { Container, Typography, Card } from '@/components/utils'
-import { InventoryGrid } from '@/components/game/grid/inventory_grid'
+import { Button } from '#components/button'
+import { InventoryDtoType } from '#dto/inventory_dto'
+import { useWorldsStore } from '#resources/store/use_worlds_store'
+import { InventoryGrid } from '#components/game/grid/inventory_grid'
+import { Container, Typography, Card } from '#components/utils/index'
 
 interface MainProps {
   inventory: InventoryDtoType

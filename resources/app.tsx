@@ -5,8 +5,8 @@ import { createRoot } from 'react-dom/client'
 import { createInertiaApp } from '@inertiajs/react'
 import type { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react'
 
-import PublicLayout from '@/layouts/public_layout'
-import PrivateLayout from '@/layouts/private_layout'
+import PublicLayout from '#resources/layouts/public_layout'
+import PrivateLayout from '#resources/layouts/private_layout'
 
 type PageType =
   | string
@@ -22,7 +22,7 @@ void createInertiaApp({
   progress: {
     color: '#16a34a',
   },
-  resolve: (name) => {
+  resolve: (name: string) => {
     const pages = import.meta.glob('./pages/**/*.tsx', { eager: true })
     const page: any = pages[`./pages/${name}.tsx`]
     page.default.layout = name.startsWith('private')
@@ -31,7 +31,7 @@ void createInertiaApp({
 
     return page
   },
-  setup({ el, App, props }) {
+  setup({ el, App, props }: any) {
     const root = createRoot(el)
     root.render(<App {...props} />)
   },

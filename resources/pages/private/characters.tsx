@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import type Character from '~/app/models/character'
 
-import { Button } from '@/components/button'
-import { Flex, Typography } from '@/components/utils'
-import { CharacterCard } from '@/components/character_card'
-import { CreateCharacterForm } from '@/components/characters/create_character_form'
+import { Button } from '#components/button'
+import type Character from '#models/character'
+import { Flex, Typography } from '#components/utils/index'
+import { CharacterCard } from '#components/character_card'
+import { CreateCharacterForm } from '#components/characters/create_character_form'
 
 type CharactersProps = {
   characters: Character[]

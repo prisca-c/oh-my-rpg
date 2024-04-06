@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BgColors } from '@/enums/tailwind'
+import { BgColors } from '#resources/enums/tailwind'
 
 type ContainerProps = {
   children: React.ReactNode

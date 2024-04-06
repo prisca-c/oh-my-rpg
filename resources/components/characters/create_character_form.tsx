@@ -1,9 +1,9 @@
 import { usePage } from '@inertiajs/react'
 
-import { Button } from '@/components/button'
-import { Form, InputGroup } from '@/components/utils'
-import { getErrorByField } from '@/helpers/form_helpers'
-import { useCreateCharacterForm } from '@/hooks/use_create_character_form'
+import { Button } from '#components/button'
+import { Form, InputGroup } from '#components/utils/index'
+import { getErrorByField } from '#resources/helpers/form_helpers'
+import { useCreateCharacterForm } from '#resources/hooks/use_create_character_form'
 
 export const CreateCharacterForm = () => {
   const { inputs, validations, onChange, onSubmit } = useCreateCharacterForm({
