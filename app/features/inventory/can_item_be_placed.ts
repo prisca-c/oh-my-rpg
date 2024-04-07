@@ -10,8 +10,8 @@ export class CanItemBePlaced {
   ): Promise<boolean> {
     const itemWidth = x + (sizeItemToPlace.width - 1)
     const itemHeight = y + (sizeItemToPlace.height - 1)
-    const maxDimension = 10
-    if (itemWidth > 10 || itemHeight > maxDimension) {
+    const maxDimension = 9
+    if (itemWidth > 9 || itemHeight > maxDimension) {
       return false
     }
     const returnStmt = await Promise.all(
