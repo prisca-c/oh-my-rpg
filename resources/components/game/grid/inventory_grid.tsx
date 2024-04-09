@@ -85,6 +85,7 @@ export const InventoryGrid = (props: InventoryGridProps) => {
     const itemId = e.dataTransfer.getData('text')
 
     const item = filteredItems?.find((item) => item.id === itemId)
+    console.log('Item:', item.size)
 
     const canPlaceItem = await canItemBePlaced(
       filteredItems?.map((item) => ({ position: item.position, size: item.size })) || [],
@@ -137,8 +138,9 @@ export const InventoryGrid = (props: InventoryGridProps) => {
                         src={item.image || 'https://via.placeholder.com/20'}
                         alt={item.name}
                         style={{
-                          width: `calc(${item.size.width} * 2.5rem - 4px)`,
-                          height: `calc(${item.size.height} * 2.5rem - 4px)`,
+                          width: `calc((${item.size.width} * 2.5rem) - 4px)`,
+                          height: `calc((${item.size.height} * 2.5rem) - 4px)`,
+                          maxWidth: 'none',
                         }}
                         draggable={canBeMoved}
                         onDragStart={onDragStart}
