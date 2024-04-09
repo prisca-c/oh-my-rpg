@@ -1,6 +1,3 @@
-import { useEffect, useState } from 'react'
-
-import { Button } from '#components/button'
 import { InventoryDtoType } from '#dto/inventory_dto'
 import { useWorldsStore } from '#resources/store/use_worlds_store'
 import { InventoryGrid } from '#components/game/grid/inventory_grid'
@@ -12,13 +9,6 @@ interface MainProps {
 
 export const Main = (props: MainProps) => {
   const { inventory } = props
-  const [inventoryPage, setInventoryPage] = useState(1)
-  const [filteredItems, setFilteredItems] = useState(inventory.items[inventoryPage])
-
-  useEffect(() => {
-    const items = inventory.items[inventoryPage] || []
-    setFilteredItems(items)
-  }, [inventoryPage])
 
   const worlds = useWorldsStore((state) => state.worlds)
   const getItem = async (worldId: string) => {
@@ -49,8 +39,7 @@ export const Main = (props: MainProps) => {
           </Card>
         </a>
       ))}
-      <InventoryGrid items={filteredItems} />
-      <Button onClick={() => setInventoryPage(inventoryPage + 1)}>Next</Button>
+      <InventoryGrid inventory={inventory} />
     </Container>
   )
 }

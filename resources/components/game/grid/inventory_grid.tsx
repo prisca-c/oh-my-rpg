@@ -1,31 +1,53 @@
-import React, { useEffect } from 'react'
-import { router, usePage } from '@inertiajs/react'
+import { usePage } from '@inertiajs/react'
+import React, { useEffect, useState } from 'react'
 
-import { Size } from '#types/size'
-import { Position } from '#types/position'
+import type { Size } from '#types/size'
+import { Button } from '#components/button'
+import type { Position } from '#types/position'
 import { Container } from '#components/utils/index'
-import type { InventoryItemDtoType } from '#dto/inventory_dto'
+import type { InventoryDtoType } from '#dto/inventory_dto'
 import { CanItemBePlaced } from '#features/inventory/can_item_be_placed'
 
 interface InventoryGridProps {
-  items: InventoryItemDtoType[]
+  inventory: InventoryDtoType
 }
 
 export const InventoryGrid = (props: InventoryGridProps) => {
-  const { items } = props
+  const { inventory } = props
+  const [items, setItems] = React.useState<InventoryDtoType['items']>([])
   const [canBeMoved, setCanBeMoved] = React.useState(false)
   const characterId = usePage().props.character.id
+  const [inventoryPage, setInventoryPage] = useState(1)
+  const [filteredItems, setFilteredItems] = useState(inventory.items[inventoryPage])
 
   useEffect(() => {
     setCanBeMoved(true)
+    setItems(inventory.items)
   }, [])
 
+  useEffect(() => {
+    setFilteredItems(items[inventoryPage])
+  }, [items, inventoryPage])
+
   const updateItem = async (itemId: string, page: number, position: Position): Promise<void> => {
-    router.put(`/inventory/${characterId}/item/${itemId}`, { page, position })
+    const xsrf = document.cookie.match(/XSRF-TOKEN=([^;]+)/)
+    const res = await fetch(`/inventory/${characterId}/item/${itemId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-XSRF-TOKEN': xsrf ? xsrf[1] : '',
+      },
+      body: JSON.stringify({ page, position }),
+    })
+    if (res.ok) {
+      const data = await res.json()
+      setItems(data.items)
+    }
   }
 
   const updateItemPosition = async (itemId: string, page: number, position: Position) => {
-    await updateItem(itemId, page, position)
+    setCanBeMoved(false)
+    await updateItem(itemId, page, position).then(() => setCanBeMoved(true))
   }
 
   const canItemBePlaced = async (
@@ -61,12 +83,11 @@ export const InventoryGrid = (props: InventoryGridProps) => {
     e.preventDefault()
     const position = getPosition(e.currentTarget.dataset.position || '')
     const itemId = e.dataTransfer.getData('text')
-    console.log('Item dropped', itemId, position)
 
-    const item = items?.find((item) => item.id === itemId)
+    const item = filteredItems?.find((item) => item.id === itemId)
 
     const canPlaceItem = await canItemBePlaced(
-      items?.map((item) => ({ position: item.position, size: item.size })) || [],
+      filteredItems?.map((item) => ({ position: item.position, size: item.size })) || [],
       item?.size,
       position.x,
       position.y,
@@ -82,6 +103,7 @@ export const InventoryGrid = (props: InventoryGridProps) => {
   return (
     <Container
       layout={'flex'}
+      direction={'col'}
       align={'center'}
       justify={'center'}
       className={'bg-gray-800 relative select-none'}
@@ -96,7 +118,7 @@ export const InventoryGrid = (props: InventoryGridProps) => {
         {Array.from({ length: 10 }).map((_, colIndex) => (
           <div key={colIndex} className={'grid grid-cols-10'}>
             {Array.from({ length: 10 }).map((_, rowIndex) => {
-              const item = items?.find(
+              const item = filteredItems?.find(
                 (item) =>
                   item.position && item.position.x === rowIndex && item.position.y === colIndex,
               )
@@ -130,6 +152,9 @@ export const InventoryGrid = (props: InventoryGridProps) => {
           </div>
         ))}
       </Container>
+
+      <Button onClick={() => setInventoryPage(inventoryPage - 1)}>Previous</Button>
+      <Button onClick={() => setInventoryPage(inventoryPage + 1)}>Next</Button>
     </Container>
   )
 }

@@ -6,19 +6,21 @@ import { InventoryDTO } from '#dto/inventory_dto'
 import { CanItemBePlaced } from '#features/inventory/can_item_be_placed'
 
 export default class InventoriesController {
-  async update({ params, request, response }: HttpContext) {
+  async update({ params, request, response, session }: HttpContext) {
     const { characterId, itemId } = params
     const { page, position } = request.all()
 
     if (!page || !position) {
-      return response.status(400).send({ message: 'Missing required parameters' })
+      session.flash('error', 'Invalid request')
+      return response.redirect().toRoute('game', { id: characterId })
     }
 
     const character = await Character.findOrFail(characterId)
     const item = await character.related('inventory').query().where('id', itemId).firstOrFail()
 
     if (!item) {
-      return response.notFound({ message: 'Item not found' })
+      session.flash('error', 'Item not found')
+      return response.redirect().toRoute('game', { id: characterId })
     }
 
     assert(item.position)
@@ -38,7 +40,8 @@ export default class InventoriesController {
     )
 
     if (!canPlaceItem) {
-      return response.status(400).send({ message: 'Item cannot be placed' })
+      session.flash('error', 'Item cannot be placed here')
+      return response.redirect().toRoute('game', { id: characterId })
     }
 
     item.position = position
@@ -47,6 +50,6 @@ export default class InventoriesController {
 
     const newInventory = await InventoryDTO.fromCharacter(character.id)
 
-    response.send(newInventory.toJSON())
+    return response.ok(newInventory.toJSON())
   }
 }

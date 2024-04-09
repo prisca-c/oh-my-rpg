@@ -38,7 +38,7 @@ export default class GamesController {
         character,
         leaderboard: await characters,
         properties: characterProperties,
-        inventory: inventory.toJSON(),
+        inventory: () => inventory.toJSON(),
         worlds,
       },
       {

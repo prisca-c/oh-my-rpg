@@ -1,5 +1,6 @@
 import { create } from 'zustand'
-import type World from '~/app/models/world'
+
+import type World from '#models/world'
 
 type WorldsState = {
   worlds: World[]
