@@ -112,51 +112,62 @@ export const InventoryGrid = (props: InventoryGridProps) => {
       <Container
         layout={'flex'}
         direction={'col'}
-        align={'center'}
-        justify={'center'}
-        className={' border-2 border-black'}
+        align={'start'}
+        className={'bg-gray-800 relative select-none'}
       >
-        {Array.from({ length: 10 }).map((_, colIndex) => (
-          <div key={colIndex} className={'grid grid-cols-10'}>
-            {Array.from({ length: 10 }).map((_, rowIndex) => {
-              const item = filteredItems?.find(
-                (item) =>
-                  item.position && item.position.x === rowIndex && item.position.y === colIndex,
-              )
+        <Container layout={'flex'} direction={'row'}>
+          {Object.keys(items).map((page) => (
+            <Button key={page} onClick={() => setInventoryPage(Number(page))}>
+              {page}
+            </Button>
+          ))}
+        </Container>
+        <Container
+          layout={'flex'}
+          direction={'col'}
+          align={'center'}
+          justify={'center'}
+          className={' border-2 border-black'}
+        >
+          {Array.from({ length: 10 }).map((_, colIndex) => (
+            <div key={colIndex} className={'grid grid-cols-10'}>
+              {Array.from({ length: 10 }).map((_, rowIndex) => {
+                const item = filteredItems?.find(
+                  (item) =>
+                    item.position && item.position.x === rowIndex && item.position.y === colIndex,
+                )
 
-              return (
-                <div
-                  key={`${colIndex}-${rowIndex}`}
-                  className={'relative bg-amber-200 border-2 border-black h-10 w-10'}
-                  data-position={`x:${rowIndex},y:${colIndex}`}
-                  onDragOver={onDragOver}
-                  onDrop={onDrop}
-                >
-                  {item && (
-                    <Container key={item.id} className={'absolute z-10'}>
-                      <img
-                        src={item.image || 'https://via.placeholder.com/20'}
-                        alt={item.name}
-                        style={{
-                          width: `calc((${item.size.width} * 2.5rem) - 4px)`,
-                          height: `calc((${item.size.height} * 2.5rem) - 4px)`,
-                          maxWidth: 'none',
-                        }}
-                        draggable={canBeMoved}
-                        onDragStart={onDragStart}
-                        data-item-id={item.id}
-                      />
-                    </Container>
-                  )}
-                </div>
-              )
-            })}
-          </div>
-        ))}
+                return (
+                  <div
+                    key={`${colIndex}-${rowIndex}`}
+                    className={'relative bg-amber-200 border-2 border-black h-10 w-10'}
+                    data-position={`x:${rowIndex},y:${colIndex}`}
+                    onDragOver={onDragOver}
+                    onDrop={onDrop}
+                  >
+                    {item && (
+                      <Container key={item.id} className={'absolute z-10'}>
+                        <img
+                          src={item.image || 'https://via.placeholder.com/20'}
+                          alt={item.name}
+                          style={{
+                            width: `calc((${item.size.width} * 2.5rem) - 4px)`,
+                            height: `calc((${item.size.height} * 2.5rem) - 4px)`,
+                            maxWidth: 'none',
+                          }}
+                          draggable={canBeMoved}
+                          onDragStart={onDragStart}
+                          data-item-id={item.id}
+                        />
+                      </Container>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          ))}
+        </Container>
       </Container>
-
-      <Button onClick={() => setInventoryPage(inventoryPage - 1)}>Previous</Button>
-      <Button onClick={() => setInventoryPage(inventoryPage + 1)}>Next</Button>
     </Container>
   )
 }
