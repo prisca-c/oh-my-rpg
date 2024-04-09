@@ -84,7 +84,10 @@ export const InventoryGrid = (props: InventoryGridProps) => {
     const position = getPosition(e.currentTarget.dataset.position || '')
     const itemId = e.dataTransfer.getData('text')
 
-    const item = filteredItems?.find((item) => item.id === itemId)
+    const item = Object.keys(items).reduce((acc, key) => {
+      const item = items[key].find((item) => item.id === itemId)
+      return item ? item : acc
+    }, null)
     console.log('Item:', item.size)
 
     const canPlaceItem = await canItemBePlaced(
@@ -95,10 +98,17 @@ export const InventoryGrid = (props: InventoryGridProps) => {
     )
 
     if (item && canPlaceItem) {
-      await updateItemPosition(itemId, item.page || 1, position)
+      await updateItemPosition(itemId, inventoryPage, position)
     } else {
       console.log('Item cannot be placed')
     }
+  }
+
+  const onDropOverButtonPage = async (e: React.DragEvent<HTMLDivElement>) => {
+    if (!canBeMoved) return
+
+    e.preventDefault()
+    setInventoryPage(Number(e.currentTarget.textContent))
   }
 
   return (
@@ -117,9 +127,9 @@ export const InventoryGrid = (props: InventoryGridProps) => {
       >
         <Container layout={'flex'} direction={'row'}>
           {Object.keys(items).map((page) => (
-            <Button key={page} onClick={() => setInventoryPage(Number(page))}>
-              {page}
-            </Button>
+            <div key={page} className={'m-2'} onDragOver={onDropOverButtonPage}>
+              <Button onClick={() => setInventoryPage(Number(page))}>{page}</Button>
+            </div>
           ))}
         </Container>
         <Container
