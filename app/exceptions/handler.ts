@@ -1,4 +1,5 @@
 import app from '@adonisjs/core/services/app'
+import logger from '@adonisjs/core/services/logger'
 import type { HttpContext } from '@adonisjs/core/http'
 import { ExceptionHandler } from '@adonisjs/core/http'
 import type { StatusPageRange, StatusPageRenderer } from '@adonisjs/core/types/http'
@@ -35,6 +36,11 @@ export default class HttpExceptionHandler extends ExceptionHandler {
    * response to the client
    */
   async handle(error: unknown, ctx: HttpContext) {
+    if (app.inDev) {
+      if (error instanceof Error && !error.message.includes('favicon')) {
+        logger.error(error)
+      }
+    }
     return super.handle(error, ctx)
   }
 
