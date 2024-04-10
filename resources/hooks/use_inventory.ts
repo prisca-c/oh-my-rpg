@@ -3,12 +3,15 @@ import { useState, useEffect } from 'react'
 import type { Position } from '#types/position'
 import type { InventoryDtoType } from '#dto/inventory_dto'
 import { updateItem } from '#resources/services/inventory_service'
+import { useCanBeMovedStore } from '#resources/store/use_can_be_moved_store'
 
 export const useInventory = (characterId: string, initialInventory: InventoryDtoType) => {
   const [items, setItems] = useState<InventoryDtoType['items']>([])
-  const [canBeMoved, setCanBeMoved] = useState(false)
   const [inventoryPage, setInventoryPage] = useState(1)
   const [filteredItems, setFilteredItems] = useState(initialInventory.items[inventoryPage])
+
+  const canBeMoved = useCanBeMovedStore((state) => state.canBeMoved)
+  const setCanBeMoved = useCanBeMovedStore((state) => state.setCanBeMoved)
 
   useEffect(() => {
     setCanBeMoved(true)

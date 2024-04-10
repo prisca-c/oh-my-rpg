@@ -8,6 +8,8 @@ import { Container } from '#components/utils/index'
 import type { InventoryDtoType } from '#dto/inventory_dto'
 import { useInventory } from '#resources/hooks/use_inventory'
 import { CanItemBePlaced } from '#features/inventory/can_item_be_placed'
+import { useCanBeMovedStore } from '#resources/store/use_can_be_moved_store'
+import { useInventoryDragAndDrop } from '#resources/hooks/use_inventory_drag_and_drop'
 
 interface InventoryGridProps {
   inventory: InventoryDtoType
@@ -16,8 +18,11 @@ interface InventoryGridProps {
 export const InventoryGrid = (props: InventoryGridProps) => {
   const { inventory } = props
   const characterId = usePage().props.character.id
-  const { items, canBeMoved, inventoryPage, filteredItems, setInventoryPage, updateItemPosition } =
+  const canBeMoved = useCanBeMovedStore((state) => state.canBeMoved)
+  const { items, inventoryPage, filteredItems, setInventoryPage, updateItemPosition } =
     useInventory(characterId, inventory)
+
+  const { onDragStart, onDragOver, onDrop, onDragOverButtonPage } = useInventoryDragAndDrop()
 
   const canItemBePlaced = async (
     itemsOnPage: { id: string; position: Position | null; size: Size }[],
@@ -26,35 +31,16 @@ export const InventoryGrid = (props: InventoryGridProps) => {
     return await new CanItemBePlaced().handle(itemsOnPage, itemToPlace)
   }
 
-  const getPosition = (dataPosition: string) => {
-    const [x, y] = dataPosition.split(',')
-    return { x: Number.parseInt(x.split(':')[1]), y: Number.parseInt(y.split(':')[1]) }
-  }
-
-  const onDragStart = (e: React.DragEvent<HTMLDivElement>) => {
-    if (!canBeMoved) return
-
-    e.dataTransfer.setData('text', e.currentTarget.getAttribute('data-item-id') || '')
-  }
-
-  const onDragOver = (e: React.DragEvent<HTMLDivElement>) => {
-    if (!canBeMoved) return
-
-    e.preventDefault()
-    e.dataTransfer.dropEffect = 'move'
-  }
-
-  const onDrop = async (e: React.DragEvent<HTMLDivElement>) => {
-    if (!canBeMoved) return
-
-    e.preventDefault()
-    const position = getPosition(e.currentTarget.dataset.position || '')
-    const itemId = e.dataTransfer.getData('text')
-
+  const handleItemDrop = async (itemId: string, position: Position) => {
     const item = Object.keys(items).reduce((acc, key) => {
       const item = items[key].find((item: { id: string }) => item.id === itemId)
       return item ? item : acc
     }, null)
+
+    if (!item) {
+      console.log('Item not found')
+      return
+    }
 
     const canPlaceItem = await canItemBePlaced(
       filteredItems?.map((item) => ({ id: item.id, position: item.position, size: item.size })) ||
@@ -62,18 +48,12 @@ export const InventoryGrid = (props: InventoryGridProps) => {
       { id: itemId, size: item.size, position },
     )
 
-    if (item && canPlaceItem) {
-      await updateItemPosition(itemId, inventoryPage, position)
-    } else {
+    if (!canPlaceItem) {
       console.log('Item cannot be placed')
+      return
     }
-  }
 
-  const onDropOverButtonPage = async (e: React.DragEvent<HTMLDivElement>) => {
-    if (!canBeMoved) return
-
-    e.preventDefault()
-    setInventoryPage(Number(e.currentTarget.textContent))
+    await updateItemPosition(itemId, inventoryPage, position)
   }
 
   return (
@@ -93,7 +73,7 @@ export const InventoryGrid = (props: InventoryGridProps) => {
         <Container layout={'flex'} direction={'row'}>
           {items &&
             Object.keys(items).map((page) => (
-              <div key={page} onDragOver={onDropOverButtonPage}>
+              <div key={page} onDragOver={(e) => onDragOverButtonPage(e, setInventoryPage)}>
                 <Button onClick={() => setInventoryPage(Number(page))}>{page}</Button>
               </div>
             ))}
@@ -119,7 +99,7 @@ export const InventoryGrid = (props: InventoryGridProps) => {
                     className={'relative bg-amber-200 border-2 border-black h-10 w-10'}
                     data-position={`x:${rowIndex},y:${colIndex}`}
                     onDragOver={onDragOver}
-                    onDrop={onDrop}
+                    onDrop={(e) => onDrop(e, handleItemDrop)}
                   >
                     {item && (
                       <Container key={item.id} className={'absolute z-10'}>
