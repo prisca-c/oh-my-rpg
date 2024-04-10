@@ -1,11 +1,12 @@
+import React from 'react'
 import { usePage } from '@inertiajs/react'
-import React, { useEffect, useState } from 'react'
 
 import type { Size } from '#types/size'
 import { Button } from '#components/button'
 import type { Position } from '#types/position'
 import { Container } from '#components/utils/index'
 import type { InventoryDtoType } from '#dto/inventory_dto'
+import { useInventory } from '#resources/hooks/use_inventory'
 import { CanItemBePlaced } from '#features/inventory/can_item_be_placed'
 
 interface InventoryGridProps {
@@ -14,41 +15,9 @@ interface InventoryGridProps {
 
 export const InventoryGrid = (props: InventoryGridProps) => {
   const { inventory } = props
-  const [items, setItems] = React.useState<InventoryDtoType['items']>([])
-  const [canBeMoved, setCanBeMoved] = React.useState(false)
   const characterId = usePage().props.character.id
-  const [inventoryPage, setInventoryPage] = useState(1)
-  const [filteredItems, setFilteredItems] = useState(inventory.items[inventoryPage])
-
-  useEffect(() => {
-    setCanBeMoved(true)
-    setItems(inventory.items)
-  }, [])
-
-  useEffect(() => {
-    setFilteredItems(items[inventoryPage])
-  }, [items, inventoryPage])
-
-  const updateItem = async (itemId: string, page: number, position: Position): Promise<void> => {
-    const xsrf = document.cookie.match(/XSRF-TOKEN=([^;]+)/)
-    const res = await fetch(`/inventory/${characterId}/item/${itemId}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        'X-XSRF-TOKEN': xsrf ? xsrf[1] : '',
-      },
-      body: JSON.stringify({ id: itemId, page, position }),
-    })
-    if (res.ok) {
-      const data = await res.json()
-      setItems(data.items)
-    }
-  }
-
-  const updateItemPosition = async (itemId: string, page: number, position: Position) => {
-    setCanBeMoved(false)
-    await updateItem(itemId, page, position).then(() => setCanBeMoved(true))
-  }
+  const { items, canBeMoved, inventoryPage, filteredItems, setInventoryPage, updateItemPosition } =
+    useInventory(characterId, inventory)
 
   const canItemBePlaced = async (
     itemsOnPage: { id: string; position: Position | null; size: Size }[],
@@ -122,11 +91,12 @@ export const InventoryGrid = (props: InventoryGridProps) => {
         className={'bg-gray-800 relative select-none'}
       >
         <Container layout={'flex'} direction={'row'}>
-          {Object.keys(items).map((page) => (
-            <div key={page} onDragOver={onDropOverButtonPage}>
-              <Button onClick={() => setInventoryPage(Number(page))}>{page}</Button>
-            </div>
-          ))}
+          {items &&
+            Object.keys(items).map((page) => (
+              <div key={page} onDragOver={onDropOverButtonPage}>
+                <Button onClick={() => setInventoryPage(Number(page))}>{page}</Button>
+              </div>
+            ))}
         </Container>
         <Container
           layout={'flex'}
