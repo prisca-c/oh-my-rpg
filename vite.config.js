@@ -13,7 +13,7 @@ export default defineConfig({
     }),
     adonisjs({
       entrypoints: ['resources/app.tsx', 'resources/css/app.css'],
-      reload: ['resources/views/**/*.edge'],
+      reload: ['resources/views/edge/**/*.edge'],
     }),
     react(),
   ],

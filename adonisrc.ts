@@ -105,7 +105,7 @@ export default defineConfig({
       reloadServer: false,
     },
     {
-      pattern: 'resources/views/**/*.edge',
+      pattern: 'resources/views/edge/**/*.edge',
       reloadServer: false,
     },
   ],
