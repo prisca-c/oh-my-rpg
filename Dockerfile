@@ -1,4 +1,4 @@
-ARG NODE_IMAGE=node:20-alpine3.18
+ARG NODE_IMAGE=node:20.12.1-alpine3.18
 
 FROM $NODE_IMAGE as base
 
@@ -22,7 +22,7 @@ RUN node ace build \
     && cd build \
     && yarn install --frozen-lockfile --production
 
-FROM node:20-alpine3.18
+FROM node:20.12.1-alpine3.18
 
 ARG APP_RELEASE
 
