@@ -16,6 +16,5 @@ export default defineConfig({
   ssr: {
     enabled: true,
     entrypoint: 'resources/ssr.tsx',
-    pages: ['public/home', 'public/login', 'public/register'],
   },
 })
