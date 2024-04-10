@@ -3,11 +3,13 @@ import { Position } from '#types/position'
 
 export class CanItemBePlaced {
   async handle(
-    itemsOnPage: { position: Position | null; size: Size }[],
-    sizeItemToPlace: Size,
-    x: number,
-    y: number,
+    itemsOnPage: { id: string; position: Position | null; size: Size }[],
+    itemToPlace: { id: string; size: Size; position: Position },
   ): Promise<boolean> {
+    const sizeItemToPlace = itemToPlace.size
+    const x = itemToPlace.position.x
+    const y = itemToPlace.position.y
+
     const itemWidth = x + (sizeItemToPlace.width - 1)
     const itemHeight = y + (sizeItemToPlace.height - 1)
     const maxDimension = 9
@@ -16,6 +18,9 @@ export class CanItemBePlaced {
     }
     const returnStmt = await Promise.all(
       itemsOnPage.map(async (existingItem) => {
+        if (existingItem.id === itemToPlace.id) {
+          return false
+        }
         const existingItemSize = existingItem.size
         const existingItemPosition = existingItem.position
 

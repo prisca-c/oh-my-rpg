@@ -39,14 +39,16 @@ export class InventoryManager {
 
         for (const item of items) {
           if (item.page === page) {
+            const id = item.id
             const size = await item.size()
             const position = item.position
-            itemsOnPage.push({ position, size })
+            itemsOnPage.push({ id, position, size })
           }
         }
 
         const itemSize = await item.size()
-        const canPlaceItem = await new CanItemBePlaced().handle(itemsOnPage, itemSize, x, y)
+        const itemToPlace = { id: item.id, size: itemSize, position: { x, y } }
+        const canPlaceItem = await new CanItemBePlaced().handle(itemsOnPage, itemToPlace)
         if (canPlaceItem) {
           return { page, x, y }
         }

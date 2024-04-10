@@ -8,7 +8,7 @@ import { CanItemBePlaced } from '#features/inventory/can_item_be_placed'
 export default class InventoriesController {
   async update({ params, request, response, session }: HttpContext) {
     const { characterId, itemId } = params
-    const { page, position } = request.all()
+    const { page, position, id } = request.all()
 
     if (!page || !position) {
       session.flash('error', 'Invalid request')
@@ -28,16 +28,16 @@ export default class InventoriesController {
     const itemsOnPage = await character.related('inventory').query().where('page', page)
     const normalizedItemsOnPage = []
     for (const item of itemsOnPage) {
+      const id = item.id
       const size = await item.size()
       const position = item.position
-      normalizedItemsOnPage.push({ position, size })
+      normalizedItemsOnPage.push({ id, position, size })
     }
-    const canPlaceItem = await new CanItemBePlaced().handle(
-      normalizedItemsOnPage,
-      await item.size(),
-      position.x,
-      position.y,
-    )
+    const canPlaceItem = await new CanItemBePlaced().handle(normalizedItemsOnPage, {
+      id,
+      size: await item.size(),
+      position,
+    })
 
     if (!canPlaceItem) {
       session.flash('error', 'Item cannot be placed here')

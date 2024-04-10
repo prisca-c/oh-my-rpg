@@ -37,7 +37,7 @@ export const InventoryGrid = (props: InventoryGridProps) => {
         'Content-Type': 'application/json',
         'X-XSRF-TOKEN': xsrf ? xsrf[1] : '',
       },
-      body: JSON.stringify({ page, position }),
+      body: JSON.stringify({ id: itemId, page, position }),
     })
     if (res.ok) {
       const data = await res.json()
@@ -51,12 +51,10 @@ export const InventoryGrid = (props: InventoryGridProps) => {
   }
 
   const canItemBePlaced = async (
-    itemsOnPage: { position: Position | null; size: Size }[],
-    sizeItemToPlace: Size,
-    x: number,
-    y: number,
+    itemsOnPage: { id: string; position: Position | null; size: Size }[],
+    itemToPlace: { id: string; size: Size; position: Position },
   ) => {
-    return await new CanItemBePlaced().handle(itemsOnPage, sizeItemToPlace, x, y)
+    return await new CanItemBePlaced().handle(itemsOnPage, itemToPlace)
   }
 
   const getPosition = (dataPosition: string) => {
@@ -85,16 +83,14 @@ export const InventoryGrid = (props: InventoryGridProps) => {
     const itemId = e.dataTransfer.getData('text')
 
     const item = Object.keys(items).reduce((acc, key) => {
-      const item = items[key].find((item) => item.id === itemId)
+      const item = items[key].find((item: { id: string }) => item.id === itemId)
       return item ? item : acc
     }, null)
-    console.log('Item:', item.size)
 
     const canPlaceItem = await canItemBePlaced(
-      filteredItems?.map((item) => ({ position: item.position, size: item.size })) || [],
-      item?.size,
-      position.x,
-      position.y,
+      filteredItems?.map((item) => ({ id: item.id, position: item.position, size: item.size })) ||
+        [],
+      { id: itemId, size: item.size, position },
     )
 
     if (item && canPlaceItem) {
@@ -127,7 +123,7 @@ export const InventoryGrid = (props: InventoryGridProps) => {
       >
         <Container layout={'flex'} direction={'row'}>
           {Object.keys(items).map((page) => (
-            <div key={page} className={'m-2'} onDragOver={onDropOverButtonPage}>
+            <div key={page} onDragOver={onDropOverButtonPage}>
               <Button onClick={() => setInventoryPage(Number(page))}>{page}</Button>
             </div>
           ))}
