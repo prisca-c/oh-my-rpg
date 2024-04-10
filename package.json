@@ -20,7 +20,7 @@
   },
   "imports": {
     "#app/*": "./app/*.js",
-    "#components/*": "./resources/components/*.js",
+    "#components/*": "./resources/views/components/*.js",
     "#config/*": "./config/*.js",
     "#controllers/*": "./app/controllers/*.js",
     "#dto/*": "./app/dto/*.js",
