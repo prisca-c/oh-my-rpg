@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 import type { Position } from '#types/position'
 import type { InventoryDtoType } from '#dto/inventory_dto'
-import { updateItem } from '#resources/services/inventory_service'
+import { InventoryService } from '#resources/services/inventory_service'
 import { useCanBeMovedStore } from '#resources/store/use_can_be_moved_store'
 
 export const useInventory = (characterId: string, initialInventory: InventoryDtoType) => {
@@ -24,7 +24,7 @@ export const useInventory = (characterId: string, initialInventory: InventoryDto
 
   const updateItemPosition = async (itemId: string, page: number, position: Position) => {
     setCanBeMoved(false)
-    await updateItem(characterId, itemId, page, position).then(
+    await new InventoryService().updateItem(characterId, itemId, page, position).then(
       (updatedItems) => {
         setItems(updatedItems)
         setCanBeMoved(true)
