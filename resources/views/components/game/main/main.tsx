@@ -1,7 +1,7 @@
 import { InventoryDtoType } from '#dto/inventory_dto'
 import { useWorldsStore } from '#resources/store/use_worlds_store'
-import { InventoryGrid } from '#components/game/grid/inventory_grid'
 import { Container, Typography, Card } from '#components/utils/index'
+import { InventoryGrid } from '#components/game/inventory/inventory_grid'
 
 interface MainProps {
   inventory: InventoryDtoType
