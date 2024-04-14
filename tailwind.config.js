@@ -9,6 +9,9 @@ export default {
     },
     container: {},
     extend: {
+      backgroundImage: {
+        inventory: "url('/images/inventory.jpeg')",
+      },
       colors: {
         'primary': '#ff984f',
         'secondary': '#ffe24f',

@@ -1,5 +1,6 @@
 export enum BgColors {
   gray = 'bg-gray',
+  white = 'bg-white',
   primary = 'bg-primary',
   darkGray = 'bg-dark-gray',
   secondary = 'bg-secondary',

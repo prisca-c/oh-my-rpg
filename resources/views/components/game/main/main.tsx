@@ -1,7 +1,7 @@
 import { InventoryDtoType } from '#dto/inventory_dto'
+import { Container, Typography } from '#components/utils/index'
+import { Inventory } from '#components/game/inventory/inventory'
 import { useWorldsStore } from '#resources/store/use_worlds_store'
-import { Container, Typography, Card } from '#components/utils/index'
-import { InventoryGrid } from '#components/game/inventory/inventory_grid'
 
 interface MainProps {
   inventory: InventoryDtoType
@@ -30,16 +30,16 @@ export const Main = (props: MainProps) => {
       <Typography type={'h1'} size={'xl'} className={'font-bold text-center'}>
         Main
       </Typography>
-      {worlds.map((world) => (
-        <a key={world.id} className={'cursor-pointer'} onClick={() => getItem(world.id)}>
-          <Card key={world.id}>
-            <Typography type={'p'} size={'sm'} className={'font-bold'}>
-              {world.name}
-            </Typography>
-          </Card>
-        </a>
-      ))}
-      <InventoryGrid inventory={inventory} />
+      {/*{worlds.map((world) => (*/}
+      {/*  <a key={world.id} className={'cursor-pointer'} onClick={() => getItem(world.id)}>*/}
+      {/*    <Card key={world.id}>*/}
+      {/*      <Typography type={'p'} size={'sm'} className={'font-bold'}>*/}
+      {/*        {world.name}*/}
+      {/*      </Typography>*/}
+      {/*    </Card>*/}
+      {/*  </a>*/}
+      {/*))}*/}
+      <Inventory inventory={inventory} />
     </Container>
   )
 }
