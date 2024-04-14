@@ -1,13 +1,28 @@
 import React from 'react'
 
+import { BgColors } from '#resources/enums/tailwind'
 import { Container } from '#components/utils/container'
 
 type CardProps = {
   children: React.ReactNode
+  size?: 'sm' | 'md' | 'lg'
+  color?: keyof typeof BgColors
 }
 
 export const Card = (props: CardProps) => {
-  const { children } = props
+  const { children, size = 'md', color = 'white' } = props
+
+  const sizes = {
+    sm: 'w-[100px] h-[100px]',
+    md: 'w-[200px] h-[200px]',
+    lg: 'w-[300px] h-[300px]',
+  }
+
+  const bg = BgColors[color]
+
+  const base = 'p-4'
+
+  const className = `${base} ${sizes[size]} ${bg}`
 
   return (
     <Container
@@ -16,7 +31,7 @@ export const Card = (props: CardProps) => {
       justify={'center'}
       align={'center'}
       gap={6}
-      className={'bg-white p-4 w-[200px] h-[200px]'}
+      className={className}
       rounded
     >
       {children}
