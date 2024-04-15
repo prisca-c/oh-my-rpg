@@ -1649,6 +1649,11 @@ acorn@^8.11.3, acorn@^8.4.1, acorn@^8.5.0, acorn@^8.9.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.11.3.tgz#71e0b14e13a4ec160724b38fb7b0f233b1b81d7a"
   integrity sha512-Y9rRfJG5jcKOE0CLisYbojUjIrIEE7AGMzA/Sm4BslANhbS+cDMpgBdcPT91oJ7OuJ9hYJBx59RjbhxVnrF8Xg==
 
+adonis-lucid-soft-deletes@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/adonis-lucid-soft-deletes/-/adonis-lucid-soft-deletes-2.0.0.tgz#3ee29694388504dcc9738d5838ee228b0c574742"
+  integrity sha512-j9JuZleiNSyFILxLqNSHmZkoPEzvWPqTeri1MNs/b20W1zchuIFrMUy+YjiiiPOllxyE/8tlVFwRHzwvJk94Sw==
+
 aggregate-error@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/aggregate-error/-/aggregate-error-4.0.1.tgz#25091fe1573b9e0be892aeda15c7c66a545f758e"
