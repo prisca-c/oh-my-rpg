@@ -1,7 +1,9 @@
 import { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
 import db from '@adonisjs/lucid/services/db'
+import { compose } from '@adonisjs/core/helpers'
 import type { Opaque } from '@poppinss/utils/types'
+import { SoftDeletes } from 'adonis-lucid-soft-deletes'
 import type { HasOne, ManyToMany } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, column, hasOne, manyToMany } from '@adonisjs/lucid/orm'
 
@@ -13,7 +15,7 @@ import type { WorldRequirements } from '#types/world_requirements'
 
 export type WorldId = Opaque<'worldId', string>
 
-export default class World extends BaseModel {
+export default class World extends compose(BaseModel, SoftDeletes) {
   @column({ isPrimary: true })
   declare id: WorldId
 
@@ -43,6 +45,9 @@ export default class World extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true, serializeAs: null })
   declare updatedAt: DateTime
+
+  @column.dateTime()
+  declare deletedAt: DateTime | null
 
   @beforeCreate()
   static async generateId(world: World) {

@@ -1,6 +1,8 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
+import { compose } from '@adonisjs/core/helpers'
 import type { Opaque } from '@poppinss/utils/types'
+import { SoftDeletes } from 'adonis-lucid-soft-deletes'
 import type { HasOne, ManyToMany } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, column, hasOne, manyToMany } from '@adonisjs/lucid/orm'
 
@@ -11,7 +13,7 @@ import type { DifficultyId } from '#models/difficulty'
 
 export type EventId = Opaque<'eventId', string>
 
-export default class Event extends BaseModel {
+export default class Event extends compose(BaseModel, SoftDeletes) {
   @column({ isPrimary: true })
   declare id: EventId
 
@@ -38,6 +40,9 @@ export default class Event extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true, serializeAs: null })
   declare updatedAt: DateTime
+
+  @column.dateTime()
+  declare deletedAt: DateTime | null
 
   @beforeCreate()
   static async generateId(event: Event) {

@@ -1,6 +1,8 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
+import { compose } from '@adonisjs/core/helpers'
 import type { Opaque } from '@poppinss/utils/types'
+import { SoftDeletes } from 'adonis-lucid-soft-deletes'
 import { BaseModel, beforeCreate, column, computed } from '@adonisjs/lucid/orm'
 
 import Character from '#models/character'
@@ -9,7 +11,7 @@ import { Entity } from '#enums/entity.enum'
 
 export type EntityPropertyId = Opaque<'entityPropertyId', string>
 
-export default class EntityProperty extends BaseModel {
+export default class EntityProperty extends compose(BaseModel, SoftDeletes) {
   @column({ isPrimary: true })
   declare id: EntityPropertyId
 
@@ -45,6 +47,9 @@ export default class EntityProperty extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true, serializeAs: null })
   declare updatedAt: DateTime
+
+  @column.dateTime()
+  declare deletedAt: DateTime | null
 
   @beforeCreate()
   static async generateId(entityProperty: EntityProperty) {

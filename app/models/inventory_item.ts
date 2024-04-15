@@ -1,6 +1,8 @@
 import type { DateTime } from 'luxon'
 import { randomUUID } from 'node:crypto'
+import { compose } from '@adonisjs/core/helpers'
 import type { Opaque } from '@poppinss/utils/types'
+import { SoftDeletes } from 'adonis-lucid-soft-deletes'
 import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, belongsTo, column } from '@adonisjs/lucid/orm'
 
@@ -18,7 +20,7 @@ import { InventoryManager } from '#features/inventory/inventory_manager'
 
 export type InventoryItemId = Opaque<'inventoryItemId', string>
 
-export default class InventoryItem extends BaseModel {
+export default class InventoryItem extends compose(BaseModel, SoftDeletes) {
   @column({ isPrimary: true })
   declare id: InventoryItemId
 
@@ -51,6 +53,9 @@ export default class InventoryItem extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true, serializeAs: null })
   declare updatedAt: DateTime
+
+  @column.dateTime()
+  declare deletedAt: DateTime | null
 
   @belongsTo(() => Character)
   declare character: BelongsTo<typeof Character>

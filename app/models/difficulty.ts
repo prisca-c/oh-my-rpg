@@ -1,10 +1,12 @@
 import type { DateTime } from 'luxon'
+import { compose } from '@adonisjs/core/helpers'
 import type { Opaque } from '@poppinss/utils/types'
+import { SoftDeletes } from 'adonis-lucid-soft-deletes'
 import { BaseModel, column } from '@adonisjs/lucid/orm'
 
 export type DifficultyId = Opaque<'difficultyId', number>
 
-export default class Difficulty extends BaseModel {
+export default class Difficulty extends compose(BaseModel, SoftDeletes) {
   @column({ isPrimary: true })
   declare id: DifficultyId
 
@@ -19,4 +21,7 @@ export default class Difficulty extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true, serializeAs: null })
   declare updatedAt: DateTime
+
+  @column.dateTime()
+  declare deletedAt: DateTime | null
 }

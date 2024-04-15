@@ -11,6 +11,7 @@ export default class extends BaseSchema {
       table.boolean('is_active').defaultTo(true)
       table.timestamp('created_at')
       table.timestamp('updated_at')
+      table.timestamp('deleted_at').nullable()
     })
   }
 
