@@ -3358,10 +3358,10 @@ hosted-git-info@^7.0.0:
   dependencies:
     lru-cache "^10.0.1"
 
-hot-hook@^0.1.4:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/hot-hook/-/hot-hook-0.1.9.tgz#2dfa0e9ed804ce06f0508a238c8402c547e9fe02"
-  integrity sha512-6tjuUSFpg0dy88Yhf7H/XMNv9y2Lc+fefx91FQKxUVXeSdOw8F9WOArbqMrNbP/trNBQBTmwY9HthSs640cJkA==
+hot-hook@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/hot-hook/-/hot-hook-0.2.0.tgz#9b102107836d485e6915354c6246a7ece78cb240"
+  integrity sha512-l+cxP/918/Htc4tsTSOeKwg1Dzl+Cte20kbgduoJ8mcWX0EObozBeTY+6Yf++e0tSGHXuLmfuxRwH9AS1Ctq7g==
   dependencies:
     chokidar "^3.6.0"
     fast-glob "^3.3.2"
