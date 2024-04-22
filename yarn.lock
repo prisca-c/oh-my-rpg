@@ -35,10 +35,10 @@
     glob-parent "^6.0.2"
     tempura "^0.4.0"
 
-"@adonisjs/assembler@7.5.0":
-  version "7.5.0"
-  resolved "https://registry.yarnpkg.com/@adonisjs/assembler/-/assembler-7.5.0.tgz#dc1867f24d3bcf76050b0e670b535a54074b41bb"
-  integrity sha512-8HAulosGXhKTNK/0Z1Fg27shg2l8JODHPS9rEY525N2ZUDaIC5galtqzmsayWmst7tSKIMz79ErCvimdTMAhHg==
+"@adonisjs/assembler@7.5.1":
+  version "7.5.1"
+  resolved "https://registry.yarnpkg.com/@adonisjs/assembler/-/assembler-7.5.1.tgz#25452c59cdc6df2af635c6f54f6f3bee3cce1faa"
+  integrity sha512-ggVicFJWOpGKl+Aye1qx/3Z6lkwxj3z7Em0zqgBD+iukjYLUYfVo0J8+7h44cI5+h49rT6xwlbhPKqV2QlDjtw==
   dependencies:
     "@adonisjs/env" "^6.0.0"
     "@antfu/install-pkg" "^0.3.2"
