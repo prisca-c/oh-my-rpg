@@ -3359,9 +3359,9 @@ hosted-git-info@^7.0.0:
     lru-cache "^10.0.1"
 
 hot-hook@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/hot-hook/-/hot-hook-0.2.0.tgz#9b102107836d485e6915354c6246a7ece78cb240"
-  integrity sha512-l+cxP/918/Htc4tsTSOeKwg1Dzl+Cte20kbgduoJ8mcWX0EObozBeTY+6Yf++e0tSGHXuLmfuxRwH9AS1Ctq7g==
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/hot-hook/-/hot-hook-0.2.4.tgz#92c8981c83f5981cf0293f07c97841fb83d24472"
+  integrity sha512-qFRxvbict1TpspPxqMk5ZDu/uN6mpxsoK2Xf26yXnY5WqS8vWLTZ732aPGsletlHXBF2WnB8cbHsSJSMJYaE1Q==
   dependencies:
     chokidar "^3.6.0"
     fast-glob "^3.3.2"
@@ -3930,7 +3930,12 @@ loupe@^3.1.0:
   dependencies:
     get-func-name "^2.0.1"
 
-lru-cache@^10.0.1, lru-cache@^10.2.0:
+lru-cache@^10.0.1:
+  version "10.2.1"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.2.1.tgz#e8d901141f22937968e45a6533d52824070151e4"
+  integrity sha512-tS24spDe/zXhWbNPErCHs/AGOzbKGHT+ybSBqmdLm8WZ1xXLWvH8Qn71QPAlqVhd0qUTWjy+Kl9JmISgDdEjsA==
+
+lru-cache@^10.2.0:
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.2.0.tgz#0bd445ca57363465900f4d1f9bd8db343a4d95c3"
   integrity sha512-2bIM8x+VAf6JT4bKAljS1qUWgMsqZRPGJS6FSahIMPVvctcNhyVp7AJu7quxOW9jwkryBReKZY5tY5JYv2n/7Q==
@@ -5693,9 +5698,9 @@ type-fest@^2.12.2:
   integrity sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==
 
 type-fest@^4.6.0, type-fest@^4.7.1:
-  version "4.15.0"
-  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-4.15.0.tgz#21da206b89c15774cc718c4f2d693e13a1a14a43"
-  integrity sha512-tB9lu0pQpX5KJq54g+oHOLumOx+pMep4RaM6liXh2PKmVRFF+/vAtUP0ZaJ0kOySfVNjF6doBWPHhBhISKdlIA==
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-4.17.0.tgz#4c1b2c2852d2a40ba8c0236d3afc6fc68229e5bf"
+  integrity sha512-9flrz1zkfLRH3jO3bLflmTxryzKMxVa7841VeMgBaNQGY6vH4RCcpN/sQLB7mQQYh1GZ5utT2deypMuCy4yicw==
 
 type-is@^1.6.18:
   version "1.6.18"
