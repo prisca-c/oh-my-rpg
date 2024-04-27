@@ -58,9 +58,9 @@
     ts-morph "^22.0.0"
 
 "@adonisjs/auth@^9.2.0":
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-9.2.0.tgz#c763953de1d920ea55489e0fa36b939717f2be33"
-  integrity sha512-t3XQibKzyQU+FTodpwc6wEBBk5PRfxvVi8uKKqjHzEiijIcsMMnmQdKPMztUdxS3HlbdaZvAvPUHFSBx+KMfpg==
+  version "9.2.1"
+  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-9.2.1.tgz#85357574b8f9332ee3b9254b1c8967d290659b90"
+  integrity sha512-HS5LtVsc5X494cCcddZ7mNCF8py6PVv+nRtYPoSGkBkxFuQEomSL+t3IxH4OzcpA2+muy3fBMCpLadymDxXpTA==
   dependencies:
     "@adonisjs/presets" "^2.4.0"
     basic-auth "^2.0.1"
