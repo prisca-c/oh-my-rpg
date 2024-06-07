@@ -295,9 +295,9 @@
     string-width "^7.1.0"
 
 "@adonisjs/session@^7.1.1":
-  version "7.4.0"
-  resolved "https://registry.yarnpkg.com/@adonisjs/session/-/session-7.4.0.tgz#2ebfe16d646ad91e5bb64a1738f440b5a2e22b05"
-  integrity sha512-RPlCZhTbIM5qrbH/c0tYrZlXPHknwdV3wNzI0yYr9Nsj9JCNMzAMPe8k8c+is1hp0wLNbVM+TdNsDPpSlRhk4A==
+  version "7.4.1"
+  resolved "https://registry.yarnpkg.com/@adonisjs/session/-/session-7.4.1.tgz#26d67b1d0d3d56379a938086c2648ee935c5bbb2"
+  integrity sha512-PfboIuZo6n0Y7YXkC3JNmWDtwZku88x4YzGqIZF4NSGPO9atT+sVw7Z4BJBmTrG/1RD+ufv+Y1ThxZfl6l+ecA==
   dependencies:
     "@poppinss/macroable" "^1.0.2"
     "@poppinss/utils" "^6.7.3"
