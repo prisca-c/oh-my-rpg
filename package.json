@@ -51,7 +51,7 @@
     "@adonisjs/vite": "3.0.0",
     "@inertiajs/react": "^1.0.14",
     "@poppinss/utils": "^6.7.2",
-    "@vinejs/vine": "2.0.0",
+    "@vinejs/vine": "2.1.0",
     "adonis-lucid-soft-deletes": "^2.0.0",
     "edge.js": "^6.0.1",
     "framer-motion": "^11.0.3",
