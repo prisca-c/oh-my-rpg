@@ -58,11 +58,11 @@
     ts-morph "^22.0.0"
 
 "@adonisjs/auth@^9.2.0":
-  version "9.2.1"
-  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-9.2.1.tgz#85357574b8f9332ee3b9254b1c8967d290659b90"
-  integrity sha512-HS5LtVsc5X494cCcddZ7mNCF8py6PVv+nRtYPoSGkBkxFuQEomSL+t3IxH4OzcpA2+muy3fBMCpLadymDxXpTA==
+  version "9.2.3"
+  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-9.2.3.tgz#bda83c564118670fd492ad7dc07144dc8da0c0fe"
+  integrity sha512-my/dqQJo1LQRhT3bW0RuK/1BhDTWcY3tVrGZmVMedCRBfYGt91OAreMy0muukJcWr8AkXBtbBsju2D+myaDa4Q==
   dependencies:
-    "@adonisjs/presets" "^2.4.0"
+    "@adonisjs/presets" "^2.5.1"
     basic-auth "^2.0.1"
 
 "@adonisjs/bodyparser@^10.0.2":
@@ -269,6 +269,13 @@
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@adonisjs/presets/-/presets-2.4.0.tgz#45ee3d5850a0c3a47813fa31b632c219a5e834c2"
   integrity sha512-pgv0dxWCg9ktbPBHCBxVnxP8DXYV6xgDWWwctcjGuXCFAkP1BN5CamTfAiQFftF4Je0G7giyK9jz/TOoBurG0g==
+  dependencies:
+    "@poppinss/utils" "^6.7.3"
+
+"@adonisjs/presets@^2.5.1":
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/@adonisjs/presets/-/presets-2.6.1.tgz#162ab99088dd0c7a65a266640c7d99cff93d5def"
+  integrity sha512-OIk5FYrbtymu1tGLv5yyZfirnXQSjrJYNyBstrTKvu7dW/jsAi9Mlm8wpXMpNhrEzo6sHGEkQKmDIz0m7TP9Pw==
   dependencies:
     "@poppinss/utils" "^6.7.3"
 
