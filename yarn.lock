@@ -836,10 +836,10 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-2.0.3.tgz#4a2868d75d6d6963e423bcf90b7fd1be343409d3"
   integrity sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==
 
-"@inertiajs/core@1.0.16":
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/@inertiajs/core/-/core-1.0.16.tgz#73484ca175464aadb6fe053b393b9829cd4f44d2"
-  integrity sha512-j0nS1KwNv2aNSC10u3qfOswhSMcHSURypPlVSimyRrxKSdrLRmPidow06avunkLU6T7nI9oDXt71WOeO3wCLQg==
+"@inertiajs/core@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@inertiajs/core/-/core-1.2.0.tgz#3cdc88bc17c20eefdae99a778eac7be1ead9b14b"
+  integrity sha512-6U0gqCPbGGGMcLoDm+ckKipc5gptZMmfVFfPGdO7vlO7yipWf1RD+TKkcZGJklFvfgFMKwK2VPw8GAv1OctuQA==
   dependencies:
     axios "^1.6.0"
     deepmerge "^4.0.0"
@@ -847,11 +847,11 @@
     qs "^6.9.0"
 
 "@inertiajs/react@^1.0.14":
-  version "1.0.16"
-  resolved "https://registry.yarnpkg.com/@inertiajs/react/-/react-1.0.16.tgz#f43defda956634e621ec47a500ab756791e97d84"
-  integrity sha512-+cWZ7yUbFHx7XcW8oSvitg7SYTAAS2WbgOrPe/18dPbWt1xNMdUgD/qh375FnO+PwLuM0fhmcze539B7LymOMw==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@inertiajs/react/-/react-1.2.0.tgz#73af92a1fab7aa10968ee818140f46bb3061d904"
+  integrity sha512-Q3wTaQJdoUbUB8YIGeQ0y2Tf/k8dNtz9Nu2dYr1pbYUBv++6d45iC/CFB/lIpqVvvUw8XuIai2bdsUcRSIbPCQ==
   dependencies:
-    "@inertiajs/core" "1.0.16"
+    "@inertiajs/core" "1.2.0"
     lodash.isequal "^4.5.0"
 
 "@ioredis/commands@^1.1.1":
@@ -1915,9 +1915,9 @@ autoprefixer@^10.4.17:
     postcss-value-parser "^4.2.0"
 
 axios@^1.6.0:
-  version "1.6.8"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.8.tgz#66d294951f5d988a00e87a0ffb955316a619ea66"
-  integrity sha512-v/ZHtJDU39mDpyBoFVkETcd/uNdxrWRrg3bKpOKzXFA6Bvqopts6ALSMU3y6ijYxbw2B+wPrIv46egTzJXCLGQ==
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.2.tgz#b625db8a7051fbea61c35a3cbb3a1daa7b9c7621"
+  integrity sha512-2A8QhOMrbomlDuiLeK9XibIBzuHeRcqqNOHp0Cyp5EoJ1IFDh+XZH3A6BkXtv0K4gFGCI0Y4BM7B1wOEi0Rmgw==
   dependencies:
     follow-redirects "^1.15.6"
     form-data "^4.0.0"
