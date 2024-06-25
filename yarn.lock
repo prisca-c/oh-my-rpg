@@ -222,18 +222,18 @@
     vary "^1.1.2"
     youch "^3.3.3"
 
-"@adonisjs/inertia@1.0.0-25":
-  version "1.0.0-25"
-  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.0.0-25.tgz#fb75a541b71777d615bf5fcf3ca28aa544f1c689"
-  integrity sha512-jf9sjpMibx4PdFYpdnNT4cqsjU5ICaHAGlGEt5Wq1vKqYZ/Qnt+kAVsTWf+K6qBVVfIXL+EtIgNz65VFlLE1dw==
+"@adonisjs/inertia@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.1.0.tgz#4132ec4ea8cacde79348fba66a4b1961063990b3"
+  integrity sha512-6DDvx9Bd8QFFbPQC7bNpjBhR5qjWeNMZh1hlSDRG0lbioartSbajyqSa6zpNsit6/tiNoNTkno8Rf43AiS6tNw==
   dependencies:
-    "@poppinss/utils" "^6.7.2"
-    "@tuyau/utils" "^0.0.1"
+    "@poppinss/utils" "^6.7.3"
+    "@tuyau/utils" "^0.0.4"
     crc-32 "^1.2.2"
     edge-error "^4.0.1"
     html-entities "^2.5.2"
     locate-path "^7.2.0"
-    qs "^6.11.2"
+    qs "^6.12.1"
 
 "@adonisjs/logger@^6.0.3":
   version "6.0.3"
@@ -1378,10 +1378,10 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.4.tgz#0b92dcc0cc1c81f6f306a381f28e31b1a56536e9"
   integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
 
-"@tuyau/utils@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@tuyau/utils/-/utils-0.0.1.tgz#bb2e7cf0995027dced7d3c24a8c740b1236a6c81"
-  integrity sha512-Vi2uT9yuy0jZkaW0c1nMgja266DcIoF+/UK0HGMlTH/FUrmKiQLtu64PKBKZtibkezN4nlw3po4SZKvH37SklA==
+"@tuyau/utils@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@tuyau/utils/-/utils-0.0.4.tgz#1db611d1e75366bdb2b106b6271bc37ad6124afd"
+  integrity sha512-ex6CAJNLiTuOvx7nUrgs8FwNG/t88Mi8QTLSO3muHbB6vBSpYimZ6iSUkk4cjEFd4XDy0y+24GDgXKoBfGf4ag==
 
 "@types/babel__core@^7.20.5":
   version "7.20.5"
@@ -4882,7 +4882,7 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.3.1.tgz#027422e2faec0b25e1549c3e1bd8309b9133b6e5"
   integrity sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==
 
-qs@^6.11.2, qs@^6.12.1, qs@^6.9.0:
+qs@^6.12.1, qs@^6.9.0:
   version "6.12.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.12.1.tgz#39422111ca7cbdb70425541cba20c7d7b216599a"
   integrity sha512-zWmv4RSuB9r2mYQw3zxQuHWeU+42aKi1wWig/j4ele4ygELZ7PEO6MM7rim9oAQH2A5MWfsAVf/jPvTPgCbvUQ==
