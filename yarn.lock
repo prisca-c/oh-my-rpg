@@ -244,12 +244,12 @@
     abstract-logging "^2.0.1"
     pino "^8.20.0"
 
-"@adonisjs/lucid@21.1.0":
-  version "21.1.0"
-  resolved "https://registry.yarnpkg.com/@adonisjs/lucid/-/lucid-21.1.0.tgz#1d588b59bc65965b1992fb5d8f6ef9e6d7155210"
-  integrity sha512-2Wz+S65lmgPJZm81I0uQl9s+FekIfO9o7beyCXZEvNpawlJaY2ebnFfs9fSDy66a2ZUFMtiUHZbTJAZ/AUbPuQ==
+"@adonisjs/lucid@21.1.1":
+  version "21.1.1"
+  resolved "https://registry.yarnpkg.com/@adonisjs/lucid/-/lucid-21.1.1.tgz#62b27e4798de42f21dc577fd6e051c5a455c909e"
+  integrity sha512-2b9bu82xC+g+zKcbWib2+jyjs41W5IAwqrfowdi6monue7rsnqqxJOXd98GLLFCTqK/jITg/BKQyI4Ixc5OHzw==
   dependencies:
-    "@adonisjs/presets" "^2.5.1"
+    "@adonisjs/presets" "^2.6.1"
     "@faker-js/faker" "^8.4.1"
     "@poppinss/hooks" "^7.2.3"
     "@poppinss/macroable" "^1.0.2"
@@ -260,11 +260,11 @@
     knex "^3.1.0"
     knex-dynamic-connection "^3.2.0"
     pretty-hrtime "^1.0.3"
-    qs "^6.12.1"
+    qs "^6.12.3"
     slash "^5.1.0"
     tarn "^3.0.2"
 
-"@adonisjs/presets@^2.5.1":
+"@adonisjs/presets@^2.5.1", "@adonisjs/presets@^2.6.1":
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/@adonisjs/presets/-/presets-2.6.1.tgz#162ab99088dd0c7a65a266640c7d99cff93d5def"
   integrity sha512-OIk5FYrbtymu1tGLv5yyZfirnXQSjrJYNyBstrTKvu7dW/jsAi9Mlm8wpXMpNhrEzo6sHGEkQKmDIz0m7TP9Pw==
@@ -4909,6 +4909,13 @@ qs@^6.12.1, qs@^6.9.0:
   version "6.12.1"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.12.1.tgz#39422111ca7cbdb70425541cba20c7d7b216599a"
   integrity sha512-zWmv4RSuB9r2mYQw3zxQuHWeU+42aKi1wWig/j4ele4ygELZ7PEO6MM7rim9oAQH2A5MWfsAVf/jPvTPgCbvUQ==
+  dependencies:
+    side-channel "^1.0.6"
+
+qs@^6.12.3:
+  version "6.12.3"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.12.3.tgz#e43ce03c8521b9c7fd7f1f13e514e5ca37727754"
+  integrity sha512-AWJm14H1vVaO/iNZ4/hO+HyaTehuy9nRqVdkTqlJt0HWvBiBIEXFmb4C0DGeYo3Xes9rrEW+TxHsaigCbN5ICQ==
   dependencies:
     side-channel "^1.0.6"
 
