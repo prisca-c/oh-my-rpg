@@ -244,10 +244,10 @@
     abstract-logging "^2.0.1"
     pino "^8.20.0"
 
-"@adonisjs/lucid@21.1.1":
-  version "21.1.1"
-  resolved "https://registry.yarnpkg.com/@adonisjs/lucid/-/lucid-21.1.1.tgz#62b27e4798de42f21dc577fd6e051c5a455c909e"
-  integrity sha512-2b9bu82xC+g+zKcbWib2+jyjs41W5IAwqrfowdi6monue7rsnqqxJOXd98GLLFCTqK/jITg/BKQyI4Ixc5OHzw==
+"@adonisjs/lucid@21.2.0":
+  version "21.2.0"
+  resolved "https://registry.yarnpkg.com/@adonisjs/lucid/-/lucid-21.2.0.tgz#5f6175fdd8bbfb24ffcf1abf6b82d6b499590c58"
+  integrity sha512-QWsRq/2uU3ZSJhAo418yTSIvgapuXC+D7ZhOvJ3Q/nav1BFUaGP8gzq68gUsBVGEk7cAiHqmBPgwR6b367TKHg==
   dependencies:
     "@adonisjs/presets" "^2.6.1"
     "@faker-js/faker" "^8.4.1"
@@ -260,7 +260,7 @@
     knex "^3.1.0"
     knex-dynamic-connection "^3.2.0"
     pretty-hrtime "^1.0.3"
-    qs "^6.12.3"
+    qs "^6.13.0"
     slash "^5.1.0"
     tarn "^3.0.2"
 
@@ -4912,10 +4912,10 @@ qs@^6.12.1, qs@^6.9.0:
   dependencies:
     side-channel "^1.0.6"
 
-qs@^6.12.3:
-  version "6.12.3"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.12.3.tgz#e43ce03c8521b9c7fd7f1f13e514e5ca37727754"
-  integrity sha512-AWJm14H1vVaO/iNZ4/hO+HyaTehuy9nRqVdkTqlJt0HWvBiBIEXFmb4C0DGeYo3Xes9rrEW+TxHsaigCbN5ICQ==
+qs@^6.13.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.13.0.tgz#6ca3bd58439f7e245655798997787b0d88a51906"
+  integrity sha512-+38qI9SOr8tfZ4QmJNplMUxqjbe7LKvvZgWdExBOmd+egZTtjLB67Gu0HRX3u/XOq7UU2Nx6nsjvS16Z9uwfpg==
   dependencies:
     side-channel "^1.0.6"
 
