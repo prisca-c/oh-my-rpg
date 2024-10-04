@@ -3326,9 +3326,9 @@ fraction.js@^4.3.7:
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
 framer-motion@^11.0.3:
-  version "11.11.0"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.11.0.tgz#1814a7abaf69d897fac2ae9e9d6db3b6151d6f29"
-  integrity sha512-H6Pv12fcXaebinvnLDabTS9vHwtJKAo7XsnVeNLm5t8Yq5LuVvQ3DtL/2yBa2kGmhdIgx9cw8mbj6I8PYx7jPA==
+  version "11.11.1"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-11.11.1.tgz#84c4bf333b445ef8abc59a5567a197b8bc0cd6cb"
+  integrity sha512-Ucr9eHSrk0d+l6vyl9fvq6omh/PAWHjS+PlczpsoUdhJo1TuF3ULWJNuAMnpWQ1dGyPOyoUVuYlUKjE/s8dyCA==
   dependencies:
     tslib "^2.4.0"
 
@@ -4240,15 +4240,7 @@ merge2@^1.3.0, merge2@^1.4.1:
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-micromatch@^4.0.4, micromatch@^4.0.5:
-  version "4.0.8"
-  resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.8.tgz#d66fa18f3a47076789320b9b1af32bd86d9fa202"
-  integrity sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==
-  dependencies:
-    braces "^3.0.3"
-    picomatch "^2.3.1"
-
-micromatch@^4.0.7:
+micromatch@^4.0.4, micromatch@^4.0.5, micromatch@^4.0.7:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.8.tgz#d66fa18f3a47076789320b9b1af32bd86d9fa202"
   integrity sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==
