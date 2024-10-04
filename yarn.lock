@@ -222,18 +222,18 @@
     vary "^1.1.2"
     youch "^3.3.3"
 
-"@adonisjs/inertia@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.1.0.tgz#4132ec4ea8cacde79348fba66a4b1961063990b3"
-  integrity sha512-6DDvx9Bd8QFFbPQC7bNpjBhR5qjWeNMZh1hlSDRG0lbioartSbajyqSa6zpNsit6/tiNoNTkno8Rf43AiS6tNw==
+"@adonisjs/inertia@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.2.2.tgz#4b8bfdb034d1b87cabf6c8754fa0e0e12e6e5c82"
+  integrity sha512-0JGnQ4cNK0ASMAbFmT1qD8OHrC7KLik6ddKyEr6EiAjLBLQiCXK7P/4vnI8holoAK3rCThicSgkJKP6bERh/+Q==
   dependencies:
-    "@poppinss/utils" "^6.7.3"
+    "@poppinss/utils" "^6.8.3"
     "@tuyau/utils" "^0.0.4"
     crc-32 "^1.2.2"
     edge-error "^4.0.1"
     html-entities "^2.5.2"
     locate-path "^7.2.0"
-    qs "^6.12.1"
+    qs "^6.13.0"
 
 "@adonisjs/logger@^6.0.3":
   version "6.0.3"
@@ -1127,6 +1127,24 @@
     flattie "^1.1.1"
     pluralize "^8.0.0"
     safe-stable-stringify "^2.4.3"
+    secure-json-parse "^2.7.0"
+    slash "^5.1.0"
+    slugify "^1.6.6"
+    truncatise "^0.0.8"
+
+"@poppinss/utils@^6.8.3":
+  version "6.8.3"
+  resolved "https://registry.yarnpkg.com/@poppinss/utils/-/utils-6.8.3.tgz#dfef2358fc8702b0e3a048d157c718c353717e2c"
+  integrity sha512-YGeH7pIUm9ExONURNH3xN61dBZ0SXgVuPA9E76t7EHeZHXPNrmR8TlbXQaka6kd5n+cpBNcHG4VsVfYf59bZ7g==
+  dependencies:
+    "@lukeed/ms" "^2.0.2"
+    "@types/bytes" "^3.1.4"
+    "@types/pluralize" "^0.0.33"
+    bytes "^3.1.2"
+    case-anything "^3.1.0"
+    flattie "^1.1.1"
+    pluralize "^8.0.0"
+    safe-stable-stringify "^2.5.0"
     secure-json-parse "^2.7.0"
     slash "^5.1.0"
     slugify "^1.6.6"
@@ -2026,6 +2044,11 @@ case-anything@^2.1.13:
   version "2.1.13"
   resolved "https://registry.yarnpkg.com/case-anything/-/case-anything-2.1.13.tgz#0cdc16278cb29a7fcdeb072400da3f342ba329e9"
   integrity sha512-zlOQ80VrQ2Ue+ymH5OuM/DlDq64mEm+B9UTdHULv5osUMD6HalNTblf2b1u/m6QecjsnOkBpqVZ+XPwIVsy7Ng==
+
+case-anything@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/case-anything/-/case-anything-3.1.0.tgz#43ba878c2381b2d28e6dead4548c94878d0d66c4"
+  integrity sha512-rRYnn5Elur8RuNHKoJ2b0tgn+pjYxL7BzWom+JZ7NKKn1lt/yGV/tUNwOovxYa9l9VL5hnXQdMc+mENbhJzosQ==
 
 chai@^5.1.0:
   version "5.1.0"
@@ -4625,11 +4648,6 @@ picocolors@^1.0.0, picocolors@^1.0.1, picocolors@^1.1.0:
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.1.0.tgz#5358b76a78cde483ba5cef6a9dc9671440b27d59"
   integrity sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==
 
-picocolors@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.1.0.tgz#5358b76a78cde483ba5cef6a9dc9671440b27d59"
-  integrity sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==
-
 picomatch@^2.0.4, picomatch@^2.2.1, picomatch@^2.3.1:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
@@ -4782,16 +4800,7 @@ postcss@^8.4.23:
     picocolors "^1.0.1"
     source-map-js "^1.2.0"
 
-postcss@^8.4.34:
-  version "8.4.47"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.47.tgz#5bf6c9a010f3e724c503bf03ef7947dcb0fea365"
-  integrity sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==
-  dependencies:
-    nanoid "^3.3.7"
-    picocolors "^1.1.0"
-    source-map-js "^1.2.1"
-
-postcss@^8.4.43:
+postcss@^8.4.34, postcss@^8.4.43:
   version "8.4.47"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.47.tgz#5bf6c9a010f3e724c503bf03ef7947dcb0fea365"
   integrity sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==
@@ -5216,6 +5225,11 @@ safe-stable-stringify@^2.3.1, safe-stable-stringify@^2.4.3:
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/safe-stable-stringify/-/safe-stable-stringify-2.4.3.tgz#138c84b6f6edb3db5f8ef3ef7115b8f55ccbf886"
   integrity sha512-e2bDA2WJT0wxseVd4lsDP4+3ONX6HpMXQa1ZhFQ7SU+GjvORCmShbCMltrtIDfkYhVHrOcPtj+KhmDBdPdZD1g==
+
+safe-stable-stringify@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/safe-stable-stringify/-/safe-stable-stringify-2.5.0.tgz#4ca2f8e385f2831c432a719b108a3bf7af42a1dd"
+  integrity sha512-b3rppTKm9T+PsVCBEOUR46GWI7fdOs00VKZ1+9c1EWDaDMvjQc6tUwuFyIprgGgTcWoVHSKrU8H31ZHA2e0RHA==
 
 "safer-buffer@>= 2.1.2 < 3":
   version "2.1.2"
