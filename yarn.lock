@@ -217,18 +217,18 @@
     vary "^1.1.2"
     youch "^3.3.3"
 
-"@adonisjs/inertia@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.1.0.tgz#4132ec4ea8cacde79348fba66a4b1961063990b3"
-  integrity sha512-6DDvx9Bd8QFFbPQC7bNpjBhR5qjWeNMZh1hlSDRG0lbioartSbajyqSa6zpNsit6/tiNoNTkno8Rf43AiS6tNw==
+"@adonisjs/inertia@1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-1.2.2.tgz#4b8bfdb034d1b87cabf6c8754fa0e0e12e6e5c82"
+  integrity sha512-0JGnQ4cNK0ASMAbFmT1qD8OHrC7KLik6ddKyEr6EiAjLBLQiCXK7P/4vnI8holoAK3rCThicSgkJKP6bERh/+Q==
   dependencies:
-    "@poppinss/utils" "^6.7.3"
+    "@poppinss/utils" "^6.8.3"
     "@tuyau/utils" "^0.0.4"
     crc-32 "^1.2.2"
     edge-error "^4.0.1"
     html-entities "^2.5.2"
     locate-path "^7.2.0"
-    qs "^6.12.1"
+    qs "^6.13.0"
 
 "@adonisjs/logger@^6.0.3":
   version "6.0.3"
