@@ -1156,25 +1156,7 @@
     "@poppinss/utils" "^6.7.3"
     enquirer "^2.4.1"
 
-"@poppinss/utils@^6.7.1", "@poppinss/utils@^6.7.2":
-  version "6.7.3"
-  resolved "https://registry.yarnpkg.com/@poppinss/utils/-/utils-6.7.3.tgz#7f0709902addf36b74853cde542d65c333612abe"
-  integrity sha512-zQnhVG4Q+n6+V1vrL/TF1Oy8ZcVVGUs49Sj5OBgoari/q42UiG/rht1DRvoeWd9bT1BBDwxO2vcfxj6C0u/Dgg==
-  dependencies:
-    "@lukeed/ms" "^2.0.2"
-    "@types/bytes" "^3.1.4"
-    "@types/pluralize" "^0.0.33"
-    bytes "^3.1.2"
-    case-anything "^2.1.13"
-    flattie "^1.1.1"
-    pluralize "^8.0.0"
-    safe-stable-stringify "^2.4.3"
-    secure-json-parse "^2.7.0"
-    slash "^5.1.0"
-    slugify "^1.6.6"
-    truncatise "^0.0.8"
-
-"@poppinss/utils@^6.7.3", "@poppinss/utils@^6.8.3":
+"@poppinss/utils@^6.7.1", "@poppinss/utils@^6.7.2", "@poppinss/utils@^6.7.3", "@poppinss/utils@^6.8.3":
   version "6.8.3"
   resolved "https://registry.yarnpkg.com/@poppinss/utils/-/utils-6.8.3.tgz#dfef2358fc8702b0e3a048d157c718c353717e2c"
   integrity sha512-YGeH7pIUm9ExONURNH3xN61dBZ0SXgVuPA9E76t7EHeZHXPNrmR8TlbXQaka6kd5n+cpBNcHG4VsVfYf59bZ7g==
@@ -2105,11 +2087,6 @@ caniuse-lite@^1.0.30001663:
   version "1.0.30001666"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001666.tgz#112d77e80f1762f62a1b71ba92164e0cb3f3dd13"
   integrity sha512-gD14ICmoV5ZZM1OdzPWmpx+q4GyefaK06zi8hmfHV5xe4/2nOQX3+Dw5o+fSqOws2xVwL9j+anOPFwHzdEdV4g==
-
-case-anything@^2.1.13:
-  version "2.1.13"
-  resolved "https://registry.yarnpkg.com/case-anything/-/case-anything-2.1.13.tgz#0cdc16278cb29a7fcdeb072400da3f342ba329e9"
-  integrity sha512-zlOQ80VrQ2Ue+ymH5OuM/DlDq64mEm+B9UTdHULv5osUMD6HalNTblf2b1u/m6QecjsnOkBpqVZ+XPwIVsy7Ng==
 
 case-anything@^3.1.0:
   version "3.1.0"
@@ -5347,7 +5324,7 @@ safe-regex@^2.1.1:
   dependencies:
     regexp-tree "~0.1.1"
 
-safe-stable-stringify@^2.3.1, safe-stable-stringify@^2.4.3, safe-stable-stringify@^2.5.0:
+safe-stable-stringify@^2.3.1, safe-stable-stringify@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/safe-stable-stringify/-/safe-stable-stringify-2.5.0.tgz#4ca2f8e385f2831c432a719b108a3bf7af42a1dd"
   integrity sha512-b3rppTKm9T+PsVCBEOUR46GWI7fdOs00VKZ1+9c1EWDaDMvjQc6tUwuFyIprgGgTcWoVHSKrU8H31ZHA2e0RHA==
