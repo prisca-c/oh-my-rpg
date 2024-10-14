@@ -2,21 +2,21 @@
 # yarn lockfile v1
 
 
-"@adonisjs/ace@^13.2.0":
-  version "13.2.0"
-  resolved "https://registry.yarnpkg.com/@adonisjs/ace/-/ace-13.2.0.tgz#84ba99d70531373b73015e9f8c3f225ab904a185"
-  integrity sha512-yVMgbicPm0vUoWkklIBnoigZtcOguEAg8KKgTupLft9vTteKBYfgnxCpO1fVjPvjXPb5RiaTACbYyR7jGmZ6fA==
+"@adonisjs/ace@^13.3.0":
+  version "13.3.0"
+  resolved "https://registry.yarnpkg.com/@adonisjs/ace/-/ace-13.3.0.tgz#832c9a4097888ad5dd85a7fd6b80368fcf79f6b4"
+  integrity sha512-68dveDFd766p69cBvK/MtOrOP0+YKYLeHspa9KLEWcWk9suPf3pbGkHQ2pwDnvLJxBPHk4932KbbSSzzpGNZGw==
   dependencies:
     "@poppinss/cliui" "^6.4.1"
-    "@poppinss/hooks" "^7.2.3"
-    "@poppinss/macroable" "^1.0.2"
+    "@poppinss/hooks" "^7.2.4"
+    "@poppinss/macroable" "^1.0.3"
     "@poppinss/prompts" "^3.1.3"
-    "@poppinss/utils" "^6.7.3"
+    "@poppinss/utils" "^6.8.3"
     fastest-levenshtein "^1.0.16"
     jsonschema "^1.4.1"
     string-width "^7.2.0"
     yargs-parser "^21.1.1"
-    youch "^3.3.3"
+    youch "^3.3.4"
     youch-terminal "^2.2.3"
 
 "@adonisjs/application@^8.3.1":
@@ -85,11 +85,11 @@
     "@poppinss/utils" "^6.7.3"
 
 "@adonisjs/core@^6.5.0":
-  version "6.14.0"
-  resolved "https://registry.yarnpkg.com/@adonisjs/core/-/core-6.14.0.tgz#57092f58f9b448e35331b599a87524d7390641a3"
-  integrity sha512-4RuCkFR35PQeIEaZQ2oS6pnZBMWKnzNQt0KH5WFYVXmwZ71C6SUCrXI3pPHtifqYzvC3FL1+rlP0sAl5lMG+GA==
+  version "6.14.1"
+  resolved "https://registry.yarnpkg.com/@adonisjs/core/-/core-6.14.1.tgz#78a85a6c42ab5503e5e8920bbe62c97a29110382"
+  integrity sha512-pwQ57tWYBMtc3LP7/eIkQuK/Ag9RrDFmcjjj04XSHR+ormeC/I94EwH89EJ0f4ejidshobtaE/OmW6it0vJfuA==
   dependencies:
-    "@adonisjs/ace" "^13.2.0"
+    "@adonisjs/ace" "^13.3.0"
     "@adonisjs/application" "^8.3.1"
     "@adonisjs/bodyparser" "^10.0.2"
     "@adonisjs/config" "^5.0.2"
@@ -99,13 +99,13 @@
     "@adonisjs/fold" "^10.1.2"
     "@adonisjs/hash" "^9.0.5"
     "@adonisjs/health" "^2.0.0"
-    "@adonisjs/http-server" "^7.2.3"
+    "@adonisjs/http-server" "^7.2.5"
     "@adonisjs/logger" "^6.0.3"
     "@adonisjs/repl" "^4.0.1"
     "@antfu/install-pkg" "^0.4.1"
     "@paralleldrive/cuid2" "^2.2.2"
     "@poppinss/colors" "^4.1.3"
-    "@poppinss/dumper" "^0.4.1"
+    "@poppinss/dumper" "^0.4.2"
     "@poppinss/macroable" "^1.0.3"
     "@poppinss/utils" "^6.8.3"
     "@sindresorhus/is" "^7.0.1"
@@ -115,7 +115,7 @@
     parse-imports "^2.2.1"
     pretty-hrtime "^1.0.3"
     string-width "^7.2.0"
-    youch "^3.3.3"
+    youch "^3.3.4"
     youch-terminal "^2.2.3"
 
 "@adonisjs/cors@^2.2.1":
@@ -193,20 +193,20 @@
     "@poppinss/utils" "^6.7.3"
     check-disk-space "^3.4.0"
 
-"@adonisjs/http-server@^7.2.3":
-  version "7.2.3"
-  resolved "https://registry.yarnpkg.com/@adonisjs/http-server/-/http-server-7.2.3.tgz#1e3977a00fcd2708d2c12396d404b591a085da8a"
-  integrity sha512-qN4hbrIIDkP7pzzUm+lhcuCUK8zID+ZAss1Hosjjg1fq6H3pA1kloJIpc6FjlOZXkO6LjkhflAEh9jf1v/G49Q==
+"@adonisjs/http-server@^7.2.5":
+  version "7.2.5"
+  resolved "https://registry.yarnpkg.com/@adonisjs/http-server/-/http-server-7.2.5.tgz#ccf54a06a0ef6c4701110b817eadfb2493c1bc9f"
+  integrity sha512-85uvY0msXVEfFl+jkpc+V2kSFvruOvRWncyiKxEkiTsma5YjnwV9OT7E/85XPGhZDMZCFHDxWeeQKNH/EOHQaQ==
   dependencies:
     "@paralleldrive/cuid2" "^2.2.2"
-    "@poppinss/macroable" "^1.0.2"
+    "@poppinss/macroable" "^1.0.3"
     "@poppinss/matchit" "^3.1.2"
-    "@poppinss/middleware" "^3.2.3"
-    "@poppinss/utils" "^6.7.3"
-    "@sindresorhus/is" "^6.3.1"
+    "@poppinss/middleware" "^3.2.4"
+    "@poppinss/utils" "^6.8.3"
+    "@sindresorhus/is" "^7.0.1"
     accepts "^1.3.8"
     content-disposition "^0.5.4"
-    cookie "^0.6.0"
+    cookie "^1.0.0"
     destroy "^1.2.0"
     encodeurl "^2.0.0"
     etag "^1.8.1"
@@ -214,11 +214,11 @@
     mime-types "^2.1.35"
     on-finished "^2.4.1"
     proxy-addr "^2.0.7"
-    qs "^6.12.1"
+    qs "^6.13.0"
     tmp-cache "^1.1.0"
     type-is "^1.6.18"
     vary "^1.1.2"
-    youch "^3.3.3"
+    youch "^3.3.4"
 
 "@adonisjs/inertia@1.2.2":
   version "1.2.2"
@@ -1097,7 +1097,7 @@
   dependencies:
     kleur "^4.1.5"
 
-"@poppinss/dumper@^0.4.1":
+"@poppinss/dumper@^0.4.2":
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/@poppinss/dumper/-/dumper-0.4.2.tgz#216733d66c5fcbfd86f5505c5c63e691d3311233"
   integrity sha512-dZBY7t0lp4fMabTQZM5mXYKoTpl0ZwZIwON0gsMmZDyHyhXzIPZw7btOr8OKqFyOKhKBPN+X4Vfmfjeq5NIC7w==
@@ -1106,7 +1106,7 @@
     "@sindresorhus/is" "^7.0.1"
     supports-color "^9.4.0"
 
-"@poppinss/hooks@^7.2.3":
+"@poppinss/hooks@^7.2.3", "@poppinss/hooks@^7.2.4":
   version "7.2.4"
   resolved "https://registry.yarnpkg.com/@poppinss/hooks/-/hooks-7.2.4.tgz#d558369164466bcf1eb01b0e86f1db1ac475983b"
   integrity sha512-AoKSHC8ts199+PPa/R+XFF1A9FFhbiGibizOp0M54kCzvhwErGNLJd8Yk/b5nzodmsvApX7cjWVKPM5+12r2VA==
@@ -1128,7 +1128,7 @@
   dependencies:
     "@arr/every" "^1.0.0"
 
-"@poppinss/middleware@^3.2.3":
+"@poppinss/middleware@^3.2.4":
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/@poppinss/middleware/-/middleware-3.2.4.tgz#10f2b13374fa09e80cb8d2d5306937a3e76876a4"
   integrity sha512-Klz8kInSN2hL3C/IRkt2DBFIc/kZ225SZpb4Mj2fS7k+YXRmogUF1sVi6W/xkuHuY523mNWgMkt/Ym5HoOC03A==
@@ -1266,7 +1266,7 @@
   resolved "https://registry.yarnpkg.com/@sinclair/typebox/-/typebox-0.27.8.tgz#6667fac16c436b5434a387a34dedb013198f6e6e"
   integrity sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==
 
-"@sindresorhus/is@^6.2.0", "@sindresorhus/is@^6.3.1":
+"@sindresorhus/is@^6.2.0":
   version "6.3.1"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-6.3.1.tgz#43bbe2a94de0d7a11b95b7fc8100fa0e4694bbe0"
   integrity sha512-FX4MfcifwJyFOI2lPoX7PQxCqx8BG1HCho7WdiXwpEQx1Ycij0JxkfYtGK7yqNScrZGSlt6RE6sw8QYoH7eKnQ==
@@ -2344,10 +2344,15 @@ cookie@^0.5.0:
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.5.0.tgz#d1f5d71adec6558c58f389987c366aa47e994f8b"
   integrity sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==
 
-cookie@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.6.0.tgz#2798b04b071b0ecbff0dbb62a505a8efa4e19051"
-  integrity sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==
+cookie@^0.7.1:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.7.2.tgz#556369c472a2ba910f2979891b526b3436237ed7"
+  integrity sha512-yki5XnKuf750l50uGTllt6kKILY4nQ1eNIQatoXEByZ5dWgnKqbnqmTrBE5B4N7lrMJKQ2ytWMiTO2o0v6Ew/w==
+
+cookie@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-1.0.0.tgz#1eee6e952e3e06f79434699fe8370c48f3a5480b"
+  integrity sha512-bsSztFoaR8bw9MlFCrTHzc1wOKCUKOBsbgFdoDilZDkETAOOjKSqV7L+EQLbTaylwvZasd9vM4MGKotJaUfSpA==
 
 copy-file@^11.0.0:
   version "11.0.0"
@@ -4562,9 +4567,9 @@ package-json-from-dist@^1.0.0:
   integrity sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==
 
 package-manager-detector@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/package-manager-detector/-/package-manager-detector-0.2.0.tgz#160395cd5809181f5a047222319262b8c2d8aaea"
-  integrity sha512-E385OSk9qDcXhcM9LNSe4sdhx8a9mAPrZ4sMLW+tmxl5ZuGtPUcdFu+MPP2jbgiWAZ6Pfe5soGFMd+0Db5Vrog==
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/package-manager-detector/-/package-manager-detector-0.2.2.tgz#fbbc8afe87cdaee471ca9b89c3700236c6d2d9e5"
+  integrity sha512-VgXbyrSNsml4eHWIvxxG/nTL4wgybMTXCV2Un/+yEc3aDKKU6nQBZjbeP3Pl3qm9Qg92X/1ng4ffvCeD/zwHgg==
 
 parent-module@^1.0.0:
   version "1.0.1"
@@ -6230,6 +6235,15 @@ youch@^3.3.3:
   integrity sha512-qSFXUk3UZBLfggAW3dJKg0BMblG5biqSF8M34E06o5CSsZtH92u9Hqmj2RzGiHDi64fhe83+4tENFP2DB6t6ZA==
   dependencies:
     cookie "^0.5.0"
+    mustache "^4.2.0"
+    stacktracey "^2.1.8"
+
+youch@^3.3.4:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/youch/-/youch-3.3.4.tgz#f13ee0966846c6200e7fb9ece89306d95df5e489"
+  integrity sha512-UeVBXie8cA35DS6+nBkls68xaBBXCye0CNznrhszZjTbRVnJKQuNsyLKBTTL4ln1o1rh2PKtv35twV7irj5SEg==
+  dependencies:
+    cookie "^0.7.1"
     mustache "^4.2.0"
     stacktracey "^2.1.8"
 
