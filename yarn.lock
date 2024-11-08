@@ -53,11 +53,12 @@
     ts-morph "^23.0.0"
 
 "@adonisjs/auth@^9.2.0":
-  version "9.2.3"
-  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-9.2.3.tgz#bda83c564118670fd492ad7dc07144dc8da0c0fe"
-  integrity sha512-my/dqQJo1LQRhT3bW0RuK/1BhDTWcY3tVrGZmVMedCRBfYGt91OAreMy0muukJcWr8AkXBtbBsju2D+myaDa4Q==
+  version "9.2.4"
+  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-9.2.4.tgz#4b053e594be070bd926a7c0b0dd2743088654050"
+  integrity sha512-n6YLy1U0ClKCNFRwC3t+TQBXlJjKwGmRQEQdJnuSgK1L38R8KhU9LbsFTkMH+iKSOigMRQlILtd4Sgf0ekoC6w==
   dependencies:
     "@adonisjs/presets" "^2.5.1"
+    "@poppinss/utils" "^6.8.3"
     basic-auth "^2.0.1"
 
 "@adonisjs/bodyparser@^10.0.2":
@@ -262,14 +263,7 @@
     slash "^5.1.0"
     tarn "^3.0.2"
 
-"@adonisjs/presets@^2.5.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@adonisjs/presets/-/presets-2.6.1.tgz#162ab99088dd0c7a65a266640c7d99cff93d5def"
-  integrity sha512-OIk5FYrbtymu1tGLv5yyZfirnXQSjrJYNyBstrTKvu7dW/jsAi9Mlm8wpXMpNhrEzo6sHGEkQKmDIz0m7TP9Pw==
-  dependencies:
-    "@poppinss/utils" "^6.7.3"
-
-"@adonisjs/presets@^2.6.3":
+"@adonisjs/presets@^2.5.1", "@adonisjs/presets@^2.6.3":
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/@adonisjs/presets/-/presets-2.6.3.tgz#b5f22117b31d2620e75f58592071fc19cdb0d817"
   integrity sha512-ADCdslOgsSZPFnDQO0I6en/PL8Hg+VDHaOI+KyPxKZ5UEy5uFHuQm2BPo+0OaoSLClIm8SJnZFaXwNK9uN55bA==
