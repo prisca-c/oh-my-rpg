@@ -18,10 +18,13 @@ type PageType =
   | null
   | undefined
 
-void createInertiaApp({
+const appName = import.meta.env.VITE_APP_NAME || 'Oh My RPG!'
+
+createInertiaApp({
   progress: {
     color: '#16a34a',
   },
+  title: (title: string) => `${title} - ${appName}`,
   resolve: (name: string) => {
     const pages = import.meta.glob('./views/pages/**/*.tsx', { eager: true })
     const page: any = pages[`./views/pages/${name}.tsx`]
@@ -31,8 +34,8 @@ void createInertiaApp({
 
     return page
   },
-  setup({ el, App, props }: any) {
+  setup({ el, App, props }) {
     const root = createRoot(el)
-    root.render(<App {...props} />)
+    root.render((<App {...props} />) as ReactElement)
   },
 })

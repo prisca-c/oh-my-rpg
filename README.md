@@ -44,6 +44,7 @@ This is a project to create a browser RPG game.
    ```bash
    node ace serve --watch
    ```
+
 ### Diagrams
 
 ![MCD](https://github.com/prisca-c/oh-my-rpg/assets/91020684/560d04ae-e506-49c4-9c2f-fc43b478d1bd)
