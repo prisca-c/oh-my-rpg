@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { BgColors } from '#resources/enums/tailwind'
+import { BG_COLORS, BgColors } from '#resources/enums/theme'
 
 type ButtonProps = {
   children: React.ReactNode
   type?: 'button' | 'reset' | 'submit'
   onClick?: () => void
-  color?: keyof typeof BgColors
+  color?: BgColors
 }
 
 export const Button = ({
@@ -15,7 +15,7 @@ export const Button = ({
   onClick = () => {},
   color = 'primary',
 }: ButtonProps): React.ReactElement => {
-  const bgColors = BgColors[color]
+  const bgColors = BG_COLORS[color]
   const classList = ['px-4', 'py-2', bgColors, 'text-white', 'rounded-md']
   const classString = classList.join(' ')
 

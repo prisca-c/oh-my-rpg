@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BgColors } from '#resources/enums/tailwind'
+import { BG_COLORS, BgColors } from '#resources/enums/theme'
 
 type ContainerProps = {
   children: React.ReactNode
@@ -11,7 +11,7 @@ type ContainerProps = {
   justify?: 'center' | 'start' | 'end'
   gap?: string | number
   direction?: 'row' | 'col'
-  bg?: keyof typeof BgColors
+  bg?: BgColors
 }
 
 export const Container = ({
@@ -39,7 +39,7 @@ export const Container = ({
     classList.push('grid')
   }
   if (bg) {
-    const bgColors = BgColors[bg]
+    const bgColors = BG_COLORS[bg]
     classList.push(bgColors)
   }
   if (rounded) classList.push('rounded-md')

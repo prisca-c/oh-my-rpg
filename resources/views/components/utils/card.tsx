@@ -1,12 +1,12 @@
 import React from 'react'
 
-import { BgColors } from '#resources/enums/tailwind'
+import { BG_COLORS, BgColors } from '#resources/enums/theme'
 import { Container } from '#components/utils/container'
 
 type CardProps = {
   children: React.ReactNode
   size?: 'sm' | 'md' | 'lg'
-  color?: keyof typeof BgColors
+  color?: BgColors
 }
 
 export const Card = (props: CardProps) => {
@@ -18,7 +18,7 @@ export const Card = (props: CardProps) => {
     lg: 'w-[300px] h-[300px]',
   }
 
-  const bg = BgColors[color]
+  const bg = BG_COLORS[color]
 
   const base = 'p-4'
 

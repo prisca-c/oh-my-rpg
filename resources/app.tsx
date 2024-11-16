@@ -1,7 +1,11 @@
 /// <reference types="vite/client" />
+/// <reference path="../adonisrc.ts" />
+/// <reference path="../config/inertia.ts" />
+import '@unocss/reset/tailwind.css'
 import './css/app.css'
+import 'virtual:uno.css'
 
-import { createRoot } from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import { createInertiaApp } from '@inertiajs/react'
 import type { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react'
 
@@ -24,7 +28,9 @@ createInertiaApp({
   progress: {
     color: '#16a34a',
   },
+
   title: (title: string) => `${title} - ${appName}`,
+
   resolve: (name: string) => {
     const pages = import.meta.glob('./views/pages/**/*.tsx', { eager: true })
     const page: any = pages[`./views/pages/${name}.tsx`]
@@ -34,8 +40,8 @@ createInertiaApp({
 
     return page
   },
+
   setup({ el, App, props }) {
-    const root = createRoot(el)
-    root.render((<App {...props} />) as ReactElement)
+    hydrateRoot(el, <App {...props} />)
   },
 })
