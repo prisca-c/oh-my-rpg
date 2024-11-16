@@ -52,12 +52,13 @@
     slash "^5.1.0"
     ts-morph "^23.0.0"
 
-"@adonisjs/auth@^9.2.0":
-  version "9.2.3"
-  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-9.2.3.tgz#bda83c564118670fd492ad7dc07144dc8da0c0fe"
-  integrity sha512-my/dqQJo1LQRhT3bW0RuK/1BhDTWcY3tVrGZmVMedCRBfYGt91OAreMy0muukJcWr8AkXBtbBsju2D+myaDa4Q==
+"@adonisjs/auth@^9.2.4":
+  version "9.2.4"
+  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-9.2.4.tgz#4b053e594be070bd926a7c0b0dd2743088654050"
+  integrity sha512-n6YLy1U0ClKCNFRwC3t+TQBXlJjKwGmRQEQdJnuSgK1L38R8KhU9LbsFTkMH+iKSOigMRQlILtd4Sgf0ekoC6w==
   dependencies:
     "@adonisjs/presets" "^2.5.1"
+    "@poppinss/utils" "^6.8.3"
     basic-auth "^2.0.1"
 
 "@adonisjs/bodyparser@^10.0.2":
@@ -84,7 +85,7 @@
   dependencies:
     "@poppinss/utils" "^6.7.3"
 
-"@adonisjs/core@^6.5.0":
+"@adonisjs/core@^6.14.1":
   version "6.14.1"
   resolved "https://registry.yarnpkg.com/@adonisjs/core/-/core-6.14.1.tgz#78a85a6c42ab5503e5e8920bbe62c97a29110382"
   integrity sha512-pwQ57tWYBMtc3LP7/eIkQuK/Ag9RrDFmcjjj04XSHR+ormeC/I94EwH89EJ0f4ejidshobtaE/OmW6it0vJfuA==
@@ -218,10 +219,10 @@
     vary "^1.1.2"
     youch "^3.3.4"
 
-"@adonisjs/inertia@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-2.0.0.tgz#b49f4277ae761ef6df3c5091518d32eff1a43fad"
-  integrity sha512-Rpmzr+vuD/xAv4FE9P+NVOr9+pWe8yXmThLeT6Q9fiDoy7TXMRdODVOLtGi3TYyYoDpPGhmEqkfto52Pw+za3g==
+"@adonisjs/inertia@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-2.0.1.tgz#686fb9964aee3ec107f80d9162545419c0ca0037"
+  integrity sha512-5x6uKmir+JcCpEVm2UbS2STrzJD1kEv7BJoYtCimZty8KEc14PwPV58Txk3FPp/DHLbsusE/gA79c3ep0z9rzQ==
   dependencies:
     "@poppinss/utils" "^6.8.3"
     "@tuyau/utils" "^0.0.4"
@@ -298,7 +299,7 @@
     "@poppinss/colors" "^4.1.2"
     string-width "^7.1.0"
 
-"@adonisjs/session@^7.1.1":
+"@adonisjs/session@^7.5.0":
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/@adonisjs/session/-/session-7.5.0.tgz#5b8cddcf7b38f59817c89160d2a7197d7a5bb3e5"
   integrity sha512-H5fFrkE/yFSWP/XD8eyWLyUVbtIqTcw9QBP1me4d9vnl4mao4jHrmnNA8rwtzsEFdXu/UgWdH4kljh1G9PDzWw==
@@ -839,7 +840,7 @@
     nprogress "^0.2.0"
     qs "^6.9.0"
 
-"@inertiajs/react@^1.0.14":
+"@inertiajs/react@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@inertiajs/react/-/react-1.2.0.tgz#73af92a1fab7aa10968ee818140f46bb3061d904"
   integrity sha512-Q3wTaQJdoUbUB8YIGeQ0y2Tf/k8dNtz9Nu2dYr1pbYUBv++6d45iC/CFB/lIpqVvvUw8XuIai2bdsUcRSIbPCQ==
@@ -1471,12 +1472,19 @@
   resolved "https://registry.yarnpkg.com/@types/luxon/-/luxon-3.4.2.tgz#e4fc7214a420173cea47739c33cdf10874694db7"
   integrity sha512-TifLZlFudklWlMBfhubvgqTXRzLDI5pCbGa4P8a3wPyUQSW+1xQ5eDsreP9DWHX3tjq1ke96uYG/nwundroWcA==
 
-"@types/node@^20.11.19", "@types/node@^20.12.3":
+"@types/node@^20.11.19":
   version "20.17.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.17.0.tgz#d0620ba0fe4cf2a0f12351c7bdd805fc4e1f036b"
   integrity sha512-a7zRo0f0eLo9K5X9Wp5cAqTUNGzuFLDG2R7C4HY2BhcMAsxgSPuRvAC1ZB6QkuUQXf0YZAgfOX2ZyrBa2n4nHQ==
   dependencies:
     undici-types "~6.19.2"
+
+"@types/node@^22.0.0":
+  version "22.9.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.9.0.tgz#b7f16e5c3384788542c72dc3d561a7ceae2c0365"
+  integrity sha512-vuyHg81vvWA1Z1ELfvLko2c8f34gyA0zaic0+Rllc5lbCnbSyuvb2Oxpm6TAUAC/2xZN3QGqxBNggD1nNR2AfQ==
+  dependencies:
+    undici-types "~6.19.8"
 
 "@types/normalize-package-data@^2.4.0", "@types/normalize-package-data@^2.4.3":
   version "2.4.4"
@@ -2549,7 +2557,7 @@ edge-parser@^9.0.3:
     edge-lexer "^6.0.2"
     js-stringify "^1.0.2"
 
-edge.js@^6.0.1:
+edge.js@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/edge.js/-/edge.js-6.2.0.tgz#45d6b500cf8e88d2585950b2e0e39abf802da927"
   integrity sha512-xw82TzdPngccJiFqK6FE/79vO6mUvWVvKe6OEu/VHDOf199SIOW1q022d3UIaKGXcwf60lIXZYPIRqooQuzigA==
@@ -5548,7 +5556,7 @@ uint8array-extras@^1.3.0:
   resolved "https://registry.yarnpkg.com/uint8array-extras/-/uint8array-extras-1.4.0.tgz#e42a678a6dd335ec2d21661333ed42f44ae7cc74"
   integrity sha512-ZPtzy0hu4cZjv3z5NW9gfKnNLjoz4y6uv4HlelAjDK7sY/xOkKZv9xK/WQpcsBB3jEybChz9DPC2U/+cusjJVQ==
 
-undici-types@~6.19.2:
+undici-types@~6.19.2, undici-types@~6.19.8:
   version "6.19.8"
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.19.8.tgz#35111c9d1437ab83a7cdc0abae2f26d88eda0a02"
   integrity sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==
