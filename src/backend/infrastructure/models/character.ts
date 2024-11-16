@@ -6,9 +6,9 @@ import { SoftDeletes } from 'adonis-lucid-soft-deletes'
 import type { HasMany, HasOne } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, column, hasMany, hasOne } from '@adonisjs/lucid/orm'
 
-import User, { type UserId } from '#models/user'
-import InventoryItem from '#models/inventory_item'
-import EntityProperty, { type EntityPropertyId } from '#models/entity_property'
+import User, { type UserId } from '#infrastructure/models/user'
+import InventoryItem from '#infrastructure/models/inventory_item'
+import EntityProperty, { type EntityPropertyId } from '#infrastructure/models/entity_property'
 
 export type CharacterId = Opaque<'characterId', string>
 

@@ -1,6 +1,6 @@
-import type Character from '#models/character'
-import InventoryItem from '#models/inventory_item'
-import { CanItemBePlaced } from '#features/inventory/can_item_be_placed'
+import type Character from '#infrastructure/models/character'
+import InventoryItem from '#infrastructure/models/inventory_item'
+import { CanItemBePlaced } from '#domain/inventory/can_item_be_placed'
 
 interface ReturnPosition {
   page: number

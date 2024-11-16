@@ -1,7 +1,7 @@
 import vine, { SimpleMessagesProvider } from '@vinejs/vine'
 
-import { uniqueRule } from '#validators/rules/index'
-import type { WorldRequirements } from '#types/world_requirements'
+import { uniqueRule } from '#infrastructure/validators/rules/index'
+import type { WorldRequirements } from '#common/types/world_requirements'
 
 type CreateWorldValidatorData = {
   name: string

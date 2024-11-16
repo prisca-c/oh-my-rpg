@@ -1,4 +1,4 @@
-import type Character from '#models/character'
+import type Character from '#infrastructure/models/character'
 import { Container, Typography } from '~/components/utils'
 
 type LeaderboardProps = {

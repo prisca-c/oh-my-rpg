@@ -1,5 +1,5 @@
 import { Container } from '~/components/utils'
-import { InventoryDtoType } from '#dto/inventory_dto'
+import { InventoryDtoType } from '#application/dto/inventory_dto'
 import { InventoryGrid } from '~/components/game/inventory/inventory_grid'
 import { InventoryCompartments } from '~/components/game/inventory/inventory_compartments'
 

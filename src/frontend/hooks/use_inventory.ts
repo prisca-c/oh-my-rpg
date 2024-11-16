@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
-import type { Position } from '#types/position'
-import type { InventoryDtoType } from '#dto/inventory_dto'
+import type { Position } from '#common/types/position'
+import type { InventoryDtoType } from '#application/dto/inventory_dto'
 import { InventoryService } from '~/services/inventory_service'
 import { useCanBeMovedStore } from '~/store/use_can_be_moved_store'
 

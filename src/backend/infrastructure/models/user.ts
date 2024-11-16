@@ -8,7 +8,7 @@ import { withAuthFinder } from '@adonisjs/auth/mixins/lucid'
 import type { HasMany } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, column, hasMany } from '@adonisjs/lucid/orm'
 
-import Character from '#models/character'
+import Character from '#infrastructure/models/character'
 
 export type UserId = Opaque<'userId', string>
 

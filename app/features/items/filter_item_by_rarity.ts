@@ -1,5 +1,5 @@
-import type Item from '#models/item'
-import ItemRarity from '#models/item_rarity'
+import type Item from '#infrastructure/models/item'
+import ItemRarity from '#infrastructure/models/item_rarity'
 
 export class FilterItemByRarity {
   async handle(items: Item[], rarity: string) {

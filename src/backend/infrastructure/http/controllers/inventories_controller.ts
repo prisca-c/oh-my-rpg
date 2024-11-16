@@ -1,9 +1,9 @@
 import type { HttpContext } from '@adonisjs/core/http'
 
-import { assert } from '#utils/assert'
-import Character from '#models/character'
-import { InventoryDTO } from '#dto/inventory_dto'
-import { CanItemBePlaced } from '#features/inventory/can_item_be_placed'
+import { assert } from '#common/utils/assert'
+import Character from '#infrastructure/models/character'
+import { InventoryDTO } from '#application/dto/inventory_dto'
+import { CanItemBePlaced } from '#domain/inventory/can_item_be_placed'
 
 export default class InventoriesController {
   async update({ params, request, response, session }: HttpContext) {

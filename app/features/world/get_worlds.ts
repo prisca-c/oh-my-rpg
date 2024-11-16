@@ -1,5 +1,5 @@
-import World from '#models/world'
-import type Character from '#models/character'
+import World from '#infrastructure/models/world'
+import type Character from '#infrastructure/models/character'
 
 export class GetWorlds {
   async handle(character: Character): Promise<World[]> {

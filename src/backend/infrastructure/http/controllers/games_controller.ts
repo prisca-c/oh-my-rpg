@@ -1,7 +1,7 @@
 import type { HttpContext } from '@adonisjs/core/http'
 
-import Character from '#models/character'
-import { InventoryDTO } from '#dto/inventory_dto'
+import Character from '#infrastructure/models/character'
+import { InventoryDTO } from '#application/dto/inventory_dto'
 import { GetWorlds } from '#features/world/get_worlds'
 
 export default class GamesController {

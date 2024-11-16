@@ -5,7 +5,7 @@ import { SoftDeletes } from 'adonis-lucid-soft-deletes'
 import type { ManyToMany } from '@adonisjs/lucid/types/relations'
 import { BaseModel, column, manyToMany } from '@adonisjs/lucid/orm'
 
-import Item from '#models/item'
+import Item from '#infrastructure/models/item'
 
 export type ItemListId = Opaque<'itemListId', string>
 

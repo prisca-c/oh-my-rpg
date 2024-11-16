@@ -5,8 +5,8 @@ import { SoftDeletes } from 'adonis-lucid-soft-deletes'
 import type { HasMany } from '@adonisjs/lucid/types/relations'
 import { BaseModel, column, hasMany } from '@adonisjs/lucid/orm'
 
-import Event from '#models/event'
-import World from '#models/world'
+import Event from '#infrastructure/models/event'
+import World from '#infrastructure/models/world'
 
 export type LimitId = Opaque<'limitId', string>
 

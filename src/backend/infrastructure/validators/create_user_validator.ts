@@ -1,6 +1,6 @@
 import vine, { SimpleMessagesProvider } from '@vinejs/vine'
 
-import { uniqueRule } from '#validators/rules/index'
+import { uniqueRule } from '#infrastructure/validators/rules/index'
 
 type CreateUserValidatorData = {
   username: string

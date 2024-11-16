@@ -1,7 +1,7 @@
 import type React from 'react'
 import { useCallback } from 'react'
 
-import type { Position } from '#types/position'
+import type { Position } from '#common/types/position'
 import { useCanBeMovedStore } from '~/store/use_can_be_moved_store'
 
 export const useInventoryDragAndDrop = () => {

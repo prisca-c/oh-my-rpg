@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import type Character from '#models/character'
+import type Character from '#infrastructure/models/character'
 import { CharacterCard } from '~/components/character_card'
 import { Flex } from '~/components/utils/flex'
 import { CreateCharacterForm } from '~/components/characters/create_character_form'

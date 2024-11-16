@@ -1,8 +1,8 @@
 import { inject } from '@adonisjs/core'
 import type { HttpContext } from '@adonisjs/core/http'
 
-import World from '#models/world'
-import Character from '#models/character'
+import World from '#infrastructure/models/world'
+import Character from '#infrastructure/models/character'
 import GetItems from '#features/items/get_items'
 import { LootItem } from '#features/items/loot_item'
 import { StoreItem } from '#features/items/store_item'

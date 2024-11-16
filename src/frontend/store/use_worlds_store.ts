@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-import type World from '#models/world'
+import type World from '#infrastructure/models/world'
 
 type WorldsState = {
   worlds: World[]

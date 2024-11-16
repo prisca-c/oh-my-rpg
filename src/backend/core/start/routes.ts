@@ -9,17 +9,18 @@
 
 import router from '@adonisjs/core/services/router'
 
-import { middleware } from '#start/kernel'
+import { middleware } from '#core/start/kernel'
 
 // region -- Import controllers
-const LootController = () => import('#controllers/loot_controller')
-const RegisterController = () => import('#controllers/register_controller')
-const LoginController = () => import('#controllers/login_controller')
-const HomeController = () => import('#controllers/home_controller')
-const GamesController = () => import('#controllers/games_controller')
-const CharactersController = () => import('#controllers/characters_controller')
-const AuthController = () => import('#controllers/auth_controller')
-const InventoriesController = () => import('#controllers/inventories_controller')
+const LootController = () => import('#infrastructure/http/controllers/loot_controller')
+const RegisterController = () => import('#infrastructure/http/controllers/register_controller')
+const LoginController = () => import('#infrastructure/http/controllers/login_controller')
+const HomeController = () => import('#infrastructure/http/controllers/home_controller')
+const GamesController = () => import('#infrastructure/http/controllers/games_controller')
+const CharactersController = () => import('#infrastructure/http/controllers/characters_controller')
+const AuthController = () => import('#infrastructure/http/controllers/auth_controller')
+const InventoriesController = () =>
+  import('#infrastructure/http/controllers/inventories_controller')
 // endregion
 
 router.get('/', [HomeController, 'index'])

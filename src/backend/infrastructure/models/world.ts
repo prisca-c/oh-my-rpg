@@ -7,11 +7,11 @@ import { SoftDeletes } from 'adonis-lucid-soft-deletes'
 import type { HasOne, ManyToMany } from '@adonisjs/lucid/types/relations'
 import { BaseModel, beforeCreate, column, hasOne, manyToMany } from '@adonisjs/lucid/orm'
 
-import Event from '#models/event'
-import ItemList from '#models/item_list'
-import Difficulty from '#models/difficulty'
-import type { DifficultyId } from '#models/difficulty'
-import type { WorldRequirements } from '#types/world_requirements'
+import Event from '#infrastructure/models/event'
+import ItemList from '#infrastructure/models/item_list'
+import Difficulty from '#infrastructure/models/difficulty'
+import type { DifficultyId } from '#infrastructure/models/difficulty'
+import type { WorldRequirements } from '#common/types/world_requirements'
 
 export type WorldId = Opaque<'worldId', string>
 

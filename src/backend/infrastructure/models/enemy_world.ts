@@ -5,8 +5,8 @@ import type { Opaque } from '@poppinss/utils/types'
 import { SoftDeletes } from 'adonis-lucid-soft-deletes'
 import { BaseModel, beforeCreate, column } from '@adonisjs/lucid/orm'
 
-import type { EnemyId } from '#models/enemy'
-import type { WorldId } from '#models/world'
+import type { EnemyId } from '#infrastructure/models/enemy'
+import type { WorldId } from '#infrastructure/models/world'
 
 export type EnemyWorldId = Opaque<'enemyWorldId', string>
 

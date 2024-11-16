@@ -1,6 +1,6 @@
 import vine, { SimpleMessagesProvider } from '@vinejs/vine'
 
-import { uniqueRule, existsRule, relationCountRule } from '#validators/rules/index'
+import { uniqueRule, existsRule, relationCountRule } from '#infrastructure/validators/rules/index'
 
 type CreateCharacterValidatorData = {
   name: string

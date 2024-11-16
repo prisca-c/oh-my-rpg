@@ -1,7 +1,7 @@
-import { Size } from '#types/size'
-import { Position } from '#types/position'
-import Character, { type CharacterId } from '#models/character'
-import Item from '#models/item'
+import { Size } from '#common/types/size'
+import { Position } from '#common/types/position'
+import Character, { type CharacterId } from '#infrastructure/models/character'
+import Item from '#infrastructure/models/item'
 
 export interface InventoryDtoType {
   items: Record<number, InventoryItemDtoType[]>

@@ -1,4 +1,4 @@
-import type Character from '#models/character'
+import type Character from '#infrastructure/models/character'
 
 export const CharacterCard = ({ character }: { character: Character }) => {
   return (

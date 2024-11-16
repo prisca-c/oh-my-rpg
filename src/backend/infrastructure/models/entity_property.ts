@@ -5,9 +5,9 @@ import type { Opaque } from '@poppinss/utils/types'
 import { SoftDeletes } from 'adonis-lucid-soft-deletes'
 import { BaseModel, beforeCreate, column, computed } from '@adonisjs/lucid/orm'
 
-import Character from '#models/character'
-import EnemyType from '#models/enemy_type'
-import { ENTITY } from '#enums/entity.enum'
+import Character from '#infrastructure/models/character'
+import EnemyType from '#infrastructure/models/enemy_type'
+import { ENTITY } from '#common/enums/entity.enum'
 
 export type EntityPropertyId = Opaque<'entityPropertyId', string>
 

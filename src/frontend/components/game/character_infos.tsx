@@ -1,5 +1,5 @@
-import type Character from '#models/character'
-import type EntityProperty from '#models/entity_property'
+import type Character from '#infrastructure/models/character'
+import type EntityProperty from '#infrastructure/models/entity_property'
 import { Container, Flex, Typography } from '~/components/utils'
 
 type CharacterInfosProps = {

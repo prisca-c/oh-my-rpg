@@ -13,12 +13,12 @@ import {
   belongsTo,
 } from '@adonisjs/lucid/orm'
 
-import ItemList from '#models/item_list'
-import ItemBase from '#models/item_base'
-import ItemRarity from '#models/item_rarity'
-import ItemProperty from '#models/item_property'
-import type { ItemBaseId } from '#models/item_base'
-import type { ItemRarityId } from '#models/item_rarity'
+import ItemList from '#infrastructure/models/item_list'
+import ItemBase from '#infrastructure/models/item_base'
+import ItemRarity from '#infrastructure/models/item_rarity'
+import ItemProperty from '#infrastructure/models/item_property'
+import type { ItemBaseId } from '#infrastructure/models/item_base'
+import type { ItemRarityId } from '#infrastructure/models/item_rarity'
 
 export type ItemId = Opaque<'itemId', string>
 

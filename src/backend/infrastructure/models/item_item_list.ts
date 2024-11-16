@@ -5,10 +5,10 @@ import { SoftDeletes } from 'adonis-lucid-soft-deletes'
 import type { HasOne } from '@adonisjs/lucid/types/relations'
 import { BaseModel, column, hasOne } from '@adonisjs/lucid/orm'
 
-import Item from '#models/item'
-import ItemList from '#models/item_list'
-import type { ItemId } from '#models/item'
-import type { ItemListId } from '#models/item_list'
+import Item from '#infrastructure/models/item'
+import ItemList from '#infrastructure/models/item_list'
+import type { ItemId } from '#infrastructure/models/item'
+import type { ItemListId } from '#infrastructure/models/item_list'
 
 export type ItemItemListId = Opaque<'itemItemListId', string>
 

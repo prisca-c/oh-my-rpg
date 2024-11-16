@@ -1,5 +1,5 @@
-import { Size } from '#types/size'
-import { Position } from '#types/position'
+import { Size } from '#common/types/size'
+import { Position } from '#common/types/position'
 
 export class CanItemBePlaced {
   async handle(

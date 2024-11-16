@@ -1,6 +1,6 @@
-import type Item from '#models/item'
-import type World from '#models/world'
-import type ItemList from '#models/item_list'
+import type Item from '#infrastructure/models/item'
+import type World from '#infrastructure/models/world'
+import type ItemList from '#infrastructure/models/item_list'
 
 export default class GetItems {
   async handle(world: World): Promise<Item[]> {

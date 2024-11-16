@@ -1,12 +1,12 @@
 import { usePage } from '@inertiajs/react'
 
-import type { Size } from '#types/size'
+import type { Size } from '#common/types/size'
 import { Button } from '~/components/button'
-import type { Position } from '#types/position'
+import type { Position } from '#common/types/position'
 import { Container } from '~/components/utils'
-import type { InventoryDtoType } from '#dto/inventory_dto'
+import type { InventoryDtoType } from '#application/dto/inventory_dto'
 import { useInventory } from '~/hooks/use_inventory'
-import { CanItemBePlaced } from '#features/inventory/can_item_be_placed'
+import { CanItemBePlaced } from '#domain/inventory/can_item_be_placed'
 import { useCanBeMovedStore } from '~/store/use_can_be_moved_store'
 import { useInventoryDragAndDrop } from '~/hooks/use_inventory_drag_and_drop'
 

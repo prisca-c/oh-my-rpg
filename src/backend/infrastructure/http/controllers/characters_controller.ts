@@ -1,9 +1,9 @@
 import type { HttpContext } from '@adonisjs/core/http'
 
-import { assert } from '#utils/assert'
-import Character from '#models/character'
-import type { UserId } from '#models/user'
-import { createCharacterValidator } from '#validators/create_character_validator'
+import { assert } from '#common/utils/assert'
+import Character from '#infrastructure/models/character'
+import type { UserId } from '#infrastructure/models/user'
+import { createCharacterValidator } from '#infrastructure/validators/create_character_validator'
 
 export default class CharactersController {
   async index({ auth, inertia }: HttpContext) {
