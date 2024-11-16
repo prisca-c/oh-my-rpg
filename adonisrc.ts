@@ -87,4 +87,6 @@ export default defineConfig({
   ],
 
   assetsBundler: false,
+
+  directories: {},
 })

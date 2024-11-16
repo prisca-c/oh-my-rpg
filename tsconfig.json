@@ -2,8 +2,6 @@
   "extends": "@adonisjs/tsconfig/tsconfig.app.json",
   "compilerOptions": {
     "rootDir": "./",
-    "resolveJsonModule": true,
-    "types": ["hot-hook/import-meta"],
     "outDir": "./build"
   },
   "exclude": ["node_modules", "build", "resources"]

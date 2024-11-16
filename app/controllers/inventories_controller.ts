@@ -27,11 +27,11 @@ export default class InventoriesController {
     assert(item.page)
     const itemsOnPage = await character.related('inventory').query().where('page', page)
     const normalizedItemsOnPage = []
-    for (const item of itemsOnPage) {
-      const id = item.id
-      const size = await item.size()
-      const position = item.position
-      normalizedItemsOnPage.push({ id, position, size })
+    for (const inventoryItem of itemsOnPage) {
+      const inventoryItemId = inventoryItem.id
+      const size = await inventoryItem.size()
+      const inventoryItemPosition = inventoryItem.position
+      normalizedItemsOnPage.push({ id: inventoryItemId, position: inventoryItemPosition, size })
     }
     const canPlaceItem = await new CanItemBePlaced().handle(normalizedItemsOnPage, {
       id,

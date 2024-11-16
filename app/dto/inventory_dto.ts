@@ -30,8 +30,8 @@ export class InventoryDTO {
   static async fromCharacter(characterId: CharacterId) {
     const character = await Character.findOrFail(characterId)
     await character.load('inventory', (query) => {
-      query.preload('item', (query) => {
-        query.preload('itemRarity')
+      query.preload('item', (item) => {
+        item.preload('itemRarity')
       })
     })
 

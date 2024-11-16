@@ -12,7 +12,7 @@ export default class LootController {
   constructor(
     private getItems: GetItems,
     private loot: LootItem,
-    private storeItem: StoreItem,
+    private storeItem: StoreItem
   ) {}
 
   async handle({ request, session, response }: HttpContext) {

@@ -4,7 +4,7 @@ import { Position } from '#types/position'
 export class CanItemBePlaced {
   async handle(
     itemsOnPage: { id: string; position: Position | null; size: Size }[],
-    itemToPlace: { id: string; size: Size; position: Position },
+    itemToPlace: { id: string; size: Size; position: Position }
   ): Promise<boolean> {
     const sizeItemToPlace = itemToPlace.size
     const x = itemToPlace.position.x
@@ -36,7 +36,7 @@ export class CanItemBePlaced {
         )
 
         return isOverlapping || isSamePosition
-      }),
+      })
     )
 
     return returnStmt.every((result) => result === false)

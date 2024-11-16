@@ -39,40 +39,14 @@
     "#utils/*": "./utils/*.js",
     "#validators/*": "./app/validators/*.js"
   },
-  "dependencies": {
-    "@adonisjs/auth": "^9.2.0",
-    "@adonisjs/core": "^6.5.0",
-    "@adonisjs/cors": "^2.2.1",
-    "@adonisjs/inertia": "2.0.0",
-    "@adonisjs/lucid": "21.3.0",
-    "@adonisjs/redis": "^9.0.0",
-    "@adonisjs/session": "^7.1.1",
-    "@adonisjs/shield": "^8.1.1",
-    "@adonisjs/static": "^1.1.1",
-    "@adonisjs/vite": "3.0.0",
-    "@inertiajs/react": "^1.0.14",
-    "@poppinss/utils": "^6.7.2",
-    "@vinejs/vine": "2.1.0",
-    "adonis-lucid-soft-deletes": "^2.0.0",
-    "edge.js": "^6.0.1",
-    "framer-motion": "^11.0.3",
-    "luxon": "^3.4.4",
-    "pg": "^8.11.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^5.0.1",
-    "reflect-metadata": "^0.2.0",
-    "zustand": "^4.5.2"
-  },
   "devDependencies": {
     "@adonisjs/assembler": "7.8.2",
-    "@adonisjs/eslint-config": "^1.3.0",
-    "@adonisjs/prettier-config": "^1.3.0",
-    "@adonisjs/tsconfig": "^1.3.0",
+    "@adonisjs/eslint-config": "^2.0.0-beta.7",
+    "@adonisjs/prettier-config": "^1.4.0",
+    "@adonisjs/tsconfig": "^1.4.0",
     "@japa/assert": "^3.0.0",
     "@japa/plugin-adonisjs": "^3.0.0",
     "@japa/runner": "^3.1.1",
-    "@julr/tooling-configs": "^2.1.0",
     "@swc/core": "^1.4.11",
     "@types/luxon": "^3.4.2",
     "@types/node": "^20.12.3",
@@ -80,7 +54,7 @@
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.17",
-    "eslint": "^8.57.0",
+    "eslint": "^9.15.0",
     "hot-hook": "^0.3.0",
     "pino-pretty": "^11.0.0",
     "postcss": "^8.4.34",
@@ -90,6 +64,48 @@
     "typescript": "~5.6.0",
     "vite": "^5.2.8"
   },
-  "prettier": "@julr/tooling-configs/prettier",
+  "dependencies": {
+    "@adonisjs/auth": "^9.2.4",
+    "@adonisjs/core": "^6.14.1",
+    "@adonisjs/cors": "^2.2.1",
+    "@adonisjs/inertia": "2.0.1",
+    "@adonisjs/lucid": "21.3.0",
+    "@adonisjs/redis": "^9.0.0",
+    "@adonisjs/session": "^7.5.0",
+    "@adonisjs/shield": "^8.1.1",
+    "@adonisjs/static": "^1.1.1",
+    "@adonisjs/vite": "3.0.0",
+    "@inertiajs/react": "^1.2.0",
+    "@poppinss/utils": "^6.7.2",
+    "@vinejs/vine": "2.1.0",
+    "adonis-lucid-soft-deletes": "^2.0.0",
+    "edge.js": "^6.2.0",
+    "framer-motion": "^11.0.3",
+    "luxon": "^3.4.4",
+    "pg": "^8.11.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.0.1",
+    "reflect-metadata": "^0.2.0",
+    "zustand": "^5.0.1"
+  },
+  "hotHook": {
+    "boundaries": [
+      "./app/controllers/**/*.ts",
+      "./app/middleware/**/*.ts"
+    ]
+  },
+  "overrides": {
+    "strtok3": "8.0.1"
+  },
+  "resolutions": {
+    "strtok3": "8.0.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "strtok3": "8.0.1"
+    }
+  },
+  "prettier": "@adonisjs/prettier-config",
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

@@ -15,7 +15,7 @@ export class InventoryManager {
     const nextAvailablePosition = this.#getNextAvailablePositionForItem(
       inventoryItems,
       item,
-      character.inventorySize,
+      character.inventorySize
     )
 
     if (nextAvailablePosition) {
@@ -29,7 +29,7 @@ export class InventoryManager {
     items: InventoryItem[],
     item: InventoryItem,
     maxPages: number,
-    page = 1,
+    page = 1
   ): Promise<ReturnPosition | null> {
     const maxDimension = 10
 
@@ -37,11 +37,11 @@ export class InventoryManager {
       for (let x = 0; x < maxDimension; x++) {
         const itemsOnPage = []
 
-        for (const item of items) {
-          if (item.page === page) {
-            const id = item.id
-            const size = await item.size()
-            const position = item.position
+        for (const inventoryItem of items) {
+          if (inventoryItem.page === page) {
+            const id = inventoryItem.id
+            const size = await inventoryItem.size()
+            const position = inventoryItem.position
             itemsOnPage.push({ id, position, size })
           }
         }
