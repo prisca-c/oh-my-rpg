@@ -11,11 +11,11 @@ export default defineConfig({
     inertia({
       ssr: {
         enabled: true,
-        entrypoint: 'resources/ssr.tsx',
+        entrypoint: 'src/frontend/app/ssr.tsx',
       },
     }),
     adonisjs({
-      entrypoints: ['resources/app.tsx', 'resources/css/app.css'],
+      entrypoints: ['src/frontend/app/app.tsx', 'src/frontend/app/app.css'],
       reload: ['resources/views/edge/**/*.edge'],
     }),
     react(),
@@ -23,7 +23,7 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      '~/': `${getDirname(import.meta.url)}/resources/`,
+      '~/': `${getDirname(import.meta.url)}/src/frontend/`,
     },
   },
 })

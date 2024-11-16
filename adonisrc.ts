@@ -49,7 +49,10 @@ export default defineConfig({
   | List of modules to import before starting the application.
   |
   */
-  preloads: [() => import('./start/routes.js'), () => import('./start/kernel.js')],
+  preloads: [
+    () => import('./src/backend/core/start/routes.js'),
+    () => import('./src/backend/core/start/kernel.js'),
+  ],
 
   /*
   |--------------------------------------------------------------------------
@@ -88,5 +91,16 @@ export default defineConfig({
 
   assetsBundler: false,
 
-  directories: {},
+  directories: {
+    config: 'src/backend/core/config',
+    exceptions: 'src/backend/core/exceptions',
+    httpControllers: 'src/backend/infrastructure/http/controllers',
+    middleware: 'src/backend/infrastructure/http/middleware',
+    migrations: 'src/backend/infrastructure/database/migrations',
+    models: 'src/backend/infrastructure/models',
+    providers: 'src/backend/core/providers',
+    seeders: 'src/backend/infrastructure/database/seeders',
+    start: 'src/backend/core/start',
+    validators: 'src/backend/infrastructure/validators',
+  },
 })
