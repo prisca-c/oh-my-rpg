@@ -17,24 +17,26 @@
     "migrate:prod": "node ace migration:run --force",
     "start": "node bin/server.js",
     "test": "node ace test",
-    "typecheck": "tsc --noEmit"
+    "typecheck:backend": "tsc --noEmit -p tsconfig.json",
+    "typecheck:frontend": "tsc --noEmit -p src/frontend/tsconfig.json",
+    "typecheck": "yarn typecheck:backend && yarn typecheck:frontend"
   },
   "imports": {
-    "#backend/*": "./src/backend/*.js",
-    "#frontend/*": "./src/frontend/*.js",
-    "#application/*": "./src/backend/application/*.js",
-    "#domain/*": "./src/backend/domain/*.js",
-    "#infrastructure/*": "./src/backend/infrastructure/*.js",
-    "#common/*": "./src/common/*.js",
-    "#core/*": "./src/backend/core/*.js",
     "#app/*": "./app/*.js",
+    "#application/*": "./src/backend/application/*.js",
+    "#backend/*": "./src/backend/*.js",
+    "#common/*": "./src/common/*.js",
     "#components/*": "./resources/views/components/*.js",
     "#config/*": "./src/backend/core/config/*.js",
     "#controllers/*": "./src/backend/infrastructure/http/controllers/*.js",
+    "#core/*": "./src/backend/core/*.js",
+    "#domain/*": "./src/backend/domain/*.js",
     "#dto/*": "./src/backend/application/dto/*.js",
     "#enums/*": "./src/common/enums/*.js",
     "#exceptions/*": "./src/backend/core/exceptions/*.js",
     "#features/*": "./app/features/*.js",
+    "#frontend/*": "./src/frontend/*.js",
+    "#infrastructure/*": "./src/backend/infrastructure/*.js",
     "#middleware/*": "./src/backend/infrastructure/http/middleware/*.js",
     "#models/*": "./src/backend/infrastructure/models/*.js",
     "#resources/*": "./resources/*.js",
@@ -60,6 +62,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.17",
     "eslint": "^9.15.0",
+    "eslint-plugin-react": "^7.37.2",
     "hot-hook": "^0.3.0",
     "pino-pretty": "^13.0.0",
     "prettier": "^3.2.5",
@@ -83,8 +86,9 @@
     "@poppinss/utils": "^6.7.2",
     "@unocss/reset": "^0.64.0",
     "@vinejs/vine": "2.1.0",
-    "adonis-lucid-soft-deletes": "^2.0.0",
+    "adonis-lucid-soft-deletes": "^2.1.0",
     "edge.js": "^6.2.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "luxon": "^3.4.4",
     "motion": "^11.11.17",
     "pg": "^8.11.3",
@@ -96,8 +100,8 @@
   },
   "hotHook": {
     "boundaries": [
-      "./app/controllers/**/*.ts",
-      "./app/middleware/**/*.ts"
+      "./src/backend/infrastructure/http/controllers/**/*.ts",
+      "./src/backend/infrastructure/http/middleware/**/*.ts"
     ]
   },
   "overrides": {

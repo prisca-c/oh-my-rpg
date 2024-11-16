@@ -1,5 +1,5 @@
-import { Card, Typography } from '#components/utils/index'
-import { useWorldsStore } from '#resources/store/use_worlds_store'
+import { Card, Typography } from '~/components/utils'
+import { useWorldsStore } from '~/store/use_worlds_store'
 
 export const World = () => {
   const worlds = useWorldsStore((state) => state.worlds)

@@ -1,4 +1,4 @@
-import { Typography } from '~/components/utils/index'
+import { Typography } from '~/components/utils'
 import { LoginForm } from '~/components/auth/login_form'
 
 export default function Login() {
