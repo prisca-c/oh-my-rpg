@@ -5,10 +5,7 @@ import { Form, InputGroup } from '~/components/utils'
 import { useLoginForm } from '~/hooks/use_login_form'
 
 export const LoginForm = () => {
-  const { inputs, validations, onChange, onSubmit } = useLoginForm({
-    email: '',
-    password: '',
-  })
+  const { data, validations, onChange, onSubmit } = useLoginForm()
 
   const goToRegister = () => {
     router.visit('/register')
@@ -23,7 +20,7 @@ export const LoginForm = () => {
         id={'email'}
         autoComplete={'email'}
         valid={validations.email}
-        value={inputs.email}
+        value={data.email}
         onChange={onChange}
       />
       <InputGroup
@@ -31,7 +28,7 @@ export const LoginForm = () => {
         name={'password'}
         type={'password'}
         id={'password'}
-        value={inputs.password}
+        value={data.password}
         onChange={onChange}
         autoComplete={'current-password'}
       />

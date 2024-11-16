@@ -1,4 +1,4 @@
-import { router } from '@inertiajs/react'
+import { useForm } from '@inertiajs/react'
 import React, { useEffect, useState } from 'react'
 
 import {
@@ -8,13 +8,6 @@ import {
   validateUsername,
 } from '~/helpers/validations'
 
-type FormFields = {
-  email: string
-  username: string
-  password: string
-  password_confirmation: string
-}
-
 type FormValidations = {
   email: boolean
   username: boolean
@@ -22,8 +15,13 @@ type FormValidations = {
   password_confirmation: boolean
 }
 
-export const useRegisterForm = (initialValues: FormFields) => {
-  const [inputs, setInputs] = useState<FormFields>(initialValues)
+export const useRegisterForm = () => {
+  const { post, data, setData } = useForm({
+    email: '',
+    username: '',
+    password: '',
+    password_confirmation: '',
+  })
   const [validations, setValidations] = useState<FormValidations>({
     email: false,
     username: false,
@@ -33,25 +31,40 @@ export const useRegisterForm = (initialValues: FormFields) => {
 
   useEffect(() => {
     setValidations({
-      email: validateEmail(inputs.email),
-      username: validateUsername(inputs.username),
-      password: validatePassword(inputs.password),
+      email: validateEmail(data.email),
+      username: validateUsername(data.username),
+      password: validatePassword(data.password),
       password_confirmation: validatePasswordConfirmation(
-        inputs.password_confirmation,
-        inputs.password
+        data.password_confirmation,
+        data.password
       ),
     })
-  }, [inputs])
+  }, [data])
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setInputs((prevState) => ({ ...prevState, [name]: value }))
+    const { name, value } = e.currentTarget
+
+    if (name === 'email') {
+      setData('email', value)
+    }
+
+    if (name === 'username') {
+      setData('username', value)
+    }
+
+    if (name === 'password') {
+      setData('password', value)
+    }
+
+    if (name === 'password_confirmation') {
+      setData('password_confirmation', value)
+    }
   }
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    router.post('/register', new FormData(e.currentTarget))
+    post('/register')
   }
 
-  return { inputs, validations, onChange, onSubmit }
+  return { data, validations, onChange, onSubmit }
 }

@@ -12,7 +12,7 @@ export class InventoryManager {
   async handle(character: Character, item: InventoryItem): Promise<ReturnPosition | null> {
     const inventoryItems = await InventoryItem.query().where('character_id', character.id)
 
-    const nextAvailablePosition = this.#getNextAvailablePositionForItem(
+    const nextAvailablePosition = this.getNextAvailablePositionForItem(
       inventoryItems,
       item,
       character.inventorySize
@@ -25,7 +25,7 @@ export class InventoryManager {
     return null
   }
 
-  async #getNextAvailablePositionForItem(
+  private async getNextAvailablePositionForItem(
     items: InventoryItem[],
     item: InventoryItem,
     maxPages: number,
@@ -57,7 +57,7 @@ export class InventoryManager {
 
     if (page < maxPages) {
       page += 1
-      return this.#getNextAvailablePositionForItem(items, item, maxPages, page)
+      return this.getNextAvailablePositionForItem(items, item, maxPages, page)
     }
 
     return null

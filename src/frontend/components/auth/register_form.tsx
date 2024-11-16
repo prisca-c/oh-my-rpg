@@ -5,12 +5,7 @@ import { Form, InputGroup } from '~/components/utils'
 import { useRegisterForm } from '~/hooks/use_register_form'
 
 export const RegisterForm = () => {
-  const { inputs, validations, onChange, onSubmit } = useRegisterForm({
-    username: '',
-    email: '',
-    password: '',
-    password_confirmation: '',
-  })
+  const { data, validations, onChange, onSubmit } = useRegisterForm()
   const errors = usePage().props.errors
 
   const goToLogin = () => {
@@ -25,7 +20,7 @@ export const RegisterForm = () => {
         type={'text'}
         id={'username'}
         errors={errors}
-        value={inputs.username}
+        value={data.username}
         valid={validations.username}
         onChange={onChange}
         autoComplete={'username'}
@@ -37,7 +32,7 @@ export const RegisterForm = () => {
         id={'email'}
         autoComplete={'email'}
         valid={validations.email}
-        value={inputs.email}
+        value={data.email}
         onChange={onChange}
         errors={errors}
       />
@@ -46,7 +41,7 @@ export const RegisterForm = () => {
         name={'password'}
         type={'password'}
         id={'password'}
-        value={inputs.password}
+        value={data.password}
         errors={errors}
         onChange={onChange}
         valid={validations.password}
@@ -57,7 +52,7 @@ export const RegisterForm = () => {
         name={'password_confirmation'}
         type={'password'}
         id={'password_confirmation'}
-        value={inputs.password_confirmation}
+        value={data.password_confirmation}
         errors={errors}
         onChange={onChange}
         valid={validations.password_confirmation}

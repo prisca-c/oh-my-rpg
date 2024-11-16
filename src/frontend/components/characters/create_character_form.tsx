@@ -7,9 +7,7 @@ import { Form } from '~/components/utils/form/form'
 import { InputGroup } from '~/components/utils/form/input_group'
 
 export const CreateCharacterForm = () => {
-  const { inputs, validations, onChange, onSubmit } = useCreateCharacterForm({
-    name: '',
-  })
+  const { data, validations, onChange, onSubmit } = useCreateCharacterForm()
 
   const errors = usePage().props.errors
   const userIdError = getErrorByField(errors, 'userId')
@@ -22,7 +20,7 @@ export const CreateCharacterForm = () => {
         type={'text'}
         id={'name'}
         errors={errors}
-        value={inputs.name}
+        value={data.name}
         valid={validations.name}
         onChange={onChange}
         autoComplete={'name'}

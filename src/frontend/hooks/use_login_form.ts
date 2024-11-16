@@ -1,41 +1,47 @@
 import type React from 'react'
-import { router } from '@inertiajs/react'
+import { useForm } from '@inertiajs/react'
 import { useEffect, useState } from 'react'
 
 import { validateEmail, validatePassword } from '~/helpers/validations'
-
-type LoginForm = {
-  email: string
-  password: string
-}
 
 type FormValidations = {
   email: boolean
   password: boolean
 }
 
-export const useLoginForm = (initialValues: LoginForm) => {
-  const [inputs, setInputs] = useState<LoginForm>(initialValues)
+export const useLoginForm = () => {
   const [validations, setValidations] = useState<FormValidations>({
     email: false,
     password: false,
   })
+  const { post, data, setData } = useForm({
+    email: '',
+    password: '',
+  })
+
   useEffect(() => {
     setValidations({
-      email: validateEmail(inputs.email),
-      password: validatePassword(inputs.password),
+      email: validateEmail(data.email),
+      password: validatePassword(data.password),
     })
-  }, [inputs])
+  }, [data])
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.currentTarget
-    setInputs((prevState) => ({ ...prevState, [name]: value }))
+
+    if (name === 'email') {
+      setData('email', value)
+    }
+
+    if (name === 'password') {
+      setData('password', value)
+    }
   }
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    router.post('/login', new FormData(e.currentTarget))
+    post('/login')
   }
 
-  return { inputs, validations, onChange, onSubmit }
+  return { data, validations, onChange, onSubmit }
 }
