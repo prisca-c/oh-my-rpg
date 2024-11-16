@@ -52,12 +52,13 @@
     slash "^5.1.0"
     ts-morph "^23.0.0"
 
-"@adonisjs/auth@^9.2.0":
-  version "9.2.3"
-  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-9.2.3.tgz#bda83c564118670fd492ad7dc07144dc8da0c0fe"
-  integrity sha512-my/dqQJo1LQRhT3bW0RuK/1BhDTWcY3tVrGZmVMedCRBfYGt91OAreMy0muukJcWr8AkXBtbBsju2D+myaDa4Q==
+"@adonisjs/auth@^9.2.4":
+  version "9.2.4"
+  resolved "https://registry.yarnpkg.com/@adonisjs/auth/-/auth-9.2.4.tgz#4b053e594be070bd926a7c0b0dd2743088654050"
+  integrity sha512-n6YLy1U0ClKCNFRwC3t+TQBXlJjKwGmRQEQdJnuSgK1L38R8KhU9LbsFTkMH+iKSOigMRQlILtd4Sgf0ekoC6w==
   dependencies:
     "@adonisjs/presets" "^2.5.1"
+    "@poppinss/utils" "^6.8.3"
     basic-auth "^2.0.1"
 
 "@adonisjs/bodyparser@^10.0.2":
@@ -84,7 +85,7 @@
   dependencies:
     "@poppinss/utils" "^6.7.3"
 
-"@adonisjs/core@^6.5.0":
+"@adonisjs/core@^6.14.1":
   version "6.14.1"
   resolved "https://registry.yarnpkg.com/@adonisjs/core/-/core-6.14.1.tgz#78a85a6c42ab5503e5e8920bbe62c97a29110382"
   integrity sha512-pwQ57tWYBMtc3LP7/eIkQuK/Ag9RrDFmcjjj04XSHR+ormeC/I94EwH89EJ0f4ejidshobtaE/OmW6it0vJfuA==
@@ -218,10 +219,10 @@
     vary "^1.1.2"
     youch "^3.3.4"
 
-"@adonisjs/inertia@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-2.0.0.tgz#b49f4277ae761ef6df3c5091518d32eff1a43fad"
-  integrity sha512-Rpmzr+vuD/xAv4FE9P+NVOr9+pWe8yXmThLeT6Q9fiDoy7TXMRdODVOLtGi3TYyYoDpPGhmEqkfto52Pw+za3g==
+"@adonisjs/inertia@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@adonisjs/inertia/-/inertia-2.0.1.tgz#686fb9964aee3ec107f80d9162545419c0ca0037"
+  integrity sha512-5x6uKmir+JcCpEVm2UbS2STrzJD1kEv7BJoYtCimZty8KEc14PwPV58Txk3FPp/DHLbsusE/gA79c3ep0z9rzQ==
   dependencies:
     "@poppinss/utils" "^6.8.3"
     "@tuyau/utils" "^0.0.4"
@@ -298,7 +299,7 @@
     "@poppinss/colors" "^4.1.2"
     string-width "^7.1.0"
 
-"@adonisjs/session@^7.1.1":
+"@adonisjs/session@^7.5.0":
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/@adonisjs/session/-/session-7.5.0.tgz#5b8cddcf7b38f59817c89160d2a7197d7a5bb3e5"
   integrity sha512-H5fFrkE/yFSWP/XD8eyWLyUVbtIqTcw9QBP1me4d9vnl4mao4jHrmnNA8rwtzsEFdXu/UgWdH4kljh1G9PDzWw==
@@ -839,7 +840,7 @@
     nprogress "^0.2.0"
     qs "^6.9.0"
 
-"@inertiajs/react@^1.0.14":
+"@inertiajs/react@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@inertiajs/react/-/react-1.2.0.tgz#73af92a1fab7aa10968ee818140f46bb3061d904"
   integrity sha512-Q3wTaQJdoUbUB8YIGeQ0y2Tf/k8dNtz9Nu2dYr1pbYUBv++6d45iC/CFB/lIpqVvvUw8XuIai2bdsUcRSIbPCQ==
@@ -2549,7 +2550,7 @@ edge-parser@^9.0.3:
     edge-lexer "^6.0.2"
     js-stringify "^1.0.2"
 
-edge.js@^6.0.1:
+edge.js@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/edge.js/-/edge.js-6.2.0.tgz#45d6b500cf8e88d2585950b2e0e39abf802da927"
   integrity sha512-xw82TzdPngccJiFqK6FE/79vO6mUvWVvKe6OEu/VHDOf199SIOW1q022d3UIaKGXcwf60lIXZYPIRqooQuzigA==
@@ -4293,7 +4294,7 @@ pathval@^2.0.0:
   resolved "https://registry.yarnpkg.com/pathval/-/pathval-2.0.0.tgz#7e2550b422601d4f6b8e26f1301bc8f15a741a25"
   integrity sha512-vE7JKRyES09KiunauX7nd2Q9/L7lhok4smP9RZTDeD4MVs72Dp2qNFVz39Nz5a0FVEW0BJR6C0DYrq6unoziZA==
 
-peek-readable@^5.1.3:
+peek-readable@^5.1.4:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/peek-readable/-/peek-readable-5.3.1.tgz#9cc2c275cceda9f3d07a988f4f664c2080387dff"
   integrity sha512-GVlENSDW6KHaXcd9zkZltB7tCLosKB/4Hg0fqBJkAoBgYG2Tn1xtMgXtSUuMU9AK/gCm/tTdT8mgAeF4YNeeqw==
@@ -5244,13 +5245,13 @@ strip-json-comments@^3.1.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
-strtok3@8.0.1, strtok3@^8.1.0:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-8.0.1.tgz#74088e62b2ba43b2f12256600c0225adbed90641"
-  integrity sha512-HNkTAnNWQj2YBzfTtoC5OQyu1QwPsMwiB7VyQmNvQKCrmEDSvFB857Vh97UY9InGLNRAB91sdS1ztifRo/3hdA==
+strtok3@8.1.0, strtok3@^8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-8.1.0.tgz#9234a6f42ee03bf8569c7ae0788d5fd4e67e095b"
+  integrity sha512-ExzDvHYPj6F6QkSNe/JxSlBxTh3OrI6wrAIz53ulxo1c4hBJ1bT9C/JrAthEKHWG9riVH3Xzg7B03Oxty6S2Lw==
   dependencies:
     "@tokenizer/token" "^0.3.0"
-    peek-readable "^5.1.3"
+    peek-readable "^5.1.4"
 
 sucrase@^3.32.0:
   version "3.35.0"
