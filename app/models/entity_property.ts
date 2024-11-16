@@ -7,7 +7,7 @@ import { BaseModel, beforeCreate, column, computed } from '@adonisjs/lucid/orm'
 
 import Character from '#models/character'
 import EnemyType from '#models/enemy_type'
-import { Entity } from '#enums/entity.enum'
+import { ENTITY } from '#enums/entity.enum'
 
 export type EntityPropertyId = Opaque<'entityPropertyId', string>
 
@@ -58,9 +58,9 @@ export default class EntityProperty extends compose(BaseModel, SoftDeletes) {
 
   @computed()
   get entity() {
-    if (this.entityType === Entity.CHARACTER) {
+    if (this.entityType === ENTITY.CHARACTER) {
       return Character.findBy('entityPropertyId', this.id)
-    } else if (this.entityType === Entity.ENEMY) {
+    } else if (this.entityType === ENTITY.ENEMY) {
       return EnemyType.findBy('entityPropertyId', this.id)
     }
   }

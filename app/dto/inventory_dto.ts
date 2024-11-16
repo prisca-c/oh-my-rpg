@@ -1,6 +1,7 @@
 import { Size } from '#types/size'
 import { Position } from '#types/position'
 import Character, { type CharacterId } from '#models/character'
+import Item from '#models/item'
 
 export interface InventoryDtoType {
   items: Record<number, InventoryItemDtoType[]>
@@ -30,7 +31,7 @@ export class InventoryDTO {
   static async fromCharacter(characterId: CharacterId) {
     const character = await Character.findOrFail(characterId)
     await character.load('inventory', (query) => {
-      query.preload('item', (item) => {
+      query.preload('item', (item: Item) => {
         item.preload('itemRarity')
       })
     })

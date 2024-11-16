@@ -13,7 +13,7 @@ import type { ItemListId } from '#models/item_list'
 import EntityProperty from '#models/entity_property'
 import type { ItemItemListId } from '#models/item_item_list'
 import type { EntityPropertyId } from '#models/entity_property'
-import { ItemRarity as ItemRarityEnum } from '#enums/item_rarity.enum'
+import { ITEM_RARITY } from '#enums/item_rarity.enum'
 
 export default class extends BaseSeeder {
   async run() {
@@ -67,7 +67,7 @@ export default class extends BaseSeeder {
 
     const itemBase = await ItemBase.createMany(itemBaseList)
 
-    const itemRarity = await ItemRarity.findBy('name', ItemRarityEnum.COMMON)
+    const itemRarity = await ItemRarity.findBy('name', ITEM_RARITY.COMMON)
     const itemRarityId = itemRarity!.id
     const itemsArray: Partial<Item>[] = [
       {
