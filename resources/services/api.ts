@@ -2,9 +2,8 @@ export class Api {
   readonly #xsrf: string
 
   constructor() {
-    this.#xsrf = document.cookie.match(/XSRF-TOKEN=([^;]+)/)
-      ? document.cookie.match(/XSRF-TOKEN=([^;]+)/)[1]
-      : ''
+    const match = document.cookie.match(/XSRF-TOKEN=([^;]+)/)
+    this.#xsrf = match ? match[1] : ''
   }
 
   async get<T>(url: string): Promise<T> {

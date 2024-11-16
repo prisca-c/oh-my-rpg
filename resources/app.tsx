@@ -5,7 +5,7 @@ import '@unocss/reset/tailwind.css'
 import './css/app.css'
 import 'virtual:uno.css'
 
-import { createRoot, hydrateRoot } from 'react-dom/client'
+import { hydrateRoot } from 'react-dom/client'
 import { createInertiaApp } from '@inertiajs/react'
 import type { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react'
 
