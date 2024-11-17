@@ -9,6 +9,7 @@ import { useInventory } from '~/hooks/use_inventory'
 import { CanItemBePlaced } from '#domain/inventory/can_item_be_placed'
 import { useCanBeMovedStore } from '~/store/use_can_be_moved_store'
 import { useInventoryDragAndDrop } from '~/hooks/use_inventory_drag_and_drop'
+import { BiShield } from 'react-icons/bi'
 
 interface InventoryGridProps {
   inventory: InventoryDtoType
@@ -104,18 +105,37 @@ export const InventoryGrid = (props: InventoryGridProps) => {
                   >
                     {item && (
                       <Container key={item.id} className={'absolute z-10'}>
-                        <img
-                          src={item.image || 'https://via.placeholder.com/20'}
-                          alt={item.name}
-                          style={{
-                            width: `calc((${item.size.width} * 2.5rem) - 4px)`,
-                            height: `calc((${item.size.height} * 2.5rem) - 4px)`,
-                            maxWidth: 'none',
-                          }}
-                          draggable={canBeMoved}
-                          onDragStart={onDragStart}
-                          data-item-id={item.id}
-                        />
+                        {item.image && (
+                          <img
+                            src={item.image}
+                            alt={item.name}
+                            style={{
+                              width: `calc((${item.size.width} * 2.5rem) - 4px)`,
+                              height: `calc((${item.size.height} * 2.5rem) - 4px)`,
+                              maxWidth: 'none',
+                            }}
+                            draggable={canBeMoved}
+                            onDragStart={onDragStart}
+                            data-item-id={item.id}
+                          />
+                        )}
+                        {!item.image && (
+                          <div
+                            style={{
+                              display: 'flex',
+                              justifyContent: 'center',
+                              alignItems: 'center',
+                              width: `calc((${item.size.width} * 2.5rem) - 4px)`,
+                              height: `calc((${item.size.height} * 2.5rem) - 4px)`,
+                              backgroundColor: 'gray',
+                            }}
+                            draggable={canBeMoved}
+                            onDragStart={onDragStart}
+                            data-item-id={item.id}
+                          >
+                            <BiShield size={24} />
+                          </div>
+                        )}
                       </Container>
                     )}
                   </div>
