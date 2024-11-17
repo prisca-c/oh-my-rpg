@@ -1,7 +1,7 @@
 import app from '@adonisjs/core/services/app'
 import { defineConfig } from '@adonisjs/core/http'
 
-import env from '../start/env.js'
+import env from '#core/start/env'
 
 /**
  * The app key is used for encrypting cookies, generating signed URLs,
