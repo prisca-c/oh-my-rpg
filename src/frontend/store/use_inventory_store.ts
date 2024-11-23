@@ -1,7 +1,7 @@
 import { StateCreator } from 'zustand'
 import { produce } from 'immer'
 import { InventoryDtoType, InventoryItemDtoType } from '#common/types/inventory_types'
-import { RootState } from '~/store/store'
+import { RootState } from '~/store'
 
 export interface InventorySlice {
   inventory: InventoryDtoType

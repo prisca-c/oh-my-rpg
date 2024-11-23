@@ -2,11 +2,11 @@ import type React from 'react'
 import { useCallback } from 'react'
 
 import type { Position } from '#common/types/position'
-import { useCanBeMovedStore } from '~/store/use_can_be_moved_store'
+import { useStore } from '~/store'
 
 export const useInventoryDragAndDrop = () => {
-  const canBeMoved = useCanBeMovedStore((state) => state.canBeMoved)
-  const setCanBeMoved = useCanBeMovedStore((state) => state.setCanBeMoved)
+  const canBeMoved = useStore((state) => state.canMoveItems)
+  const setCanBeMoved = useStore((state) => state.setCanMoveItems)
   const getPosition = (dataPosition: string) => {
     const [x, y] = dataPosition.split(',')
     return { x: Number.parseInt(x.split(':')[1]), y: Number.parseInt(y.split(':')[1]) }
@@ -48,10 +48,7 @@ export const useInventoryDragAndDrop = () => {
   )
 
   const onDragOverButtonPage = useCallback(
-    (
-      e: React.DragEvent<HTMLDivElement>,
-      setInventoryPage: React.Dispatch<React.SetStateAction<number>>
-    ) => {
+    (e: React.DragEvent<HTMLDivElement>, setInventoryPage: (newValue: number) => void) => {
       if (!canBeMoved) return
 
       e.preventDefault()

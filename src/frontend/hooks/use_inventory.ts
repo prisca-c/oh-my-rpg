@@ -1,26 +1,25 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
 import type { Position } from '#common/types/position'
 import { InventoryService } from '~/services/inventory_service'
-import { useCanBeMovedStore } from '~/store/use_can_be_moved_store'
 import { InventoryDtoType } from '#common/types/inventory_types'
+import { useStore } from '~/store'
 
 export const useInventory = (characterId: string, initialInventory: InventoryDtoType) => {
-  const [items, setItems] = useState<InventoryDtoType['items']>([])
-  const [inventoryPage, setInventoryPage] = useState(1)
-  const [filteredItems, setFilteredItems] = useState(initialInventory.items[inventoryPage])
+  const canBeMoved = useStore((state) => state.canMoveItems)
+  const items = useStore((state) => state.inventory.items)
+  const inventoryPage = useStore((state) => state.currentInventoryPage)
+  const currentPageItems = useStore((state) => state.getCurrentPageItems())
 
-  const canBeMoved = useCanBeMovedStore((state) => state.canBeMoved)
-  const setCanBeMoved = useCanBeMovedStore((state) => state.setCanBeMoved)
+  const setCanBeMoved = useStore((state) => state.setCanMoveItems)
+  const setItems = useStore((state) => state.setItems)
+  const setInventoryPage = useStore((state) => state.setInventoryPage)
 
   useEffect(() => {
-    setCanBeMoved(true)
     setItems(initialInventory.items)
+    setInventoryPage(1)
+    setCanBeMoved(true)
   }, [])
-
-  useEffect(() => {
-    setFilteredItems(items[inventoryPage])
-  }, [items, inventoryPage])
 
   const updateItemPosition = async (itemId: string, page: number, position: Position) => {
     setCanBeMoved(false)
@@ -40,7 +39,7 @@ export const useInventory = (characterId: string, initialInventory: InventoryDto
     items,
     canBeMoved,
     inventoryPage,
-    filteredItems,
+    filteredItems: currentPageItems,
     setInventoryPage,
     updateItemPosition,
   }

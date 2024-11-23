@@ -6,10 +6,10 @@ import type { Position } from '#common/types/position'
 import { Container } from '~/components/utils'
 import { useInventory } from '~/hooks/use_inventory'
 import { CanItemBePlaced } from '#domain/inventory/can_item_be_placed'
-import { useCanBeMovedStore } from '~/store/use_can_be_moved_store'
 import { useInventoryDragAndDrop } from '~/hooks/use_inventory_drag_and_drop'
 import { BiShield } from 'react-icons/bi'
 import { InventoryDtoType } from '#common/types/inventory_types'
+import { useStore } from '~/store'
 
 interface InventoryGridProps {
   inventory: InventoryDtoType
@@ -18,7 +18,7 @@ interface InventoryGridProps {
 export const InventoryGrid = (props: InventoryGridProps) => {
   const { inventory } = props
   const { characterId } = usePage().props
-  const canBeMoved = useCanBeMovedStore((state) => state.canBeMoved)
+  const canBeMoved = useStore((state) => state.canMoveItems)
   const { items, inventoryPage, filteredItems, setInventoryPage, updateItemPosition } =
     useInventory(characterId as string, inventory)
 
@@ -51,7 +51,7 @@ export const InventoryGrid = (props: InventoryGridProps) => {
     })
 
     if (!canPlaceItem) {
-      console.log('Item cannot be placed')
+      console.error('Item cannot be placed')
       return
     }
 
