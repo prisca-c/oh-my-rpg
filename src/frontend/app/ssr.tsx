@@ -3,8 +3,11 @@ import { createInertiaApp } from '@inertiajs/react'
 import PrivateLayout from '#frontend/layouts/private_layout'
 import PublicLayout from '#frontend/layouts/public_layout'
 import { PageType } from '~/app/app'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 export default function render(page: any) {
+  const queryClient = new QueryClient()
+
   return createInertiaApp({
     page,
     render: ReactDOMServer.renderToString,
@@ -17,6 +20,10 @@ export default function render(page: any) {
 
       return page
     },
-    setup: ({ App, props }) => <App {...props} />,
+    setup: ({ App, props }) => (
+      <QueryClientProvider client={queryClient}>
+        <App {...props} />
+      </QueryClientProvider>
+    ),
   })
 }

@@ -10,6 +10,7 @@ import { createInertiaApp } from '@inertiajs/react'
 import type { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react'
 import PrivateLayout from '~/layouts/private_layout'
 import PublicLayout from '~/layouts/public_layout'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 export type PageType =
   | string
@@ -22,6 +23,8 @@ export type PageType =
   | undefined
 
 const appName = import.meta.env.VITE_APP_NAME || 'Oh My RPG!'
+
+const queryClient = new QueryClient()
 
 createInertiaApp({
   progress: {
@@ -41,6 +44,11 @@ createInertiaApp({
   },
 
   setup({ el, App, props }) {
-    hydrateRoot(el, <App {...props} />)
+    hydrateRoot(
+      el,
+      <QueryClientProvider client={queryClient}>
+        <App {...props} />
+      </QueryClientProvider>
+    )
   },
 })

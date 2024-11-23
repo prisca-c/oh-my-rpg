@@ -1,10 +1,12 @@
 import { configApp } from '@adonisjs/eslint-config'
+import pluginQuery from '@tanstack/eslint-plugin-query'
 import UnoCss from '@unocss/eslint-config/flat'
 import unusedImports from 'eslint-plugin-unused-imports'
 import reactEslint from 'eslint-plugin-react'
+
 import noCrossLayerImports from './config/eslint_rules/no-cross-layer-imports.js'
 
-export default configApp({
+export default configApp(...pluginQuery.configs['flat/recommended'], {
   extends: [UnoCss],
   plugins: {
     'unused-imports': unusedImports,
