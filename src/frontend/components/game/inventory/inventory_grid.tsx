@@ -4,12 +4,12 @@ import type { Size } from '#common/types/size'
 import { Button } from '~/components/button'
 import type { Position } from '#common/types/position'
 import { Container } from '~/components/utils'
-import type { InventoryDtoType } from '#application/dto/inventory_dto'
 import { useInventory } from '~/hooks/use_inventory'
 import { CanItemBePlaced } from '#domain/inventory/can_item_be_placed'
 import { useCanBeMovedStore } from '~/store/use_can_be_moved_store'
 import { useInventoryDragAndDrop } from '~/hooks/use_inventory_drag_and_drop'
 import { BiShield } from 'react-icons/bi'
+import { InventoryDtoType } from '#common/types/inventory_types'
 
 interface InventoryGridProps {
   inventory: InventoryDtoType

@@ -1,6 +1,7 @@
 import { Api } from '~/services/api'
 import type { Position } from '#common/types/position'
-import type { InventoryDtoType } from '#application/dto/inventory_dto'
+
+import { InventoryDtoType } from '#common/types/inventory_types'
 
 export class InventoryService {
   private api: Api

@@ -4,11 +4,11 @@ import type World from '#infrastructure/models/world'
 import type Character from '#infrastructure/models/character'
 import { Main } from '~/components/game/main/main'
 import { Container } from '~/components/utils'
-import { InventoryDtoType } from '#application/dto/inventory_dto'
 import type EntityProperty from '#infrastructure/models/entity_property'
 import { Leaderboard } from '~/components/game/leaderboard'
 import { CharacterInfos } from '~/components/game/character_infos'
 import { useWorldsStore } from '~/store/use_worlds_store'
+import { InventoryDtoType } from '#common/types/inventory_types'
 
 type GameProps = {
   character: Character

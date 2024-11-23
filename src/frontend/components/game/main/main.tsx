@@ -1,6 +1,6 @@
-import { InventoryDtoType } from '#application/dto/inventory_dto'
 import { Container, Typography } from '~/components/utils'
 import { Inventory } from '~/components/game/inventory/inventory'
+import { InventoryDtoType } from '#common/types/inventory_types'
 
 interface MainProps {
   inventory: InventoryDtoType

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 
 import type { Position } from '#common/types/position'
-import type { InventoryDtoType } from '#application/dto/inventory_dto'
 import { InventoryService } from '~/services/inventory_service'
 import { useCanBeMovedStore } from '~/store/use_can_be_moved_store'
+import { InventoryDtoType } from '#common/types/inventory_types'
 
 export const useInventory = (characterId: string, initialInventory: InventoryDtoType) => {
   const [items, setItems] = useState<InventoryDtoType['items']>([])
