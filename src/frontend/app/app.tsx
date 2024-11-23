@@ -8,8 +8,8 @@ import 'virtual:uno.css'
 import { hydrateRoot } from 'react-dom/client'
 import { createInertiaApp } from '@inertiajs/react'
 import type { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react'
-import PrivateLayout from '~/layouts/private_layout'
-import PublicLayout from '~/layouts/public_layout'
+import PrivateLayout from '~/features/layouts/private_layout'
+import PublicLayout from '~/features/layouts/public_layout'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 export type PageType =
@@ -34,8 +34,8 @@ createInertiaApp({
   title: (title: string) => `${title} - ${appName}`,
 
   resolve: (name: string) => {
-    const pages = import.meta.glob('../pages/**/*.tsx', { eager: true })
-    const page: any = pages[`../pages/${name}.tsx`]
+    const pages = import.meta.glob('../features/pages/**/*.tsx', { eager: true })
+    const page: any = pages[`../features/pages/${name}.tsx`]
     page.default.layout = name.startsWith('private')
       ? (page: PageType) => <PrivateLayout>{page}</PrivateLayout>
       : (page: PageType) => <PublicLayout>{page}</PublicLayout>
