@@ -79,6 +79,7 @@
     "adonis-lucid-soft-deletes": "^2.1.0",
     "edge.js": "^6.2.0",
     "eslint-plugin-unused-imports": "^4.1.4",
+    "immer": "^10.1.1",
     "luxon": "^3.4.4",
     "motion": "^11.11.17",
     "pg": "^8.11.3",
