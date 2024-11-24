@@ -21,6 +21,8 @@ const CharactersController = () => import('#infrastructure/http/controllers/char
 const AuthController = () => import('#infrastructure/http/controllers/auth_controller')
 const InventoriesController = () =>
   import('#infrastructure/http/controllers/inventories_controller')
+const CharacterPageController = () =>
+  import('#infrastructure/http/controllers/character_page_controller')
 // endregion
 
 router.get('/', [HomeController, 'index'])
@@ -45,5 +47,6 @@ router
       .put('/inventory/:characterId/item/:itemId', [InventoriesController, 'update'])
       .where('characterId', router.matchers.uuid())
       .where('itemId', router.matchers.uuid())
+    router.get('/game/:id/profile', [CharacterPageController])
   })
   .use(middleware.auth())

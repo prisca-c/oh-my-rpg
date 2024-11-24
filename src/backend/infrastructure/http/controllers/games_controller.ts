@@ -1,7 +1,6 @@
 import type { HttpContext } from '@adonisjs/core/http'
 
 import Character from '#infrastructure/models/character'
-import { InventoryDTO } from '#application/dto/inventory_dto'
 import { GetWorlds } from '#features/world/get_worlds'
 
 export default class GamesController {
@@ -30,7 +29,6 @@ export default class GamesController {
     }
 
     const worlds = await new GetWorlds().handle(character)
-    const inventory = await InventoryDTO.fromCharacter(character.id)
 
     return inertia.render(
       'private/game',
@@ -38,7 +36,6 @@ export default class GamesController {
         character,
         leaderboard: await characters,
         properties: characterProperties,
-        inventory: () => inventory.toJSON(),
         worlds,
       },
       {
