@@ -52,7 +52,7 @@
     "autoprefixer": "^10.4.17",
     "eslint": "^9.15.0",
     "eslint-plugin-react": "^7.37.2",
-    "hot-hook": "^0.3.0",
+    "hot-hook": "^0.4.0",
     "pino-pretty": "^13.0.0",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
