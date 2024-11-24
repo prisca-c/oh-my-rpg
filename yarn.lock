@@ -3130,7 +3130,7 @@ __metadata:
     eslint: "npm:^9.15.0"
     eslint-plugin-react: "npm:^7.37.2"
     eslint-plugin-unused-imports: "npm:^4.1.4"
-    hot-hook: "npm:^0.3.0"
+    hot-hook: "npm:^0.4.0"
     immer: "npm:^10.1.1"
     luxon: "npm:^3.4.4"
     motion: "npm:^11.11.17"
@@ -5836,16 +5836,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hot-hook@npm:^0.3.0":
-  version: 0.3.1
-  resolution: "hot-hook@npm:0.3.1"
+"hot-hook@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "hot-hook@npm:0.4.0"
   dependencies:
     chokidar: "npm:^4.0.1"
     fast-glob: "npm:^3.3.2"
     parse-imports: "npm:^2.2.1"
     picomatch: "npm:^4.0.2"
     read-package-up: "npm:^11.0.0"
-  checksum: 10c0/123eb2839617d740cb57d8a1d3a2bf15234a4eecf273b62e2cd05ca4744f14e683549d6336e5e2cac0c0b4cc7483d92cd0018dbda784fe3abd5631b83a58a5ce
+  checksum: 10c0/f721b86d9a3cb23fcb1a78634819c11666f85654f74578f260a3a449c486a3b4c1710927e6f435ee8820959bff95d6ea8d4b0669df5366b48b1ad25ff24bb765
   languageName: node
   linkType: hard
 
