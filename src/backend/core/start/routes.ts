@@ -21,6 +21,8 @@ const CharactersController = () => import('#infrastructure/http/controllers/char
 const AuthController = () => import('#infrastructure/http/controllers/auth_controller')
 const InventoriesController = () =>
   import('#infrastructure/http/controllers/inventories_controller')
+const CharacterPageController = () =>
+  import('#infrastructure/http/controllers/character_page_controller')
 // endregion
 
 router.get('/', [HomeController, 'index'])
@@ -35,7 +37,7 @@ router.post('/register', [AuthController, 'register']).as('register.post')
 router
   .group(() => {
     router
-      .get('/game/:id', [GamesController, 'index'])
+      .get('/game/:characterId', [GamesController, 'index'])
       .where('id', router.matchers.uuid())
       .as('game')
     router.get('/characters', [CharactersController, 'index'])
@@ -45,5 +47,6 @@ router
       .put('/inventory/:characterId/item/:itemId', [InventoriesController, 'update'])
       .where('characterId', router.matchers.uuid())
       .where('itemId', router.matchers.uuid())
+    router.get('/game/:characterId/profile', [CharacterPageController])
   })
   .use(middleware.auth())

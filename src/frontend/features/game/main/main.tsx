@@ -1,13 +1,13 @@
 import { Container, Typography } from '~/common/components/utils'
-import { Inventory } from '~/features/game/inventory/inventory'
-import { InventoryDtoType } from '#common/types/inventory_types'
+import { router, usePage } from '@inertiajs/react'
+import { Button } from '~/common/components/button'
 
-interface MainProps {
-  inventory: InventoryDtoType
-}
+export const Main = () => {
+  const { characterId } = usePage().props
 
-export const Main = (props: MainProps) => {
-  const { inventory } = props
+  const goToCharacterProfile = () => {
+    router.visit(`/game/${characterId}/profile`)
+  }
 
   return (
     <Container
@@ -23,7 +23,7 @@ export const Main = (props: MainProps) => {
       <Typography type={'h1'} size={'xl'} className={'font-bold text-center'}>
         Main
       </Typography>
-      <Inventory inventory={inventory} />
+      <Button onClick={goToCharacterProfile}>Go to Profile</Button>
     </Container>
   )
 }

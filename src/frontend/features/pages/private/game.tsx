@@ -7,22 +7,20 @@ import { Container } from '~/common/components/utils'
 import type EntityProperty from '#infrastructure/models/entity_property'
 import { Leaderboard } from '~/features/game/leaderboard'
 import { CharacterInfos } from '~/features/game/character_infos'
-import { useWorldsStore } from '~/store/use_worlds_store'
-import { InventoryDtoType } from '#common/types/inventory_types'
+import { useStore } from '~/store'
 
 type GameProps = {
   character: Character
   leaderboard: Character[]
-  inventory: InventoryDtoType
   properties: EntityProperty
   worlds: World[]
 }
 
 export default function Game(props: GameProps) {
-  const { character, leaderboard, properties, worlds, inventory } = props
+  const { character, leaderboard, properties, worlds } = props
 
   useEffect(() => {
-    useWorldsStore.setState({ worlds })
+    useStore.setState({ worlds })
   }, [worlds])
 
   return (
@@ -53,7 +51,7 @@ export default function Game(props: GameProps) {
           <CharacterInfos character={character} properties={properties} />
           <Leaderboard leaderboard={leaderboard} />
         </Container>
-        <Main inventory={inventory} />
+        <Main />
       </Container>
     </Container>
   )
