@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="index, follow">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
 
-  @!component('edge/components/meta', {
+    @!component('edge/components/meta', {
     title: meta?.title,
     description: meta?.description,
-  })
+    })
 
-  @inertiaHead()
-  @viteReactRefresh()
-  @vite(['src/frontend/app/app.tsx', `src/frontend/features/pages/${page.component}.tsx`])
-</head>
+    @inertiaHead()
+    @viteReactRefresh()
+    @vite(['src/frontend/app/app.tsx', `src/frontend/features/pages/${page.component}.tsx`])
+  </head>
 
-<body>
-  @inertia()
-</body>
+  <body>
+    @inertia()
+  </body>
 
 </html>

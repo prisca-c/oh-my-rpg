@@ -1,8 +1,8 @@
 import { Card, Typography } from '~/common/components/utils'
-import { useWorldsStore } from '~/store/use_worlds_store'
+import { useStore } from '~/store'
 
 export const World = () => {
-  const worlds = useWorldsStore((state) => state.worlds)
+  const worlds = useStore((state) => state.worlds)
   const getItem = async (worldId: string) => {
     await fetch(`/world/loot/${worldId}`)
   }
