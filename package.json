@@ -97,7 +97,7 @@
   },
   "overrides": {
     "cookie": "0.7.0",
-    "send": "0.19.0",
+    "send": "0.19.1",
     "strtok3": "9.0.1"
   },
   "resolutions": {
