@@ -11,16 +11,16 @@ COPY . .
 
 FROM base as deps
 
-RUN curl -o- -L https://yarnpkg.com/install.sh | sh
+RUN corepack enable
 
-RUN yarn install --frozen-lockfile
+RUN yarn install --immutable
 
 FROM deps as builder
 
 RUN node ace build \
     --ignore-ts-errors \
     && cd build \
-    && yarn install --frozen-lockfile --production
+    && yarn install --immutable --production
 
 FROM $NODE_IMAGE as release
 

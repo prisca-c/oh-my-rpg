@@ -12,8 +12,8 @@ jobs:
         with:
           node-version: 20.12.1
 
-      - name: Install Yarn
-        run: npm install -g yarn
+      - name: Enable Corepack
+        run: corepack enable
 
       - name: Install Dependencies
         run: yarn install
