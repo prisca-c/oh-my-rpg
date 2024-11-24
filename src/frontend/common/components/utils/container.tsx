@@ -1,51 +1,52 @@
 import React from 'react'
-
+import type { HTMLAttributesProps } from '~/common/types/html_attributes'
 import { BG_COLORS, BgColors } from '~/common/enums/theme'
 
-type ContainerProps = {
+type Props = HTMLAttributesProps & {
   children: React.ReactNode
-  className?: string
-  rounded?: boolean
-  layout?: 'flex' | 'grid'
-  align?: 'center' | 'start' | 'end'
-  justify?: 'center' | 'start' | 'end'
-  gap?: string | number
   direction?: 'row' | 'col'
+  justify?: 'center' | 'start' | 'end' | 'between' | 'around' | 'evenly'
+  align?: 'center' | 'start' | 'end' | 'stretch' | 'baseline'
+  className?: string
+  gap?: number
+  containerType?: 'div' | 'section' | 'main' | 'header' | 'footer'
   bg?: BgColors
+  rounded?: boolean
 }
 
-export const Container = ({
-  children,
-  className = '',
-  rounded = false,
-  layout,
-  align = 'center',
-  justify = 'center',
-  gap,
-  direction = 'row',
-  bg,
-}: ContainerProps) => {
-  const classList: string[] = []
-  if (layout === 'flex') {
-    classList.push('flex')
-    classList.push(`flex-${direction}`)
-    classList.push(`justify-${justify}`)
-    classList.push(`items-${align}`)
-  }
-  if (gap) {
-    classList.push(`gap-${gap}`)
-  }
-  if (layout === 'grid') {
-    classList.push('grid')
-  }
-  if (bg) {
-    const bgColors = BG_COLORS[bg]
-    classList.push(bgColors)
-  }
-  if (rounded) classList.push('rounded-md')
-  if (className) classList.push(className)
+export const Container = (props: Props) => {
+  const {
+    children,
+    direction = 'col',
+    justify = 'center',
+    align = 'center',
+    className = '',
+    gap = 0,
+    containerType = 'div',
+    rounded = false,
+    bg,
+    ...argRest
+  } = props
 
-  const classString = classList.join(' ')
+  const gapStyle = gap ? `gap-${gap}` : ''
+  const directionStyle = `flex-${direction}`
+  const justifyStyle = `justify-${justify}`
+  const alignStyle = `items-${align}`
+  const roundedClass = rounded ? 'rounded' : ''
+  const bgStyle = bg ? BG_COLORS[bg] : ''
 
-  return <div className={classString}>{children}</div>
+  const classes = () => {
+    return [
+      'flex',
+      directionStyle,
+      justifyStyle,
+      alignStyle,
+      gapStyle,
+      roundedClass,
+      bgStyle,
+      className,
+    ].join(' ')
+  }
+
+  return React.createElement(containerType, { className: classes(), ...argRest }, children)
 }

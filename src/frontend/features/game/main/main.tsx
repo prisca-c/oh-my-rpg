@@ -11,7 +11,6 @@ export const Main = () => {
 
   return (
     <Container
-      layout={'flex'}
       direction={'col'}
       justify={'center'}
       align={'center'}

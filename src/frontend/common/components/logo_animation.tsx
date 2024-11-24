@@ -10,7 +10,7 @@ type LogoAnimationProps = {
 
 export const LogoAnimation = ({ textSizes = '3xl', logoSize = 50 }: LogoAnimationProps) => {
   return (
-    <Container layout={'flex'} direction={'col'} justify={'center'} align={'center'}>
+    <Container direction={'col'} justify={'center'} align={'center'}>
       <FadeIn
         delay={0}
         duration={0.8}

@@ -25,14 +25,12 @@ export default function Game(props: GameProps) {
 
   return (
     <Container
-      layout={'flex'}
       direction={'col'}
       justify={'center'}
       align={'center'}
       className={'h-full w-full p-4'}
     >
       <Container
-        layout={'flex'}
         direction={'row'}
         justify={'center'}
         align={'center'}
@@ -40,7 +38,6 @@ export default function Game(props: GameProps) {
         className={'h-full w-full'}
       >
         <Container
-          layout={'flex'}
           direction={'col'}
           justify={'center'}
           align={'center'}

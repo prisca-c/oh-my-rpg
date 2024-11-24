@@ -60,19 +60,13 @@ export const InventoryGrid = (props: InventoryGridProps) => {
 
   return (
     <Container
-      layout={'flex'}
       direction={'col'}
       align={'center'}
       justify={'center'}
       className={'bg-gray-800 relative select-none'}
     >
-      <Container
-        layout={'flex'}
-        direction={'col'}
-        align={'start'}
-        className={'bg-gray-800 relative select-none'}
-      >
-        <Container layout={'flex'} direction={'row'}>
+      <Container direction={'col'} align={'start'} className={'bg-gray-800 relative select-none'}>
+        <Container direction={'row'}>
           {items &&
             Object.keys(items).map((page) => (
               <div key={page} onDragOver={(e) => onDragOverButtonPage(e, setInventoryPage)}>
@@ -81,7 +75,6 @@ export const InventoryGrid = (props: InventoryGridProps) => {
             ))}
         </Container>
         <Container
-          layout={'flex'}
           direction={'col'}
           align={'center'}
           justify={'center'}

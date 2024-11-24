@@ -8,7 +8,6 @@ type LeaderboardProps = {
 export const Leaderboard = ({ leaderboard }: LeaderboardProps) => {
   return (
     <Container
-      layout={'flex'}
       direction={'col'}
       justify={'start'}
       align={'center'}

@@ -10,7 +10,6 @@ type CharacterInfosProps = {
 export const CharacterInfos = ({ character, properties }: CharacterInfosProps) => {
   return (
     <Container
-      layout={'flex'}
       direction={'col'}
       justify={'start'}
       align={'center'}
