@@ -15,7 +15,7 @@ export interface InventorySlice {
   addItem: (item: InventoryItemDtoType) => void
 }
 
-export const createInventorySlice: SliceStateCreator<InventorySlice> = (set, get) => ({
+export const inventorySlice: SliceStateCreator<InventorySlice> = (set, get) => ({
   inventory: {
     items: [],
     inventorySize: 0,

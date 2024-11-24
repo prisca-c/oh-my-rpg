@@ -1,15 +1,17 @@
 import { create, StateCreator } from 'zustand'
 import { devtools } from 'zustand/middleware'
 
-import { InventorySlice, createInventorySlice } from '~/store/use_inventory_store'
+import { InventorySlice, inventorySlice } from '~/store/inventory_store'
+import { WorldsSlice, worldsSlice } from '~/store/worlds_store'
 
-export interface RootState extends InventorySlice {}
+export interface RootState extends InventorySlice, WorldsSlice {}
 
 type Mutators = [['zustand/devtools', never]]
 
 export const useStore = create<RootState, Mutators>(
   devtools((...args) => ({
-    ...createInventorySlice(...args),
+    ...inventorySlice(...args),
+    ...worldsSlice(...args),
   }))
 )
 
