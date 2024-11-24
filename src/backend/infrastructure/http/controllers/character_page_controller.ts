@@ -5,14 +5,16 @@ import { InventoryDTO } from '#application/dto/inventory_dto'
 export default class CharacterController {
   async handle({ auth, inertia, params, session }: HttpContext) {
     const user = auth.user
-    const id = params.id
+    const characterId = params.characterId
 
-    const character = await Character.find(id)
+    const character = await Character.find(characterId)
 
     if (user?.id !== character?.userId || !character) {
       session.flash('error', 'Seems like there was an error loading your character.')
       return inertia.location('/characters')
     }
+
+    session.put('characterId', characterId)
 
     const inventory = await InventoryDTO.fromCharacter(character.id)
 

@@ -37,7 +37,7 @@ router.post('/register', [AuthController, 'register']).as('register.post')
 router
   .group(() => {
     router
-      .get('/game/:id', [GamesController, 'index'])
+      .get('/game/:characterId', [GamesController, 'index'])
       .where('id', router.matchers.uuid())
       .as('game')
     router.get('/characters', [CharactersController, 'index'])
@@ -47,6 +47,6 @@ router
       .put('/inventory/:characterId/item/:itemId', [InventoriesController, 'update'])
       .where('characterId', router.matchers.uuid())
       .where('itemId', router.matchers.uuid())
-    router.get('/game/:id/profile', [CharacterPageController])
+    router.get('/game/:characterId/profile', [CharacterPageController])
   })
   .use(middleware.auth())

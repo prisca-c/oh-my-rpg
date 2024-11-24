@@ -6,16 +6,16 @@ import { GetWorlds } from '#features/world/get_worlds'
 export default class GamesController {
   async index({ params, auth, session, inertia }: HttpContext) {
     const user = auth.user
-    const id = params.id
+    const characterId = params.characterId
 
-    const character = await Character.find(id)
+    const character = await Character.find(characterId)
 
     if (user?.id !== character?.userId || !character) {
       session.flash('error', 'Seems like there was an error loading your character.')
       return inertia.location('/characters')
     }
 
-    session.put('characterId', id)
+    session.put('characterId', characterId)
 
     await character.load('entityProperties')
     const characterProperties = character.entityProperties
