@@ -15,12 +15,12 @@ export default class LootController {
     private storeItem: StoreItem
   ) {}
 
-  async handle({ request, session, response }: HttpContext) {
+  async handle({ request, session, inertia }: HttpContext) {
     const characterId = session.get('characterId')
     const { id } = request.params()
 
     if (!characterId) {
-      return response.redirect().toPath('/characters')
+      return inertia.location('/characters')
     }
 
     const character = await Character.findOrFail(characterId)
@@ -28,8 +28,12 @@ export default class LootController {
     const items = await this.getItems.handle(world)
     const item = await this.loot.handle(items)
 
-    if (item) {
+    if (!item) return inertia.location(`/game/${character.id}`)
+
+    try {
       await this.storeItem.handle(item, character)
+    } catch (error) {
+      session.flash('error', error.message)
     }
 
     return item

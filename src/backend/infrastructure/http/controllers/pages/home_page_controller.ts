@@ -3,8 +3,8 @@ import type { HttpContext } from '@adonisjs/core/http'
 import Character from '#infrastructure/models/character'
 import { GetWorlds } from '#features/world/get_worlds'
 
-export default class GamesController {
-  async index({ params, auth, session, inertia }: HttpContext) {
+export default class HomePageController {
+  async handle({ params, auth, session, inertia }: HttpContext) {
     const user = auth.user
     const characterId = params.characterId
 

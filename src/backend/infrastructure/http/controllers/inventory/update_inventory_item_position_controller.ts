@@ -5,8 +5,8 @@ import Character from '#infrastructure/models/character'
 import { InventoryDTO } from '#application/dto/inventory_dto'
 import { CanItemBePlaced } from '#domain/inventory/can_item_be_placed'
 
-export default class InventoriesController {
-  async update({ params, request, response, session }: HttpContext) {
+export default class UpdateInventoryItemPositionController {
+  async handle({ params, request, response, session }: HttpContext) {
     const { characterId, itemId } = params
     const { page, position, id } = request.all()
 

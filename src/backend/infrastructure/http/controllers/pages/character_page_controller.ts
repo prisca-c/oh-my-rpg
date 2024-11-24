@@ -2,7 +2,7 @@ import type { HttpContext } from '@adonisjs/core/http'
 import Character from '#infrastructure/models/character'
 import { InventoryDTO } from '#application/dto/inventory_dto'
 
-export default class CharacterController {
+export default class CharacterPageController {
   async handle({ auth, inertia, params, session }: HttpContext) {
     const user = auth.user
     const characterId = params.characterId
