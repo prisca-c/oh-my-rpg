@@ -11,7 +11,7 @@ type CharactersProps = {
   characters: Character[]
 }
 
-export default function Characters({ characters }: CharactersProps) {
+export default function CharacterListPage({ characters }: CharactersProps) {
   const [createCharacter, setCreateCharacter] = useState(false)
 
   return (

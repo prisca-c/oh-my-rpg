@@ -19,7 +19,7 @@ export default class CharacterPageController {
     const inventory = await InventoryDTO.fromCharacter(character.id)
 
     return inertia.render(
-      'private/character',
+      'private/character_page',
       { character, inventory: inertia.always(() => inventory.toJSON()) },
       {
         meta: {

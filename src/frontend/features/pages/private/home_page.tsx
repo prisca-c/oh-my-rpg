@@ -16,7 +16,7 @@ type GameProps = {
   worlds: World[]
 }
 
-export default function Game(props: GameProps) {
+export default function HomePage(props: GameProps) {
   const { character, leaderboard, properties, worlds } = props
 
   useEffect(() => {

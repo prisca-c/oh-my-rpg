@@ -3,7 +3,7 @@ import type { HttpContext } from '@adonisjs/core/http'
 export default class RegisterPageController {
   async handle(ctx: HttpContext) {
     return ctx.inertia.render(
-      'public/register',
+      'public/register_page',
       {},
       {
         meta: {

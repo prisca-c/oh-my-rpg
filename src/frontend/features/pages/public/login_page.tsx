@@ -1,13 +1,13 @@
 import { Typography } from '~/common/components/utils'
-import { RegisterForm } from '~/features/auth/register_form'
+import { LoginForm } from '~/features/auth/login_form'
 
-export default function Register() {
+export default function LoginPage() {
   return (
     <div>
       <Typography type={'h1'} size={'5xl'} className={'font-bold text-center'}>
-        Register
+        Login
       </Typography>
-      <RegisterForm />
+      <LoginForm />
     </div>
   )
 }

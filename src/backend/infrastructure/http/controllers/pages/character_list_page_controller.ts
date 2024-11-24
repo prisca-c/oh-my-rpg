@@ -6,7 +6,7 @@ export default class CharacterListPageController {
     await user?.load('characters')
 
     return inertia.render(
-      'private/characters',
+      'private/character_list_page',
       { characters: user?.characters ?? [] },
       {
         meta: {

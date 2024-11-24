@@ -4,7 +4,7 @@ import { Button } from '~/common/components/button'
 import { FadeIn, Flex } from '~/common/components/utils'
 import { LogoAnimation } from '~/common/components/logo_animation'
 
-export default function Home() {
+export default function LandingPage() {
   const goToLogin = () => {
     router.visit('/login')
   }

@@ -31,7 +31,7 @@ export default class HomePageController {
     const worlds = await new GetWorlds().handle(character)
 
     return inertia.render(
-      'private/game',
+      'private/home_page',
       {
         character,
         leaderboard: await characters,

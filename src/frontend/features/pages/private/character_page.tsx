@@ -12,7 +12,7 @@ interface Props {
   inventory: InventoryDtoType
 }
 
-export default function Character(props: Props) {
+export default function CharacterPage(props: Props) {
   const { character, inventory } = props
   const goToHome = () => {
     router.visit(`/game/${character.id}`)
