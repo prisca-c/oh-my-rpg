@@ -1,7 +1,6 @@
-import { StateCreator } from 'zustand'
 import { produce } from 'immer'
 import { InventoryDtoType, InventoryItemDtoType } from '#common/types/inventory_types'
-import { RootState } from '~/store'
+import { SliceStateCreator } from '~/store'
 
 export interface InventorySlice {
   inventory: InventoryDtoType
@@ -16,10 +15,7 @@ export interface InventorySlice {
   addItem: (item: InventoryItemDtoType) => void
 }
 
-export const createInventorySlice: StateCreator<RootState, [], [], InventorySlice> = (
-  set,
-  get
-) => ({
+export const createInventorySlice: SliceStateCreator<InventorySlice> = (set, get) => ({
   inventory: {
     items: [],
     inventorySize: 0,

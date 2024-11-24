@@ -1,8 +1,16 @@
+import { create, StateCreator } from 'zustand'
+import { devtools } from 'zustand/middleware'
+
 import { InventorySlice, createInventorySlice } from '~/store/use_inventory_store'
-import { create } from 'zustand'
 
 export interface RootState extends InventorySlice {}
 
-export const useStore = create<RootState>((...args) => ({
-  ...createInventorySlice(...args),
-}))
+type Mutators = [['zustand/devtools', never]]
+
+export const useStore = create<RootState, Mutators>(
+  devtools((...args) => ({
+    ...createInventorySlice(...args),
+  }))
+)
+
+export type SliceStateCreator<TSlice> = StateCreator<RootState, Mutators, [], TSlice>
