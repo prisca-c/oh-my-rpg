@@ -1435,13 +1435,13 @@ __metadata:
   linkType: hard
 
 "@japa/plugin-adonisjs@npm:^3.0.0":
-  version: 3.0.1
-  resolution: "@japa/plugin-adonisjs@npm:3.0.1"
+  version: 3.0.2
+  resolution: "@japa/plugin-adonisjs@npm:3.0.2"
   peerDependencies:
-    "@adonisjs/core": ^6.5.0
-    "@japa/api-client": ^2.0.3
+    "@adonisjs/core": ^6.17.0
+    "@japa/api-client": ^2.0.3 || ^3.0.0
     "@japa/browser-client": ^2.0.3
-    "@japa/runner": ^3.1.2
+    "@japa/runner": ^3.1.2 || ^4.0.0
     playwright: ^1.42.1
   peerDependenciesMeta:
     "@japa/api-client":
@@ -1450,7 +1450,7 @@ __metadata:
       optional: true
     playwright:
       optional: true
-  checksum: 10c0/95294a360c4ae7db1d332d61fc10dad9a9e6c54d2f33f8a6c3426d74c131890842d3a058ead993803c1eb12643e6506b82c7e6f3ba9fa36486fba1385e660fb4
+  checksum: 10c0/b5f84b2332cf3fb665cbeee4b8b84ec304d0ad27e65a8354b61aee8ddc6a9a93e52c6a67cf273a496cdcc5eb1906ccab48383b7796b33cbea31f0c62e051859a
   languageName: node
   linkType: hard
 
