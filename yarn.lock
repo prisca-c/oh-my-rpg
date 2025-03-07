@@ -211,8 +211,8 @@ __metadata:
   linkType: hard
 
 "@adonisjs/eslint-config@npm:^2.0.0-beta.7":
-  version: 2.0.0-beta.7
-  resolution: "@adonisjs/eslint-config@npm:2.0.0-beta.7"
+  version: 2.0.0
+  resolution: "@adonisjs/eslint-config@npm:2.0.0"
   dependencies:
     "@adonisjs/eslint-plugin": "npm:^2.0.0-beta.5"
     "@stylistic/eslint-plugin-ts": "npm:^2.7.2"
@@ -223,7 +223,7 @@ __metadata:
   peerDependencies:
     eslint: ^9.9.0
     prettier: ^3.3.3
-  checksum: 10c0/b18e3daf81b7afbd91f12f2fb8e01fe4b254d948ec0ac0d63b39bba604eaf8b7c3ad01a8eccf8b22424f2d31feab5108db385cb247f1b138e8a7510bfe5e3cb0
+  checksum: 10c0/f7edb6a017426d9bcd97fb95e91b68d6b532f3e3ce54f782c861dbf6e98ab845e0ed375859b3c317762fa3b89932aab3165d37a33044c39449493ea6e22416d4
   languageName: node
   linkType: hard
 
