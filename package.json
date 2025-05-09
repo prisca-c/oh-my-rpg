@@ -110,5 +110,5 @@
     }
   },
   "prettier": "@adonisjs/prettier-config",
-  "packageManager": "yarn@4.5.2"
+  "packageManager": "yarn@4.9.1"
 }
