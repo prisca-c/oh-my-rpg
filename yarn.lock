@@ -474,17 +474,17 @@ __metadata:
   linkType: hard
 
 "@adonisjs/shield@npm:^8.1.1":
-  version: 8.1.1
-  resolution: "@adonisjs/shield@npm:8.1.1"
+  version: 8.2.0
+  resolution: "@adonisjs/shield@npm:8.2.0"
   dependencies:
-    "@poppinss/utils": "npm:^6.7.1"
+    "@poppinss/utils": "npm:^6.9.2"
     csrf: "npm:^3.1.0"
     helmet-csp: "npm:^3.4.0"
   peerDependencies:
     "@adonisjs/core": ^6.2.0
     "@adonisjs/i18n": ^2.0.0
     "@adonisjs/session": ^7.0.0
-    "@japa/api-client": ^2.0.2
+    "@japa/api-client": ^2.0.2 || ^3.0.0
     edge.js: ^6.0.1
   peerDependenciesMeta:
     "@adonisjs/i18n":
@@ -493,7 +493,7 @@ __metadata:
       optional: true
     edge.js:
       optional: true
-  checksum: 10c0/e8fd234df666ac34babab0c7038efd3827e85fc0b9a9ec794a1b9894cf8bea40f3ebbdfc2d7dc749307ff3cf07a403c300fca6635b1e692582273ec457bceaf9
+  checksum: 10c0/943535f38fa858dae3d47d7f565ee2e89049f37719768bfa8680482e7fd745314e339b4a21906c3f1188845b10a6f0d1c727d3819ad2d1bc9b63c26b71fd11a2
   languageName: node
   linkType: hard
 
@@ -1869,7 +1869,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@poppinss/utils@npm:^6.7.1, @poppinss/utils@npm:^6.7.2, @poppinss/utils@npm:^6.7.3, @poppinss/utils@npm:^6.8.1, @poppinss/utils@npm:^6.8.3":
+"@poppinss/utils@npm:^6.7.2, @poppinss/utils@npm:^6.7.3, @poppinss/utils@npm:^6.8.1, @poppinss/utils@npm:^6.8.3":
   version: 6.8.3
   resolution: "@poppinss/utils@npm:6.8.3"
   dependencies:
