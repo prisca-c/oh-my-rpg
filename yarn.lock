@@ -509,9 +509,9 @@ __metadata:
   linkType: hard
 
 "@adonisjs/tsconfig@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "@adonisjs/tsconfig@npm:1.4.0"
-  checksum: 10c0/d5da8a0d5ed1922411df8c377c19109d49a2b1d3ee1c84b85616ca90f01bb72268ad144171ef56933072d4e78037593435c1307facfb68c7adcda5c3ced32e36
+  version: 1.4.1
+  resolution: "@adonisjs/tsconfig@npm:1.4.1"
+  checksum: 10c0/a610abd720f16a94a8173a71a08b2f72b6270c361fbd04374eda03bab05a04dce3fc2500ae941c7a458a44cf2db9b9cb6a6f52cded513d501ae885b4838a90a1
   languageName: node
   linkType: hard
 
