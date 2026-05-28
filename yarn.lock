@@ -411,11 +411,11 @@ __metadata:
   linkType: hard
 
 "@adonisjs/prettier-config@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "@adonisjs/prettier-config@npm:1.4.0"
+  version: 1.5.0
+  resolution: "@adonisjs/prettier-config@npm:1.5.0"
   dependencies:
-    prettier-edgejs: "npm:^0.2.16"
-  checksum: 10c0/bafdeaa2091affe0c127a10af3f1386bdf1575e1574ca07526b71e6dddc38e1e7b6789f1da8b1ea6452d2d31f2f22db57475203f128c22ff28be97093b8cb65c
+    prettier-edge: "npm:^1.0.0"
+  checksum: 10c0/acd0fd9cdb87a83a546eacb6a0cbedbe82a2e5c4d25aee4b5ca66cb767d672cd94904e1a8776dd33e7f6486a561a329ca453e21aa7d6870e302c38c888f17637
   languageName: node
   linkType: hard
 
@@ -867,48 +867,6 @@ __metadata:
     "@babel/helper-string-parser": "npm:^7.25.9"
     "@babel/helper-validator-identifier": "npm:^7.25.9"
   checksum: 10c0/6f1592eabe243c89a608717b07b72969be9d9d2fce1dee21426238757ea1fa60fdfc09b29de9e48d8104311afc6e6fb1702565a9cc1e09bc1e76f2b2ddb0f6e1
-  languageName: node
-  linkType: hard
-
-"@chevrotain/cst-dts-gen@npm:11.0.3":
-  version: 11.0.3
-  resolution: "@chevrotain/cst-dts-gen@npm:11.0.3"
-  dependencies:
-    "@chevrotain/gast": "npm:11.0.3"
-    "@chevrotain/types": "npm:11.0.3"
-    lodash-es: "npm:4.17.21"
-  checksum: 10c0/9e945a0611386e4e08af34c2d0b3af36c1af08f726b58145f11310f2aeafcb2d65264c06ec65a32df6b6a65771e6a55be70580c853afe3ceb51487e506967104
-  languageName: node
-  linkType: hard
-
-"@chevrotain/gast@npm:11.0.3":
-  version: 11.0.3
-  resolution: "@chevrotain/gast@npm:11.0.3"
-  dependencies:
-    "@chevrotain/types": "npm:11.0.3"
-    lodash-es: "npm:4.17.21"
-  checksum: 10c0/54fc44d7b4a7b0323f49d957dd88ad44504922d30cb226d93b430b0e09925efe44e0726068581d777f423fabfb878a2238ed2c87b690c0c0014ebd12b6968354
-  languageName: node
-  linkType: hard
-
-"@chevrotain/regexp-to-ast@npm:11.0.3":
-  version: 11.0.3
-  resolution: "@chevrotain/regexp-to-ast@npm:11.0.3"
-  checksum: 10c0/6939c5c94fbfb8c559a4a37a283af5ded8e6147b184a7d7bcf5ad1404d9d663c78d81602bd8ea8458ec497358a9e1671541099c511835d0be2cad46f00c62b3f
-  languageName: node
-  linkType: hard
-
-"@chevrotain/types@npm:11.0.3":
-  version: 11.0.3
-  resolution: "@chevrotain/types@npm:11.0.3"
-  checksum: 10c0/72fe8f0010ebef848e47faea14a88c6fdc3cdbafaef6b13df4a18c7d33249b1b675e37b05cb90a421700c7016dae7cd4187ab6b549e176a81cea434f69cd2503
-  languageName: node
-  linkType: hard
-
-"@chevrotain/utils@npm:11.0.3":
-  version: 11.0.3
-  resolution: "@chevrotain/utils@npm:11.0.3"
-  checksum: 10c0/b31972d1b2d444eef1499cf9b7576fc1793e8544910de33a3c18e07c270cfad88067f175d0ee63e7bc604713ebed647f8190db45cc8311852cd2d4fe2ef14068
   languageName: node
   linkType: hard
 
@@ -3094,6 +3052,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"angular-html-parser@npm:^10.6.1":
+  version: 10.6.1
+  resolution: "angular-html-parser@npm:10.6.1"
+  checksum: 10c0/deb3a7e704f78b0b91c38ff6de0fb9310fb7a067325ece7eadfd4d1494054259298936c29b30328c380e3a2a6cfe51c1ca735280d1fbc6b2ee3e77cd0c7255c6
+  languageName: node
+  linkType: hard
+
 "ansi-colors@npm:^4.1.1":
   version: 4.1.3
   resolution: "ansi-colors@npm:4.1.3"
@@ -3429,15 +3394,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"atob@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "atob@npm:2.1.2"
-  bin:
-    atob: bin/atob.js
-  checksum: 10c0/ada635b519dc0c576bb0b3ca63a73b50eefacf390abb3f062558342a8d68f2db91d0c8db54ce81b0d89de3b0f000de71f3ae7d761fd7d8cc624278fe443d6c7e
-  languageName: node
-  linkType: hard
-
 "atomic-sleep@npm:^1.0.0":
   version: 1.0.0
   resolution: "atomic-sleep@npm:1.0.0"
@@ -3748,20 +3704,6 @@ __metadata:
   version: 2.1.1
   resolution: "check-error@npm:2.1.1"
   checksum: 10c0/979f13eccab306cf1785fa10941a590b4e7ea9916ea2a4f8c87f0316fc3eab07eabefb6e587424ef0f88cbcd3805791f172ea739863ca3d7ce2afc54641c7f0e
-  languageName: node
-  linkType: hard
-
-"chevrotain@npm:^11.0.3":
-  version: 11.0.3
-  resolution: "chevrotain@npm:11.0.3"
-  dependencies:
-    "@chevrotain/cst-dts-gen": "npm:11.0.3"
-    "@chevrotain/gast": "npm:11.0.3"
-    "@chevrotain/regexp-to-ast": "npm:11.0.3"
-    "@chevrotain/types": "npm:11.0.3"
-    "@chevrotain/utils": "npm:11.0.3"
-    lodash-es: "npm:4.17.21"
-  checksum: 10c0/ffd425fa321e3f17e9833d7f44cd39f2743f066e92ca74b226176080ca5d455f853fe9091cdfd86354bd899d85c08b3bdc3f55b267e7d07124b048a88349765f
   languageName: node
   linkType: hard
 
@@ -4124,17 +4066,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "css@npm:3.0.0"
-  dependencies:
-    inherits: "npm:^2.0.4"
-    source-map: "npm:^0.6.1"
-    source-map-resolve: "npm:^0.6.0"
-  checksum: 10c0/c17cb4a46a39c11b00225f1314158a892828af34cdf3badc7e88084882e9f414e4902a1d59231c0854f310af30bde343fd8a9e79c6001426fe88af45d3312fe2
-  languageName: node
-  linkType: hard
-
 "csstype@npm:^3.0.2":
   version: 3.1.3
   resolution: "csstype@npm:3.1.3"
@@ -4273,13 +4204,6 @@ __metadata:
   version: 10.4.3
   resolution: "decimal.js@npm:10.4.3"
   checksum: 10c0/6d60206689ff0911f0ce968d40f163304a6c1bc739927758e6efc7921cfa630130388966f16bf6ef6b838cb33679fbe8e7a78a2f3c478afce841fd55ac8fb8ee
-  languageName: node
-  linkType: hard
-
-"decode-uri-component@npm:^0.2.0":
-  version: 0.2.2
-  resolution: "decode-uri-component@npm:0.2.2"
-  checksum: 10c0/1f4fa54eb740414a816b3f6c24818fbfcabd74ac478391e9f4e2282c994127db02010ce804f3d08e38255493cfe68608b3f5c8e09fd6efc4ae46c807691f7a31
   languageName: node
   linkType: hard
 
@@ -4465,12 +4389,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"edge-error@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "edge-error@npm:4.0.2"
+  checksum: 10c0/c44a212a99e907209b24d263cd2fa4999d72f56c7cf9693bceea626fd319f3544033140d642a298d0b652c9d5d66874228d2cad2d851219a4fac4cdd5d6ab391
+  languageName: node
+  linkType: hard
+
 "edge-lexer@npm:^6.0.2":
   version: 6.0.2
   resolution: "edge-lexer@npm:6.0.2"
   dependencies:
     edge-error: "npm:^4.0.1"
   checksum: 10c0/04bc14b5fb084aef00d653dfab98997dbff12f56b8749a7e28437aa20291826b5af013fd38d3eb40a2bdcef21c25aff836f915521471b39b260482de6434aa17
+  languageName: node
+  linkType: hard
+
+"edge-lexer@npm:^6.0.5":
+  version: 6.0.5
+  resolution: "edge-lexer@npm:6.0.5"
+  dependencies:
+    edge-error: "npm:^4.0.2"
+  checksum: 10c0/156869177f106d90c59a4775b62aad81f2c524871891922a35603525f940711c91903b1751a527471dce1da38277f99982320cc00c6896d760699fddec5d0c5d
   languageName: node
   linkType: hard
 
@@ -4504,15 +4444,6 @@ __metadata:
     property-information: "npm:^6.5.0"
     stringify-attributes: "npm:^4.0.0"
   checksum: 10c0/cc2babb029ddfcd841c5a90970324b05dc68c967886a712cb7263c076e844e51e43bc50e4074da66f279181bb8cca0db94feb5f0d948cf4cc4d673a851986c07
-  languageName: node
-  linkType: hard
-
-"edgejs-parser@npm:^0.2.12":
-  version: 0.2.12
-  resolution: "edgejs-parser@npm:0.2.12"
-  dependencies:
-    chevrotain: "npm:^11.0.3"
-  checksum: 10c0/35a0789322670f9ee82bdc53407b88a26fe28449a5b3904dba434ca8b5f007f6079400911a18bfeb9ff94a05f6a86cf4d3d6afc513129bcffe0ebca6f50f6cb7
   languageName: node
   linkType: hard
 
@@ -6266,7 +6197,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inherits@npm:2.0.4, inherits@npm:^2.0.4":
+"inherits@npm:2.0.4":
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: 10c0/4e531f648b29039fb7426fb94075e6545faa1eb9fe83c29f0b6d9e7263aceb4289d2d4557db0d428188eeb449cc7c5e77b0a0b2c4e248ff2a65933a0dee49ef2
@@ -7206,13 +7137,6 @@ __metadata:
   dependencies:
     p-locate: "npm:^6.0.0"
   checksum: 10c0/139e8a7fe11cfbd7f20db03923cacfa5db9e14fa14887ea121345597472b4a63c1a42a8a5187defeeff6acf98fd568da7382aa39682d38f0af27433953a97751
-  languageName: node
-  linkType: hard
-
-"lodash-es@npm:4.17.21":
-  version: 4.17.21
-  resolution: "lodash-es@npm:4.17.21"
-  checksum: 10c0/fb407355f7e6cd523a9383e76e6b455321f0f153a6c9625e21a8827d10c54c2a2341bd2ae8d034358b60e07325e1330c14c224ff582d04612a46a4f0479ff2f2
   languageName: node
   linkType: hard
 
@@ -8549,15 +8473,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-edgejs@npm:^0.2.16":
-  version: 0.2.33
-  resolution: "prettier-edgejs@npm:0.2.33"
+"prettier-edge@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "prettier-edge@npm:1.0.0"
   dependencies:
-    css: "npm:^3.0.0"
-    edgejs-parser: "npm:^0.2.12"
-    prettier: "npm:^3.3.3"
-    uglify-js: "npm:^3.19.2"
-  checksum: 10c0/37cdb0b816cd58f65e3469257b50de81210df936f1e81c5fec6a25aa7d24ae6d78a2ad3bcd124548eb0672e3a270a04e8a679cbce27e6d970090799240dfcf86
+    angular-html-parser: "npm:^10.6.1"
+    edge-lexer: "npm:^6.0.5"
+  peerDependencies:
+    prettier: ^3.0.0
+  checksum: 10c0/9ba8a4fc15d3929925d09c2fa8263f582f4ea43f18a3493a27272de28eb1da4f071c1fb73fd5616a5807512a7f17bf812e1dd3158fa1f6f2d9df5e0a6a77025c
   languageName: node
   linkType: hard
 
@@ -8570,7 +8494,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.2.5, prettier@npm:^3.3.3":
+"prettier@npm:^3.2.5":
   version: 3.3.3
   resolution: "prettier@npm:3.3.3"
   bin:
@@ -9599,16 +9523,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-resolve@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "source-map-resolve@npm:0.6.0"
-  dependencies:
-    atob: "npm:^2.1.2"
-    decode-uri-component: "npm:^0.2.0"
-  checksum: 10c0/bc2a94af3d2417196195eecf0130925b3558726726504a7c7bd1b9e383c4a789fa3f4616c4c673cf8bd7930ddd2e80481f203422282aeae342dbd56b91995188
-  languageName: node
-  linkType: hard
-
 "source-map@npm:^0.6.1":
   version: 0.6.1
   resolution: "source-map@npm:0.6.1"
@@ -10379,15 +10293,6 @@ __metadata:
   version: 1.5.4
   resolution: "ufo@npm:1.5.4"
   checksum: 10c0/b5dc4dc435c49c9ef8890f1b280a19ee4d0954d1d6f9ab66ce62ce64dd04c7be476781531f952a07c678d51638d02ad4b98e16237be29149295b0f7c09cda765
-  languageName: node
-  linkType: hard
-
-"uglify-js@npm:^3.19.2":
-  version: 3.19.3
-  resolution: "uglify-js@npm:3.19.3"
-  bin:
-    uglifyjs: bin/uglifyjs
-  checksum: 10c0/83b0a90eca35f778e07cad9622b80c448b6aad457c9ff8e568afed978212b42930a95f9e1be943a1ffa4258a3340fbb899f41461131c05bb1d0a9c303aed8479
   languageName: node
   linkType: hard
 
