@@ -17,14 +17,14 @@ export default class LootController {
 
   async handle({ request, session, inertia }: HttpContext) {
     const characterId = session.get('characterId')
-    const { id } = request.params()
+    const { worldId } = request.params()
 
     if (!characterId) {
       return inertia.location('/characters')
     }
 
     const character = await Character.findOrFail(characterId)
-    const world = await World.findOrFail(id)
+    const world = await World.findOrFail(worldId)
     const items = await this.getItems.handle(world)
     const item = await this.loot.handle(items)
 

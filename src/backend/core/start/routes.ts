@@ -23,6 +23,8 @@ const HomePageController = () =>
   import('#infrastructure/http/controllers/pages/home_page_controller')
 const CharacterListPageController = () =>
   import('#infrastructure/http/controllers/pages/character_list_page_controller')
+const WorldPageController = () =>
+  import('#infrastructure/http/controllers/pages/world_page_controller')
 
 const LoginController = () => import('#infrastructure/http/controllers/auth/login_controller')
 const LogoutController = () => import('#infrastructure/http/controllers/auth/logout_controller')
@@ -54,9 +56,12 @@ router
       .as('game')
     router.get('/characters', [CharacterListPageController])
     router.get('/game/:characterId/profile', [CharacterPageController])
+    router
+      .get('/game/world/:worldId', [WorldPageController])
+      .where('worldId', router.matchers.uuid())
 
     router.post('/characters', [CreateCharacterController]).as('character.store')
-    router.get('/world/loot/:id', [LootController]).where('id', router.matchers.uuid())
+    router.get('/world/loot/:worldId', [LootController]).where('id', router.matchers.uuid())
     router
       .put('/inventory/:characterId/item/:itemId', [UpdateInventoryItemPositionController])
       .where('characterId', router.matchers.uuid())

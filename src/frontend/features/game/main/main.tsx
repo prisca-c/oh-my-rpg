@@ -1,6 +1,7 @@
 import { Container, Typography } from '~/common/components/utils'
 import { router, usePage } from '@inertiajs/react'
 import { Button } from '~/common/components/button'
+import { WorldList } from '~/features/game/adventure/world_list'
 
 export const Main = () => {
   const { characterId } = usePage().props
@@ -23,6 +24,7 @@ export const Main = () => {
         Main
       </Typography>
       <Button onClick={goToCharacterProfile}>Go to Profile</Button>
+      <WorldList />
     </Container>
   )
 }

@@ -1,7 +1,7 @@
 import type { HttpContext } from '@adonisjs/core/http'
 
 export default class LoginPageController {
-  async handler({ inertia }: HttpContext) {
+  async handle({ inertia }: HttpContext) {
     return inertia.render(
       'public/login_page',
       {},
