@@ -37,4 +37,4 @@ jobs:
         run: NODE_ENV=test SESSION_DRIVER=memory yarn test --force-exit
 
       - name: Build
-        run: node ace build --ignore-ts-errors
+        run: node ace.js build --ignore-ts-errors
