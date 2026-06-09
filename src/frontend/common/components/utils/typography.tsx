@@ -17,7 +17,7 @@ export const Typography = ({
   className = '',
   align = 'left',
 }: TypographyProps): React.ReactElement => {
-  const Tag = type as keyof JSX.IntrinsicElements
+  const Tag: React.ElementType = type
 
   const textSizes: Record<TextSizes, string> = {
     'xs': 'text-xs',
