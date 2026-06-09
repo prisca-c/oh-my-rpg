@@ -8,15 +8,15 @@
     "node": ">=20.12.0"
   },
   "scripts": {
-    "build": "node ace build",
-    "dev": "node ace serve",
+    "build": "node ace.js build",
+    "dev": "node ace.js serve",
     "format": "prettier --write .",
     "lint": "eslint .",
     "prettier": "prettier --write .",
-    "migrate": "node ace migration:run",
-    "migrate:prod": "node ace migration:run --force",
+    "migrate": "node ace.js migration:run",
+    "migrate:prod": "node ace.js migration:run --force",
     "start": "node bin/server.js",
-    "test": "node ace test",
+    "test": "node ace.js test",
     "typecheck:backend": "tsc --noEmit -p tsconfig.json",
     "typecheck:frontend": "tsc --noEmit -p src/frontend/tsconfig.json",
     "typecheck": "yarn typecheck:backend && yarn typecheck:frontend"
