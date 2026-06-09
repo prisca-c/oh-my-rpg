@@ -1,8 +1,8 @@
-import { create, StateCreator } from 'zustand'
+import { create, type StateCreator } from 'zustand'
 import { devtools } from 'zustand/middleware'
 
-import { InventorySlice, inventorySlice } from '~/store/inventory_store'
-import { WorldsSlice, worldsSlice } from '~/store/worlds_store'
+import { type InventorySlice, inventorySlice } from '~/store/inventory_store'
+import { type WorldsSlice, worldsSlice } from '~/store/worlds_store'
 
 export interface RootState extends InventorySlice, WorldsSlice {}
 

@@ -78,7 +78,7 @@ export const InventoryGrid = (props: InventoryGridProps) => {
           direction={'col'}
           align={'center'}
           justify={'center'}
-          className={' border-2 border-black'}
+          className={'border-2 border-black'}
         >
           {Array.from({ length: 10 }).map((_, colIndex) => (
             <div key={colIndex} className={'grid grid-cols-10'}>
@@ -91,7 +91,7 @@ export const InventoryGrid = (props: InventoryGridProps) => {
                 return (
                   <div
                     key={`${colIndex}-${rowIndex}`}
-                    className={'relative bg-amber-200 border-2 border-black h-10 w-10'}
+                    className={'relative h-10 w-10 border-2 border-black bg-amber-200'}
                     data-position={`x:${rowIndex},y:${colIndex}`}
                     onDragOver={onDragOver}
                     onDrop={(e) => onDrop(e, handleItemDrop)}

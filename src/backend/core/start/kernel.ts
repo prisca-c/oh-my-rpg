@@ -24,7 +24,7 @@ server.errorHandler(() => import('#core/exceptions/handler'))
  */
 server.use([
   () => import('#infrastructure/http/middleware/container_bindings_middleware'),
-  () => import('@adonisjs/inertia/inertia_middleware'),
+  () => import('#infrastructure/http/middleware/inertia_middleware'),
   () => import('@adonisjs/cors/cors_middleware'),
   () => import('@adonisjs/vite/vite_middleware'),
   () => import('@adonisjs/static/static_middleware'),
@@ -39,7 +39,6 @@ router.use([
   () => import('@adonisjs/session/session_middleware'),
   () => import('@adonisjs/shield/shield_middleware'),
   () => import('@adonisjs/auth/initialize_auth_middleware'),
-  () => import('@adonisjs/inertia/inertia_middleware'),
 ])
 
 /**

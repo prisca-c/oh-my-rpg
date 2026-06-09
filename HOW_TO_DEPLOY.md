@@ -9,14 +9,12 @@ This document explains how to deploy the application on a Linux server.
 ## Steps
 
 1. **Setup the server** _(If not already done)_:
-
    - Install docker
    - Install git
    - Install nginx or apache
    - Install certbot (for https)
 
 2. a. **Clone the repository** (If you have not already done so):
-
    - Use git to clone the repository
      ```bash
      git clone https://github.com/prisca-c/adonis-rpg.git
@@ -39,7 +37,6 @@ This document explains how to deploy the application on a Linux server.
      ```
 
 3. b. **Pull the latest changes** (If you have already cloned the repository):
-
    - Use git to pull the latest changes
      ```bash
      git pull
@@ -54,7 +51,6 @@ This document explains how to deploy the application on a Linux server.
      ```
 
 4. **Setup the web server (Nginx or Apache)** _(If not already done)_:
-
    - Create a new server block
    - Add the server block to the sites-available folder
    - Enable the server block
@@ -64,7 +60,6 @@ This document explains how to deploy the application on a Linux server.
      ```
 
 5. **Setup the SSL certificate** _(If not already done)_:
-
    - Run certbot to get the certificate
    - Update the server block to use the certificate
    - Restart the web server

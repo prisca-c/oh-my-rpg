@@ -1,6 +1,16 @@
+import { indexEntities } from '@adonisjs/core'
 import { defineConfig } from '@adonisjs/core/app'
+import { indexPages } from '@adonisjs/inertia'
 
 export default defineConfig({
+  hooks: {
+    init: [
+      indexEntities(),
+      indexPages({ framework: 'react', source: 'src/frontend/features/pages' }),
+    ],
+    buildStarting: [() => import('@adonisjs/vite/build_hook')],
+  },
+
   /*
   |--------------------------------------------------------------------------
   | Commands
@@ -66,12 +76,12 @@ export default defineConfig({
   tests: {
     suites: [
       {
-        files: ['tests/unit/**/*.spec(.ts|.js)'],
+        files: ['tests/unit/**/*.spec.{ts,js}'],
         name: 'unit',
         timeout: 2000,
       },
       {
-        files: ['tests/functional/**/*.spec(.ts|.js)'],
+        files: ['tests/functional/**/*.spec.{ts,js}'],
         name: 'functional',
         timeout: 30_000,
       },
@@ -88,8 +98,6 @@ export default defineConfig({
       reloadServer: false,
     },
   ],
-
-  assetsBundler: false,
 
   directories: {
     config: 'src/backend/core/config',

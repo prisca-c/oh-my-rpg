@@ -1,5 +1,5 @@
-import { Size } from '#common/types/size'
-import { Position } from '#common/types/position'
+import { type Size } from '#common/types/size'
+import { type Position } from '#common/types/position'
 
 type PaginatedInventoryItems = Record<number, InventoryItemDtoType[]>
 

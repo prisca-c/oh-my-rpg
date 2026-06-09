@@ -22,7 +22,7 @@ export const Card = (props: CardProps) => {
 
   const base = 'p-4'
 
-  const className = `${base} ${sizes[size]} ${bg}`
+  const className = `${base}  ${sizes[size]}  ${bg}`
 
   return (
     <Container

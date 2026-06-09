@@ -1,4 +1,4 @@
-ARG NODE_IMAGE=node:23
+ARG NODE_IMAGE=node:24
 
 FROM $NODE_IMAGE as base
 
@@ -20,7 +20,7 @@ FROM deps as builder
 RUN node ace build \
     --ignore-ts-errors \
     && cd build \
-    && yarn install --immutable --production
+    && yarn workspaces focus --production
 
 FROM $NODE_IMAGE as release
 

@@ -12,7 +12,7 @@ export default class UpdateInventoryItemPositionController {
 
     if (!page || !position) {
       session.flash('error', 'Invalid request')
-      return response.redirect().toRoute('game', { id: characterId })
+      return response.redirect().toPath(`/game/${characterId}`)
     }
 
     const character = await Character.findOrFail(characterId)
@@ -20,7 +20,7 @@ export default class UpdateInventoryItemPositionController {
 
     if (!item) {
       session.flash('error', 'Item not found')
-      return response.redirect().toRoute('game', { id: characterId })
+      return response.redirect().toPath(`/game/${characterId}`)
     }
 
     assert(item.position)
@@ -41,7 +41,7 @@ export default class UpdateInventoryItemPositionController {
 
     if (!canPlaceItem) {
       session.flash('error', 'Item cannot be placed here')
-      return response.redirect().toRoute('game', { id: characterId })
+      return response.redirect().toPath(`/game/${characterId}`)
     }
 
     item.position = position

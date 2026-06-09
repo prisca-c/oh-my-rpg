@@ -20,7 +20,7 @@ export const Main = () => {
       rounded
       bg={'lightPrimary'}
     >
-      <Typography type={'h1'} size={'xl'} className={'font-bold text-center'}>
+      <Typography type={'h1'} size={'xl'} className={'text-center font-bold'}>
         Main
       </Typography>
       <Button onClick={goToCharacterProfile}>Go to Profile</Button>

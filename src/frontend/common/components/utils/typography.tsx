@@ -38,5 +38,7 @@ export const Typography = ({
     right: 'text-right',
   }
 
-  return <Tag className={`${textSizes[size]} ${textAlignment[align]} ${className}`}>{children}</Tag>
+  return (
+    <Tag className={`${textSizes[size]}  ${textAlignment[align]}  ${className}`}>{children}</Tag>
+  )
 }

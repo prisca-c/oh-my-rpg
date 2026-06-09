@@ -1,16 +1,17 @@
 /// <reference types="vite/client" />
-/// <reference path="../../../adonisrc.ts" />
-/// <reference path="../../backend/core/config/inertia.ts" />
+/// <reference path="../adonisrc.ts" />
+/// <reference path="../src/backend/core/config/inertia.ts" />
 import '@unocss/reset/tailwind.css'
-import './app.css'
+import '~/app/app.css'
 import 'virtual:uno.css'
 
-import { hydrateRoot } from 'react-dom/client'
+import type { JSXElementConstructor, ReactElement, ReactNode, ReactPortal } from 'react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { createInertiaApp } from '@inertiajs/react'
-import type { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from 'react'
+import { hydrateRoot } from 'react-dom/client'
+
 import PrivateLayout from '~/features/layouts/private_layout'
 import PublicLayout from '~/features/layouts/public_layout'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 export type PageType =
   | string
@@ -34,8 +35,8 @@ createInertiaApp({
   title: (title: string) => `${title} - ${appName}`,
 
   resolve: (name: string) => {
-    const pages = import.meta.glob('../features/pages/**/*.tsx', { eager: true })
-    const page: any = pages[`../features/pages/${name}.tsx`]
+    const pages = import.meta.glob('../src/frontend/features/pages/**/*.tsx', { eager: true })
+    const page: any = pages[`../src/frontend/features/pages/${name}.tsx`]
     page.default.layout = name.startsWith('private')
       ? (page: PageType) => <PrivateLayout>{page}</PrivateLayout>
       : (page: PageType) => <PublicLayout>{page}</PublicLayout>

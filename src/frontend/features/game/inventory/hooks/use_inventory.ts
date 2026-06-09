@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 
 import type { Position } from '#common/types/position'
 import { InventoryService } from '~/services/inventory_service'
-import { InventoryDtoType } from '#common/types/inventory_types'
+import { type InventoryDtoType } from '#common/types/inventory_types'
 import { useStore } from '~/store'
 
 export const useInventory = (characterId: string, initialInventory: InventoryDtoType) => {

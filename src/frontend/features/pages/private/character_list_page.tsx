@@ -16,7 +16,7 @@ export default function CharacterListPage({ characters }: CharactersProps) {
 
   return (
     <Flex direction={'col'} justify={'center'} align={'center'} className={'gap-6'}>
-      <Typography type={'h1'} size={'5xl'} className={'font-bold text-center'}>
+      <Typography type={'h1'} size={'5xl'} className={'text-center font-bold'}>
         Characters
       </Typography>
       <Flex direction={'col'} justify={'center'} align={'center'} className={'gap-6'}>

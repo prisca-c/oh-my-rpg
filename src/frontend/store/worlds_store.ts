@@ -1,5 +1,5 @@
 import type World from '#infrastructure/models/world'
-import { SliceStateCreator } from '~/store/index'
+import { type SliceStateCreator } from '~/store/index'
 
 export interface WorldsSlice {
   worlds: World[]

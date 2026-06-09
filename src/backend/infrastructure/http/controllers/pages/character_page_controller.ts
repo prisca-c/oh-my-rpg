@@ -17,10 +17,11 @@ export default class CharacterPageController {
     session.put('characterId', characterId)
 
     const inventory = await InventoryDTO.fromCharacter(character.id)
+    const serializedInventory = JSON.parse(JSON.stringify(inventory.toJSON()))
 
     return inertia.render(
       'private/character_page',
-      { character, inventory: inertia.always(() => inventory.toJSON()) },
+      { character, inventory: inertia.always(serializedInventory) },
       {
         meta: {
           title: 'Character Profile',

@@ -1,6 +1,6 @@
 import { produce } from 'immer'
-import { InventoryDtoType, InventoryItemDtoType } from '#common/types/inventory_types'
-import { SliceStateCreator } from '~/store'
+import { type InventoryDtoType, type InventoryItemDtoType } from '#common/types/inventory_types'
+import { type SliceStateCreator } from '~/store'
 
 export interface InventorySlice {
   inventory: InventoryDtoType

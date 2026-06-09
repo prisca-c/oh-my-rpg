@@ -13,7 +13,7 @@ export const CreateCharacterForm = () => {
   const userIdError = getErrorByField(errors, 'userId')
   return (
     <Form method={'POST'} onSubmit={onSubmit}>
-      {userIdError && <p className={'text-red-500 text-xs'}>{userIdError}</p>}
+      {userIdError && <p className={'text-xs text-red-500'}>{userIdError}</p>}
       <InputGroup
         label={'Name'}
         name={'name'}

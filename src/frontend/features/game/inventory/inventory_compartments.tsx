@@ -16,7 +16,7 @@ export const InventoryCompartments = (props: InventoryCompartmentsProps) => {
     lg: 'w-[100px] h-[200px]',
   }
 
-  const className = `${baseClass} ${sizes[size || 'md']} ${position}`
+  const className = `${baseClass}  ${sizes[size || 'md']}  ${position}`
 
   return <div className={className}>{children}</div>
 }

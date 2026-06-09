@@ -38,7 +38,7 @@ export const InputGroup = ({
 
   return (
     <div className={'flex flex-col'}>
-      {!valid && error && <p className={'text-red-500 text-xs'}>{error}</p>}
+      {!valid && error && <p className={'text-xs text-red-500'}>{error}</p>}
       <label htmlFor={name}>{label}</label>
       <input
         type={type}

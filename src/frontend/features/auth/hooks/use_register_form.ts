@@ -1,5 +1,6 @@
 import { useForm } from '@inertiajs/react'
-import React, { useEffect, useState } from 'react'
+import type React from 'react'
+import { useEffect, useState } from 'react'
 
 import {
   validateEmail,

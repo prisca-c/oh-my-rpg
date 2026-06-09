@@ -16,7 +16,7 @@ export const Leaderboard = ({ leaderboard }: LeaderboardProps) => {
       bg={'lightGray'}
       rounded
     >
-      <Typography type={'h2'} size={'lg'} className={'font-bold text-center'}>
+      <Typography type={'h2'} size={'lg'} className={'text-center font-bold'}>
         Leaderboard
       </Typography>
       <table className={'w-full'}>
@@ -29,7 +29,7 @@ export const Leaderboard = ({ leaderboard }: LeaderboardProps) => {
         <tbody>
           {leaderboard.map((character) => (
             <tr key={character.id}>
-              <td className={'text-start truncate'}>{character.name}</td>
+              <td className={'truncate text-start'}>{character.name}</td>
               <td className={'text-end'}>{character.level}</td>
             </tr>
           ))}

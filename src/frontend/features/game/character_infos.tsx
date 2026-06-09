@@ -18,7 +18,7 @@ export const CharacterInfos = ({ character, properties }: CharacterInfosProps) =
       bg={'lightGray'}
       rounded
     >
-      <Typography type={'h2'} size={'lg'} className={'font-bold text-center'}>
+      <Typography type={'h2'} size={'lg'} className={'text-center font-bold'}>
         Character
       </Typography>
       <Flex direction={'col'} justify={'flex-start'} align={'flex-start'} className={'gap-2'}>

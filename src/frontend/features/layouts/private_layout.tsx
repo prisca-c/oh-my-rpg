@@ -6,7 +6,7 @@ export default function PrivateLayout({ children }: { children: React.ReactNode 
     <div className={'h-screen'}>
       <Center
         type={'grid'}
-        className={'h-screen w-screen max-h-screen max-w-screen overflow-hidden'}
+        className={'h-screen max-h-screen max-w-screen w-screen overflow-hidden'}
       >
         {children}
       </Center>

@@ -13,7 +13,7 @@ export const Inventory = (props: InventoryProps) => {
   return (
     <>
       <Container
-        className={'relative w-[500px] h-[500px] rounded-lg bg-inventory bg-center bg-cover'}
+        className={'bg-inventory relative h-[500px] w-[500px] rounded-lg bg-cover bg-center'}
       >
         <InventoryCompartments size={'lg'} position="bottom-20 left-10"></InventoryCompartments>
         <InventoryCompartments size={'lg'} position="bottom-20 right-10"></InventoryCompartments>

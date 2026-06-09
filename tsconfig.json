@@ -1,8 +1,9 @@
 {
-  "exclude": ["./node_modules/**/*", "build", "resources", "./src/frontend/**/*"],
+  "exclude": ["./node_modules/**/*", "build", "resources", "./src/frontend/**/*", "./inertia/**/*"],
   "extends": "@adonisjs/tsconfig/tsconfig.app.json",
   "compilerOptions": {
     "rootDir": "./",
     "outDir": "./build"
-  }
+  },
+  "references": [{ "path": "./tsconfig.inertia.json" }]
 }

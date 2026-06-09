@@ -1,5 +1,5 @@
 import Character, { type CharacterId } from '#infrastructure/models/character'
-import Item from '#infrastructure/models/item'
+import type Item from '#infrastructure/models/item'
 import type { InventoryDtoType, InventoryItemDtoType } from '#common/types/inventory_types'
 
 export class InventoryDTO {
