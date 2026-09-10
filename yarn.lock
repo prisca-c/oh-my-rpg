@@ -473,15 +473,15 @@ __metadata:
   linkType: hard
 
 "@adonisjs/redis@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "@adonisjs/redis@npm:10.0.0"
+  version: 10.0.2
+  resolution: "@adonisjs/redis@npm:10.0.2"
   dependencies:
-    "@poppinss/utils": "npm:^7.0.0"
-    emittery: "npm:^1.2.0"
-    ioredis: "npm:^5.9.3"
+    "@poppinss/utils": "npm:^7.0.1"
+    emittery: "npm:^1.2.1"
+    ioredis: "npm:^5.11.1"
   peerDependencies:
     "@adonisjs/core": ^7.0.0-next.0 || ^7.0.0
-  checksum: 10c0/d45bc691e9e823652ab16216c90755a139b4038401ebacf2c181be666aedf2a9ddbdc37ae3174b5761afb99bea64cd36c9a3c44e08ca3ebc48c460005023cc01
+  checksum: 10c0/844eefee60f42e102f0c3cf6a8da7c5b7f64c83c5374bd015a74d2f25724d0c275f96a82e1210e9dd2e743a0af2eeadbe61a28352a791a037bd003cd3e4ed423
   languageName: node
   linkType: hard
 
@@ -4077,7 +4077,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"emittery@npm:^1.2.0":
+"emittery@npm:^1.2.0, emittery@npm:^1.2.1":
   version: 1.2.1
   resolution: "emittery@npm:1.2.1"
   checksum: 10c0/188f6ee8725589df6d49a8ed18b216709dfda3574547860c122bc0223570d839bb2c8ca5cd95483a6b064636af195d7c6ab99a35a317f9734d8bc455f644c785
@@ -5406,7 +5406,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ioredis@npm:^5.9.3":
+"ioredis@npm:^5.11.1":
   version: 5.11.1
   resolution: "ioredis@npm:5.11.1"
   dependencies:
